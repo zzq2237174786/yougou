@@ -2,7 +2,7 @@ package com.yougou.pojo;
 
 public class Lixue {
 	public static void main(String[] args) {
-		System.out.println("ÀîÑ©");
+		System.out.println("æé›ª");
 	}
 
 }
