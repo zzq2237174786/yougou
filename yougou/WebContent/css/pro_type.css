@@ -1,0 +1,191 @@
+/*分类面包屑*/
+.type .type-title{
+	padding: 30px 0px 20px;
+}
+.type .type-title>.breadcrumb{
+	margin: 0px;
+	padding: 0px;
+	background: none;
+}
+.type .type-title>.breadcrumb a{
+	font-size: 12px;
+	color: #333333;
+	font-weight: bold;
+}
+
+/*分类的内容*/
+/*左边的导航列表*/
+.type .type-nav{
+	width: 160px;
+	float: left;
+	position: none;
+	top:30px;
+}
+.type .type-nav>p{
+	color: #666;
+    font-size: 12px;
+    margin: 45px 0px 0px 0px;
+}
+/*列表*/
+.type .type-nav .type-navlist{
+	font-size: 12px;
+    color: #333;
+    margin-top: 25px;
+    height: 480px;
+    overflow-y: auto;
+}
+/*列表下面分类*/
+.type-navlist>li{
+	padding-top: 10px;
+	cursor: pointer;
+}
+.type-navlist>li>p{
+	margin: 0px;
+	font-size: 12px;
+	font-weight: bold;
+}
+.type-navlist>li>p>span{
+	display: inline-block;
+	width: 10px;
+    height: 10px;
+    margin-right: 9px;
+    background: url(../img/css_sprites.png) -212px -124px;
+}
+/*分类后的内容*/
+.type-navlist .type-navlist-content ul li{
+	margin-top: 10px;
+}
+.type-navlist .type-navlist-content ul li>a{
+	color: #666;
+}
+.type-navlist .type-navlist-content {
+	display: none;
+}
+
+/*右边分类内容*/
+/*上面的导航内容*/
+.type-content{
+	float: right;
+}
+.type-content-nav{
+	height: 57px;
+	width: 1010px;
+	border-bottom: 1px solid #eee;
+}
+.type-content-nav>ul>li{
+	height: 50px;
+	float: left;
+	line-height: 50px;
+	padding: 0px 30px;
+	margin-top: 6px;
+}
+.type-content-nav>ul>li>a{
+	font-size: 14px;
+	color: #333333;
+}
+.type-content-nav>ul>li>a.active{
+	color: back;
+	font-weight: bold;
+	text-decoration: underline;
+}
+/*当面头部翻页*/
+.nav-page{
+	float: right;
+    font-size: 12PX;
+    color: #999;
+    height: 50px;
+    line-height: 50px;
+    margin: 6px 30px 0px 0px;
+}
+.nav-page span a{
+	color: #999;
+}
+
+/*产品*/
+.type-content-product .ul-product{
+	width: 1010px;
+	margin-top: 30px;
+}
+.type-content-product .ul-product:after{
+	display: block;
+	clear: both;
+	content: "";
+}
+.ul-product li{
+	display: inline-block;
+    width: 245px;
+    height: 400px;
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    position: relative;
+}
+.ul-product li:hover{
+	background: #f6f6f6;
+}
+.ul-product li:hover>.imgbox{
+	background: #f6f6f6;
+}
+.ul-product>li>.imgbox img{
+	width: 210px;
+	height: 230px;
+}
+.ul-product>li>.product-info{
+	height: 150px;
+	text-align: center;
+    margin: 0 auto;
+    padding: 15px 10px 25px;
+}
+.ul-product>li>.product-info>a{
+	display: block;
+	height: 54px;
+	color: #333333;
+	font-size: 12px;
+}
+.ul-product>li>.product-info>p{
+	margin:10px 0px 0px 0px;
+}
+.ul-product>li>.product-info>p>span.price{
+	font-size: 16px;
+	font-weight: bold;
+	color: black;
+	margin-right: 5px;
+}
+.ul-product>li>.product-info>p>span.old-price{
+	font-size: 14px;
+	color: #CCCCCC;
+	text-decoration: line-through;
+}
+
+/*分页*/
+.type-page{
+	height: 110px;
+	padding: 40px 0px 30px 0px;
+}
+.pagination{
+	margin: 5px 10px 0px 0px;
+	float: right;
+}
+.pagination>a , .pagination>span{
+	height: 27px;
+	width: 27px;
+    line-height: 27px;
+    font-size: 14px;
+    color: #333;
+    padding: 0 6px;
+    min-width: 15px;
+    margin: 0 6px;
+    border-left: none;
+    text-align: center;
+    overflow: hidden;
+    float: left;
+    display: inline-block;
+}
+.pagination>.active{
+	background: #333;
+    color: #fff;
+}
+.pagination>.page-prev, .pagination>.page-next{
+	width:64px;
+}

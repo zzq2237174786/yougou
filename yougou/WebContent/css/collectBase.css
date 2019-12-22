@@ -1,0 +1,153 @@
+/*全局样式*/
+*{margin: 0px;padding: 0px;}
+li{list-style: none;}
+a{
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {color: #000000; text-decoration:none;}
+img{border: none;vertical-align: bottom;}
+.head{
+	width: 100%;height: 200px;
+	background: palegoldenrod;
+}
+/*导航路径*/
+.curmbs{
+	height: 60px;
+	line-height: 60px;
+	margin: 3px auto;
+	font-size: 12px;
+	margin-left: -25px;
+}
+.curmbs a{
+	font-weight: bold;
+}
+
+/*菜单*/
+.umenu{
+	width: 150px;
+	padding: 0px;
+}
+.myyougou{
+	height: 34px;
+	background: #333333;
+	line-height: 34px;
+	text-align: center;	
+}
+.myyougou>a{
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+	
+}
+/*每个菜单*/
+.jiaoyizx,.wodezc,.gerensz,.shouhoufw{
+	padding-bottom: 23px;
+	margin-bottom: 0px;
+	border: 1px solid  #E3E3E3;
+	border-top :0;
+	border-bottom :0;
+	background: #fcfcfc
+}
+.jiaoyizx{
+	padding-top: 15px;
+}
+.shouhoufw{
+	padding-bottom: 15px;
+	border-bottom: 1px solid #E3E3E3;
+}
+.jiaoyizx .present{
+	list-style: disc;
+}
+.jiaoyizx,.wodezc,.gerensz,.shouhoufw, .current:hover{
+	list-style: disc;
+	
+}
+.umenu>ul>li{
+	margin-left: 30px;
+	padding-bottom: 8px;
+	
+}
+
+.jiaoyizx,.wodezc,.gerensz,.shouhoufw, ul li span{
+	color: #666666;
+	font-size: 12px;
+}
+.ultitle{
+	font-weight: bold;
+	font-size: 14px;
+}
+/*热门菜单*/
+.hotlist{
+	margin-top: 20px;
+	border: 1px solid #E3E3E3;
+}
+.umenu .hotlist>li{
+	margin: 0px;padding: 0px;
+}
+
+/*热门头*/
+.hottitle{
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 1px solid #E3E3E3;
+}
+/*热门中*/
+.hotlist img{
+	height: 60pxs;
+	width: 60px;
+}
+.hotmiddle dl{
+	width: 150px;
+	height: 70px;
+	margin-bottom: 6px;
+}
+.hotmiddle dt{	
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+
+}
+.hotmiddle dl dd{
+	display: inline-block;
+	float: right;	
+}
+
+.hotgoodsname{
+	padding-top:4px;
+	height: 30px; width: 70px;
+	font-size: 12px;
+}
+.hotgoodsprice{
+	width: 87px;height: 25px;
+	margin: 0px;padding: 0px;
+	padding-left: -2px;
+}
+.hotgoodsprice span{
+	font-size: 16px;
+	font-weight: bold;
+	color: #333333;
+	
+}
+.hotgoodsprice .primecost{
+	
+	width: 45px;
+	text-decoration:line-through;
+	font-size: 12px;
+	font-weight: bolder;
+	color: #CCCCCC;
+	
+}
+/*热门尾*/
+.hotlast{
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-top: 1px solid #E3E3E3;
+	font-size: 12px;
+}
+.hotlast>a{
+	color: #666666;
+}

@@ -1,0 +1,98 @@
+#car-order{
+	border-bottom: 1px solid gainsboro;
+}
+#car-order button{
+	margin-bottom: 20px;
+}
+.form-inline{
+	margin-top: 30px;
+}
+#car-order2{
+	margin-left: -120px;
+}
+#car-order3{
+	padding-left: 50px;
+}
+#car-order3 input{
+	width: 100px;
+}
+.car-order8{
+	border-bottom: 1px solid gainsboro;
+}
+#car-order9{
+	width: 914px;
+	height: 164px;
+	border: 1px solid gainsboro;
+	margin-top: 0px;
+}
+#car-order9 input{
+	margin-top: 60px;
+}
+#car-order10 button{
+	margin-top: 50px;
+}
+span{
+	margin-left: 20px;
+}
+#car-order11{
+	height: 510px;
+	border: 1px solid gainsboro;
+	margin-top: 20px;
+}
+.text-right{
+	margin-right: 50px;
+}
+#sure{
+	background: #333;
+	width: 200px;
+	height: 40px;
+	margin-left: 30px;
+	margin-top: 50px;
+}
+#back{
+	margin-top: 50px;
+}
+/*.glyphicon{
+	font-size: 20px;
+	color: #333;
+	margin-right: 780px;
+	margin-top: -30px;
+}*/
+#car-order16{
+	margin-bottom: 50px;
+	border-top: 1px solid gainsboro;
+}
+#car-order16 p{
+	font-size: 12px;
+}
+
+.minus,.cart-num,.add{
+	border: 1px solid gainsboro;
+	padding: 5px 10px;
+}
+.minus, .add{
+  cursor: pointer;
+  font-weight: bold;
+}
+.minus:hover, .add:hover, .del-btn:hover{
+  color:dodgerblue;
+}
+
+tr img{
+	width: 81px;
+	height:82px;
+}
+table{
+  margin-top:10px;
+  width:600px;
+}
+table td{
+  padding: 8px;
+  border-bottom: 1px solid gainsboro;
+  font-size: 14px;
+  text-align: center;
+}
+.cart-desc{
+  width:300px;
+}
+

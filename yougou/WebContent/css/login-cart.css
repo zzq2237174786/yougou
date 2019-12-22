@@ -1,0 +1,146 @@
+/*全局样式*/
+*{margin: 0px;padding: 0px;}
+li{list-style: none;}
+a{text-decoration: none;}
+img{border: none;vertical-align: bottom;}
+td{
+	color: gray;
+}
+/*tr{
+	border-bottom: 1px solid gainsboro;
+}*/
+/*.active{
+	width: 20px;
+}*/
+td a:hover{
+	text-decoration: none;
+}
+td a p{
+	color: gray;
+}
+.logincar{
+	height: 68px;
+	background: gainsboro;
+}
+.logincar a:hover{
+	text-decoration: none;
+}
+.logincar a button{
+	margin-top: 20px;
+	margin-left: 20px;
+	background: #333;
+}
+.logincar p{
+	float: right;
+	margin-top: -65px;
+	margin-right: 20px;
+}
+.logincar p a button{
+	width: 120px;
+	height: 68px;
+}
+#next{
+	font-size: 30px;
+	color: gray;
+	right: 0px;
+}
+#prev{
+	font-size: 30px;
+	color: gray;
+	left: 0px;
+}
+.minus,.cart-num,.add{
+	border: 1px solid gainsboro;
+	padding: 5px 10px;
+}
+.minus, .add{
+  cursor: pointer;
+  font-weight: bold;
+}
+.minus:hover, .add:hover, .del-btn:hover{
+  color:dodgerblue;
+}
+
+tr img{
+	width: 81px;
+	height:82px;
+}
+table{
+  margin-top:10px;
+  width:100%;
+}
+table td{
+  padding: 8px;
+  border-bottom: 1px solid gainsboro;
+  font-size: 14px;
+  text-align: center;
+}
+.cart-desc{
+  width:300px;
+}
+#logincar{
+	margin-top: 0px;
+	background: gainsboro;
+}
+
+
+.shoes{
+	width: 1182px;
+	height: 382px;
+	/*background: yellowgreen;*/
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+.full{
+	/*width: 3546px;*/
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.full ul{
+	width: 1182px;
+	height: 382px;
+	float: left;
+	position: relative;
+}
+.shoes1{
+	width: 230px;
+	height: 382px;
+	float: left;
+	margin-right: 20px;
+	margin-left: 40px;
+}
+.shoes1:hover{
+	background: gainsboro;
+}
+.shoes1 a img{
+	width: 210px;
+	height: 210px;
+	margin: 10px 10px;
+}
+.shoes1 img{
+	margin-left: 30%;
+}
+.shoes1 h1{
+	font-size: 16px;
+	text-align: center;
+}
+.shoes1 a p{
+	font-size: 12px;
+	color: black;
+	text-align: center;
+}
+.shoes a:hover{
+	text-decoration: none;
+}
+
+.shoes>a{
+	width: 40px;
+	height: 80px;
+	position: absolute;
+	top: 50%;
+	margin-top: -40px;
+	opacity: 0.6;
+}
+

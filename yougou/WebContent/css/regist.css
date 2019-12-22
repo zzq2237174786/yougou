@@ -1,0 +1,360 @@
+/*全局样式*/
+/*设置边距*/
+*{margin: 0; padding: 0;}
+/*li标签*/
+li{list-style: none;}
+/*a标签下划线*/
+a{text-decoration: none;}
+/*低版本IE*/
+img{border: none; vertical-align: bottom;}
+.header{
+	width: 100%;
+	height: 40px;
+	background: #333333;
+	line-height: 40px;
+	font-size: 12px;
+	font-family: "宋体";
+}
+.contain{
+	width: 100%;
+	height: 642px;
+	position: relative;
+}
+.contain-top{
+	height: 69px;
+}
+.contain-top-logo{
+	float: left;
+	margin-left: 300px;
+	
+}
+.contain-top>div>span{
+	width: 72px;
+	height: 69px;
+	float: right;
+	font-size: 18px;
+	color: #666666;
+	text-align: center;
+	line-height: 69px;
+	margin-right: 65%;
+}
+.contain-bottom{
+	width: 100%;
+	height: 553px;
+	background: url(../img/1.jpg) no-repeat;
+	position: absolute;
+}
+.contain-bottom .tab{
+	left: 70%;
+	background: white;
+	box-sizing: border-box;
+	height: 450px;
+	margin-top: 50px;
+	width: 378px;
+	position: absolute;
+}
+.contain .blank{
+	width: 100%;
+	height: 20px;
+}
+.footer{
+	width: 100%;
+	height: 20px;
+}
+.footer>p{
+	line-height: 20px;
+	text-align: center;
+	font-size: 12px;
+	color: #666666;
+	background: white;
+}
+.form{
+	width: 378px;
+	height: 530px;
+	margin: 12px 0 0;
+	background: white;
+	position: absolute;
+	left: 70%;
+}
+.form-head{
+	width: 348px;
+	height: 41px;
+	margin: 24px 15px 0 68px;
+	font-size: 12px;
+	text-align: center;
+	
+}
+.form-head>a{
+	float: left;
+}
+.form-regist{
+	width: 123px;
+	height: 40px;
+}
+.form-registbtn{
+	color: #FFFFFF;
+	line-height: 40px;
+	background: black;
+	border: none;
+	width: 123px;
+	height: 40px;
+	
+}
+.form-login{
+	width: 123px;
+	height: 40px;
+}
+.form-loginbtn{
+	color: #333333;
+	line-height: 40px;
+	border: none;
+	width: 123px;
+	height: 40px;
+	margin-left: -5px;
+}
+.form-contain{
+	width: 348px;
+	height: 472px;
+	margin: 0 15px;
+	padding: 30px 0 0 10px;
+}
+.yzm{
+	width: 200px;
+	height: 38px;
+	border: 1px solid #000000;
+	float: left;
+}
+.yzm-y{
+	width: 110px;
+	height: 36px;
+	background: #999999;
+	margin-right: 20px;
+	line-height: 36px;
+	font-size: 15px;text-align: center;
+	float: right;
+}
+.phone{
+	width: 313px;
+	height: 38px;
+	border: 1px solid #000000;
+}
+.box{
+	width: 60px;
+	height: 38px;
+	margin: 0 0 0 10px;
+	float: left;
+	text-align: center;
+	font-size: 12px;
+	line-height: 38px;
+}
+.printk{
+	width: 235px;
+	height: 36px;
+	float: right;
+	border: none;
+	font-size: 12px;
+}
+.form-contain-blank{
+	width: 330px;
+	height: 28px;
+	color: #666666;
+}
+.printy{
+	width: 128px;
+	height: 36px;
+	float: right;
+	border: none;
+}
+.box2{
+	width: 60px;
+	height: 38px;
+	margin: 0 0 0 10px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 38px;
+	float: left;
+}
+.form-contain-foot{
+	width: 338px;
+	height: 40px;
+	margin: 0 40px;
+	margin-top: 20px;
+}
+.form-contain-foot>a{
+	margin: 0 5px;
+}
+.ssd{
+	width: 330px;
+	height: 28px;
+	margin-top: 40px;
+	color: #666666;
+}
+.yzm-dx{
+	width: 235px;
+	height: 38px;
+	border: 1px solid #000000;
+	margin-right: 0px;
+	float: left;
+}
+.box3{
+	width: 60px;
+	height: 38px;
+	margin: 0 0 0 10px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 38px;
+	float: left;
+}
+.yzm-dx-t{
+	width: 155px;
+	height: 36px;
+	border: none;
+	float: right;
+}
+.yzm-get{
+	width: 73px;
+	height: 38px;
+	text-align: center;
+	line-height: 38px;
+	background: #323232;
+	color: white;
+	font-size: 12px;
+	margin: 0 25px 0 0;
+	float: right;
+}
+.dxyzm-yz{
+	width: 330px;
+	height: 28px;
+	color: #666666;
+	margin: 40px 0 0 0;
+}
+.yzm-password{
+	width: 313px;
+	height: 38px;
+	color: #000000;
+	border: 1px solid #000000;
+}
+.box4{
+	width: 60px;
+	height: 38px;
+	margin: 0 0 0 10px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 38px;
+	float: left;
+}
+.yzm-password-t{
+	width: 235px;
+	height: 36px;
+	float: right;
+	font-size: 12px;
+	border: none;
+}
+.yzm-password-ts{
+	width: 330px;
+	height: 28px;
+	color: #666666;
+}
+.yzm-qrpassword{
+	width: 313px;
+	height: 38px;
+	color: #000000;
+	border: 1px solid #000000;
+}
+.box5{
+	width: 60px;
+	height: 38px;
+	margin: 0 0 0 10px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 38px;
+	float: left;
+}
+.yzm-qrpassword-t{
+	width: 235px;
+	height: 36px;
+	float: right;
+	font-size: 12px;
+	border: none;
+}
+.yzm-qrpassword-yz{
+	width: 330px;
+	height: 28px;
+	color: #666666;
+}
+.zhuce-xieyi{
+	width: 338px;
+	height: 20px;
+	color: #666666;
+	margin:  0 0 0 0;
+	text-align: center;
+}
+.zhuce-xieyi>a{
+	font-size: 14px;
+	color: #000000;
+}
+.zhuce-xieyi>a:hover{
+	color: #46B8DA;
+}
+.zhuce-btn{
+	width: 312px;
+	height: 40px;
+	background: #000000;
+	padding: 1px 6px;
+	margin-top: 8px;
+}
+.zhuce-btn>input{
+	width: 300px;
+	height: 38px;
+	background: black;
+	color: white;
+	font-size: 16px;
+	border: none;
+	text-align: center;
+	line-height: 40px;
+}
+.phone-yz{
+	width: 330px;
+	height: 28px;
+	display: none;
+	font-size: 12px;
+	text-align: center;
+	line-height: 28px;
+	color: red;
+}
+.ssd-yzm{
+	width: 330px;
+	height: 28px;
+	display: none;
+	font-size: 12px;
+	text-align: center;
+	line-height: 28px;
+	color: red;
+}
+.dxyzm-yz-ts{
+	width: 330px;
+	height: 28px;
+	display: none;
+	font-size: 12px;
+	text-align: center;
+	line-height: 28px;
+	color: red;
+}
+.yzm-password-ts1{
+	width: 330px;
+	height: 28px;
+	display: none;
+	font-size: 12px;
+	text-align: center;
+	line-height: 28px;
+	color: red;
+}
+.yzm-qrpassword-yz-ts{
+	width: 330px;
+	height: 28px;
+	display: none;
+	font-size: 12px;
+	text-align: center;
+	line-height: 28px;
+	color: red;
+}

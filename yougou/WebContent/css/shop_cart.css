@@ -1,0 +1,109 @@
+/*全局样式*/
+*{margin: 0px;padding: 0px;}
+a{text-decoration: none;}
+img{border: none;vertical-align: bottom;}
+li{list-style: none;}
+
+/*顶部*/
+.container{
+	margin-top: 50px;
+}
+.navbar-left{
+	margin-left: 30px;
+}
+/*.nav{
+	padding-top: 20px;
+}*/
+.active{
+	width: 200px;
+	color: white;
+	background: #333;
+	text-align: center;
+}
+.active1{
+	width: 200px;
+	color: black;
+	background:gainsboro;
+	text-align: center;
+	
+}
+
+#glyphicon{
+	font-size: 20px;
+	color: white;
+	float: right;
+}
+/*中间*/
+#myModal{
+	height: 356px;
+	border: 1px solid gainsboro;
+}
+.text-center{
+	margin-top: 30px;
+}
+.text-center p{
+	font-size: 16px;
+	color: gray;
+	margin-top: 30px;
+}
+
+.text-center a:hover{
+	text-decoration: none;
+}
+.text-right a:hover{
+	text-decoration: none;
+}
+#car-right{
+	margin-bottom: 50px;
+}
+.text-left h3{
+	font-size: 18px;
+	font-weight: bold;
+}
+#car-bottom{
+	height: 500px;
+	border: 1px solid gainsboro;
+}
+#car-bottom p{
+	color: gray;
+}
+/*#pre,#next{
+	margin-top: 250px;
+}
+#next{
+	float: right;
+}
+#next:hover{
+	cursor: pointer;
+}
+#pre:hover{
+	cursor: pointer;
+}
+#pre{
+	float: left;
+}*/
+#car-bottom1{
+	border-top: 1px solid gainsboro;
+}
+#car-bottom1 p{
+	margin-top: 10px;
+	margin-bottom: 50px;
+	font-size: 12px;
+}
+.glyphicon-hand-down{
+	font-size: 30px;
+	color: black;
+	margin-right: 800px;
+}
+.glyphicon-hand-right{
+	font-size: 30px;
+	color: black;
+	float: left;
+	margin-top: 250px;
+}
+.glyphicon-hand-left{
+	font-size: 30px;
+	color: black;
+	float: right;
+	margin-top: 250px;
+}

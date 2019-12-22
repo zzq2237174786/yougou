@@ -1,0 +1,249 @@
+.breadcrumb{
+/*	margin-left: 30px;*/
+	background: none;
+}
+.detail1{
+	padding-top: 50px;
+}
+.small a li img{
+	border: 2px solid gainsboro;
+	/*过渡动画*/
+	transition: all 0.5s;
+	width: 60px;
+	height: 60px;
+}
+.small a li img:hover{
+	border-color: black;
+}
+#pro-right{
+	position: relative;
+}
+/*大图样式*/
+.pro-big{
+	width:480px;
+	height: 480px;
+	border: 1px solid black;
+	position: absolute;
+	/*right: -500px;*/
+	top: 0px;
+	overflow: hidden;
+	/*margin-right: 450px;*/
+	display: none;
+}
+
+.pro-big img{
+	position:absolute;
+	left: 0px;
+	top: 0px;
+	width:800px ;
+	height: 800px;
+}
+
+.small a li{
+	margin-bottom: 10px;
+	height: 65px;
+}
+/*.small a li:hover{
+	border:1px solid gray;
+}*/
+.big{
+	width: 450px;
+	height: 450px;
+	/*margin-left: 30px;
+	border: 1px solid red;*/
+}
+.big a li img{
+	width: 480px;
+	height: 480px;
+}
+
+.big a li{
+	/*display: none;*/
+	position: absolute;
+}
+/*显示第一个*/
+.big a li.active{
+	display: block;
+}
+.goods{
+	background: none;
+	margin-top: -20px;
+}
+.table tr{
+	border-bottom: 1px solid gainsboro;
+	height: 100px;
+}
+.jumbotron{
+	background: none;
+}
+.jumbotron h1{
+	font-size: 36px;
+}
+#bg{
+	padding-top: 50px; 
+	/*padding-left: 150px;*/
+}
+.thumbnail{
+	border: none;
+}
+.judge{
+	padding:0 0 0 60px;
+}
+strong button{
+	background: #333;
+	color: white;
+	border: none;
+}
+.shoes{
+	width: 1182px;
+	height: 382px;
+	/*background: yellowgreen;*/
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+.full{
+	/*width: 3546px;*/
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.full ul{
+	width: 1182px;
+	height: 382px;
+	float: left;
+	position: relative;
+}
+.shoes1{
+	width: 230px;
+	height: 382px;
+	float: left;
+	margin-right: 20px;
+	margin-left: 40px;
+}
+.shoes1:hover{
+	background: gainsboro;
+}
+.shoes1 a img{
+	width: 210px;
+	height: 210px;
+	margin: 10px 10px;
+}
+.shoes1 img{
+	margin-left: 30%;
+}
+.shoes1 h1{
+	font-size: 16px;
+	text-align: center;
+}
+.shoes1 a p{
+	font-size: 12px;
+	color: black;
+	text-align: center;
+}
+.shoes a{
+	text-decoration: none;
+}
+.glyphicon-menu-left{
+	font-size: 30px;
+	color: gray;
+	left: 0px;
+}
+.glyphicon-menu-right{
+	font-size: 30px;
+	color: gray;
+	right: 0px;
+}
+.shoes>a{
+	width: 40px;
+	height: 80px;
+	position: absolute;
+	top: 50%;
+	margin-top: -40px;
+	opacity: 0.6;
+}
+
+.foot1{
+	width: 100%;
+	height: 150px;
+	background: #333;
+	margin-top: 50px;
+	border-bottom: 1px solid gray;
+}
+.foot2{
+	width: 100%;
+	height: 500px;
+	background: #333;
+}
+.detail2{
+	padding-top: 20px;
+}
+
+.detail4{
+	margin-top: -30px;
+	margin-left: 85px;
+	text-decoration: line-through;
+}
+.detail5{
+	padding-top: 50px;
+	border-bottom: 1px solid gainsboro;
+}
+.detail6{
+	padding-top: 20px;
+}
+.detail6 p{
+	padding-bottom: 20px;
+}
+.detail6 p a{
+	text-decoration: none;
+}
+.detail6 p a img{
+	border: 1px solid gainsboro;
+}
+.detail6 p a img:hover{
+	border: 1px solid gray;
+}
+.detail7{
+	padding-bottom: 30px;
+}
+.detail7 a .btn{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.detail7 a{
+	text-decoration: none;
+}
+.detail7 span{
+	margin-top: -80px;
+	margin-left: 460px;
+	color: black;
+}
+/*模态框*/
+.modal-body{
+	padding: 0px 15px;
+}
+.model-header h3{
+	background: gray;
+	color: white;
+	font-size: 16px;
+}
+
+.slide{
+	width: 200px;
+	height: 200px;
+	margin-left: 100px;
+	/*top: 0px;*/
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background: url(/yougou/img/slide_bg.png);
+	display: none;
+	cursor: move;
+}
+.active{
+	width: 480px;
+	height:480px;
+}
+#star p{
+	display: inline-block;
+}
