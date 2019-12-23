@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -42,21 +44,21 @@
 				<ul class="nav navbar-nav navbar-right">
 					<!--登录注册-->
 					<li>
-						<a href="/yougou/base_html/login.html" id="login-btn">登录</a>
+						<a href="/yougou/base_html/login.jsp" id="login-btn">登录</a>
 						<span id="username"></span>
 						<p>/</p>
-						<a href="/yougou/base_html/register.html" id="register-btn">注册</a>
+						<a href="/yougou/base_html/register.jsp" id="register-btn">注册</a>
 						<a href="javaScript:;" id="exit-btn">退出</a>
 					</li>
 					<!--收藏-->
 					<li id="collect-btn">
-						<a href="/yougou/base_html/login.html">
+						<a href="/yougou/base_html/login.jsp">
 							<span class="glyphicon glyphicon-heart"></span> 收藏
 						</a>
 					</li>
 					<!--购物袋-->
 					<li id="cart-btn">
-						<a href="/yougou/base_htm/login.html">
+						<a href="/yougou/base_htm/login.jsp">
 							<span class="glyphicon glyphicon-shopping-cart"></span> 购物车
 						</a>
 					</li>
@@ -134,7 +136,7 @@
 					<div class="umenu col-lg-2 col-lg-offset-1" id="umenu ">
 						<!--我的优购-->
 						<div class="myyougou ">
-							<a class="text-center" href="collect-my.html ">
+							<a class="text-center" href="collect-my.jsp">
 								<span class="text-center">我的优购</span>
 							</a>
 						</div>
@@ -142,50 +144,50 @@
 						<!--交易中心-->
 						<ul class="jiaoyizx">
 							<li class=" ultitle ">交易中心</li>
-							<li class="current myorder"><a href="/yougou/power_html/collect_order.html">
+							<li class="current myorder"><a href="/yougou/power_html/collect_order.jsp">
 								<span>
 								我的订单
 							</span></a></li>
-							<li class="present myfavor"><a href="/yougou/power_html/collect.html"><span>
+							<li class="present myfavor"><a href="/yougou/power_html/collect.jsp"><span>
 								我的收藏
 							</span></a></li>
-							<li class="current mycomment"><a href="/yougou/power_html/collect_comment.html"><span>
+							<li class="current mycomment"><a href="/yougou/power_html/collect_comment.jsp"><span>
 								商品评论/晒单
 							</span></a></li>
-							<li class="current mymessage"><a href="/yougou/power_html/collect_message.html"><span>
+							<li class="current mymessage"><a href="/yougou/power_html/collect_message.jsp"><span>
 								站内消息
 							</span></a></li>							
 						</ul>
 						<!--我的资产-->
 						<ul class="wodezc">
 							<li class=" ultitle ">我的资产</li>
-							<li class="current mycoupon"><a href="/yougou/power_html/collect_coupon.html"><span>
+							<li class="current mycoupon"><a href="/yougou/power_html/collect_coupon.jsp"><span>
 								我的优惠券
 							</span></a></li>
-							<li class="current mygiftcard"><a href="/yougou/power_html/colect_giftcard.html"><span>
+							<li class="current mygiftcard"><a href="/yougou/power_html/colect_giftcard.jsp"><span>
 								我的礼品卡
 							</span></a></li>
-							<li class="current mypoint"><a href="/yougou/power_html/collect_point.html"><span>
+							<li class="current mypoint"><a href="/yougou/power_html/collect_point.jsp"><span>
 								我的积分
 							</span></a></li>
 						</ul>
 						<!--个人设置-->
 						<ul class="gerensz">
 							<li class="ultitle ">个人设置</li>
-							<li class="current mysafeset"><a href="/yougou/power_html/collect_safeSet.html"><span>
+							<li class="current mysafeset"><a href="/yougou/power_html/collect_safeSet.jsp"><span>
 								安全设置
 							</span></a></li>
-							<li class="current myaddress"><a href="/yougou/power_html/collect_address.html"><span>
+							<li class="current myaddress"><a href="/yougou/power_html/collect_address.jsp"><span>
 								我的收获地址
 							</span></a></li>
 						</ul>
 						<!--售后服务-->
 						<ul class="shouhoufw">
 							<li class="ultitle">售后服务</li>
-							<li class="current mysafeset"><a href="/yougou/power_html/collect_afterService.html"><span>
+							<li class="current mysafeset"><a href="/yougou/power_html/collect_afterService.jsp"><span>
 								查看退换货
 							</span></a></li>
-							<li class="current myaddress"><a href="/yougou/power_html/collect_applicationService.html"><span>
+							<li class="current myaddress"><a href="/yougou/power_html/collect_applicationService.jsp"><span>
 								申请退换货
 							</span></a></li>
 						</ul>
@@ -323,7 +325,7 @@
 										<a class="goods-up glyphicon glyphicon-circle-arrow-up" href="javascript:void(0)" title="置顶"></a>
 										<input type="checkbox" class="check"/>
 									</span>
-									<a href="pro_center.html"><img src="img/101244991_01_s.jpg"/></a>
+									<a href="pro_center.jsp"><img src="img/101244991_01_s.jpg"/></a>
 									<div class="goods-list">
 										<div class="goods-name">
 											<p>
@@ -342,7 +344,7 @@
 											<p class="">￥62</p>
 										</div>
 										<div class="goods-make">
-											<p><a class="addcart" href="pro_center.html">加入购物车</a></p>
+											<p><a class="addcart" href="pro_center.jsp">加入购物车</a></p>
 											<p><a class="reducefavor" href="javascript:void(0)">取消收藏</a></p>
 										</div>
 									</div>
@@ -352,11 +354,11 @@
 										<a class="goods-up glyphicon glyphicon-circle-arrow-up" href="javascript:void(0)" title="置顶"></a>
 										<input type="checkbox" class="check"/>
 									</span>
-									<a href="/yougou/base_html/pro_center.html"><img src="/yougou/img/101244991_01_s.jpg"/></a>
+									<a href="/yougou/base_html/pro_center.jsp"><img src="/yougou/img/101244991_01_s.jpg"/></a>
 									<div class="goods-list">
 										<div class="goods-name">
 											<p>
-												<a href="/yougou/base_html/pro_center.html" target="_blank">adidas阿迪达斯2019中性EC ORG单肩包ED6877</a>
+												<a href="/yougou/base_html/pro_center.jsp" target="_blank">adidas阿迪达斯2019中性EC ORG单肩包ED6877</a>
 											</p>
 											<p>
 												<span class="goods-color">
@@ -371,7 +373,7 @@
 											<p class="">￥62</p>
 										</div>
 										<div class="goods-make">
-											<p><a class="addcart" href="/yougou/base_html/pro_center.html">加入购物车</a></p>
+											<p><a class="addcart" href="/yougou/base_html/pro_center.jsp">加入购物车</a></p>
 											<p><a class="reducefavor" href="javascript:void(0)">取消收藏</a></p>
 										</div>
 									</div>
@@ -381,11 +383,11 @@
 										<a class="goods-up glyphicon glyphicon-circle-arrow-up" href="javascript:void(0)" title="置顶"></a>
 										<input type="checkbox" class="check"/>
 									</span>
-									<a href="/yougou/base_html/pro_center.html"><img src="/yougou/img/101244991_01_s.jpg"/></a>
+									<a href="/yougou/base_html/pro_center.jsp"><img src="/yougou/img/101244991_01_s.jpg"/></a>
 									<div class="goods-list">
 										<div class="goods-name">
 											<p>
-												<a href="/yougou/power_html/pro_center.html" target="_blank">adidas阿迪达斯2019中性EC ORG单肩包ED6877</a>
+												<a href="/yougou/power_html/pro_center.jsp" target="_blank">adidas阿迪达斯2019中性EC ORG单肩包ED6877</a>
 											</p>
 											<p>
 												<span class="goods-color">
@@ -400,7 +402,7 @@
 											<p class="">￥62</p>
 										</div>
 										<div class="goods-make">
-											<p><a class="addcart" href="/yougou/power_html/login-order.html">加入购物车</a></p>
+											<p><a class="addcart" href="/yougou/power_html/login-order.jsp">加入购物车</a></p>
 											<p><a class="reducefavor" href="javascript:void(0)">取消收藏</a></p>
 										</div>
 									</div>

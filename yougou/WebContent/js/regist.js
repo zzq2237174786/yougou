@@ -182,7 +182,7 @@ $(function(){
       alert('注册成功，2秒之后跳转登录页面');
       setTimeout(function(){
         //跳转到登录页面
-        window.location.href = '/yougou/base_html/login.html';
+        window.location.href = '/yougou/base_html/login.jsp';
       },2000);
     });
   });

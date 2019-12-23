@@ -39,7 +39,7 @@ $(function(){
       if(goodsId){
         location.href = 'product.html?goods_id='+goodsId;
       }else{
-        location.href = 'index.html';      
+        location.href = 'index.jsp';      
       };
 
     });

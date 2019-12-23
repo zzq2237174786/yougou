@@ -94,9 +94,9 @@ $(function(){
       localStorage.setItem('token', obj.data.token);
       //跳首页还是详情
       if(goodsId){
-        location.href = '/yougou/base_html/pro_center.html?goods_id='+goodsId;
+        location.href = '/yougou/base_html/pro_center.jsp?goods_id='+goodsId;
       }else{
-        location.href = '/yougou/base_html/login.html';      
+        location.href = '/yougou/base_html/login.jsp';      
       };
 
     });
