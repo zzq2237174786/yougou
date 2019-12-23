@@ -54,7 +54,7 @@
 					</li>
 					<!--收藏-->
 					<li id="collect-btn">
-						<a href="/yougou/base_html/login.html">
+						<a href="/yougou/base_html/login.jsp">
 							<span class="glyphicon glyphicon-heart"></span> 收藏
 						</a>
 					</li>
