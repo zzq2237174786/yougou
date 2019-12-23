@@ -8,7 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="/yougou/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="/yougou/css/base.css"/>
 		<link rel="stylesheet" type="text/css" href="/yougou/css/collectBase.css"/>
-		<link rel="stylesheet" type="text/css" href="/yougou/css/collect-order.css"/>
+		<link rel="stylesheet" type="text/css" href="/yougou/css/collect_order.css"/>
 	</head>
 	<body>
 		<!--头部-->
@@ -78,7 +78,7 @@
 				<!--logo-->
 				<div class="row">
 					<div class="col-md-2 col-md-offset-5 logo-header">
-						<a href=""><img src="img/logo.png" /></a>
+						<a href=""><img src="/yougou/img/logo.png" /></a>
 					</div>
 				</div>
 			</div>
@@ -92,7 +92,7 @@
 						<nav class="navbar ">
 							<ul class="nav navbar-nav" id="nav-type">
 								<li class="nav-log">
-									<a href=""><img src="img/nav-logo.png" /></a>
+									<a href=""><img src="/yougou/img/nav-logo.png" /></a>
 								</li>
 								<li>
 									<a href="/yougou/base_html/index.html">首页</a>
@@ -480,25 +480,25 @@
 					<div class="footer-help-center">
 						<ul class="ul-left">
 							<li class="li-one">
-								<a href="javaScript:;"><img src="img/footer-img1.png" /></a>
+								<a href="javaScript:;"><img src="/yougou/img/footer-img1.png" /></a>
 							</li>
 							<li>
-								<a href="javaScript:;"><img src="img/footer-img2.jpg" /></a>
+								<a href="javaScript:;"><img src="/yougou/img/footer-img2.jpg" /></a>
 							</li>
 							<li>
-								<a href="javaScript:;"><img src="img/footer-img3.png" /></a>
+								<a href="javaScript:;"><img src="/yougou/img/footer-img3.png" /></a>
 							</li>
 							<li>
-								<a href="javaScript:;"><img src="img/footer-img4.png" /></a>
+								<a href="javaScript:;"><img src="/yougou/img/footer-img4.png" /></a>
 							</li>
 						</ul>
 						<ul class="ul-right">
 							<li>
-								<a><img src="img/app.jpg" class="ul-right-img1" /></a>
+								<a><img src="/yougou/img/app.jpg" class="ul-right-img1" /></a>
 								<a class="a-title">扫描下载手机客户端</a>
 							</li>
 							<li>
-								<a><img src="img/weChat.jpg" /></a>
+								<a><img src="/yougou/img/weChat.jpg" /></a>
 								<a class="a-title">关注公众号</a>
 							</li>
 						</ul>
@@ -538,6 +538,6 @@
 		
 	</body>
 </html>
-<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+<script src="/yougou/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/yougou/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+<script src="/yougou/js/base.js" type="text/javascript" charset="utf-8"></script>

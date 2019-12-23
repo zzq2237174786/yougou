@@ -8,6 +8,8 @@
 		<link rel="stylesheet" type="text/css" href="/yougou/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="/yougou/css/collect.css"/>
 		<link rel="stylesheet" type="text/css" href="/yougou/css/base.css"/>
+
+		
 	</head>
 	<body>
 		<!--头部-->
@@ -94,7 +96,7 @@
 									<a href=""><img src="/yougou/img/nav-logo.png" /></a>
 								</li>
 								<li>
-									<a href="index.html">首页</a>
+									<a href="index.jsp">首页</a>
 								</li>
 								<!--分类-->
 							</ul>
@@ -124,9 +126,9 @@
 				<div class="row col-lg-10 col-lg-offset-1">
 					<p class="curmbs">
 						您当前的位置：
-						<a href="/yougou/index.html">首页</a>
+						<a href="/yougou/index.jsp">首页</a>
 						>
-						<a href="collect-my.html">我的优购</a>
+						<a href="collect-my.jsp">我的优购</a>
 						>我的收藏夹
 					</p>
 				</div>
@@ -325,11 +327,11 @@
 										<a class="goods-up glyphicon glyphicon-circle-arrow-up" href="javascript:void(0)" title="置顶"></a>
 										<input type="checkbox" class="check"/>
 									</span>
-									<a href="pro_center.jsp"><img src="img/101244991_01_s.jpg"/></a>
+									<a href="pro_center.jsp"><img src="/yougou/img/101244991_01_s.jpg"/></a>
 									<div class="goods-list">
 										<div class="goods-name">
 											<p>
-												<a href="pro_center.html" target="_blank">adidas阿迪达斯2019中性EC ORG单肩包ED6877</a>
+												<a href="pro_center.jsp" target="_blank">adidas阿迪达斯2019中性EC ORG单肩包ED6877</a>
 											</p>
 											<p>
 												<span class="goods-color">
@@ -402,7 +404,7 @@
 											<p class="">￥62</p>
 										</div>
 										<div class="goods-make">
-											<p><a class="addcart" href="/yougou/power_html/login-order.jsp">加入购物车</a></p>
+											<p><a class="addcart" href="/yougou/power_html/login_car.jsp">加入购物车</a></p>
 											<p><a class="reducefavor" href="javascript:void(0)">取消收藏</a></p>
 										</div>
 									</div>
