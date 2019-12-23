@@ -6,9 +6,9 @@
 		<meta charset="UTF-8">
 		<title>站内消息</title>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-		<link rel="stylesheet" type="text/css" href="css/yougou/power_html/collect-message.css"/>
+		<link rel="stylesheet" type="text/css" href="css/collect-message.css"/>
 		<link rel="stylesheet" type="text/css" href="css/base.css"/>
-		<link rel="stylesheet" type="text/css" href="css/yougou/power_html/collectBase.css"/>
+		<link rel="stylesheet" type="text/css" href="css/collectBase.css"/>
 	</head>
 	<body>
 		<!--头部-->
@@ -532,4 +532,3 @@
 <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/base.js" type="text/javascript" charset="utf-8"></script>
-<script src="js//yougou/power_html/collect.js" type="text/javascript" charset="utf-8"></script>

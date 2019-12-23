@@ -1,0 +1,67 @@
+
+/*上步*/
+.content-top{
+	border-bottom:1px solid #efefef ;
+	height: 32px;
+	margin-top: 10px;
+	
+}
+/*.content ul:after{
+	content: "";
+	display: block;
+	clear: both;
+}*/
+.content-top li{
+	float: left;
+	width: 130px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border: 1px solid #efefef;
+	border-bottom: 0;
+	margin-right: 15px;
+	background: #F7F7F7;
+}
+.content-top span{
+	float: right;
+	font-size: 12px;
+	color: #666666;
+}
+
+/*表格内容*/
+.content-body thead{
+	height: 35px;
+	background: #FCFCFC;
+	border: 1px solid #efefef;
+}
+.content-body thead tr th{
+	height: 35px;
+	color: #666666;
+	padding-left: 20px;
+	font-size: 12px;
+	font-weight:normal;
+}
+.content-body tbody{
+	height: 30px;
+	padding-left: 30px;
+	line-height: 30px;
+	font-size: 12px;
+	color: #666666;
+	border: 1px solid #efefef;
+}
+.content-body tbody p{
+	padding-left: 80px;
+}
+.content-bottom a{
+	padding: 0px ;
+	margin-left: 20px;
+	width: 80px;
+	height: 20px;
+	background: black;
+	color: white;
+	text-align: center;
+	line-height: 20px;
+}
+.content-bottom a:hover{
+	color:white;
+}

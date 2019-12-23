@@ -6,9 +6,9 @@
 		<meta charset="UTF-8">
 		<title>商品点评</title>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-		<link rel="stylesheet" type="text/css" href="css/yougou/power_html/collect_comment.css"/>
+		<link rel="stylesheet" type="text/css" href="css/collect_comment.css"/>
 		<link rel="stylesheet" type="text/css" href="css/base.css"/>
-		<link rel="stylesheet" type="text/css" href="css/yougou/power_html/collectBase.css"/>
+		<link rel="stylesheet" type="text/css" href="css/collectBase.css"/>
 	</head>
 	<body>
 		<!--头部-->
