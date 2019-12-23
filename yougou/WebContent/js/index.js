@@ -80,10 +80,10 @@ $(function() {
 				var str = `
        		<li>
 				<div class="new-product-img">
-						<a href="/yougou/base_html/pro_center.html?goods_id=${listArr[i].goods_id}"><img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}"/></a>
+						<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}"><img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}"/></a>
 				</div>
 				<img src="/yougou/img/new-product1-brand.png" />
-				<a href="/yougou/base_html/pro_center.html?goods_id=${listArr[i].goods_id}">${listArr[i].goods_name}</a>
+				<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}">${listArr[i].goods_name}</a>
 				<div class="price">
 					<span>￥${listArr[i].price}</span>
 					<a href="javaScript:;" class="glyphicon glyphicon-heart my-collect"></a>
@@ -98,10 +98,10 @@ $(function() {
 				var str = `
        		<li>
 				<div class="new-product-img">
-						<a href="/yougou/base_html/pro_center.html?goods_id=${listArr[j].goods_id}"><img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[j].goods_thumb}"/></a>
+						<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[j].goods_id}"><img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[j].goods_thumb}"/></a>
 				</div>
 				<img src="/yougou/img/new-product1-brand.png" />
-				<a href="/yougou/base_html/pro_center.html?goods_id=${listArr[j].goods_id}">${listArr[j].goods_name}</a>
+				<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[j].goods_id}">${listArr[j].goods_name}</a>
 				<div class="price">
 					<span>￥${listArr[j].price}</span>
 					<a href="javaScript:;" class="glyphicon glyphicon-heart my-collect"></a>
@@ -150,7 +150,7 @@ $(function() {
 			var str = `
        			<li>
 					<img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}"/>
-					<a href="/yougou/base_html/pro_center.html?goods_id=${listArr[i].goods_id}"><img src="/yougou/img/whiteL-keds.png" /></a>
+					<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}"><img src="/yougou/img/whiteL-keds.png" /></a>
 				</li>
      			 `;
 			//内部组装一个添加一个
@@ -179,7 +179,7 @@ $(function() {
 			var str = `
        			<li>
 					<img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}"/>
-					<a href="/yougou/base_html/pro_center.html?goods_id=${listArr[i].goods_id}"><img src="/yougou/img/whiteL-keds.png" /></a>
+					<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}"><img src="/yougou/img/whiteL-keds.png" /></a>
 				</li>
      			 `;
 			//内部组装一个添加一个
@@ -212,14 +212,14 @@ $(function() {
 				str = `
        					<li class="fashion-content2-four">
 							<img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}"/>
-							<a href="/yougou/base_html/pro_center.html?goods_id=${listArr[i].goods_id}">${listArr[i].goods_desc}</a>
+							<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}">${listArr[i].goods_desc}</a>
 						</li>
      			    `;
 			} else {
 				str = `
        			<li>
 					<img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}"/>
-					<a href="/yougou/base_html/pro_center.html?goods_id=${listArr[i].goods_id}">${listArr[i].goods_desc}</a>
+					<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}">${listArr[i].goods_desc}</a>
 				</li>
      			 `;
 			}
@@ -249,7 +249,7 @@ $(function() {
 			if(i == 3 || i == 7) {
 				str = `
        					<li class="fashion-content4-four">
-								<a href="/yougou/base_html/pro_center.html?goods_id=${listArr[i].goods_id}">
+								<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}">
 								<img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}"/>
 								<h3>${listArr[i].goods_name}</h3>
 									<p>Seanker</p>
@@ -259,7 +259,7 @@ $(function() {
 			} else {
 				str = `
        			<li>
-								<a href="/yougou/base_html/pro_center.html?goods_id=${listArr[i].goods_id}">
+								<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}">
 								<img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}"/>
 								<h3>${listArr[i].goods_name}</h3>
 									<p>Seanker</p>

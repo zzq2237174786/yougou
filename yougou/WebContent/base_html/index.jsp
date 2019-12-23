@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html>
 
@@ -46,21 +49,21 @@
 				<ul class="nav navbar-nav navbar-right">
 					<!--登录注册-->
 					<li>
-						<a href="/yougou/base_html/login.html" id="login-btn">登录</a>
+						<a href="/yougou/base_html/login.jsp" id="login-btn">登录</a>
 						<span id="username"></span>
 						<p>/</p>
-						<a href="regist.html" id="register-btn">注册</a>
+						<a href="/yougou/base_html/regist.jsp" id="register-btn">注册</a>
 						<a href="javaScript:;" id="exit-btn">退出</a>
 					</li>
 					<!--收藏-->
 					<li id="collect-btn">
-						<a href="/yougou/base_html/login.html">
+						<a href="/yougou/base_html/login.jsp">
 							<span class="glyphicon glyphicon-heart"></span> 收藏
 						</a>
 					</li>
 					<!--购物袋-->
 					<li id="cart-btn">
-						<a href="/yougou/base_html/login.html">
+						<a href="/yougou/base_html/login.jsp">
 							<span class="glyphicon glyphicon-shopping-cart"></span> 购物车
 						</a>
 					</li>
@@ -96,7 +99,7 @@
 										<a href=""><img src="/yougou/img/nav-logo.png" /></a>
 									</li>
 									<li>
-										<a href="/yougou/base_html/index.html">首页</a>
+										<a href="/yougou/base_html/index.jsp">首页</a>
 									</li>
 									<!--分类-->
 								</ul>
@@ -122,8 +125,8 @@
 		<!--大广告图-->
 		<div class="big-banner">
 			<!--两个大的广告图-->
-			<a href="/yougou/base_html/pro_type.html?cat_id=101" class="big-banner-active"><img src="/yougou/img/banner1.jpg" /></a>
-			<a href="/yougou/base_html/pro_type.html?cat_id=112"><img src="/yougou/img/banner2.jpg" /></a>
+			<a href="/yougou/base_html/pro_type.jsp?cat_id=101" class="big-banner-active"><img src="/yougou/img/banner1.jpg" /></a>
+			<a href="/yougou/base_html/pro_type.jsp?cat_id=112"><img src="/yougou/img/banner2.jpg" /></a>
 			<ul class="banner-point">
 				<!--两个小方形-->
 				<li class="banner-active"></li>

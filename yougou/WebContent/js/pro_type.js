@@ -84,10 +84,10 @@ $(function() {
 			var str = `
      				<li>
 						<div class="imgbox">
-							<a href="/yougou/base_html/pro_center.html?goods_id=${listArr[i].goods_id}"><img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}" /><a/>
+							<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}"><img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}" /><a/>
 						</div>
 						<div class="product-info">
-							<a href="/yougou/base_html/pro_center.html?goods_id=${listArr[i].goods_id}">${listArr[i].goods_desc}</a>
+							<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}">${listArr[i].goods_desc}</a>
 							<p><span class="price">￥${listArr[i].price}</span><span class="old-price">￥888</span></p>
 						</div>
 					</li>
@@ -124,10 +124,10 @@ $(function() {
 						str += `
      							<li>
 									<div class="imgbox">
-									<a href="/yougou/base_html/pro_center.html?goods_id=${listArr[i].goods_id}"><img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}" /><a/>
+									<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}"><img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}" /><a/>
 									</div>
 									<div class="product-info">
-										<a href="/yougou/base_html/pro_center.html?goods_id=${listArr[i].goods_id}">${listArr[i].goods_desc}</a>
+										<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}">${listArr[i].goods_desc}</a>
 										<p><span class="price">￥${listArr[i].price}</span><span class="old-price">￥888</span></p>
 									</div>
 								</li>
