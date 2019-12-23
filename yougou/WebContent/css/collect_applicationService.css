@@ -1,0 +1,56 @@
+.u-detail{
+	font-size: 12px;
+	color: #666666;
+}
+/*标题*/
+.tab-top{
+	margin-bottom: 10px;
+    background: 0;
+    border-bottom: 1px solid #efefef;
+}
+.top-title{
+	color: #666666;
+	background: #fcfcfc;
+	width: 185px;
+    height: 33px;
+    text-align: center;
+    line-height: 33px;
+    font-weight: bold;
+    border: 1px solid #efefef;
+    cursor: default;
+}
+/*表格*/
+.tab-tb {
+	border: 1px solid #e3e3e3;
+    /*border-top: 1px solid #e3e3e3;*/
+}
+.tab-tb thead {
+	color: #666666;
+	background: #fcfcfc;
+	border: 1px solid #e3e3e3;
+    height: 34px;
+    line-height: 34px;
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+}
+.tab-tb thead tr th{
+	font-size: 12px;
+	text-align: center;
+	font-weight: normal;
+}
+table tr{
+	color: #666666;
+	padding-bottom: 8px;
+	height: 29px;
+	font-size: 12px;
+	text-align: center;
+	font-weight: normal;	
+}
+/**/
+.pagination{
+	padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+    clear: both;
+    overflow: hidden;
+}

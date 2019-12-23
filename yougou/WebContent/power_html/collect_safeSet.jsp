@@ -7,8 +7,8 @@
 		<title>安全设置</title>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="css/base.css"/>
-		<link rel="stylesheet" type="text/css" href="css//yougou/power_html/collectBase.css"/>
-		<link rel="stylesheet" type="text/css" href="css//yougou/power_html/collect_safe.css"/>
+		<link rel="stylesheet" type="text/css" href="css/collectBase.css"/>
+		<link rel="stylesheet" type="text/css" href="css//collect_safe.css"/>
 	</head>
 	<body>
 		<!--头部-->
@@ -165,7 +165,7 @@
 							<li class="current mycoupon"><a href="/yougou/power_html/collect_coupon.html"><span>
 								我的优惠券
 							</span></a></li>
-							<li class="current mygiftcard"><a href="colect-giftcard.html"><span>
+							<li class="current mygiftcard"><a href="/yougou/power_html/collect-giftcard.html"><span>
 								我的礼品卡
 							</span></a></li>
 							<li class="current mypoint"><a href="/yougou/power_html/collect_point.html"><span>
@@ -284,8 +284,8 @@
 							<span>安全设置</span>
 						</p>
 						<div class="safeSet">
-							<!--安全度	safe_degree-->
-							<div class="safe_degree">
+							<!--安全度	safe-degree-->
+							<div class="safe-degree">
 				            	<p class="safeDegree">您目前账户安全等级为：
 				            				<span class="u_safeDegr mid"></span>
 				            		</p>
@@ -293,37 +293,37 @@
 				            </div>
 				            
 				            <dl class="safemake">
-				            	<dd class="safe_picuture">
+				            	<dd class="safe-picuture">
 				                	<p class="blank8"></p>
 				                	<p class="glyphicon glyphicon-ok-sign"></p>
 				                </dd>
-				                <dd class="safemake_name">登录密码</dd>
-				                	<dd class="safemake_detail">安全性高的密码可以使账号更安全。建议您定期更换密码，且设置一个包含数字和字母，并长度超过6位以上的密码。</dd>
-				                	<dd class="safemake_btn"><a href="/my/toEditPwdIndex.jhtml?t=157672560307910198" class="uc_btn safe_edit_pwd">修改密码</a></dd>
+				                <dd class="safe-name">登录密码</dd>
+				                	<dd class="safe-detail">安全性高的密码可以使账号更安全。建议您定期更换密码，且设置一个包含数字和字母，并长度超过6位以上的密码。</dd>
+				                	<dd class="safe-btn"><a href="/my/toEditPwdIndex.jhtml?t=157672560307910198" class="uc_btn safe-edit_pwd">修改密码</a></dd>
 				            </dl>
 				            <dl class="safemake">
-				            	<dd class="safe_picuture">
+				            	<dd class="safe-picuture">
 				                		<p class="glyphicon glyphicon-ban-circle"></p>
 				                    	<p class="safeCz_degr">未绑定</p>
 				                </dd>
-				                <dd class="safemake_name">绑定邮箱</dd>
-				                <dd class="safemake_detail">可使用已绑定邮箱登录优购账号。2019年1月4日24：00后，不再提供邮箱找回密码、绑定/更换绑定邮箱、接收订单提醒等服务。带来不便敬请谅解。</dd>
-				                	<dd class="safemake_btn email_btn"><a href="javascript:void(0);" id="safe_bind_modify" class="uc_btn safe_bind_now" style="color:#ddd;background-color: #999;">立即绑定</a></dd>
+				                <dd class="safe-name">绑定邮箱</dd>
+				                <dd class="safe-detail">可使用已绑定邮箱登录优购账号。2019年1月4日24：00后，不再提供邮箱找回密码、绑定/更换绑定邮箱、接收订单提醒等服务。带来不便敬请谅解。</dd>
+				                	<dd class="safe-btn email_btn"><a href="javascript:void(0);" id="safe-bind_modify" class="uc_btn safe-bind_now" style="color:#ddd;background-color: #999;">立即绑定</a></dd>
 				            </dl>
 				            <dl class="safemake" style="border:none;">
-				            	<dd class="safe_picuture">
+				            	<dd class="safe-picuture">
 				                	<p class="glyphicon glyphicon-ok-sign"></p>
 				                    <p class="safeCz_degr">已绑定</p>
 				                </dd>
-				                <dd class="safemake_name">绑定手机</dd>
-				                <dd class="safemake_detail">绑定手机后，您即可享受优购网丰富的手机服务，如手机登录、手机找回密码等，保证您账户更安全。</dd>
-				                	<dd class="safemake_btn"><a href="/my/rebind/verifyByBind.jhtml?t=15767256030792011" class="uc_btn safe_edit_pho">修改绑定</a></dd>
+				                <dd class="safe-name">绑定手机</dd>
+				                <dd class="safe-detail">绑定手机后，您即可享受优购网丰富的手机服务，如手机登录、手机找回密码等，保证您账户更安全。</dd>
+				                	<dd class="safe-btn"><a href="/my/rebind/verifyByBind.jhtml?t=15767256030792011" class="uc_btn safe-edit_pho">修改绑定</a></dd>
 				            </dl>
 				            <p class="blank15"></p>
 						</div>
 				        <p class="blank15"></p>
-				        <div class="content_bottom">
-				            <p class="bottom_tit">常见问题</p>
+				        <div class="content-bottom">
+				            <p class="bottom-tit">常见问题</p>
 				            <p class="bindEmail_qa">Q 为什么要进行安全设置？进行安全设置后有什么好处？<br><span>A 优购时尚商城账户涉及您的优惠券、礼品卡和积分资产，我们强烈建议您完善安全设置，以免造成不必要的损失；</span></p>
 				            <p class="bindEmail_qa">Q 安全设置完成之后可以修改吗？<br><span>A 您可以点击“修改”按钮进行修改。</span></p>
 				      	</div>

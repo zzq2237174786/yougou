@@ -1,0 +1,105 @@
+/*标题*/
+.con-title{
+	margin: 0;
+	border: 1px solid #efefef;
+	height: 35px;
+	background: #F7F7F7;
+	line-height: 35px;
+	font-weight: bold;
+}
+.con-title span{
+	padding-left: 18px;
+}
+/*安全度*/
+.safeSet{
+	border: 1px solid #e3e3e3;
+    border-top: 0;
+    height: auto;
+}
+.safe-degree{
+	padding: 25px 30px 18px;
+    zoom: 1;
+    
+}
+.safemake{
+	width: 770px;
+    height: 98px;
+    margin: 0 auto;
+    border-bottom: 1px dashed #e3e3e3;
+    overflow: hidden;
+    position: relative;
+}
+.safe-picuture{
+	position: absolute;
+	width: 100px;
+    overflow: hidden;
+    left: 0;
+    top: 20px;
+    display: inline-block;
+    
+}
+.glyphicon-ban-circle,.glyphicon-ok-sign{
+	font-size: 32px;
+	display: inline-block;
+}
+.safemake-name{
+	width: 85px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    left: 103px;
+    top: 35px;
+    display: inline-block;
+}
+.safemake-detail{
+	width: 430px;
+    text-align: left;
+    padding-left: 20px;
+    border-left: 1px solid #e3e3e3;
+    position: absolute;
+    left: 190px;
+    top: 28px;
+    display: inline-block;
+}
+.safemake-detail{
+	font-size: 12px;
+	color: #666666;
+}
+.safemake-btn{
+	width: 77px;
+	height: 22px;
+	display: block;
+    text-align: center;
+    border: 0;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    left: 660px;
+    top: 35px;
+}
+.email-btn{
+	background: #999999;
+}
+.safemake-btn a{
+	color: white;
+}
+/*底部*/
+.content-bottom{
+	border: 1px solid #ddd;
+    color: #979595;
+    font-family: "'Microsoft YaHei';";
+    /*width: 828px;*/
+    padding-bottom: 20px;
+}
+
+.content-bottom .bottom-tit {
+	color: #333333;
+	font-weight: bold;
+}
+.content-bottom p{
+	padding: 7px 20px;
+	font-size: 12px;
+	color: #666666;
+}
