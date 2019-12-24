@@ -20,11 +20,13 @@ $(function(){
       console.log(obj);
       //验证
       if(obj.code == 2002){
-        $('.username-msg').html('用户名不存在').css('color',' red');
+        $('.username-msg').html('用户名不存在').css('color',' #333333');
+        $('.username-tssize').show();
         return;
       };
       if(obj.code == 1001){
-        $('.password-msg').html('密码错误').css('color',' red');
+        $('.password-msg').html('密码错误').css('color',' #333333');
+        $('.username-tssize').show();
         return;
       };
       if(obj.code != 0){
@@ -39,7 +41,7 @@ $(function(){
       if(goodsId){
         location.href = 'product.html?goods_id='+goodsId;
       }else{
-        location.href = 'index.jsp';      
+        location.href = 'index.html';      
       };
 
     });
@@ -52,11 +54,13 @@ $(function(){
   $('.printk').focus(function(){
     //提示显示
     $('.username-msg').show();
+    $('.username-tssize').show();
   });
   //密码获取焦点
   $('.printp').focus(function(){
     //提示显示
     $('.password-msg').show();
+    $('.password-tssize').show();
   });
   //账号失去焦点
   $('.printk').blur(function(){
@@ -64,7 +68,7 @@ $(function(){
     userVal = $(this).val();
     //验证
     if(userVal == ''){
-      $('.username-msg').html('账号不能为空').css('color','red');
+      $('.username-msg').html('账号不能为空').css('color','#333333');
       //设置不能注册
       isUser = false;
       return;
@@ -72,13 +76,16 @@ $(function(){
     //3-20位  定正则
     var re = /^[0-9_]{11}$/g;
     if(!re.test(userVal)){
-      $('.username-msg').html('格式错误,必须为11位数字').css('color', 'red');
+      $('.username-msg').html('格式错误,必须为11位数字').css('color', '#333333');
+      $('.printk-ts').hide();
       //设置不能注册
       isUser = false;
     }else{
       //要发送请求查看后台数据库没有此注册过
       //这里接口有问题 
-      $('.username-msg').html('用户名格式正确').css('color', 'green');
+      $('.username-msg').hide();
+      $('.username-tssize').hide();
+      $('.printk-ts').show();
       //设置能注册
       isUser = true;
     };
@@ -89,19 +96,23 @@ $(function(){
     pwdVal = $(this).val();
     //验证
     if(pwdVal == ''){
-      $('.password-msg').html('密码不能为空').css('color','red');
+      $('.password-msg').html('密码不能为空').css('color','#333333');
       isPwd = false;
       return;
     };
     //6-20位数字  定正则
     var re = /^[a-z0-9]{6,25}$/g;
     if(!re.test(pwdVal)){
-      $('.password-msg').html('密码格式为6-25位数字和字母组,请重新输入！').css('color', 'red');
+      $('.password-msg').html('密码格式为6-25位数字和字母组,请重新输入').css('color', '#333333');
+      $('.printp-ts').hide();
       isPwd = false;
     }else{
-      $('.password-msg').html('密码正确').css('color', 'green');
+      $('.password-msg').hide();
+      $('.password-tssize').hide();
+      $('.printp-ts').show();
       isPwd = true;
     };
   });
   
 });
+

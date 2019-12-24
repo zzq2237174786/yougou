@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <!DOCTYPE html>
 <html>
 	<head>
@@ -54,13 +53,13 @@
 					</li>
 					<!--收藏-->
 					<li id="collect-btn">
-						<a href="/yougou/base_html/login.jsp">
+						<a href="/yougou/base_html/collect.jsp">
 							<span class="glyphicon glyphicon-heart"></span> 收藏
 						</a>
 					</li>
 					<!--购物袋-->
 					<li id="cart-btn">
-						<a href="/yougou/base_html/login.jsp">
+						<a href="/yougou/base_html/login_car.jsp">
 							<span class="glyphicon glyphicon-shopping-cart"></span> 购物车
 						</a>
 					</li>
@@ -71,11 +70,10 @@
 				</ul>
 			</nav>
 		</div>
-	
-	<!--身体-->
+		<!--身体-->
 		<div class="contain">
 			<div class="contain-top">
-				<div class="contain-top-logo"><a href="/yougou/base_html/index.jsp"><img src="/yougou/img/logo.png"/></a></div>
+				<div class="contain-top-logo"><a href=""><img src="/yougou/img/logo.png"/></a></div>
 				<div><span>用户登录</span></div>
 			</div>
 			<div class="contain-bottom">
@@ -89,16 +87,28 @@
 						</div></a>
 					</div>
 					<div class="form-contain">
-						<div class="srzh">
+						<div class="srzh-username">
 							<div class="box"></div>
-							<input class="printk" placeholder="请输入您的账号" type="text" />
+							<div class="username-srzh">
+								<input class="printk" placeholder="请输入账号" type="text" />
+								<img class="printk-ts" src="/yougou/img/yes-ts_03.png" />
+							</div>
 						</div>
-						<div class="form-contain-blank"><span class="username-msg">请输入您的账号！</span></div>
-						<div class="srzh">
+						<div class="form-contain-usernameblank">
+							<div class="username-tssize"><img src="/yougou/img/ts_03.png"/></div>
+							<div class="username-size"><span class="username-msg">请输入账号</span></div>
+						</div>
+						<div class="srzh-password">
 							<div class="box2"></div>
-							<input class="printp" placeholder="请输入密码" type="password"/>
+							<div class="password-srzh">
+								<input class="printp" placeholder="请输入密码" type="password" />
+								<img class="printp-ts" src="/yougou/img/yes-ts_03.png" />
+							</div>
 						</div>
-						<div class="form-contain-blank"><span class="password-msg">请输入您的密码！</span></div>
+						<div class="form-contain-passwordblank">
+							<div class="password-tssize"><img src="/yougou/img/ts_03.png"/></div>
+							<div class="password-size"><span class="password-msg">请输入密码</span></div>
+						</div>
 						<p class="form-contain-p"><a href="">忘记密码</a></p>
 						<div class="loginbtn">
 							<input type="submit" class="loginbtn1" value="点击登录" title="登录"/>
@@ -129,3 +139,4 @@
 <script src="/yougou/js/bootstrap.js"></script>
 <script src="/yougou/js/base.js"></script>
 <script src="/yougou/js/login.js"></script>
+
