@@ -1,0 +1,94 @@
+/*上部*/
+.outarea{
+	border: 1px solid #d1d1d1;
+    height: 85px;
+    margin-bottom: 20px;
+}
+.outarea .inarea{
+    margin: 20px;
+    height: 40px;  
+   	line-height: 40px;
+    font-size: 12px;
+    color: #666666;
+    font-style:normal  
+}
+.inarea em{
+	font-style:normal
+}
+.border_style{
+	height: 25px;
+}
+.btn_bind_giftcard_coupon {
+    background: none repeat scroll 0 0 #000;
+    color: #fff;
+    cursor: pointer;
+    height: 23px;
+    line-height: 23px;
+    margin-top: 8px;
+    text-align: center;
+    width: 137px;
+    padding: 5px 10px;
+    margin-left: 80px;
+}
+/*中部*/
+.tab_top {
+    margin-bottom: 10px;
+    background: 0;
+    border-bottom: 1px solid #efefef;
+    height: 33px;
+}
+.tab_top li{
+	margin-right: 8px;
+    background: #f7f7f7;
+    border: 1px solid #efefef;
+    border-bottom: 0;
+    width: 129px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    float: left;
+}
+.tab_top .on{
+	background: #FCFCFC;
+}
+.tab_tb {
+    border-top: 1px solid #e3e3e3;
+}
+.tab_tb thead{
+	height: 35px;
+    background: #fcfcfc;
+    border: 1px solid #e3e3e3;
+}
+.tab_tb thead tr th{
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: normal;
+	
+}
+.tab_content .tab_tb td {
+	height: 33px;
+    border: 1px solid #e3e3e3;
+    font-size: 12px;
+}
+/*尾部*/
+.u_coupon_tips {
+    border: 1px solid #ddd;
+    color: #979595;
+    font-family: "'Microsoft YaHei';";
+    padding-bottom: 20px;
+}
+.u_coupon_tips .tit{
+	color: #333333;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 20px;
+	
+}
+.u_coupon_tips p{
+	margin-left: 20px;
+	color: #666666;
+	font-size: 12px;
+	line-height: 25px;
+}

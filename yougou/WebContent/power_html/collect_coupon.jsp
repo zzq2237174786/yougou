@@ -4,11 +4,11 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>安全设置</title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-		<link rel="stylesheet" type="text/css" href="css/base.css"/>
-		<link rel="stylesheet" type="text/css" href="css/collectBase.css"/>
-		<link rel="stylesheet" type="text/css" href="css/collect_safe.css"/>
+		<title>查看退换货</title>
+		<link rel="stylesheet" type="text/css" href="/yougou/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="/yougou/css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="/yougou/css/collectBase.css"/>
+		<link rel="stylesheet" type="text/css" href="/yougou/css/collect_coupon.css"/>
 	</head>
 	<body>
 		<!--头部-->
@@ -45,21 +45,21 @@
 				<ul class="nav navbar-nav navbar-right">
 					<!--登录注册-->
 					<li>
-						<a href="login.html" id="login-btn">登录</a>
+						<a href="login.jsp" id="login-btn">登录</a>
 						<span id="username"></span>
 						<p>/</p>
-						<a href="register.html" id="register-btn">注册</a>
+						<a href="register.jsp" id="register-btn">注册</a>
 						<a href="javaScript:;" id="exit-btn">退出</a>
 					</li>
 					<!--收藏-->
 					<li id="/yougou/power_html/collect_btn">
-						<a href="login.html">
+						<a href="login.jsp">
 							<span class="glyphicon glyphicon-heart"></span> 收藏
 						</a>
 					</li>
 					<!--购物袋-->
 					<li id="cart-btn">
-						<a href="login.html">
+						<a href="login.jsp">
 							<span class="glyphicon glyphicon-shopping-cart"></span> 购物车
 						</a>
 					</li>
@@ -95,7 +95,7 @@
 									<a href=""><img src="img/nav-logo.png" /></a>
 								</li>
 								<li>
-									<a href="index.html">首页</a>
+									<a href="index.jsp">首页</a>
 								</li>
 								<!--分类-->
 							</ul>
@@ -125,10 +125,10 @@
 				<div class="row col-lg-10 col-lg-offset-1">
 					<p class="curmbs">
 						您当前的位置：
-						<a href="index.html">首页</a>
+						<a href="index.jsp">首页</a>
 						>
-						<a href="/yougou/power_html/collect_my.html">我的优购</a>
-						>安全设置
+						<a href="/yougou/power_html/collect_my.jsp">我的优购</a>
+						>查看退换货
 					</p>
 				</div>
 				<!--主体-->
@@ -137,7 +137,7 @@
 					<div class="umenu col-lg-2 col-lg-offset-1" id="umenu ">
 						<!--我的优购-->
 						<div class="myyougou ">
-							<a class="text-center" href="/yougou/power_html/collect_my.html ">
+							<a class="text-center" href="/yougou/power_html/collect_my.jsp ">
 								<span class="text-center">我的优购</span>
 							</a>
 						</div>
@@ -145,50 +145,50 @@
 						<!--交易中心-->
 						<ul class="jiaoyizx">
 							<li class=" ultitle ">交易中心</li>
-							<li class="current myorder"><a href="/yougou/power_html/collect_order.html">
+							<li class="current myorder"><a href="/yougou/power_html/collect_order.jsp">
 								<span>
 								我的订单
 							</span></a></li>
-							<li class="current myfavor"><a href=" /yougou/power_html/collect.html"><span>
+							<li class="current myfavor"><a href=" /yougou/power_html/collect.jsp"><span>
 								我的收藏
 							</span></a></li>
-							<li class="current mycomment"><a href="/yougou/power_html/collect_comment.html"><span>
+							<li class="current mycomment"><a href="/yougou/power_html/collect_comment.jsp"><span>
 								商品评论/晒单
 							</span></a></li>
-							<li class="current mymessage"><a href=" /yougou/power_html/collect_message.html"><span>
+							<li class="current mymessage"><a href=" /yougou/power_html/collect_message.jsp"><span>
 								站内消息
 							</span></a></li>							
 						</ul>
 						<!--我的资产-->
 						<ul class="wodezc">
 							<li class=" ultitle ">我的资产</li>
-							<li class="current mycoupon"><a href="/yougou/power_html/collect_coupon.html"><span>
+							<li class="current mycoupon"><a href="/yougou/power_html/collect_coupon.jsp"><span>
 								我的优惠券
 							</span></a></li>
-							<li class="current mygiftcard"><a href="/yougou/power_html/collect-giftcard.html"><span>
+							<li class="current mygiftcard"><a href="colect-giftcard.jsp"><span>
 								我的礼品卡
 							</span></a></li>
-							<li class="current mypoint"><a href="/yougou/power_html/collect_point.html"><span>
+							<li class="current mypoint"><a href="/yougou/power_html/collect_point.jsp"><span>
 								我的积分
 							</span></a></li>
 						</ul>
 						<!--个人设置-->
 						<ul class="gerensz">
 							<li class="ultitle ">个人设置</li>
-							<li class="present mysafeset"><a href="/yougou/power_html/collect_safeSet.html"><span>
+							<li class="current mysafeset"><a href="/yougou/power_html/collect_safeSet.jsp"><span>
 								安全设置
 							</span></a></li>
-							<li class="current myaddress"><a href="/yougou/power_html/collect_address.html"><span>
+							<li class="current myaddress"><a href="/yougou/power_html/collect_address.jsp"><span>
 								我的收获地址
 							</span></a></li>
 						</ul>
 						<!--售后服务-->
 						<ul class="shouhoufw">
 							<li class="ultitle">售后服务</li>
-							<li class="current mysafeset"><a href="/yougou/power_html/collect_afterService.html"><span>
+							<li class="present mysafeset"><a href="/yougou/power_html/collect_afterService.jsp"><span>
 								查看退换货
 							</span></a></li>
-							<li class="current myaddress"><a href="/yougou/power_html/collect_applicationService.html"><span>
+							<li class="current myaddress"><a href="/yougou/power_html/collect_applicationService.jsp"><span>
 								申请退换货
 							</span></a></li>
 						</ul>
@@ -201,7 +201,7 @@
 							<li class="hotmiddle">
 								<dl>
 									<dt>
-										<a href="javascript:void(0)"><img src="img/101244991_01_s.jpg"/></a>
+										<a href="javascript:void(0)"><img src="img/101244991-01-s.jpg"/></a>
 									</dt>
 									<dd>
 										<p class="hotgoodsname">
@@ -215,7 +215,7 @@
 								</dl>
 								<dl>
 									<dt>
-										<a href="javascript:void(0)"><img src="img/101301590_01_s.jpg"/></a>
+										<a href="javascript:void(0)"><img src="img/101301590-01-s.jpg"/></a>
 									</dt>
 									<dd>
 										<p class="hotgoodsname">
@@ -229,7 +229,7 @@
 								</dl>
 								<dl>
 									<dt>
-										<a href="javascript:void(0)"><img src="img/100990096_01_s.jpg"/></a>
+										<a href="javascript:void(0)"><img src="img/100990096-01-s.jpg"/></a>
 									</dt>
 									<dd>
 										<p class="hotgoodsname">
@@ -243,7 +243,7 @@
 								</dl>
 								<dl>
 									<dt>
-										<a href="javascript:void(0)"><img src="img/101306504_01_s.jpg"/></a>
+										<a href="javascript:void(0)"><img src="img/101306504-01-s.jpg"/></a>
 									</dt>
 									<dd>
 										<p class="hotgoodsname">
@@ -257,7 +257,7 @@
 								</dl>
 								<dl>
 									<dt>
-										<a href="javascript:void(0)"><img src="img/101306504_01_s.jpg"/></a>
+										<a href="javascript:void(0)"><img src="img/101306504-01-s.jpg"/></a>
 									</dt>
 									<dd>
 										<p class="hotgoodsname">
@@ -279,55 +279,62 @@
 					</div>
 					<!--主要内容-->
 					<div class="content col-lg-9" id="content">
-						
-						<p class="con_title">
-							<span>安全设置</span>
-						</p>
-						<div class="safeSet">
-							<!--安全度	safe-degree-->
-							<div class="safe-degree">
-				            	<p class="safeDegree">您目前账户安全等级为：
-				            				<span class="u_safeDegr mid"></span>
-				            		</p>
-				                <p class="safeDegree_tip">不要等到后悔莫及！通过完成下方的设置来提高账户安全等级，保障您的信息和资产安全。</p>
+						<div id="couponAD" style="padding-bottom: 20px; overflow: hidden; display: none;">
+				             <a target="_blank" href="https://www.yougou.com/topics/1415244574206.jsp?t=15771679675093457"><img width="830" src="//i2.ygimg.cn/pics/shop/zt/qchd/141113/1190X391.jpg"></a>
+				        </div>
+						<div class="outarea">
+				        	<div class="inarea">
+				                <em>优惠券编号：</em><input class="border_style" type="text" name="coupon" id="yhq_num">&nbsp;&nbsp;&nbsp;
+				                <em>验证码：</em><input class="border_style" type="text" name="checkcode" id="check_num" maxlength="4">
+				                <img src="https://www.yougou.com/servlet/imageCaptcha?rand=0.04606458891644394" id="imageValidate2">&nbsp;&nbsp;
+				                <a href="#?t=157716796750910924" class="Gray changeImg" id="change_check">换一张</a>
+				                <span id="bind_btn_coupon" class="btn_bind_giftcard_coupon">绑定到当前账户</span>
+				                <!--<div class="bind_tips"><div class="errortips" id="yhq_num_tip">请输入编号</div><div class="errortips" id="check_num_tip">请输入验证码</div></div>-->
 				            </div>
-				            
-				            <dl class="safemake">
-				            	<dd class="safe-picuture">
-				                	<p class="blank8"></p>
-				                	<p class="glyphicon glyphicon-ok-sign"></p>
-				                </dd>
-				                <dd class="safe-name">登录密码</dd>
-				                	<dd class="safe-detail">安全性高的密码可以使账号更安全。建议您定期更换密码，且设置一个包含数字和字母，并长度超过6位以上的密码。</dd>
-				                	<dd class="safe-btn"><a href="/my/toEditPwdIndex.jhtml?t=157672560307910198" class="uc_btn safe-edit_pwd">修改密码</a></dd>
-				            </dl>
-				            <dl class="safemake">
-				            	<dd class="safe-picuture">
-				                		<p class="glyphicon glyphicon-ban-circle"></p>
-				                    	<p class="safeCz_degr">未绑定</p>
-				                </dd>
-				                <dd class="safe-name">绑定邮箱</dd>
-				                <dd class="safe-detail">可使用已绑定邮箱登录优购账号。2019年1月4日24：00后，不再提供邮箱找回密码、绑定/更换绑定邮箱、接收订单提醒等服务。带来不便敬请谅解。</dd>
-				                	<dd class="safe-btn email_btn"><a href="javascript:void(0);" id="safe-bind_modify" class="uc_btn safe-bind_now" style="color:#ddd;background-color: #999;">立即绑定</a></dd>
-				            </dl>
-				            <dl class="safemake" style="border:none;">
-				            	<dd class="safe-picuture">
-				                	<p class="glyphicon glyphicon-ok-sign"></p>
-				                    <p class="safeCz_degr">已绑定</p>
-				                </dd>
-				                <dd class="safe-name">绑定手机</dd>
-				                <dd class="safe-detail">绑定手机后，您即可享受优购网丰富的手机服务，如手机登录、手机找回密码等，保证您账户更安全。</dd>
-				                	<dd class="safe-btn"><a href="/my/rebind/verifyByBind.jhtml?t=15767256030792011" class="uc_btn safe-edit_pho">修改绑定</a></dd>
-				            </dl>
-				            <p class="blank15"></p>
-						</div>
-				        <p class="blank15"></p>
-				        <div class="content-bottom">
-				            <p class="bottom-tit">常见问题</p>
-				            <p class="bindEmail_qa">Q 为什么要进行安全设置？进行安全设置后有什么好处？<br><span>A 优购时尚商城账户涉及您的优惠券、礼品卡和积分资产，我们强烈建议您完善安全设置，以免造成不必要的损失；</span></p>
-				            <p class="bindEmail_qa">Q 安全设置完成之后可以修改吗？<br><span>A 您可以点击“修改”按钮进行修改。</span></p>
-				      	</div>
+				        </div>
+						<div class="tab_content" id="coupon_tab">
+							<ul class="tab_top">
+								<li id="changCoupon1" onclick="changCoupon(1)" class="on">可使用优惠券</li>
+								<li id="changCoupon0" onclick="changCoupon(0)">未激活优惠券</li>
+								<li id="changCoupon2" onclick="changCoupon(2)">已使用优惠券</li>
+								<li id="changCoupon3" onclick="changCoupon(3)">已过期优惠券</li>
+							</ul>
+							<ul class="tab_con">
+								<table class="tab_tb">
+									<thead>
+										<tr><th class="llb" width="130">优惠券编号</th>
+										<th width="93">面额</th>
+										<th width="93">使用条件</th>
+										<th width="220">有效期</th>
+										<th width="130">使用范围</th>
+										<th width="92">获取渠道</th>
+										<th class="lrb" width="87">状态</th>
+									</tr></thead>
+									<tbody>
+									     	<tr><td colspan="7"><center><div id="remark">您暂无可使用优惠券</div></center></td></tr>
+						        	</tbody>
+								</table>
+							</ul>
+							<!-- 20条记录换页 -->
+							<div id="paginator" class="paginator" style="display: block;">
+							</div>
+							<p class="blank07"></p>
+							<!--优惠券说明开始-->
+							<div class="u_coupon_tips">
+								<p class="tit">优惠券温馨提示：</p>
+								<p> ·为了保证您的10天退换货的权益，优惠券将在<span>相关订单商品出库后10天生效</span>。部分优惠券生效时间会受网站活动限制；<br>
+									·部分优惠券会受网站活动限制，有的活动商品不支持使用优惠券，单张订单只能使用一张优惠券；<br>
 					
+									·不同的优惠券使用规则不同，请您使用前详细阅读相应优惠券的使用规则；<br>
+									·请保证您的优惠券在有效期内使用，过期即作废；<br>
+									·优惠券不得合并，不设找零，不可兑换现金；<br>
+									·单张订单，优惠券和礼品卡可同时使用；<br>
+									·如遇优惠券使用问题，可直接与优购网客户服务中心联系，我们会竭诚为您服务。<br>
+								</p>
+							</div>
+							<!--优惠券说明结束-->
+						</div>
+							
 					</div>
 				</div>
 			</div>
