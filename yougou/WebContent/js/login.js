@@ -21,12 +21,10 @@ $(function(){
       //验证
       if(obj.code == 2002){
         $('.username-msg').html('用户名不存在').css('color',' #333333');
-        $('.username-tssize').show();
         return;
       };
       if(obj.code == 1001){
         $('.password-msg').html('密码错误').css('color',' #333333');
-        $('.username-tssize').show();
         return;
       };
       if(obj.code != 0){
@@ -39,9 +37,9 @@ $(function(){
       localStorage.setItem('token', obj.data.token);
       //跳首页还是详情
       if(goodsId){
-        location.href = 'product.html?goods_id='+goodsId;
+        location.href = '/yougou/product.jsp?goods_id='+goodsId;
       }else{
-        location.href = 'index.html';      
+        location.href = '/yougou/index.jsp';      
       };
 
     });

@@ -142,6 +142,7 @@
 	height: 36px;
 	float: left;
 	border: none;
+	outline: none;
 }
 .printk-ts,.printp-ts{
 	width: 18px;
@@ -186,6 +187,7 @@
 	font-size: 16px;
 	border: none;
 	color: white;
+	outline: none;
 }
 .form-contain-tisement{
 	width: 338px;
