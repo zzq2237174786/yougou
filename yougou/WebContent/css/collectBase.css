@@ -56,7 +56,7 @@ img{border: none;vertical-align: bottom;}
 	padding-bottom: 15px;
 	border-bottom: 1px solid #E3E3E3;
 }
-.jiaoyizx .present{
+.jiaoyizx,.wodezc,.gerensz,.shouhoufw, .present{
 	list-style: disc;
 }
 .jiaoyizx,.wodezc,.gerensz,.shouhoufw, .current:hover{
