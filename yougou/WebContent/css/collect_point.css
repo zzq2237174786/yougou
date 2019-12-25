@@ -1,0 +1,124 @@
+/*标题部分*/
+.ubtitle {
+    background: #fcfcfc;
+    height: 33px;
+    border: 1px solid #e0e0e0;
+    margin: 0px;
+}
+.ubtitle span {
+    padding-left: 18px;
+    line-height: 33px;
+    font-weight: bold;
+    font-size: 14px;
+}
+/*可用积分*/
+.havepoint{
+	padding: 18px 15px 5px;
+    border: 1px solid #e3e3e3;
+    border-top: 0;
+    height: auto;
+    font-size: 12px;
+    color: #666666;
+}
+
+.havepoint .godh_btn{
+    background: #000;
+    color: #fff;
+    width: 104px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    vertical-align: bottom;
+    margin-left: 30px;
+    font-size: 12px;
+    display: inline-block;
+}
+/*表格上部*/
+.tab_top {
+    position: relative;
+    margin-bottom: 10px;
+    background: 0;
+    border-bottom: 1px solid #efefef;
+    height: 33px;
+}
+.tab_top li {
+    background: #f7f7f7;
+    border: 1px solid #efefef;
+    border-bottom: 0;
+    float: left;
+    width: 127px;
+    height: 32px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 35px;
+    margin-right: 8px;
+}
+.tab_top .on{
+	background: #fcfcfc;
+}
+.t_filter {
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    font-size: 12px;
+    overflow: hidden;
+    height: 30px;
+    width: 200px;
+    text-align: right;
+}
+/*表格内容*/
+.tab_tb{
+  	border: 1px solid #efefef;
+  	font-size: 12px;
+  	
+}
+.tab_tb th{
+	color: #666666;
+	font-weight: normal;
+}
+.tab_tb thead {
+    background: #fcfcfc;
+    border-top: 1px solid #e3e3e3;
+    height: 34px;
+    line-height: 34px;
+}
+.tab_tb thead tr th{
+	text-align: center;
+}
+.tab_tb td{
+	border-top: 1px solid #e3e3e3;
+	border-right: 1px solid #e3e3e3;
+	padding-bottom: 8px;
+	height: 54px;
+	line-height: 54px;
+	text-align: center;
+	color: #666666;
+}
+/*拥有积分数量*/
+.paginator {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    color: #666666;
+    clear: both;
+    overflow: hidden;
+    
+}
+/*积分说明*/
+.bottom_tips {
+    border: 1px solid #ddd;
+    color: #666666;
+    font-size: 12px;
+    font-family: "'Microsoft YaHei';";
+    padding-bottom: 20px;
+}
+.bottom_tit{
+	color: #333;
+    height: 15px;
+    padding-top: 15px;
+    font-weight: bold;
+}
+.bottom_tips p {
+    padding: 5px 20px;
+    line-height: 25px;
+}
