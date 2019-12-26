@@ -202,9 +202,9 @@
 									<div class="media-body detail6">
 										<p>颜色：
 											<a href="">
-												<img data-toggle="tooltip" data-placement="left" title="颜色：黑色" src="img/small.jpg" id="cart" />
-												<img data-toggle="tooltip" data-placement="left" title="颜色：灰色" src="img/small.jpg">
-												<img data-toggle="tooltip" data-placement="left" title="颜色：灰蓝" src="img/small.jpg">
+												<img data-toggle="tooltip" data-placement="left" title="颜色：黑色" src="/yougou/img/small.jpg" id="cart" />
+												<img data-toggle="tooltip" data-placement="left" title="颜色：灰色" src="/yougou/img/small.jpg">
+												<img data-toggle="tooltip" data-placement="left" title="颜色：灰蓝" src="/yougou/img/small.jpg">
 											</a>
 
 										</p>
@@ -321,7 +321,7 @@
 																	</div>
 																</a>
 															</div>
-															<div class="form-contain">
+															<div class="form-contain"style="margin-left: 25px;">
 																<div class="srzh">
 																	<div class="box">手机号</div>
 																	<input class="printk" placeholder="请输入手机号码" type="text" />
@@ -692,11 +692,11 @@
 						</ul>
 						<ul class="ul-right">
 							<li>
-								<a><img src="img/app.jpg" class="ul-right-img1" /></a>
+								<a><img src="/yougou/img/app.jpg" class="ul-right-img1" /></a>
 								<a class="a-title">扫描下载手机客户端</a>
 							</li>
 							<li>
-								<a><img src="img/weChat.jpg" /></a>
+								<a><img src="/yougou/img/weChat.jpg" /></a>
 								<a class="a-title">关注公众号</a>
 							</li>
 						</ul>
