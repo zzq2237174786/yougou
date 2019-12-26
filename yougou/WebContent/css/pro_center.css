@@ -1,13 +1,22 @@
+/*鍏ㄥ眬鏍峰紡*/
+*{margin: 0px;padding: 0px;}
+li{list-style: none;}
+a{text-decoration: none;}
+img{border: none;vertical-align: bottom;}
 .breadcrumb{
-/*	margin-left: 30px;*/
+	/*margin-top: 150px;*/
+	margin-left: 30px;
 	background: none;
 }
 .detail1{
 	padding-top: 50px;
 }
+.container{
+	/*margin-left: 10px;*/
+}
 .small a li img{
 	border: 2px solid gainsboro;
-	/*过渡动画*/
+	/*杩囨浮鍔ㄧ敾*/
 	transition: all 0.5s;
 	width: 60px;
 	height: 60px;
@@ -15,10 +24,13 @@
 .small a li img:hover{
 	border-color: black;
 }
+/*#pro-left{
+	position: relative;
+}*/
 #pro-right{
 	position: relative;
 }
-/*大图样式*/
+/*澶у浘鏍峰紡*/
 .pro-big{
 	width:480px;
 	height: 480px;
@@ -61,7 +73,7 @@
 	/*display: none;*/
 	position: absolute;
 }
-/*显示第一个*/
+/*鏄剧ず绗竴涓�*/
 .big a li.active{
 	display: block;
 }
@@ -182,6 +194,7 @@ strong button{
 .detail4{
 	margin-top: -30px;
 	margin-left: 85px;
+	padding-left: 20px;
 	text-decoration: line-through;
 }
 .detail5{
@@ -218,7 +231,7 @@ strong button{
 	margin-left: 460px;
 	color: black;
 }
-/*模态框*/
+/*妯℃�佹*/
 .modal-body{
 	padding: 0px 15px;
 }
@@ -236,7 +249,7 @@ strong button{
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	background: url(/yougou/img/slide_bg.png);
+	background: url(../img/slide_bg.png);
 	display: none;
 	cursor: move;
 }
@@ -246,4 +259,112 @@ strong button{
 }
 #star p{
 	display: inline-block;
+}
+.tc{
+	width: 500px;
+	height: 400px;
+   /* border: 1px solid gainsboro;*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -280px;
+	margin-top: -50px;
+	z-index: 100;
+	display: none;
+}
+.close{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	/*color: #fff;*/
+	font-size: 16px;
+	/*z-index:100;*/
+	cursor: pointer;
+	color: white;
+}
+.tc h3{
+	font-size: 14px;
+	background: black;
+	color: white;
+	margin-top: -5px;
+	/*color: #fff;*/
+	/*text-align: center;*/
+	position:relative ;
+	z-index: 100;
+	line-height: 30px;
+}
+.xx{
+	padding: 5px 20px;
+	border: 1px solid gainsboro;
+}
+.xx:hover{
+	
+	border-color: black;
+	cursor: pointer;
+	
+}
+.bk{
+	width: 100%;
+	height: 100%;
+	/*background: #000;*/
+	/*opacity: 0.5;*/
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#sure{
+	margin-top: 10px;
+	margin-right: 20px;
+	float: right;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: none;
+	background: black;
+	color: white;
+	/*border-bottom: 1px solid gainsboro;*/
+}
+.line{
+	border: 1px solid gainsboro;
+	width: 500px;
+	height: 100px;
+	background:white;
+}
+#tc{
+	width: 1800px;
+	height: 100px;
+    border: 1px solid gainsboro;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: 1500px;
+	margin-top: -350px;
+	z-index: 10;
+	display: none;
+}
+#context{
+	height: 500px;
+	background: white;
+	width: 450px;
+}
+#context1{
+	margin-left: 10px;
+	height: 300px;
+}
+#context h4{
+	font-size: 14px;
+	
+}
+#cha{
+	color: gray;
+	font-size: 30px;
+}
+.current{
+	background: gainsboro;
+}
+#look:hover{
+	cursor: pointer;
+}
+#look{
+	background: black;
+	color: white;
 }

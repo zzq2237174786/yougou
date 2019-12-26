@@ -1,11 +1,11 @@
-/*全局样式*/
-/*设置边距*/
+/*鍏ㄥ眬鏍峰紡*/
+/*璁剧疆杈硅窛*/
 *{margin: 0; padding: 0;}
-/*li标签*/
+/*li鏍囩*/
 li{list-style: none;}
-/*a标签下划线*/
+/*a鏍囩涓嬪垝绾�*/
 a{text-decoration: none;}
-/*低版本IE*/
+/*浣庣増鏈琁E*/
 img{border: none; vertical-align: bottom;}
 .header{
 	width: 100%;
@@ -13,7 +13,7 @@ img{border: none; vertical-align: bottom;}
 	background: #333333;
 	line-height: 40px;
 	font-size: 12px;
-	font-family: "宋体";
+	font-family: "瀹嬩綋";
 }
 .contain{
 	width: 100%;
@@ -60,7 +60,7 @@ img{border: none; vertical-align: bottom;}
 .footer{
 	width: 100%;
 	height: 20px;
-}
+}  
 .footer>p{
 	line-height: 20px;
 	text-align: center;

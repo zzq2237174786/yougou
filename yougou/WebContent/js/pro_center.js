@@ -318,4 +318,79 @@ function bigImg(){
 };
 
 
+$(function(){
+    $('#addcart').click(function(){
+    $('.tc').fadeIn();
+    $('#sure').click(function(){
+    	 // var id = $(this).attr('id');
+        var fly = $('#img_').clone().css('opacity','0.7');
+        fly.css({
+            'z-index': 90,
+            'display': 'block',
+            'position': 'absolute',
+           // 'top': $('#img_'+id).offset().top +'px',
+            'top': $('#img_').offset().top +'px',
+            'left': $('#img_').offset().left +'px',
+            'width': $('#img_').width() +'px',
+            'height': $('#img_').height() +'px'
+        });
+        $('body').append(fly);
+        fly.animate({
+            top:$('#end').offset().top,
+            left:$('#end').offset().left,
+            width:50,
+            height:50
+        },1000,function(){$(this).remove()});
+        var str=parseInt($('#num').text())+1;
+        $('#num').text(str).css('display','block');
+		$('.tc').fadeOut();
+	});
+	$('.close').click(function(){
+		$('.tc').fadeOut();
+	});
+    });
+});	
+$('#buy').click(function(){
+    $('#tc').fadeIn();
+});
+	$('#close').click(function(){
+		$('#tc').fadeOut();
+	});
 	
+/*点击尺码弹窗中的尺码页面上的尺码会相应的被选中*/
+
+var oPoint=document.querySelector('.detail7');
+var aSpan=oPoint.querySelectorAll('#xx1');
+
+//尺码信号量
+	var n=0;
+	var x=0;
+	//点击尺码
+	$('.xx').each(function(i){
+		//点哪个this就是哪个
+		$(this).click(function(){
+			//联动
+			n=i;
+			x=i;
+			//当前元素添加类名，其他兄弟元素移除类名
+			$('.xx').eq(x).addClass('current').siblings('.xx').removeClass('current');
+		});
+		/*//尺码跟随
+		x++;
+		if(x>9){
+			x=0;
+		}
+  		size();*/
+	});
+	
+/*//尺码方法封装
+function size(){
+	//排他
+  	for(var i=0;i<aSpan.length;i++){
+  		//先让每一个变为空
+  		aSpan[i].className='';
+  	};
+  	//再让当前点击的小圆点变色
+  	aSpan[x].className='current';
+  };*/
+  
