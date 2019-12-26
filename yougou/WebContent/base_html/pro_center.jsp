@@ -9,10 +9,10 @@
 		<!--视口-->
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<title>商品详情页</title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="css/pro_center.css" />
-		<link rel="stylesheet" type="text/css" href="css/base.css" />
-		<link rel="stylesheet" href="css/phonelogin.css" />
+		<link rel="stylesheet" type="text/css" href="/yougou/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="/yougou/css/pro_center.css" />
+		<link rel="stylesheet" type="text/css" href="/yougou/css/base.css" />
+		<link rel="stylesheet" href="/yougou/css/phonelogin.css" /> 
 	</head>
 
 	<body>
@@ -736,8 +736,8 @@
 	</body>
 
 </html>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/jquery-1.8.3.min.js"></script>
-<script src="js/base.js"></script>
-<script src="js/pro_center.js"></script>
+<script src="/yougou/js/jquery.min.js"></script>
+<script src="/yougou/js/bootstrap.js"></script>
+<script src="/yougou/js/jquery-1.8.3.min.js"></script>
+<script src="/yougou/js/base.js"></script>
+<script src="/yougou/js/pro_center.js"></script>
