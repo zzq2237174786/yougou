@@ -7,40 +7,70 @@ $(function(){
   var isPwd = false;
   var userVal = null;
   var pwdVal = null;
+  var repwdVal = null;
   
   //用户名获取焦点
-  $('.printk').focus(function(){
+  $('.phone-right').focus(function(){
     //提示显示
-    $('.phone-yz').show();
+    $('.phone-check').show();
   });
   //验证码获取焦点
-  $('.printy').focus(function(){
+  $('.checknumber-right').focus(function(){
     //提示显示
-    $('.ssd-yzm').show();
+    $('.checknumber-check').show();
   });
   //短信验证码获取焦点
-  $('.yzm-dx-t').focus(function(){
+  $('.newschecknumber-right').focus(function(){
     //提示显示
-    $('.dxyzm-yz-ts').show();
+    $('.newschecknumber-check').show();
   });
   //密码获取焦点
-  $('.yzm-password-t').focus(function(){
+  $('.password-right').focus(function(){
     //提示显示
-    $('.yzm-password-ts1').show();
+  	$('.password-check').show();
+                function checkStrong(val) {
+                    var modes = 0;
+                    if (val.length < 6) return 0;
+                    if (/\d/.test(val)) modes++; //数字
+                    if (/[a-z]/.test(val)) modes++; //小写
+                    if (/[A-Z]/.test(val)) modes++; //大写  
+                    if (/\W/.test(val)) modes++; //特殊字符
+                    if (val.length > 12) return 3;
+                    return modes;
+                };
+                $(".password-right").keyup(function() {
+                    var val = $(this).val();
+                    var num = checkStrong(val);
+                    switch (num) {
+                        case 0:
+                            break;
+                        case 1:
+                            $(".password-high").css('background', 'green');
+                            break;
+                        case 2:
+                            $(".password-middle").css('background', 'red');
+                            break;
+                         case 3:
+                            $(".password-low").css('background', 'yellow');
+                            break;
+                        default:
+                            break;
+                    }
+                })
   });
   //确认密码获取焦点
-  $('.yzm-qrpassword-t').focus(function(){
+  $('.repassword-right').focus(function(){
     //提示显示
-    $('.yzm-qrpassword-yz-ts').show();
+    $('.repassword-check').show();
   });
   
   //用户名失去焦点
-  $('.printk').blur(function(){
+  $('.phone-right').blur(function(){
     //拿到值
     userVal = $(this).val();
     //验证
     if(userVal == ''){
-      $('.phone-yz').html('手机号不能为空').css('color','red');
+      $('.phone-check-text').html('手机号不能为空').css('color','#333333');
       //设置不能注册
       isUser = false;
       return;
@@ -48,102 +78,106 @@ $(function(){
     //3-20位  定正则
     var re = /^[0-9_]{11}$/g;
     if(!re.test(userVal)){
-      $('.phone-yz').html('格式错误,必须为11位数字').css('color', 'red');
+      $('.phone-check-text').html('格式错误,必须为11位数字').css('color', '#333333');
       //设置不能注册
       isUser = false;
     }else{
       //要发送请求查看后台数据库没有此注册过
       //这里接口有问题 
-      $('.phone-yz').html('用户名格式正确').css('color', 'green');
+      $('.phone-check-text').hide();
+      $('.phone-right-ts').show();
+      $('.phone-ts').hide();
       //设置能注册
       isUser = true;
     };
   });
   
   //验证码失去焦点
-  $('.printy').blur(function(){
+  $('.checknumber-right').blur(function(){
     //拿到值
     pwdVal = $(this).val();
     //验证
     if(pwdVal == ''){
-      $('.ssd-yzm').html('验证码不能为空').css('color','red');
+      $('.checknumber-check-text').html('验证码不能为空').css('color','#333333');
       isPwd = false;
       return;
     };
     //6-20位数字  定正则
     var re = /^[0-9]{4}$/g;
     if(!re.test(pwdVal)){
-      $('.ssd-yzm').html('验证码有误,请重新输入！').css('color', 'red');
+      $('.checknumber-check-text').html('验证码有误,请重新输入！').css('color', '#333333');
       isPwd = false;
     }else{
-      $('.ssd-yzm').html('验证码正确').css('color', 'green');
+      $('.checknumber-check-text').html('验证码正确').css('color', '#333333');
       isPwd = true;
     };
   });
   
   //短信验证码失去焦点
-  $('.yzm-dx-t').blur(function(){
+  $('.newschecknumber-right').blur(function(){
     //拿到值
     userVal = $(this).val();
     //验证
     if(userVal == ''){
-      $('.dxyzm-yz-ts').html('短信验证码不能为空').css('color','red');
+      $('.newschecknumber-check-text').html('短信验证码不能为空').css('color','#333333');
       //设置不能注册
       isUser = false;
       return;
     };
     //3-20位  定正则
     var re = /^[0-9]{6}$/g;
-    if(!re.test(userVal)){
-      $('.dxyzm-yz-ts').html('格式错误,必须为6位数字').css('color', 'red');
+    if(!re.test(pwdVal)){
+      $('.newschecknumber-check-text').html('格式错误,必须为6位数字').css('color', '#333333');
       //设置不能注册
       isUser = false;
     }else{
       //要发送请求查看后台数据库没有此注册过
       //这里接口有问题 
-      $('.dxyzm-yz-ts').html('短信验证码格式正确').css('color', 'green');
+      $('.newschecknumber-check-text').html('短信验证码格式正确').css('color', '#333333');
       //设置能注册
       isUser = true;
     };
   });
-  
   //密码失去焦点
-  $('.yzm-password-t').blur(function(){
+  $('.password-right').blur(function(){
     //拿到值
     pwdVal = $(this).val();
     //验证
     if(pwdVal == ''){
-      $('.yzm-password-ts1').html('密码不能为空').css('color','red');
+      $('.password-check-text').html('密码不能为空').css('color','#333333');
       isPwd = false;
       return;
     };
     //6-20位数字  定正则
-    var re = /^[0-9]{8}$/g;
+    var re = /([0-9a-zA-Z][!@#%^&()*])/;
     if(!re.test(pwdVal)){
-      $('.yzm-password-ts1').html('密码格式有误,请重新输入！').css('color', 'red');
+      $('.password-check-text').html('密码格式有误').css('color', '#333333');
       isPwd = false;
     }else{
-      $('.yzm-password-ts1').html('密码正确').css('color', 'green');
+      $('.password-check-text').hide();
+      $('.password-ts').hide();
+      $('.password-right-ts').show();
       isPwd = true;
     };
   });
   //确认密码失去焦点
-  $('.yzm-qrpassword-t').blur(function(){
+  $('.repassword-right').blur(function(){
     //拿到值
-    pwdVal = $(this).val();
+    repwdVal = $(this).val();
     //验证
-    if(pwdVal == ''){
-      $('.yzm-qrpassword-yz-ts').html('密码不能为空').css('color','red');
+    if(repwdVal == ''){
+      $('.repassword-check-text').html('密码不能为空').css('color','#333333');
       isPwd = false;
       return;
     };
-    var re = /^[0-9]{8}$/g;
-    if(!re.test(pwdVal)){
-      $('.yzm-qrpassword-yz-ts').html('格式有误,请重新输入！').css('color', 'red');
-      isPwd = false;
-    }else{
-      $('.yzm-qrpassword-yz-ts').html('密码格式正确').css('color', 'green');
+    if(pwdVal==repwdVal){
+    	$('.repassword-check-text').hide();
+      $('.repassword-ts').hide();
+      $('.repassword-right-ts').show();
       isPwd = true;
+    }else{
+    	$('.repassword-check-text').html('密码错误,请重新输入！').css('color', '#333333');
+    	return false;
     };
   });
   
@@ -166,7 +200,7 @@ $(function(){
       console.log(obj);
       //验证
       if(obj.code == 2001){
-        $('.printk').html('用户名已存在').css('color', 'red');
+        $('.phone-right').html('用户名已存在').css('color', '#333333');
         //设置不能注册
         isUser = false;
         return;
@@ -174,15 +208,15 @@ $(function(){
       
       if(obj.code != 0){return;}
       //注册成功 把文本框清空,设置不能注册
-      $('.printk, .yzm-password-t').val('');     
+      $('.phone-right, .password-right').val('');     
       isUser = false;
       isPwd = false;
-      $('.phone-yz, .yzm-password-t').hide();
+      $('.phone-check-text, .password-right').hide();
       //跳转到登录页面
       alert('注册成功，2秒之后跳转登录页面');
       setTimeout(function(){
         //跳转到登录页面
-        window.location.href = '/yougou/base_html/login.jsp';
+        window.location.href = '/yougou/login.jsp';
       },2000);
     });
   });

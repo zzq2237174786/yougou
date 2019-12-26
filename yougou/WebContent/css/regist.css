@@ -1,12 +1,3 @@
-/*全局样式*/
-/*设置边距*/
-*{margin: 0; padding: 0;}
-/*li标签*/
-li{list-style: none;}
-/*a标签下划线*/
-a{text-decoration: none;}
-/*低版本IE*/
-img{border: none; vertical-align: bottom;}
 .header{
 	width: 100%;
 	height: 40px;
@@ -57,19 +48,19 @@ img{border: none; vertical-align: bottom;}
 	width: 100%;
 	height: 20px;
 }
-.footer{
+.registfooter{
 	width: 100%;
 	height: 20px;
 }
-.footer>p{
+.registfooter>p{
 	line-height: 20px;
 	text-align: center;
 	font-size: 12px;
 	color: #666666;
 	background: white;
 }
-.form{
-	width: 378px;
+.form-top{
+	width: 380px;
 	height: 530px;
 	margin: 12px 0 0;
 	background: white;
@@ -77,7 +68,7 @@ img{border: none; vertical-align: bottom;}
 	left: 70%;
 }
 .form-head{
-	width: 348px;
+	width: 248px;
 	height: 41px;
 	margin: 24px 15px 0 68px;
 	font-size: 12px;
@@ -98,6 +89,7 @@ img{border: none; vertical-align: bottom;}
 	border: none;
 	width: 123px;
 	height: 40px;
+	outline: none;
 	
 }
 .form-login{
@@ -111,190 +103,256 @@ img{border: none; vertical-align: bottom;}
 	width: 123px;
 	height: 40px;
 	margin-left: -5px;
+	outline: none;
 }
 .form-contain{
 	width: 348px;
-	height: 472px;
-	margin: 0 15px;
+	height: 427px;
+	margin: 0px 15px;
 	padding: 30px 0 0 10px;
 }
-.yzm{
-	width: 200px;
-	height: 38px;
-	border: 1px solid #000000;
-	float: left;
+.form-contain-phone{
+	width: 338px;
+	height: 66px;
+	padding: 0 0 0 8px;
+	color: #666666;
 }
-.yzm-y{
-	width: 110px;
-	height: 36px;
-	background: #999999;
-	margin-right: 20px;
-	line-height: 36px;
-	font-size: 15px;text-align: center;
-	float: right;
+.form-contain-checknum{
+	width: 338px;
+	height: 68px;
+	padding: 0 0 0 8px;
+	color: #666666;
+}
+.form-contain-email{
+	width: 338px;
+	height: 66px;
+	padding: 0 0 0 8px;
+	color: #666666;
+
+}
+.form-contain-password{
+	width: 338px;
+	height: 66px;
+	padding: 0 0 0 8px;
+	color: #666666;
+}
+.form-contain-repassword{
+	width: 338px;
+	height: 66px;
+	padding: 0 0 0 8px;
+	color: #666666;
 }
 .phone{
-	width: 313px;
-	height: 38px;
-	border: 1px solid #000000;
+	width: 305px;
+	height: 36px;
 }
-.box{
+.phone-left{
 	width: 60px;
-	height: 38px;
+	height: 36px;
 	margin: 0 0 0 10px;
+	border: solid 1px #D5D5D5;
+	border-right: none;
 	float: left;
-	text-align: center;
-	font-size: 12px;
-	line-height: 38px;
+	
 }
-.printk{
+.phone-left>p{
+	font-size: 12px;
+	line-height: 36px;
+	text-align: center;
+	margin-bottom: 0px;
+	color: #000000;
+}
+.box1{
 	width: 235px;
 	height: 36px;
 	float: right;
-	border: none;
+	border: solid 1px #D5D5D5;
+	border-left: none;
+	
+}
+.phone-right{
+	width: 200px;
+	height: 35px;
+	float: left;
 	font-size: 12px;
+	outline: none;
+	border: none;
+	border-bottom: 1px #D5D5D5 solid;
 }
-.form-contain-blank{
-	width: 330px;
-	height: 28px;
-	color: #666666;
+.phone-check,.checknumber-check,.newschecknumber-check,.password-check,.repassword-check{
+	margin: 4px 0 0;
+	padding: 0 0 0 25px;
+	font-size: 12px;
+	display: none;
 }
-.printy{
+.phone-ts,.checknumber-ts,.newschecknumber-ts,.password-ts,.repassword-ts{
+	margin-bottom: 2px;
+}
+.checknumber{
+	width: 298px;
+	height: 38px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 36px;
+	color: #000000;
+}
+.checknumber-left{
+	width: 60px;
+	height: 36px;
+	margin: 0 0 0 10px;
+	border: solid 1px #D5D5D5;
+	border-right: none;
+	float: left;
+}
+.checknumber-left>p{
+	margin: 0 0 0 0 ;
+}
+.checknumber-right{
 	width: 128px;
 	height: 36px;
-	float: right;
-	border: none;
+	border: solid 1px #D5D5D5;
+	border-left: none;
+	outline: none;
 }
-.box2{
-	width: 60px;
-	height: 38px;
-	margin: 0 0 0 10px;
-	text-align: center;
-	font-size: 12px;
-	line-height: 38px;
-	float: left;
-}
-.form-contain-foot{
-	width: 338px;
-	height: 40px;
-	margin: 0 40px;
-	margin-top: 20px;
-}
-.form-contain-foot>a{
-	margin: 0 5px;
-}
-.ssd{
-	width: 330px;
-	height: 28px;
-	margin-top: 40px;
-	color: #666666;
-}
-.yzm-dx{
-	width: 235px;
-	height: 38px;
-	border: 1px solid #000000;
-	margin-right: 0px;
-	float: left;
-}
-.box3{
-	width: 60px;
-	height: 38px;
-	margin: 0 0 0 10px;
-	text-align: center;
-	font-size: 12px;
-	line-height: 38px;
-	float: left;
-}
-.yzm-dx-t{
-	width: 155px;
+.checknumber-number{
+	width: 90px;
 	height: 36px;
-	border: none;
+	border: solid 1px #122B40;
+	background: #1B6D85;
+	color: white;
 	float: right;
+	font-size: 16px;
+	margin-left: 10px;
 }
-.yzm-get{
-	width: 73px;
+.newschecknumber{
+	width: 307px;
 	height: 38px;
+	font-size: 12px;
 	text-align: center;
-	line-height: 38px;
+	line-height: 36px;
+	color: #000000;
+}
+.newschecknumber-left{
+	width: 68px;
+	height: 36px;
+	margin: 0 0 0 10px;
+	border: solid 1px #D5D5D5;
+	border-right: none;
+	float: left;
+}
+.newschecknumber-left>p{
+	margin-bottom: 0;
+}
+.newschecknumber-right{
+	width: 148px;
+	height: 36px;
+	border: solid 1px #D5D5D5;
+	border-left: none;
+	outline: none;
+}
+.newschecknumber-getnumber{
+	width: 70px;
+	height: 36px;
+	border: solid 1px #122B40;
 	background: #323232;
+	float: right;
+	margin-left: 10px;
+}
+.newschecknumber-getnumber>a{
 	color: white;
 	font-size: 12px;
-	margin: 0 25px 0 0;
-	float: right;
 }
-.dxyzm-yz{
-	width: 330px;
-	height: 28px;
-	color: #666666;
-	margin: 40px 0 0 0;
+.password{
+	width: 305px;
+	height: 36px;
 }
-.yzm-password{
-	width: 313px;
-	height: 38px;
-	color: #000000;
-	border: 1px solid #000000;
-}
-.box4{
+.password-left{
 	width: 60px;
-	height: 38px;
+	height: 36px;
 	margin: 0 0 0 10px;
-	text-align: center;
-	font-size: 12px;
-	line-height: 38px;
+	border: solid 1px #D5D5D5;
+	border-right: none;
 	float: left;
+	
 }
-.yzm-password-t{
+.password-left>p{
+	font-size: 12px;
+	line-height: 36px;
+	text-align: center;
+	margin-bottom: 0px;
+	color: #000000;
+}
+.box2{
 	width: 235px;
 	height: 36px;
 	float: right;
-	font-size: 12px;
-	border: none;
+	border: solid 1px #D5D5D5;
+	border-left: none;
+	
 }
-.yzm-password-ts{
-	width: 330px;
-	height: 28px;
-	color: #666666;
-}
-.yzm-qrpassword{
-	width: 313px;
-	height: 38px;
-	color: #000000;
-	border: 1px solid #000000;
-}
-.box5{
-	width: 60px;
-	height: 38px;
-	margin: 0 0 0 10px;
-	text-align: center;
-	font-size: 12px;
-	line-height: 38px;
+.password-right{
+	width: 200px;
+	height: 35px;
 	float: left;
+	font-size: 12px;
+	outline: none;
+	border: none;
+	border-bottom: 1px #D5D5D5 solid;
 }
-.yzm-qrpassword-t{
+.repassword{
+	width: 305px;
+	height: 36px;
+}
+.repassword-left{
+	width: 60px;
+	height: 36px;
+	margin: 0 0 0 10px;
+	border: solid 1px #D5D5D5;
+	border-right: none;
+	float: left;
+	
+}
+.repassword-left>p{
+	font-size: 12px;
+	line-height: 36px;
+	text-align: center;
+	margin-bottom: 0px;
+	color: #000000;
+}
+.box3{
 	width: 235px;
 	height: 36px;
 	float: right;
-	font-size: 12px;
-	border: none;
+	border: solid 1px #D5D5D5;
+	border-left: none;
+	
 }
-.yzm-qrpassword-yz{
-	width: 330px;
-	height: 28px;
-	color: #666666;
+.repassword-right{
+	width: 200px;
+	height: 35px;
+	float: left;
+	font-size: 12px;
+	outline: none;
+	border: none;
+	border-bottom: 1px #D5D5D5 solid;
 }
 .zhuce-xieyi{
-	width: 338px;
-	height: 20px;
-	color: #666666;
-	margin:  0 0 0 0;
-	text-align: center;
+	width: 274px;
+	height: 30px;
 }
-.zhuce-xieyi>a{
-	font-size: 14px;
-	color: #000000;
+.zhuce-xieyi-left{
+	width: 24px;
+	height: 28px;
+	float: left;
+	margin-left: 45px;
 }
-.zhuce-xieyi>a:hover{
-	color: #46B8DA;
+.zhuce-xieyi-right{
+	width: 250;
+	height: 28px;
+	font-size: 12px;
+	float: right;
+	margin-top: 2px;
+	outline: none;
 }
 .zhuce-btn{
 	width: 312px;
@@ -312,49 +370,28 @@ img{border: none; vertical-align: bottom;}
 	border: none;
 	text-align: center;
 	line-height: 40px;
+	outline: none;
 }
-.phone-yz{
-	width: 330px;
-	height: 28px;
-	display: none;
-	font-size: 12px;
+.phone-right-ts,.password-right-ts,.repassword-right-ts{
+	width: 18px;
+	height: 18px;
+	float: right;
+	margin-top: 9px;
+	margin-right: 9px;
+}
+.password-strength{
+	width: 126px;
+	height: 15px;
+	float: right;
+	margin-right: 25px;
+}
+.password-strength>div{
+	width: 40px;
+	height: 15px;
+	float: right;
+	background: #D5D5D5;
+	color: white;
 	text-align: center;
-	line-height: 28px;
-	color: red;
+	margin-right: 1px;
 }
-.ssd-yzm{
-	width: 330px;
-	height: 28px;
-	display: none;
-	font-size: 12px;
-	text-align: center;
-	line-height: 28px;
-	color: red;
-}
-.dxyzm-yz-ts{
-	width: 330px;
-	height: 28px;
-	display: none;
-	font-size: 12px;
-	text-align: center;
-	line-height: 28px;
-	color: red;
-}
-.yzm-password-ts1{
-	width: 330px;
-	height: 28px;
-	display: none;
-	font-size: 12px;
-	text-align: center;
-	line-height: 28px;
-	color: red;
-}
-.yzm-qrpassword-yz-ts{
-	width: 330px;
-	height: 28px;
-	display: none;
-	font-size: 12px;
-	text-align: center;
-	line-height: 28px;
-	color: red;
-}
+
