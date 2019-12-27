@@ -47,21 +47,21 @@
 				<ul class="nav navbar-nav navbar-right">
 					<!--登录注册-->
 					<li>
-						<a href="/yougou/base_html/login.jsp" id="login-btn">登录</a>
+						<a href="/yougou/login.jsp" id="login-btn">登录</a>
 						<span id="username"></span>
 						<p>/</p>
-						<a href="/yougou/base_html/regist.jsp" id="register-btn">注册</a>
+						<a href="/yougou/regist.jsp" id="register-btn">注册</a>
 						<a href="javaScript:;" id="exit-btn">退出</a>
 					</li>
 					<!--收藏-->
 					<li id="collect-btn">
-						<a href="/yougou/base_html/login.jsp">
+						<a href="/yougou/login.jsp">
 							<span class="glyphicon glyphicon-heart"></span> 收藏
 						</a>
 					</li>
 					<!--购物袋-->
 					<li id="cart-btn">
-						<a href="/yougou/base_html/login.jsp">
+						<a href="/yougou/login.jsp">
 							<span class="glyphicon glyphicon-shopping-cart"></span> 购物车
 						</a>
 					</li>
@@ -82,10 +82,10 @@
 			<div class="contain-bottom">
 				<div class="form">
 					<div class="form-head">
-						<a href="/yougou/base_html/login.jsp"><div class="zhmmdl">
+						<a href="/yougou/login.jsp"><div class="zhmmdl">
 								<input typre="submit" class="zhmmdl-a" value="账号密码登录"/>
 						</div></a>
-						<a href="/yougou/base_html/phonelogin.jsp"><div class="sjhkjdl">
+						<a href="/yougou/phonelogin.jsp"><div class="sjhkjdl">
 								<input type="submit" class="sjhkjdl-a" value="手机号码登录"/>
 						</div></a>
 					</div>
@@ -94,13 +94,19 @@
 							<div class="box">手机号</div>
 							<input class="printk" placeholder="请输入手机号码" type="text" />
 						</div>
-						<div class="form-contain-blank"><span class="form-contain-blank-yz">请输入11位手机号码！</span></div>
+						<div class="form-contain-bottom">
+							<div class="phonelogin-ts1"><img class="phonelogin-img" src="/yougou/img/ts_03.png" /></div>
+							<div class="form-contain-blank"><span class="form-contain-blank-yz">请输入手机号码</span></div>
+						</div>
 						<div class="srzh1">
 							<div class="box2">短信验证码</div>
 							<input class="printp" placeholder="" type="password"/>
 						</div>
 						<a href="" ><div class="yzm-get">获取验证码</div></a>
-						<div class="form-contain-blank1"><span class="form-contain-blank1-yz">请输入验证码！</span></div>
+						<div>
+							<div class="phonelogin-ts2"><img class="phonelogin-img" src="/yougou/img/ts_03.png" /></div>
+							<div class="form-contain-blank1"><span class="form-contain-blank1-yz">请输入验证码</span></div>
+						</div>
 						<div class="loginbtn">
 							<input type="submit" class="loginbtn1" value="点击登录" title="登录"/>
 						</div>
@@ -119,7 +125,7 @@
 			</div>
 			<div class="blank"></div>
 		</div>
-		<div class="footer">
+		<div class="phonelogin-footer">
 			<p>Copyright © 2011-2014 Yougou Technology Co., Ltd.</p>
 			<p>粤ICP备09070608号-4</p>
 			<p>增值电信业务经营许可证：粤 B2-20090203</p>
