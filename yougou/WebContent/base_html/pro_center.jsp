@@ -107,7 +107,7 @@
 								</ul>
 							</nav>
 						</div>
-						<span style="display:none" id="num">0</span>
+						<span id="num" class="badge">0</span>
 						<span class="glyphicon glyphicon-shopping-cart" id="end"></span> 购物车
 						<!--搜索框 logo-serach-->
 						<div class="col-md-2 logo-search">

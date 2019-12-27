@@ -1,19 +1,10 @@
-/*鍏ㄥ眬鏍峰紡*/
-/*璁剧疆杈硅窛*/
-*{margin: 0; padding: 0;}
-/*li鏍囩*/
-li{list-style: none;}
-/*a鏍囩涓嬪垝绾�*/
-a{text-decoration: none;}
-/*浣庣増鏈琁E*/
-img{border: none; vertical-align: bottom;}
 .header{
 	width: 100%;
 	height: 40px;
 	background: #333333;
 	line-height: 40px;
 	font-size: 12px;
-	font-family: "瀹嬩綋";
+	font-family: "宋体";
 }
 .contain{
 	width: 100%;
@@ -57,11 +48,11 @@ img{border: none; vertical-align: bottom;}
 	width: 100%;
 	height: 20px;
 }
-.footer{
+.phonelogin-footer{
 	width: 100%;
 	height: 20px;
-}  
-.footer>p{
+}
+.phonelogin-footer>p{
 	line-height: 20px;
 	text-align: center;
 	font-size: 12px;
@@ -143,6 +134,8 @@ img{border: none; vertical-align: bottom;}
 	height: 36px;
 	float: right;
 	border: none;
+	font-size: 12px;
+	outline: none;
 }
 .form-contain-blank{
 	width: 330px;
@@ -159,6 +152,7 @@ img{border: none; vertical-align: bottom;}
 	height: 36px;
 	float: right;
 	border: none;
+	outline: none;
 }
 .box2{
 	width: 60px;
@@ -234,35 +228,46 @@ img{border: none; vertical-align: bottom;}
 	padding: 9px 18px;
 }
 .wechet{
-	background: url(/yougou/img/wechet_03.png) no-repeat;
+	background: url(../img/wechet_03.png) no-repeat;
 }
 .zhifubao{
-	background: url(/yougou/img/zhifubao_03.png) no-repeat;
+	background: url(../img/zhifubao_03.png) no-repeat;
 }
 .qq{
-	background: url(/yougou/img/qq_03.png) no-repeat;
+	background: url(../img/qq_03.png) no-repeat;
 }
 .weibo{
-	background: url(/yougou/img/weibo2_03.png) no-repeat;
+	background: url(../img/weibo2_03.png) no-repeat;
 }
 .renren{
-	background: url(/yougou/img/renren_03.png) no-repeat;
+	background: url(../img/renren_03.png) no-repeat;
 }
 .form-contain-blank-yz{
-	width: 330px;
+	width: 300px;
 	height: 28px;
 	display: none;
 	font-size: 12px;
-	text-align: center;
 	line-height: 28px;
-	color: red;
+	color: #5D5D5D;
+	float: right;
 }
 .form-contain-blank1-yz{
 	width: 330px;
 	height: 28px;
 	display: none;
 	font-size: 12px;
-	text-align: center;
 	line-height: 28px;
-	color: red;
+	margin-left: 10px;
+	color: #5D5D5D;
+}
+.phonelogin-ts1,.phonelogin-ts2{
+	width: 30;
+	height: 28px;
+	margin-left: 10px;
+	float: left;
+	display: none;
+}
+.form-contain-bottom{
+	width: 330px;
+	height: 28px;
 }

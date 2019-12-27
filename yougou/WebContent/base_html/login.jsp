@@ -53,13 +53,13 @@
 					</li>
 					<!--收藏-->
 					<li id="collect-btn">
-						<a href="/yougou/base_html/collect.jsp">
+						<a href="/yougou/power_html/collect.jsp">
 							<span class="glyphicon glyphicon-heart"></span> 收藏
 						</a>
 					</li>
 					<!--购物袋-->
 					<li id="cart-btn">
-						<a href="/yougou/base_html/login_car.jsp">
+						<a href="/yougou/power_html/login_car.jsp">
 							<span class="glyphicon glyphicon-shopping-cart"></span> 购物车
 						</a>
 					</li>

@@ -45,21 +45,21 @@
 				<ul class="nav navbar-nav navbar-right">
 					<!--登录注册-->
 					<li>
-						<a href="/yougou/login.jsp" id="login-btn">登录</a>
+						<a href="/yougou/base_html/login.jsp" id="login-btn">登录</a>
 						<span id="username"></span>
 						<p>/</p>
-						<a href="/yougou/regist.jsp" id="register-btn">注册</a>
+						<a href="/yougou/base_html/regist.jsp" id="register-btn">注册</a>
 						<a href="javaScript:;" id="exit-btn">退出</a>
 					</li>
 					<!--收藏-->
 					<li id="collect-btn">
-						<a href="/yougou/login.jsp">
+						<a href="/yougou/power_html/login.jsp">
 							<span class="glyphicon glyphicon-heart"></span> 收藏
 						</a>
 					</li>
 					<!--购物袋-->
 					<li id="cart-btn">
-						<a href="/yougou/login.jsp">
+						<a href="/yougou/power_html/login.jsp">
 							<span class="glyphicon glyphicon-shopping-cart"></span> 购物车
 						</a>
 					</li>
@@ -81,10 +81,10 @@
 			<div class="contain-bottom">
 				<div class="form-top">
 					<div class="form-head">
-						<a href="/yougou/login.jsp"><div class="form-login">
+						<a href="/yougou/base_html/login.jsp"><div class="form-login">
 								<input type="submit" class="form-loginbtn" value="登录"/>
 						</div></a>
-						<a href="/yougou/regist.jsp"><div class="for-regist">
+						<a href="/yougou/base_html/regist.jsp"><div class="for-regist">
 								<input type="submit" class="form-registbtn" value="注册"/>
 						</div></a>
 					</div>
@@ -104,9 +104,9 @@
 						</div>
 						<div class="form-contain-checknum">
 							<div class="checknumber">
-								<div class="checknumber-left"><p>验证码</p></div>
+								<div class="checknumber-left">验证码</div>
 								<input class="checknumber-right" type="text"/>
-								<div class="checknumber-number">9852</div>
+								<div class="checknumber-number"><span id="tips" class="num">8888</span></div>
 							</div>
 							<div class="checknumber-check">
 								<img class="checknumber-ts" src="/yougou/img/ts_03.png"/>
@@ -167,7 +167,7 @@
 			</div>
 			<div class="blank"></div>
 		</div>
-		<div class="registfooter">
+		<div class="login-footer">
 			<p>Copyright © 2011-2014 Yougou Technology Co., Ltd.</p>
 			<p>粤ICP备09070608号-4</p>
 			<p>增值电信业务经营许可证：粤 B2-20090203</p>
