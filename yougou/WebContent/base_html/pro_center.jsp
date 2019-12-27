@@ -738,6 +738,5 @@
 </html>
 <script src="/yougou/js/jquery.min.js"></script>
 <script src="/yougou/js/bootstrap.js"></script>
-<script src="/yougou/js/jquery-1.8.3.min.js"></script>
 <script src="/yougou/js/base.js"></script>
 <script src="/yougou/js/pro_center.js"></script>
