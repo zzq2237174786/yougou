@@ -150,7 +150,7 @@
 								<span>
 								我的订单
 							</span></a></li>
-							<li class="current myfavor"><a href="collect.jsp"><span>
+							<li class="current myfavor"><a href=" collect.jsp"><span>
 								我的收藏
 							</span></a></li>
 							<li class="current mycomment"><a href="collect_comment.jsp"><span>
@@ -282,10 +282,10 @@
 					<div class="content col-lg-9" id="content">
 						<h2 class="content-title">我的订单</h2>
 						<div class="content-top">
-							<a class="current choosed" href="javascript:void(0)">
+							<a class="current zeronum" href="collect_order.jsp">
 								未发货
 								<span>
-									1
+									0
 								</span>
 							</a>
 							<a class="current zeronum" href="collect_deliveredGoods.jsp">
@@ -294,10 +294,10 @@
 									0
 								</span>
 							</a>
-							<a class="current zeronum" href="collect_singGoods.jsp">
+							<a class="current choosed" href="javascript:void(0)">
 								已收货
 								<span>
-									0
+									1
 								</span>
 							</a>
 						</div>
@@ -305,8 +305,8 @@
 						<div class="content-body">
 							<ul class="body-top">
 								<li class="top-goodsinfo">商品信息</li>
-								<li class="top-orderifo">订单信息</li>
-								<li class="top-ordertime">订单时间</li>
+								<li class="top-orderifo">订单人信息</li>
+								<li class="top-ordertime">订单信息</li>
 							</ul>
 							<!--无数据时-->
 							<ul class="body-middle">

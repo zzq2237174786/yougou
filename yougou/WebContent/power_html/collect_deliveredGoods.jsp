@@ -8,7 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="/yougou/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="/yougou/css/base.css"/>
 		<link rel="stylesheet" type="text/css" href="/yougou/css/collectBase.css"/>
-		<link rel="stylesheet" type="text/css" href="/yougou/css/collect_order.css"/>
+		<link rel="stylesheet" type="text/css" href="/yougou/css/collect_delivered.css"/>
 	</head>
 	<body>
 		<!--头部-->
@@ -150,7 +150,7 @@
 								<span>
 								我的订单
 							</span></a></li>
-							<li class="current myfavor"><a href="collect.jsp"><span>
+							<li class="current myfavor"><a href=" collect.jsp"><span>
 								我的收藏
 							</span></a></li>
 							<li class="current mycomment"><a href="collect_comment.jsp"><span>
@@ -282,13 +282,13 @@
 					<div class="content col-lg-9" id="content">
 						<h2 class="content-title">我的订单</h2>
 						<div class="content-top">
-							<a class="current choosed" href="javascript:void(0)">
+							<a class="current zeronum" href="collect_order.jsp">
 								未发货
 								<span>
 									1
 								</span>
 							</a>
-							<a class="current zeronum" href="collect_deliveredGoods.jsp">
+							<a class="current choosed" href="javascript:void(0)">
 								已发货
 								<span>
 									0
@@ -305,8 +305,9 @@
 						<div class="content-body">
 							<ul class="body-top">
 								<li class="top-goodsinfo">商品信息</li>
-								<li class="top-orderifo">订单信息</li>
-								<li class="top-ordertime">订单时间</li>
+								<li class="top-orderifo">订单人信息</li>
+								<li class="top-ordertime">订单信息</li>
+								<li class="top-orderconfirm">确认收货</li>
 							</ul>
 							<!--无数据时-->
 							<ul class="body-middle">
@@ -323,7 +324,7 @@
 									<div class="goods-list">
 										<div class="goods-info">
 											<p>
-												<a href="pro-center.jsp" target="-blank">adidas阿迪达斯2019中性EC ORG单肩包ED6877</a>
+												adidas阿迪达斯2019中性EC ORG单肩包ED6877
 											</p>
 											<p>
 												<span class="goods-color">
@@ -334,9 +335,9 @@
 													&nbsp;&nbsp;数量：
 													<em>1</em>
 													&nbsp;&nbsp;价格：
-													<em>1000</em>
-												
+													<em>1000000000000</em>
 												</span>
+												
 											</p>
 											<p>
 												
@@ -361,6 +362,9 @@
 										<div class="order-info">
 											订单时间：<p class="order-time">2020-1-1</p>
 											订单编号：<p class="order-num">1027583A</p>
+										</div>
+										<div class="order-confirm">
+											<input type="button" id="confirm-btn" value="确认收货" />
 										</div>
 									</div>
 								</li>
