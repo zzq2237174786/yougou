@@ -368,3 +368,9 @@ strong button{
 	background: black;
 	color: white;
 }
+#num{
+	display: none;
+	width: 20px;
+	height: 20px;
+	margin-left: 1000px;
+}
