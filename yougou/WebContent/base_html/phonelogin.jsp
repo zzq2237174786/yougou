@@ -47,21 +47,21 @@
 				<ul class="nav navbar-nav navbar-right">
 					<!--登录注册-->
 					<li>
-						<a href="/yougou/login.jsp" id="login-btn">登录</a>
+						<a href="/yougou/base_html/login.jsp" id="login-btn">登录</a>
 						<span id="username"></span>
 						<p>/</p>
-						<a href="/yougou/regist.jsp" id="register-btn">注册</a>
+						<a href="/yougou/base_html/regist.jsp" id="register-btn">注册</a>
 						<a href="javaScript:;" id="exit-btn">退出</a>
 					</li>
 					<!--收藏-->
 					<li id="collect-btn">
-						<a href="/yougou/login.jsp">
+						<a href="/yougou/power_html/login.jsp">
 							<span class="glyphicon glyphicon-heart"></span> 收藏
 						</a>
 					</li>
 					<!--购物袋-->
 					<li id="cart-btn">
-						<a href="/yougou/login.jsp">
+						<a href="/yougou/power_html/login.jsp">
 							<span class="glyphicon glyphicon-shopping-cart"></span> 购物车
 						</a>
 					</li>
@@ -82,10 +82,10 @@
 			<div class="contain-bottom">
 				<div class="form">
 					<div class="form-head">
-						<a href="/yougou/login.jsp"><div class="zhmmdl">
+						<a href="/yougou/base_html/login.jsp"><div class="zhmmdl">
 								<input typre="submit" class="zhmmdl-a" value="账号密码登录"/>
 						</div></a>
-						<a href="/yougou/phonelogin.jsp"><div class="sjhkjdl">
+						<a href="/yougou/base_html/phonelogin.jsp"><div class="sjhkjdl">
 								<input type="submit" class="sjhkjdl-a" value="手机号码登录"/>
 						</div></a>
 					</div>

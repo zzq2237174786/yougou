@@ -45,21 +45,21 @@
 				<ul class="nav navbar-nav navbar-right">
 					<!--登录注册-->
 					<li>
-						<a href="/yougou/login.jsp" id="login-btn">登录</a>
+						<a href="/yougou/base_html/login.jsp" id="login-btn">登录</a>
 						<span id="username"></span>
 						<p>/</p>
-						<a href="/yougou/regist.jsp" id="register-btn">注册</a>
+						<a href="/yougou/base_html/regist.jsp" id="register-btn">注册</a>
 						<a href="javaScript:;" id="exit-btn">退出</a>
 					</li>
 					<!--收藏-->
 					<li id="collect-btn">
-						<a href="/yougou/login.jsp">
+						<a href="/yougou/power_html/login.jsp">
 							<span class="glyphicon glyphicon-heart"></span> 收藏
 						</a>
 					</li>
 					<!--购物袋-->
 					<li id="cart-btn">
-						<a href="/yougou/login.jsp">
+						<a href="/yougou/power_html/login.jsp">
 							<span class="glyphicon glyphicon-shopping-cart"></span> 购物车
 						</a>
 					</li>
@@ -81,10 +81,10 @@
 			<div class="contain-bottom">
 				<div class="form-top">
 					<div class="form-head">
-						<a href="/yougou/login.jsp"><div class="form-login">
+						<a href="/yougou/base_html/login.jsp"><div class="form-login">
 								<input type="submit" class="form-loginbtn" value="登录"/>
 						</div></a>
-						<a href="/yougou/regist.jsp"><div class="for-regist">
+						<a href="/yougou/base_html/regist.jsp"><div class="for-regist">
 								<input type="submit" class="form-registbtn" value="注册"/>
 						</div></a>
 					</div>
