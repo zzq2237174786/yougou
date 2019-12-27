@@ -104,9 +104,9 @@
 						</div>
 						<div class="form-contain-checknum">
 							<div class="checknumber">
-								<div class="checknumber-left"><p>验证码</p></div>
+								<div class="checknumber-left">验证码</div>
 								<input class="checknumber-right" type="text"/>
-								<div class="checknumber-number">9852</div>
+								<div class="checknumber-number"><span id="tips" class="num">8888</span></div>
 							</div>
 							<div class="checknumber-check">
 								<img class="checknumber-ts" src="/yougou/img/ts_03.png"/>
@@ -167,7 +167,7 @@
 			</div>
 			<div class="blank"></div>
 		</div>
-		<div class="registfooter">
+		<div class="login-footer">
 			<p>Copyright © 2011-2014 Yougou Technology Co., Ltd.</p>
 			<p>粤ICP备09070608号-4</p>
 			<p>增值电信业务经营许可证：粤 B2-20090203</p>
