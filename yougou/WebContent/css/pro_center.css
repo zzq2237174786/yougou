@@ -365,12 +365,29 @@ strong button{
 	cursor: pointer;
 }
 #look{
-	background: black;
-	color: white;
+	color: gray;
+	font-size: 12px;
 }
 #num{
 	display: none;
 	width: 20px;
 	height: 20px;
 	margin-left: 1000px;
+}
+#location{
+	margin-left: 100px;
+}
+#position{
+	color: gray;
+}
+.minus,.cart-num,.add{
+	border: 1px solid gainsboro;
+	padding: 5px 10px;
+}
+.minus, .add{
+  cursor: pointer;
+  font-weight: bold;
+}
+.minus:hover, .add:hover:hover{
+  color:dodgerblue;
 }

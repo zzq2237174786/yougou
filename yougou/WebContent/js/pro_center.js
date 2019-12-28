@@ -393,4 +393,24 @@ function size(){
   	//再让当前点击的小圆点变色
   	aSpan[x].className='current';
   };*/
-  
+	//点击加
+	$('.add').click(function(){
+	  	//拿到元素中的number值进行++
+	  	var nowNum=parseInt($(this).siblings('.cart-num').html());
+	  	nowNum++;
+	  	//设置限购最大值
+	  	nowNum=nowNum>=10?10:nowNum;
+	  	//设置累加后的值
+	  	$(this).siblings('.cart-num').html(nowNum);
+	  });
+	  			
+	//点击减
+	$('.minus').click(function(){
+	  	//拿到元素中的number值进行++
+	  	var nowNum=parseInt($(this).siblings('.cart-num').html());
+	  	nowNum--;
+	  	//设置限购最大值
+	  	nowNum=nowNum<=1?1:nowNum;
+	  	//设置累加后的值
+	  	$(this).siblings('.cart-num').html(nowNum);
+	});

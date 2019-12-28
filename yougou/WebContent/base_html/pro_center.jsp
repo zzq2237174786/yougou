@@ -127,8 +127,8 @@
 
 		<!--导航路径  面包屑-->
 		<!--<div class="container"style="padding-top: 150px;margin-left: -20px;">-->
-		<ul class="breadcrumb">
-			<li>您当前位置：</li>
+		<ul class="breadcrumb" id="location">
+			<li id="position">您当前位置：</li>
 			<li>
 				<a href="">首页</a>
 			</li>
@@ -218,7 +218,7 @@
 												<button class=" btn btn-default" id="xx1">39</button>
 											</a>
 											<!--模态框-->
-											<span data-toggle="modal" data-target="#myModal" id="look">查看尺码表</span>
+											<span data-toggle="modal" data-target="#myModal" id="look"><img src="/yougou/img/rule.png"/>查看尺码表</span>
 											<!--只能作为body子集-->
 											<div class="modal fade" data-backdrop="static" id="myModal">
 												<!--窗口层-->
@@ -271,6 +271,12 @@
 
 											</div>
 
+										</p>
+										<p>&nbsp;数量：
+											<span class="minus">-</span>
+											<span class="cart-num">1</span>
+											<span class="add">+</span>
+											
 										</p>
 										<p id="star"></p>
 
