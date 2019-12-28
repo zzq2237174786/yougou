@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+	<action path="login" class="com.yougou.web.servlet.action.LoginAction" form="com.yougou.web.servlet.form.LoginForm">
+		<result name="show" path="main.jsp"></result>
+	</action>
+</actions>
