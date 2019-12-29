@@ -3,4 +3,6 @@
 	<action path="login" class="com.yougou.web.servlet.action.LoginAction" form="com.yougou.web.servlet.form.LoginForm">
 		<result name="show" path="main.jsp"></result>
 	</action>
+	
+	
 </actions>

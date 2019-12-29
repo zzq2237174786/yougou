@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<class name="com.yougou.pojo.Users" table="users">
+		<id name="usersNum" column="users_num"/>
+		<property name="usersPwd" column="users_pwd"/>
+		<property name="usersMSum" column="users_msum"/>
+		<property name="usersPTime" column="users_ptime"/>
+
+		<!-- 查询有没有 -->
+		<select sqlId="selectOne" parameterType="com.yougou.pojo.Users" resultType="com.yougou.pojo.Users">
+			select * from users where users_num = #{usersNum}
+		</select >
+		
+		<insert sqlId="insertOne" parameterType="com.yougou.pojo.Users">
+			insert into users(users_num,users_pwd,users_msum,users_ptime) values (#{usersNum},#{usersPwd},#{usersMSum},#{usersPTime})
+		</insert>
+		
+		<delete sqlId="deleteOne"  parameterType="com.yougou.pojo.Users">
+			delete from users where users_num = #{usersNum}
+		</delete>
+		
+		<update sqlId= "updateOne"  parameterType="com.yougou.pojo.Users">
+			update users set  users_msum = #{usersMSum} where users_num = #{usersNum}
+		</update>
+	</class>

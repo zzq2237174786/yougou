@@ -1,4 +1,4 @@
-package com.yougou.dto;
+package com.yougou.dto.lx;
 
 public class TestDemo {
 

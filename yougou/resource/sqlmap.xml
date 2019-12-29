@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<properties>		
+		<mappings>
+			<mapping path="com/yougou/pojo/mapping/users.xml"/>
+		</mappings>
+	</properties>
+	
