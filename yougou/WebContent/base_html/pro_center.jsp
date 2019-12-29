@@ -107,15 +107,15 @@
 								</ul>
 							</nav>
 						</div>
-						<span id="num" class="badge">0</span>
-						<span class="glyphicon glyphicon-shopping-cart" id="end"></span> 购物车
 						<!--搜索框 logo-serach-->
-						<div class="col-md-2 logo-search">
+						<div class="col-md-2 logo-search" style="margin-left: 900px;">
 							<input type="text" />
 							<a href=""><span></span></a>
 						</div>
+						<span id="num" class="badge">0</span>
+						<span class="glyphicon glyphicon-shopping-cart" id="end"></span> 购物车
 					</div>
-
+			
 					<!--导航条下的内容-->
 					<div class="nav-content" id="nav-content">
 						<!--分类下的内容-->

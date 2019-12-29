@@ -275,9 +275,9 @@ strong button{
 .close{
 	position: absolute;
 	right: 10px;
-	top: 10px;
+	top: -5px;
 	/*color: #fff;*/
-	font-size: 16px;
+	font-size: 36px;
 	/*z-index:100;*/
 	cursor: pointer;
 	color: white;
@@ -372,7 +372,8 @@ strong button{
 	display: none;
 	width: 20px;
 	height: 20px;
-	margin-left: 1000px;
+	margin-left: 1100px;
+	margin-top: 75px;
 }
 #location{
 	margin-left: 100px;
@@ -390,4 +391,8 @@ strong button{
 }
 .minus:hover, .add:hover:hover{
   color:dodgerblue;
+}
+#end{
+	margin-top: -50px;
+	margin-left: 1100px;
 }
