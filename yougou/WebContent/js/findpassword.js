@@ -78,7 +78,7 @@ $(function(){
   //下一步的点击事件
   $('.bootom-next').click(function(){
   	if(isPwd == true && isUser == true){
-  		window.location.href = 'findpassword-two.html'
+  		window.location.href = '/yougou/base_html/findpassword-two.jsp'
   	}else{
   		alert('账号或者验证码有误，请重新输入');
   	}
@@ -87,50 +87,3 @@ $(function(){
 });
 
 
-$(function(){
-  //用户名和密码做验证
-  $('.bootom-next').click(function(){
-    //拿到用户名和密码
-    var userVal = $('.user-input-phone').val();
-    var pwdVal = $('.check-inputnumber').val();
-    //验证
-    if(userVal == '' || pwdVal == ''){
-      alert('用户名和密码不能为空');
-      return;
-    };
-    //发起登录请求 
-    $.post(URL + 'api_user.php',{
-      status : 'login',
-      username : userVal,
-      password : pwdVal
-    }, function(re){
-      var obj = JSON.parse(re);
-      console.log(obj);
-      //验证
-      if(obj.code == 2002){
-        $('.user-input-phone').html('用户名不存在').css('color','#5D5D5D');
-        return;
-      };
-      if(obj.code == 1001){
-        alert('验证码有误');
-        return;
-      };
-      if(obj.code != 0){
-        console.log(obj.message);
-        return;
-      };
-      //成功登录  到底是跳转到首页还是其它商品详情？
-      //把用户名和token存到本地
-      localStorage.setItem('username', obj.data.username);
-      localStorage.setItem('token', obj.data.token);
-      //跳首页还是详情
-      if(goodsId){
-        location.href = 'product.jsp?goods_id='+goodsId;
-      }else{
-        location.href = '/yougou/base_html/findpassword-two.jsp';      
-      };
-
-    });
-    
-  });
-});
