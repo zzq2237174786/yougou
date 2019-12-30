@@ -59,11 +59,12 @@
 							</div>							
 							<p>促销互动</p>	
 						</li>
+						
 						<li>
 							<div class="">
 								<img src="/yougou/img/订单管理.png" />
 							</div>							
-							<a href="backstage_order.jsp"><p>订单管理</p>	</a>
+							<a href="backstage_order.jsp"><p>订单管理</p></a>
 						</li>
 						<li>
 							<div class="">

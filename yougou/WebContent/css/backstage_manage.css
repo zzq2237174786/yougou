@@ -1,3 +1,5 @@
+
+/*右侧主内容*/
 /*小斜角*/
 .menu{
 	position: relative;
@@ -9,38 +11,27 @@
 	padding-bottom: 0px;
 	position: absolute;
 	right: -25px;
-	top: 5px;
+	top: 275px;
 	transform: rotate(45deg);
 }
 /*查找*/
 .select{
-	background: #CCCCCC;;
+	background: #CCCCCC;
 	height: 100px;
 	border-bottom:3px solid #204D74;
-	margin-bottom: 10px;
-}
-.goods-min,.goods-max{
-	width: 80px;
-}
-.goodsStatus{
-	width: 80px;
+
 }
 .select li{
-	padding: 30px 20px;
+	padding: 30px 10px;
 	float: left;
+	
 }
-.select .goodsSelect{
-	padding: 30px 10px;
-}
-.select .goodsAdd{
-	padding: 30px 10px;
-}
-.goods-select{
+.on-select{
 	width: 55px;
+	
 }
-.goods-add{
-	width: 100px;
-}
+
+
 /*内容菜单*/
 .tab-top{
 	border: 1px solid #efefef;
@@ -48,16 +39,14 @@
 	background: #FCFCFC;
 	margin-bottom: 0px;
 }
+
 .tab-top li{
 	background: #FCFCFC;
 	height: 40px;
-	width: 155px;
+	width: 145px;
 	float: left;
 	line-height: 40px;
 	text-align: center;
-}
-.tab-top .top-goodsname{
-	width: 280px;
 }
 /*详细内容*/
 .tab-body{
@@ -65,20 +54,17 @@
 }
 
 .tab-body ul{
-	width: 930px;
 	display: inline-block;
+	width: 920px;
 	margin: 0px;
 	border-top: 1px solid #efefef;
 }
 .tab-body ul li{
 	height: 40px;
-	width: 155px;
+	width: 145px;
 	float: left;
 	line-height: 40px;
 	text-align: center;
-}
-.tab-body ul .goods-name{
-	width: 280px;
 }
 /*分页*/
 .type-page{
