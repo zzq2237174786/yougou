@@ -1,4 +1,4 @@
-package com.yougou.dao.basedao.impl;
+package com.yougou.dao.impl;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -19,7 +19,7 @@ import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.Element;
 
-import com.yougou.dao.basedao.BaseDao;
+import com.yougou.dao.BaseDao;
 import com.yougou.db.DBHelper;
 
 public class BaseDaoImpl implements BaseDao {

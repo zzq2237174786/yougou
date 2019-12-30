@@ -1,4 +1,4 @@
-package com.yougou.dao.basedao;
+package com.yougou.dao;
 
 import java.sql.Connection;
 import java.util.List;

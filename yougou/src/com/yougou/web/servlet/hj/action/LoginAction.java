@@ -1,4 +1,4 @@
-package com.yougou.web.servlet.action;
+package com.yougou.web.servlet.hj.action;
 
 import java.io.IOException;
 

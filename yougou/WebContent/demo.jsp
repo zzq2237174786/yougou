@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
-<%@page import="com.yougou.dao.basedao.impl.BaseDaoImpl"%>
-<%@page import="com.yougou.dao.basedao.BaseDao"%>
+<%@page import="com.yougou.dao.impl.BaseDaoImpl"%>
+<%@page import="com.yougou.dao.BaseDao"%>
 <%@page import="com.yougou.util.UsersPwdEncrypt"%>
 <%@page import="com.yougou.pojo.Users"%>
 <%@page import="com.yougou.db.DBHelper"%>

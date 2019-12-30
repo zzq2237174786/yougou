@@ -1,6 +1,7 @@
 package com.yougou.web.core;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -9,20 +10,33 @@ import javax.servlet.http.HttpServletResponse;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
 
+import jdk.nashorn.api.scripting.AbstractJSObject;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
 public class ActionForward {
 	private String path;
 	private boolean isRedirect;
+	private String data;
 	
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	public ActionForward(String path) {
 		this(path,false);
 	}
 	
 	public ActionForward(String path, boolean isRedirect) {
-		this.path=path;
-		this.isRedirect=isRedirect;
+		this.path = path;
+		this.isRedirect = isRedirect;
 	}
-	
-	
+
+			
 	public String getPath() {
 		return path;
 	}
@@ -42,10 +56,15 @@ public class ActionForward {
 		Document config = (Document)request.getSession().getServletContext().getAttribute("config");
 		Attribute attr = (Attribute)config.selectSingleNode("/actions/action[@path='"+uri+"']/result[@name='"+path+"']/@path");
 		path = attr.getValue();
-		if(isRedirect) {
-			response.sendRedirect(path);
+		if(data!=null) {
+			if(isRedirect) {
+				response.sendRedirect(path);
+			}else {
+				request.getRequestDispatcher(path).forward(request, response);
+			}
 		}else {
-			request.getRequestDispatcher(path).forward(request, response);
+			PrintWriter out = response.getWriter();
+			out.print(data);
 		}
 	}
 	 
