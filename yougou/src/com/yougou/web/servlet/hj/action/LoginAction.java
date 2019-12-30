@@ -16,26 +16,7 @@ public class LoginAction extends DispatcherAction{
 	public LoginAction() {
 		System.out.println("login出生了");
 	}
-	public ActionForward add(HttpServletRequest request, HttpServletResponse response ,ActionForm form) throws ServletException, IOException{
-		String first = request.getParameter("first");
-		String second = request.getParameter("second");
-		System.out.println(Integer.parseInt(first)+Integer.parseInt(second));
-		return new ActionForward("show" , true);
-	}
 	
-	public ActionForward div(HttpServletRequest request, HttpServletResponse response ,ActionForm form) throws ServletException, IOException{
-		String first = request.getParameter("first");
-		String second = request.getParameter("second");
-		System.out.println(Integer.parseInt(first)*Integer.parseInt(second));
-		return new ActionForward("show" , true);
-	}
-	
-	public ActionForward deMethod(HttpServletRequest request, HttpServletResponse response ,ActionForm form) throws ServletException, IOException{
-		String first = request.getParameter("first");
-		String second = request.getParameter("second");
-		System.out.println(Integer.parseInt(first)*Integer.parseInt(second));
-		return new ActionForward("show" , true);
-	}
 	
 	
 }
