@@ -1,4 +1,4 @@
-package com.yougou.web.servlet.form;
+package com.yougou.web.servlet.hj.form;
 
 import com.yougou.web.core.ActionForm;
 

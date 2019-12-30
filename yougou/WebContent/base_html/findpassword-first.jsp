@@ -6,7 +6,7 @@
 		<meta charset="utf-8" />
 		<title>找回密码</title>
 		<link rel="stylesheet" href="/yougou/css/bootstrap.css" />
-		<link rel="stylesheet" href="/yougou/css/findpassword.css" />
+		<link rel="stylesheet" href="/yougou/css/findpassword-first.css" />
 		<meta name="viewport" content="width=device-width , initial-scale=1" />
 		<link rel="stylesheet" href="/yougou/css/base.css" />
 	</head>
@@ -55,13 +55,13 @@
 					</li>
 					<!--收藏-->
 					<li id="collect-btn">
-						<a href="/yougou/base_html/collect.jsp">
+						<a href="/yougou/power_html/collect.jsp">
 							<span class="glyphicon glyphicon-heart"></span> 收藏
 						</a>
 					</li>
 					<!--购物袋-->
 					<li id="cart-btn">
-						<a href="/yougou/power_html/login_car.jsp">
+						<a href="/yougou/power_html/login-cart.jsp">
 							<span class="glyphicon glyphicon-shopping-cart"></span> 购物车
 						</a>
 					</li>
@@ -119,8 +119,7 @@
 		
 	</body>
 </html>
-<!--js-->
 <script src="/yougou/js/jquery.min.js"></script>
 <script src="/yougou/js/bootstrap.js"></script>
-<script src="/yougou/js/findpassword.js"></script>
+<script src="/yougou/js/findpassword-first.js"></script>
 <script src="/yougou/js/base.js"></script>
