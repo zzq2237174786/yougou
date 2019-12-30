@@ -125,9 +125,9 @@ $(function(){
       localStorage.setItem('token', obj.data.token);
       //跳首页还是详情
       if(goodsId){
-        location.href = 'product.html?goods_id='+goodsId;
+        location.href = 'product.jsp?goods_id='+goodsId;
       }else{
-        location.href = '/yougou/base_html/login.jsp';      
+        location.href = '/yougou/base_html/findpassword-two.jsp';      
       };
 
     });

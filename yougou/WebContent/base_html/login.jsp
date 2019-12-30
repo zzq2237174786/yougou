@@ -109,7 +109,7 @@
 							<div class="password-tssize"><img src="/yougou/img/ts_03.png"/></div>
 							<div class="password-size"><span class="password-msg">请输入密码</span></div>
 						</div>
-						<p class="form-contain-p"><a href="">忘记密码</a></p>
+						<p class="form-contain-p"><a href="/yougou/base_html/findpassword.jsp">忘记密码</a></p>
 						<div class="loginbtn">
 							<input type="submit" class="loginbtn1" value="点击登录" title="登录"/>
 						</div>
