@@ -1,0 +1,104 @@
+/*小斜角*/
+.menu{
+	position: relative;
+}
+.menu .current{
+	background: white;
+	width: 20px;
+	height: 20px;
+	padding-bottom: 0px;
+	position: absolute;
+	right: -25px;
+	top: 5px;
+	transform: rotate(45deg);
+}
+/*查找*/
+.select{
+	background: #CCCCCC;;
+	height: 100px;
+	border-bottom:3px solid #204D74;
+	margin-bottom: 10px;
+}
+.goods-min,.goods-max{
+	width: 80px;
+}
+.select li{
+	padding: 30px 20px;
+	float: left;
+}
+.goods-select{
+	width: 55px;
+	
+}
+.goods-add{
+	width: 100px;
+}
+/*内容菜单*/
+.tab-top{
+	border: 1px solid #efefef;
+	display: inline-block;
+	background: #FCFCFC;
+	margin-bottom: 0px;
+}
+.tab-top li{
+	background: #FCFCFC;
+	height: 40px;
+	width: 210px;
+	float: left;
+	line-height: 40px;
+	text-align: center;
+}
+.tab-top .top-goodsname{
+	width: 280px;
+}
+/*详细内容*/
+.tab-body{
+	border: 1px solid #efefef;
+}
+
+.tab-body ul{
+	display: inline-block;
+	margin: 0px;
+	border-bottom: 1px solid #efefef;
+}
+.tab-body ul li{
+	height: 40px;
+	width: 210px;
+	float: left;
+	line-height: 40px;
+	text-align: center;
+}
+.tab-body ul .goods-name{
+	width: 280px;
+}
+/*分页*/
+.type-page{
+	height: 110px;
+	padding: 40px 0px 30px 0px;
+}
+.pagination{
+	margin: 5px 10px 0px 0px;
+	float: right;
+}
+.pagination>a , .pagination>span{
+	height: 27px;
+	width: 27px;
+    line-height: 27px;
+    font-size: 14px;
+    color: #333;
+    padding: 0 6px;
+    min-width: 15px;
+    margin: 0 6px;
+    border-left: none;
+    text-align: center;
+    overflow: hidden;
+    float: left;
+    display: inline-block;
+}
+.pagination>.active{
+	background: #333;
+    color: #fff;
+}
+.pagination>.page-prev, .pagination>.page-next{
+	width:64px;
+}

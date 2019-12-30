@@ -1,0 +1,105 @@
+/*全局样式*/
+*{margin: 0px; padding: 0px;}
+img{ border: none; vertical-align: bottom;}
+li{list-style: none; }
+a{text-decoration: none; color: black;}
+a:hover{text-decoration: none;}
+hr{
+	margin: 0px;
+}
+/*头部导航栏*/
+.nav{
+	background: dimgrey;
+	width: 1140px;
+	
+	margin: auto;
+	border: 1px solid#FCFCFC;
+	color: #FCFCFC;
+}
+.navbar-header{
+	font-size: 30px;
+	font-weight: bold;
+	padding-left: 60px;
+	line-height: 60px;
+	text-align: center;
+}
+.navbar-header p{
+	margin-bottom: 0px;
+}
+
+.nowtime{
+	font-size: 20px;
+	font-weight: bold;
+	padding-left: 60px;
+	line-height: 60px;
+	text-align: center;
+	float: left;
+}
+.navbar-list{
+	float: right;
+	
+}
+.navbar-list li{
+	margin-right: 20px;
+	float: left;
+	width: 100px;
+	line-height: 60px;
+	text-align: center;
+}
+/*侧边栏*/
+.main-left{
+	background: dimgrey;
+	color: #fcfcfc;
+	height: 600px;
+	
+}
+.left-top{
+	height: 200px;
+}
+.picture, .left-info{
+	margin-top: 50px;
+	height: 80px;
+} 
+.picture img{
+	color: white;
+	margin-left: -10px;
+	width: 60px;
+	height: 60px;
+	border-radius:50% ;
+}
+.left-info p {
+	margin-top: 5px;
+	text-align: center;	
+}
+.menu a{
+	color: #FCFCFC;
+}
+.menu{
+	margin-left: 20px;
+}
+.menu li{
+	margin: 5px;
+	
+}
+.menu li div{
+	display: inline-block;
+}
+/*.menu span{
+	display: inline-block;
+}*/
+.menu p{
+	display: inline-block;
+	line-height: 30px;
+	
+}
+.menu img{
+	/*color: white;*/
+	line-height: 30px;
+	width: 20px;
+	display: inline-block;
+	/*background: white;*/
+	
+}
+.main-right{
+	padding: 0px;
+}
