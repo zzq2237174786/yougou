@@ -6,7 +6,7 @@
 		<meta charset="utf-8" />
 		<title>找回密码</title>
 		<link rel="stylesheet" href="/yougou/css/bootstrap.css" />
-		<link rel="stylesheet" href="/yougou/css/findpassword.css" />
+		<link rel="stylesheet" href="/yougou/css/findpassword-first.css" />
 		<meta name="viewport" content="width=device-width , initial-scale=1" />
 		<link rel="stylesheet" href="/yougou/css/base.css" />
 	</head>
@@ -121,5 +121,5 @@
 </html>
 <script src="/yougou/js/jquery.min.js"></script>
 <script src="/yougou/js/bootstrap.js"></script>
-<script src="/yougou/js/findpassword.js"></script>
+<script src="/yougou/js/findpassword-first.js"></script>
 <script src="/yougou/js/base.js"></script>
