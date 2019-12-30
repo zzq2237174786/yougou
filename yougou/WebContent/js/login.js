@@ -39,7 +39,7 @@ $(function(){
       if(goodsId){
         location.href = '/yougou/product.jsp?goods_id='+goodsId;
       }else{
-        location.href = '/yougou/index.jsp';      
+        location.href = '/yougou/base_html/index.jsp';      
       };
 
     });
