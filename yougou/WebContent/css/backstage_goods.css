@@ -22,13 +22,21 @@
 .goods-min,.goods-max{
 	width: 80px;
 }
+.goodsStatus{
+	width: 80px;
+}
 .select li{
 	padding: 30px 20px;
 	float: left;
 }
+.select .goodsSelect{
+	padding: 30px 10px;
+}
+.select .goodsAdd{
+	padding: 30px 10px;
+}
 .goods-select{
 	width: 55px;
-	
 }
 .goods-add{
 	width: 100px;
@@ -43,7 +51,7 @@
 .tab-top li{
 	background: #FCFCFC;
 	height: 40px;
-	width: 210px;
+	width: 155px;
 	float: left;
 	line-height: 40px;
 	text-align: center;
@@ -57,13 +65,14 @@
 }
 
 .tab-body ul{
+	width: 930px;
 	display: inline-block;
 	margin: 0px;
-	border-bottom: 1px solid #efefef;
+	border-top: 1px solid #efefef;
 }
 .tab-body ul li{
 	height: 40px;
-	width: 210px;
+	width: 155px;
 	float: left;
 	line-height: 40px;
 	text-align: center;
