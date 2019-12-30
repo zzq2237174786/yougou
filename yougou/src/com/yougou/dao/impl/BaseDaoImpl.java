@@ -88,13 +88,7 @@ public class BaseDaoImpl implements BaseDao {
 			}
 			list.add(obj);
 		}
-		if(list.size()>1) {
-			return list;
-		}else if(list.size() == 1) {
-			return list.get(0);
-		}else {
-			return null;
-		}
+		return list;
 	}
 
 	// 增加一个数据

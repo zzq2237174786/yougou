@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class OClassify implements Serializable{
 	private String ocId;
 	private String ocName;
-	private String oc_ename;
+	private String ocEName;
 	
 	public OClassify() {
 	}
@@ -26,11 +26,11 @@ public class OClassify implements Serializable{
 		this.ocName = ocName;
 	}
 
-	public String getOc_ename() {
-		return oc_ename;
+	public String getOcEName() {
+		return ocEName;
 	}
 
-	public void setOc_ename(String oc_ename) {
-		this.oc_ename = oc_ename;
-	}	
+	public void setOcEName(String ocEName) {
+		this.ocEName = ocEName;
+	}
 }

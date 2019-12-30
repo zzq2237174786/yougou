@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<class name="com.yougou.pojo.OClassify" table="oclassify">
+		<id name="ocId" column="oc_id"/>
+		<property name="ocName" column="oc_name"/>
+		<property name="ocEName" column="oc_ename"/>
+
+		<!-- 查询有没有 -->
+		<select sqlId="selectOne" parameterType="com.yougou.pojo.OClassify" resultType="com.yougou.pojo.OClassify">
+			select * from oclassify where oc_id = #{ocId}
+		</select >
+	
+	</class>

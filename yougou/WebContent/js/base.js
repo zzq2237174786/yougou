@@ -1,5 +1,5 @@
 //公共url前缀
-var URL = 'http://www.wjian.top/shop/';
+var URL =  'http://www.wjian.top/shop/';;
 
 //获取地址栏参数
 function getUrlVal(property) {
@@ -33,7 +33,7 @@ function checkLogin() {
 //请求商品分类
 $(function() {
 	//刷新就请求
-	$.get(URL + 'api_cat.php', function(result) {
+	$.get("/yougou/base.do?method=getNavClassify", function(result) {
 		var obj = JSON.parse(result);
 		//验证
 		if(obj.code != 0) {
@@ -47,77 +47,13 @@ $(function() {
 		var str2 = ` `;
 		for(var i = 0; i < listArr.length; i++) {
 			str1 += `
-    			<li><a href="/yougou/base_html/pro_type.jsp?cat_id=${listArr[i].cat_id}">${listArr[i].cat_name}</a></li>
+    			<li><a href="/yougou/base_html/pro_type.jsp?ocId=${listArr[i].ocId}">${listArr[i].ocName}</a></li>
     			`;
-			str2 += `
-    				<!--运动-->
-					<div>
-						<ul class="container">
-							<!--品牌-->
-							<li>
-								<a href="javaScript:;">品牌</a>
-								<!--品牌下的详情-->
-								<ul>
-									<li>
-										<a href="javaScript:;">缺货</a>
-									</li>
-									<li>
-										<a href="javaScript:;">缺货</a>
-									</li>
-									<li>
-										<a href="javaScript:;">缺货</a>
-									</li>
-									<li>
-										<a href="javaScript:;">缺货</a>
-									</li>
-									<li>
-										<a href="javaScript:;">缺货</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="javaScript:;">关键词</a>
-								<ul>
-									<li>
-										<a href="javaScript:;">缺货</a>
-									</li>
-									<li>
-										<a href="javaScript:;">缺货</a>
-									</li>
-									<li>
-										<a href="javaScript:;">缺货</a>
-									</li>
-									<li>
-										<a href="javaScript:;">缺货</a>
-									</li>
-									<li>
-										<a href="javaScript:;">缺货</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="javaScript:;">风格</a>
-								<ul>
-									<li>
-										<a href="javaScript:;">缺货</a>
-									</li>
-									<li>
-										<a href="javaScript:;">缺货</a>
-									</li>
-									<li>
-										<a href="javaScript:;">缺货</a>
-									</li>
-									<li>
-										<a href="javaScript:;">缺货</a>
-									</li>
-									<li>
-										<a href="javaScript:;">缺货</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-    			`;
+			var listArr2 = listArr.ocData;
+			//循环分类里面的二级分类
+			for(var i = 0; i < listArr.length; i++){
+				
+			}
 		};
 		//添加到页面
 		$('#nav-type').append(str1);

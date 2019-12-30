@@ -2,6 +2,9 @@
 	<properties>		
 		<mappings>
 			<mapping path="com/yougou/pojo/mapping/users.xml"/>
+			<mapping path="com/yougou/pojo/mapping/oclassify.xml"/>
+			<mapping path="com/yougou/pojo/mapping/tclassify.xml"/>
+			<mapping path="com/yougou/pojo/mapping/cclassify.xml"/>
 		</mappings>
 	</properties>
 	
