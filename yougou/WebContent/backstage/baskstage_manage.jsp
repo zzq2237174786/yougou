@@ -4,10 +4,10 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>商品管理</title>
+		<title>会员管理</title>
 		<link rel="stylesheet" type="text/css" href="/yougou/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="/yougou/css/backstage.css"/>
-		<link rel="stylesheet" type="text/css" href="/yougou/css/backstage_goods.css"/>
+		<link rel="stylesheet" type="text/css" href="/yougou/css/backstage_manage.css"/>
 	</head>
 	<body>
 		<!--头部-->
@@ -50,8 +50,7 @@
 							<div class="">
 								<img src="/yougou/img/商品管理.png" />
 							</div>
-							<p>商品管理</p>
-							<p class="current"></p>
+							<a href="backstage_goods.jsp"><p>商品管理</p></a>
 						</li>
 						<li>
 							<div class="">
@@ -63,7 +62,7 @@
 							<div class="">
 								<img src="/yougou/img/订单管理.png" />
 							</div>							
-							<a href="backstage_order.jsp"><p>订单管理</p>	</a>
+							<a href="backstage_order.jsp"><p>订单管理</p></a>
 						</li>
 						<li>
 							<div class="">
@@ -87,7 +86,8 @@
 							<div class="">
 								<img src="/yougou/img/账户信息.png" />
 							</div>							
-							<a href="baskstage_manage.jsp"><p>会员管理</p></a>	
+							<p>会员管理</p>
+							<p class="current"></p>
 						</li>
 						<li>
 							<div class="">
@@ -100,47 +100,58 @@
 				<!--右侧主内容-->
 				<div class="col-lg-10 main-right">
 					<!--查找-->
-					<div class="select">
-						<li>商品名称：<input type="text" class="goodsInfo" id="goodsInfo"/></li>
-						
+					<ul class="select">
+						<li>购买次数>=：<input type="text" class="buy-times" id="buy-times" /></li>
+						<li>购买流水>=：<input type="text" class="buy-water" id="buy-water" /></li>
+						<li>是否被禁用：<input type="text" class="buy-water" id="buy-water" /></li>
 						<li>
-							库存数：<input type="text" class="goods-min" id="goods-min" />
-						~<input type="text" class="goods-max" id="goods-max" />
+							<input type="button" class="on-select" id="on-select" value="查询" />
+							
 						</li>
-						<li>
-							商品状态：<input type="text" class="goodsStatus" id="goodsStatus"/>
-						</li>
-						
-						<li class="goodsSelect"><input type="button" class="goods-select" id="goods-select" value="查询" /></li>
-						<li class="goodsAdd"><input type="button" class="goods-add" id="goods-add" value="添加新商品" /></li>
-						
-						
-						
-					</div>
+					</ul>
 					<!--内容菜单-->
 					<ul class="tab-top col-lg-12">
-						<li class="top-goodsname">商品名称</li>
-						<li>商品尺码</li>
-						<li>商品存货</li>
-						<li>商品状态</li>
+						<li >会员编号</li>
+						<li >会员手机</li>
+						<li >注册时间</li>
+						<li >购买次数</li>
+						<li >购买流水</li>	
 						<li>操作</li>
 					</ul>
 					<!--详细内容-->
 					<div class="tab-body col-lg-12">						
-						<ul class="tab-detail"id="ulList">
-							<li class="goods-name">鞋子</li>
-							<li class="goods-size">37</li>
-							<li class="goods-stock">3</li>
-							<li class="goods-status">
-								<input class="btn btn-default btn-off" type="button" value="下架">
-								<input class="btn btn-default btn-on" type="button" value="上架">
+						<ul class="tab-detail">
+							<li class="member-id">yg000001</li>
+							<li class="member-tel">13888888888</li>
+							<li class="rigtime">2019-12-26</li>
+							<li class="buying-times">3</li>
+							<li class="buying-water">976</li>
+							<li class="member-operate">
+								<input class="btn btn-default btn-off" type="button" value="禁止">
+								<input class="btn btn-default btn-on" type="button" value="允许">
 							</li>
-							<li class="goods-true">
-								<input class="btn btn-default btn-true" type="button" value="确认">
-								
-							</li>					
 						</ul>
-						
+						<ul class="tab-detail">
+							<li class="member-id">yg000001</li>
+							<li class="member-tel">13888888888</li>
+							<li class="rigtime">2019-12-26</li>
+							<li class="buying-times">3</li>
+							<li class="buying-water">976</li>					
+						</ul>
+						<ul class="tab-detail">
+							<li class="member-id">yg000001</li>
+							<li class="member-tel">13888888888</li>
+							<li class="rigtime">2019-12-26</li>
+							<li class="buying-times">3</li>
+							<li class="buying-water">976</li>					
+						</ul>
+						<ul class="tab-detail">
+							<li class="member-id">yg000001</li>
+							<li class="member-tel">13888888888</li>
+							<li class="rigtime">2019-12-26</li>
+							<li class="buying-times">3</li>
+							<li class="buying-water">976</li>					
+						</ul>
 					</div>
 					
 					<!--分页-->
@@ -159,4 +170,3 @@
 </html>
 <script src="/yougou/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="/yougou/js/backstage_time.js" type="text/javascript" charset="utf-8"></script>
-
