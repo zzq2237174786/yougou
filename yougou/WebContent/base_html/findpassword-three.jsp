@@ -93,7 +93,7 @@
 						<div class="foot-bootom-checknum">
 							<div class="checknum">图片验证码：</div>
 							<div class="check-input"><input class="check-inputnumber" type="text" /></div>
-							<div id="checknumber" class="checknum-num">5462</div>
+							<canvas id="verifyCode" width="110px" height="35px"></canvas>
 							<div class="checknum-wz">看不清？换一张</div>
 						</div>
 						<div class="foot-bootom-user">

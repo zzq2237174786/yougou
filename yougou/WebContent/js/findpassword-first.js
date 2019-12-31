@@ -156,6 +156,7 @@ $(function(){
     //6-20位数字  定正则
     if(pwdVal != s){
     	alert('验证码错误，请重新输入！');
+    	refresh();
       	isPwd = false;
     }else{
       isPwd = true;
@@ -170,7 +171,7 @@ $(function(){
   //下一步的点击事件
   $('.bootom-next').click(function(){
   	if(isPwd == true && isUser == true){
-  		window.location.href = 'findpassword-two.html'
+  		window.location.href = 'findpassword-two.jsp'
   	}else{
   		alert('账号或者验证码有误，请重新输入');
   	}

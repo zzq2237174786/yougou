@@ -99,7 +99,7 @@
 						<div class="foot-bootom-checknum">
 							<div class="checknum">请输入验证码：</div>
 							<div class="check-input"><input class="check-inputnumber" type="text" /></div>
-							<canvas id="verifyCode" width="110px" height="35px" onclick="refresh()"></canvas>
+							<canvas id="verifyCode" width="110px" height="35px"></canvas>
 							<div class="checknum-wz">看不清？换一张</div>
 						</div>
 						<div class="foot-bootom-next">
