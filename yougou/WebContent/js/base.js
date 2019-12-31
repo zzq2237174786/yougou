@@ -41,19 +41,39 @@ $(function() {
 			return;
 		};
 		//OK的分类
+		console.log(obj);
 		var listArr = obj.data;
-		console.log(listArr);
+		var ccData;
+		var tcData;
 		var str1 = ` `;
 		var str2 = ` `;
 		for(var i = 0; i < listArr.length; i++) {
 			str1 += `
     			<li><a href="/yougou/base_html/pro_type.jsp?ocId=${listArr[i].ocId}">${listArr[i].ocName}</a></li>
     			`;
-			var listArr2 = listArr.ocData;
+			str2+=`<div> <ul class="container">`;
+			 tcData = listArr[i].ocData;
 			//循环分类里面的二级分类
-			for(var i = 0; i < listArr.length; i++){
-				
+			for(var j = 0; j < tcData.length; j++){
+				if(j>3){continue;}
+				str2+=`<li><a href="/yougou/base_html/pro_type.jsp?ocId=${listArr[i].ocId}&tcId=${tcData[j].tcId}">${tcData[j].tcName}</a><ul>`;
+				//拿到数据
+			 ccData = tcData[j].tcData;
+				//拿取三级分类
+				for(var k = 0; k < ccData.length; k++){
+					//拼接数据
+					str2+=`<li> <a href="/yougou/base_html/pro_type.jsp?ocId=${listArr[i].ocId}&tcId=${tcData[j].tcId}&ccId=${ccData[k].ccId}">${ccData[k].ccName}</a> </li>`;
+					if(k==7){
+						str2+="</ul><ul>"
+					}
+					if(k>14){
+						break;
+					}
+				}
+				str2+=`	</ul> </li>`;
 			}
+			str2+=`	</ul> </div>`;
+			console.log("进入");
 		};
 		//添加到页面
 		$('#nav-type').append(str1);

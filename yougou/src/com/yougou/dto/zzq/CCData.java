@@ -2,17 +2,18 @@ package com.yougou.dto.zzq;
 
 public class CCData {
 	private String ccName;
-	private String ccID;
+	private String ccId;
 	public String getCcName() {
 		return ccName;
 	}
 	public void setCcName(String ccName) {
 		this.ccName = ccName;
 	}
-	public String getCcID() {
-		return ccID;
+	public String getCcId() {
+		return ccId;
 	}
-	public void setCcID(String ccID) {
-		this.ccID = ccID;
-	}	
+	public void setCcId(String ccId) {
+		this.ccId = ccId;
+	}
+
 }

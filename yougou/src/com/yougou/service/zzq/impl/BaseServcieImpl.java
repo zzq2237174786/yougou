@@ -66,7 +66,7 @@ public class BaseServcieImpl implements BaseService{
 					for (CClassify rcc : listCC) {
 						//创建一个ccdata
 						CCData ccData = new CCData();
-						ccData.setCcID(rcc.getCcId());
+						ccData.setCcId(rcc.getCcId());
 						ccData.setCcName(rcc.getCcName());
 						listCCData.add(ccData);
 					}
