@@ -14,7 +14,7 @@ $(function(){
 
 	//默认验证码宽高
 	var verifyCodeWidth = 130;
-	var verifyCodeHeight = 40;
+	var verifyCodeHeight = 35;
 
 	//干扰线条数
 	var verifyCodeLine = 8;
@@ -23,9 +23,7 @@ $(function(){
 	var verifyCodeDot = 100;
 
 	/**
- 	* @description 生成随机整数
- 	* @param {Object} min 最小整数
- 	* @param {Object} max 最大整数
+ 	*生成随机整数
  	*/
 	function randomNum(min,max){
 		return parseInt(Math.random()*(max-min+1) + min);
@@ -33,8 +31,6 @@ $(function(){
 
 	/**
  	*  生成随机颜色
- 	* @param {Object} min 最小强度值
- 	* @param {Object} max 最大强度值
  	*/
 	function randomCol(min,max){
 		var r = randomNum(min,max);
@@ -109,7 +105,7 @@ $(function(){
   	var a = $('.check-inputnumber').val();
   	var b = $('.foot-phoneofnum').val();
   	if(a == s && b == '666'){
-  		window.location.href = '/yougou/login.jsp'
+  		window.location.href = '/yougou/base_html/login.jsp'
   	}else{
   		alert('账号或者验证码有误，请重新输入');
   	}
