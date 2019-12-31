@@ -21,6 +21,15 @@ public class Resolver {
 		}
 		return list;
 	}	
+	//}拆分
+	public static List<String> resolver1(String msg){
+		 List<String> list = new ArrayList<>();
+		String[] filedAll = msg.split("}");
+		for (int i = 0; i < filedAll.length; i++) {
+			list.add(filedAll[i]);
+		}
+		return list;
+	}	
 }
 
 
