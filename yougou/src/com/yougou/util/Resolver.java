@@ -35,7 +35,6 @@ public class Resolver {
 			String str = obj.getString("group"+(i+1));
 			list.add(str);
 		}
-		System.out.println(JSONArray.fromObject(list).toString());
 		return JSONArray.fromObject(list).toString();
 	}	
 	
