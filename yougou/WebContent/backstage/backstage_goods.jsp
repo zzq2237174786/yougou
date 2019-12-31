@@ -10,7 +10,6 @@
 		<link rel="stylesheet" type="text/css" href="/yougou/css/backstage_goods.css"/>
 	</head>
 	<body>
-		
 		<div class="modal fade" data-backdrop="static" id="myModal" >
 		  <div class="modal-dialog">
 		    <div class="modal-content">
@@ -79,21 +78,22 @@
 							<div class="">
 								<img src="/yougou/img/商品管理.png" />
 							</div>
-							<p>商品管理</p>
-							<p class="current"></p>
+							
+							<a href="backstage_stock.jsp"><p>商品库存</p></a>
+							
 						</li>
 						<li>
 							<div class="">
 								<img src="/yougou/img/我的卡券.png" />
 							</div>							
-							<p>促销互动</p>	
+							<p>商品管理</p>
+							<p class="current"></p>
 						</li>
-						
 						<li>
 							<div class="">
 								<img src="/yougou/img/订单管理.png" />
 							</div>							
-							<a href="backstage_order.jsp"><p>订单管理</p></a>
+							<a href="backstage_order.jsp"><p>订单管理</p>	</a>
 						</li>
 						<li>
 							<div class="">
@@ -134,7 +134,7 @@
 						<li>商品名称：<input type="text" class="goodsInfo" id="goodsInfo"/></li>
 						
 						<li>
-							库存数：<input type="text" class="goods-min" id="goods-min" />
+							商品价格：<input type="text" class="goods-min" id="goods-min" />
 						~<input type="text" class="goods-max" id="goods-max" />
 						</li>
 						<li>
@@ -142,7 +142,7 @@
 						</li>
 						
 						<li class="goodsSelect"><input type="button" class="goods-select" id="goods-select" value="查询" /></li>
-						<li class="goodsAdd"><input type="button" data-toggle="modal" data-target="#myModal" class="goods-add" id="goods-add" value="添加新商品" /></li>
+						<!--<li class="goodsAdd"><input type="button" data-toggle="modal" data-target="#myModal" class="goods-add " id="goods-add" value="添加新商品" /></li>-->
 						
 						
 						
@@ -150,8 +150,8 @@
 					<!--内容菜单-->
 					<ul class="tab-top col-lg-12">
 						<li class="top-goodsname">商品名称</li>
-						<li>商品尺码</li>
-						<li>商品存货</li>
+						<li>商品旧价</li>
+						<li>商品新价</li>
 						<li>商品状态</li>
 						<li>操作</li>
 					</ul>
@@ -190,3 +190,5 @@
 <script src="/yougou/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="/yougou/js/backstage_time.js" type="text/javascript" charset="utf-8"></script>
 <script src="/yougou/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+
+
