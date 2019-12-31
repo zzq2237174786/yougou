@@ -10,6 +10,35 @@
 		<link rel="stylesheet" type="text/css" href="/yougou/css/backstage_goods.css"/>
 	</head>
 	<body>
+		
+		<div class="modal fade" data-backdrop="static" id="myModal" >
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        
+		      </div>
+		      <div class="modal-body">
+		      		 <!--表单元素-->
+		        <div class="form-group">
+		           	<label>名称:</label>
+		           	<input type="text" class="form-control" />
+		        </div>
+		        <div class="form-group">
+	              	<label>尺码:</label>
+	              	<input type="text" class="form-control" />
+	            </div>
+	            <div class="form-group">
+	              	<label>数量:</label>
+	              	<input type="text" class="form-control" />
+	            </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		        <button type="button" class="btn btn-primary">提交</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
 		<!--头部-->
 		<header>
 			<!--导航栏-->
@@ -113,7 +142,7 @@
 						</li>
 						
 						<li class="goodsSelect"><input type="button" class="goods-select" id="goods-select" value="查询" /></li>
-						<li class="goodsAdd"><input type="button" class="goods-add" id="goods-add" value="添加新商品" /></li>
+						<li class="goodsAdd"><input type="button" data-toggle="modal" data-target="#myModal" class="goods-add" id="goods-add" value="添加新商品" /></li>
 						
 						
 						
@@ -160,4 +189,4 @@
 </html>
 <script src="/yougou/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="/yougou/js/backstage_time.js" type="text/javascript" charset="utf-8"></script>
-
+<script src="/yougou/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
