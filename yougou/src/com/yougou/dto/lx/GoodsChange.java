@@ -4,8 +4,8 @@ import java.util.List;
 
 public class GoodsChange {
 	private String goodsName;
-	private List<String> goodsImg;
-	private List<String> goodsCImg;
+	private String goodsImg;
+	private String goodsCImg;
 	private List<String> goodsSize;
 	private List<String> goodsDetails;
 	private String goodsBrand;
@@ -61,16 +61,16 @@ public class GoodsChange {
 	
 	
 
-	public List<String> getGoodsImg() {
+	public String getGoodsImg() {
 		return goodsImg;
 	}
-	public void setGoodsImg(List<String> goodsImg) {
+	public void setGoodsImg(String goodsImg) {
 		this.goodsImg = goodsImg;
 	}
-	public List<String> getGoodsCImg() {
+	public String getGoodsCImg() {
 		return goodsCImg;
 	}
-	public void setGoodsCImg(List<String> goodsCImg) {
+	public void setGoodsCImg(String goodsCImg) {
 		this.goodsCImg = goodsCImg;
 	}
 	public List<String> getGoodsSize() {

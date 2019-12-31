@@ -25,7 +25,7 @@ public class GoodsAction extends DispatcherAction {
 		String data = lx.getGoodsInfo(goods);
 		//成功..
 		ActionForward fa=new ActionForward();
-		data=JsonSuccess.success(data);
+		data=JsonSuccess.success(data);;
 		fa.setData(data);
 		return fa;
 	}

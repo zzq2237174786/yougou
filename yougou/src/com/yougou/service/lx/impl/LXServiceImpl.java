@@ -27,9 +27,9 @@ public class LXServiceImpl implements LXService {
 			List<GoodsBrand> allGoods = (List<GoodsBrand>)dao.selectMethod(good, conn, "selectOne");
 			 goods = allGoods.get(0);
 			change.setGoodsName(goods.getGoodsName());
-			change.setGoodsImg(Resolver.resolver1(goods.getGoodsImg()));
-			change.setGoodsCImg(Resolver.resolver1(goods.getGoodsCImg()));
-			change.setGoodsSize(Resolver.resolver1(goods.getGoodsSize()));
+			change.setGoodsImg(Resolver.resolverImg(goods.getGoodsImg()));
+			change.setGoodsCImg(goods.getGoodsCImg());
+			change.setGoodsSize(Resolver.resolver(goods.getGoodsSize()));
 			change.setGoodsDetails(Resolver.resolver(goods.getGoodsDetails()));
 			change.setGoodsBrand(goods.getGoodsBrand());
 			change.setGoodsCollect(goods.getGoodsCollect());
@@ -37,7 +37,7 @@ public class LXServiceImpl implements LXService {
 			change.setGoodsNewPrice(goods.getGoodsNewPrice());
 			change.setGoodsSales(goods.getGoodsSales());
 			change.setGoodsColor(goods.getGoodsColor());
-			change.setGoodsSizeSpec(goods.getGoodsSizeSpec());
+			change.setGoodsSizeSpec(Resolver.resolverSize(goods.getGoodsSizeSpec()));
 			change.setBrandName(goods.getBrandName());
 			change.setBrandLImg(goods.getBrandLImg());
 			change.setBrandSImg(goods.getBrandSImg());
