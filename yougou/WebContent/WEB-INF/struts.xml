@@ -6,6 +6,8 @@
 	<action path="base" class="com.yougou.web.servlet.zzq.action.BaseAction" >
 		<result name="show" path="main.jsp"></result>
 	</action>
+	<action path="goods" class="com.yougou.web.servlet.lx.action.GoodsAction"  form="com.yougou.web.servlet.lx.form.GoodsForm">
+	</action>
 	
 	
 	

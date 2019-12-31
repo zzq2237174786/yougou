@@ -5,6 +5,7 @@
 			<mapping path="com/yougou/pojo/mapping/oclassify.xml"/>
 			<mapping path="com/yougou/pojo/mapping/tclassify.xml"/>
 			<mapping path="com/yougou/pojo/mapping/cclassify.xml"/>
+			<mapping path="com/yougou/pojo/mapping/goods.xml"/>
 		</mappings>
 	</properties>
 	
