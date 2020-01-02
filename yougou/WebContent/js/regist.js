@@ -7,19 +7,111 @@ $(function(){
   var phonechecknumber = null;
   var checknumber = null;
   var phonenumber = null;
-  //验证码
-  var ret = 8888;
   
-  //打开页面刷新验证码
-  changeNum();
-  //验证码的更换
-  function changeNum(){
-  	for(var i=0;i<5;i++){
-			    var number = Math.round((Math.random() * 8999)+1000); //随机产生一个0~9之间的数字
-			    ret = number;//将随机产生的数字当作字符串的位置下标,在字符串s中取出该字符，并加入到ret中
-			  }
-    $('#tips').text(ret);
-  }
+  	//验证码字符
+	var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	var lower = "abcdefghijklmnopqrstuvwxyz";
+	var number = "0123456789"
+	var str = upper+lower+number;
+
+	//验证码最小和最大字体
+	var fontMinSize = 25;
+	var fontMaxSize = 35;
+
+	//验证码字符个数
+	var verifyCodeNum = 4;
+
+	//默认验证码宽高
+	var verifyCodeWidth = 120;
+	var verifyCodeHeight = 38;
+
+	//干扰线条数
+	var verifyCodeLine = 8;
+
+	//干扰点数
+	var verifyCodeDot = 100;
+
+	/**
+ 	* @description 生成随机整数
+ 	* @param {Object} min 最小整数
+ 	* @param {Object} max 最大整数
+ 	*/
+	function randomNum(min,max){
+		return parseInt(Math.random()*(max-min+1) + min);
+	}
+
+	/**
+ 	*  生成随机颜色
+ 	* @param {Object} min 最小强度值
+ 	* @param {Object} max 最大强度值
+ 	*/
+	function randomCol(min,max){
+		var r = randomNum(min,max);
+		var g = randomNum(min,max);
+		var b = randomNum(min,max);
+		return "rgb("+r+","+g+","+b+")";
+	}
+	var s = '';
+	//随机生成验证码
+	function randomStr(){
+		for(var i = 0;i < 4;i++){
+			var verifyChar = str[randomNum(0,str.length-1)];
+			var fontSize = randomNum(fontMinSize,fontMaxSize);
+			var angle = randomNum(-30,30);
+			verifyCodePic.font = fontSize + 'px consolas';
+			verifyCodePic.textBaseline = "top";
+			verifyCodePic.save();
+			verifyCodePic.fillStyle = randomCol(50,150);
+			verifyCodePic.translate(30*i+15,15);
+			verifyCodePic.rotate(angle*Math.PI/180);
+			verifyCodePic.fillText(verifyChar,-10,-5);
+			verifyCodePic.restore();
+			s+=verifyChar;
+		}
+	}
+	//随机产生干扰线,干扰线的颜色要浅一点
+	function randomLine(){
+		for(var i = 0;i < verifyCodeLine;i++){
+			verifyCodePic.beginPath();
+			verifyCodePic.moveTo(randomNum(0,verifyCodeWidth),randomNum(0,verifyCodeHeight));
+			verifyCodePic.lineTo(randomNum(0,verifyCodeWidth),randomNum(0,verifyCodeHeight));
+			verifyCodePic.strokeStyle=randomCol(50,230);
+			verifyCodePic.closePath();
+			verifyCodePic.stroke();
+		}
+	}
+
+	//随机产生干扰的小点
+	function randomDot(){
+		for(var i = 0;i < verifyCodeDot;i++){
+			verifyCodePic.beginPath();
+			verifyCodePic.arc(randomNum(0,verifyCodeWidth),randomNum(0,verifyCodeHeight),1,0,2*Math.PI);
+			verifyCodePic.closePath();
+			verifyCodePic.fillStyle=randomCol(50,200);
+			verifyCodePic.fill();
+		}
+	}
+
+	var verifyCode = document.getElementById("verifyCode");
+	var verifyCodePic = verifyCode.getContext("2d");
+	initVerifyCode();
+	//初始化验证码
+	function initVerifyCode(){
+		verifyCode.setAttribute("width",verifyCodeWidth);
+		verifyCode.setAttribute("height",verifyCodeHeight);
+		verifyCodePic.fillStyle = randomCol(180,255);
+		verifyCodePic.fillRect(0,0,verifyCodeWidth,verifyCodeHeight);
+		randomStr();
+		randomLine();
+		randomDot();
+	}
+	function refresh(){
+		initVerifyCode();
+	}
+//点击图片进行切换
+  $('.pic').click(function(){
+  	refresh();
+  });
   //手机号码获取焦点
   $('.phone-right').focus(function(){
     //提示显示
@@ -32,14 +124,10 @@ $(function(){
     $('.checknumber-check').show();
   });
   
-  $('.num').click(function(){
-  	changeNum();
-  });
-  
-  //短信验证码获取焦点
-  $('.newschecknumber-right').focus(function(){
+  //邮箱验证码获取焦点
+  $('.email-right').focus(function(){
     //提示显示
-    $('.newschecknumber-check').show();
+    $('.email-check').show();
   });
   
   //密码获取焦点
@@ -128,7 +216,7 @@ $(function(){
       return;
     };
     //6-20位数字  定正则
-    if(checknumber!=ret){
+    if(checknumber != s){
       $('.checknumber-check-text').html('验证码有误,请重新输入！').css('color', '#333333');
       isPwd = false;
     }else{
@@ -140,28 +228,30 @@ $(function(){
   
   
   
-  //短信验证码失去焦点
-  $('.newschecknumber-right').blur(function(){
+  //邮箱去焦点
+  $('.email-right').blur(function(){
     //拿到值
     phonechecknumber = $(this).val();
     //验证
-    if(userVal == ''){
-      $('.newschecknumber-check-text').html('短信验证码不能为空').css('color','#333333');
+    if(phonechecknumber == ''){
+      $('.email-check-text').html('邮箱验证码不能为空').css('color','#333333');
       //设置不能注册
       isUser = false;
       return;
     };
     //3-20位  定正则
-    var re = /^[0-9]{6}$/g;
+    var re = /^[a-zA-Z\d]+([-_\.][a-zA-Z\d]+)*@[a-zA-Z\d]+\.[a-zA-Z\d]{2,4}$/g;
     if(!re.test(phonechecknumber)){
-      $('.newschecknumber-check-text').html('格式错误,必须为6位数字').css('color', '#333333');
+      $('.email-check-text').html('格式错误,请重新输入').css('color', '#333333');
       //设置不能注册
       isUser = false;
     }else{
       //要发送请求查看后台数据库没有此注册过
       //这里接口有问题 
-      $('.newschecknumber-check-text').html('短信验证码格式正确').css('color', '#333333');
+      $('.email-check-text').hide();
       //设置能注册
+      $('.email-ts').hide();
+      $('.email-right-ts').show();
       isUser = true;
     };
   });
@@ -253,7 +343,7 @@ $(function(){
       alert('注册成功，2秒之后跳转登录页面');
       setTimeout(function(){
         //跳转到登录页面
-        window.location.href = '/yougou/login.jsp';
+        window.location.href = 'login.jsp';
       },2000);
     });
   });

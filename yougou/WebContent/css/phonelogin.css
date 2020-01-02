@@ -8,7 +8,7 @@
 }
 .contain{
 	width: 100%;
-	height: 642px;
+	height: 624px;
 	position: relative;
 }
 .contain-top{
@@ -270,4 +270,7 @@
 .form-contain-bottom{
 	width: 330px;
 	height: 28px;
+}
+.zhmmdl-a:hover{
+	cursor: pointer;
 }

@@ -1,3 +1,12 @@
+/*全局样式*/
+/*设置边距*/
+*{margin: 0; padding: 0;}
+/*li标签*/
+li{list-style: none;}
+/*a标签下划线*/
+a{text-decoration: none;}
+/*低版本IE*/
+img{border: none; vertical-align: bottom;}
 .header{
 	width: 100%;
 	height: 40px;
@@ -8,7 +17,7 @@
 }
 .contain{
 	width: 100%;
-	height: 642px;
+	height: 624px;
 	position: relative;
 }
 .contain-top{
@@ -61,8 +70,8 @@
 }
 .form-top{
 	width: 380px;
-	height: 530px;
-	margin: 12px 0 0;
+	height: 548px;
+	margin: 5px 0 0;
 	background: white;
 	position: absolute;
 	left: 70%;
@@ -107,11 +116,17 @@
 }
 .form-contain{
 	width: 348px;
-	height: 427px;
+	height: 466px;
 	margin: 0px 15px;
-	padding: 30px 0 0 10px;
+	padding: 10px 0 0 10px;
 }
 .form-contain-phone{
+	width: 338px;
+	height: 66px;
+	padding: 0 0 0 8px;
+	color: #666666;
+}
+.form-contain-email{
 	width: 338px;
 	height: 66px;
 	padding: 0 0 0 8px;
@@ -124,9 +139,8 @@
 	color: #666666;
 }
 .form-contain-email{
-	width: 338px;
+	width: 305px;
 	height: 66px;
-	padding: 0 0 0 8px;
 	color: #666666;
 
 }
@@ -179,17 +193,17 @@
 	border: none;
 	border-bottom: 1px #D5D5D5 solid;
 }
-.phone-check,.checknumber-check,.newschecknumber-check,.password-check,.repassword-check{
+.phone-check,.checknumber-check,.email-check,.emailnum-check,.password-check,.repassword-check{
 	margin: 4px 0 0;
 	padding: 0 0 0 25px;
 	font-size: 12px;
 	display: none;
 }
-.phone-ts,.checknumber-ts,.newschecknumber-ts,.password-ts,.repassword-ts{
+.phone-ts,.checknumber-ts,.emailnum-ts,.email-ts,.password-ts,.repassword-ts{
 	margin-bottom: 2px;
 }
 .checknumber{
-	width: 298px;
+	width: 320px;
 	height: 38px;
 	font-size: 12px;
 	text-align: center;
@@ -208,56 +222,9 @@
 	width: 128px;
 	height: 36px;
 	border: solid 1px #D5D5D5;
-	border-left: none;
-	outline: none;
-}
-.checknumber-number{
-	width: 90px;
-	height: 36px;
-	border: solid 1px #D5D5D5;
-	background: #D5D5D5;
-	color: #222222;
-	float: right;
-	font-size: 16px;
-	margin-left: 10px;
-}
-.newschecknumber{
-	width: 307px;
-	height: 38px;
-	font-size: 12px;
-	text-align: center;
-	line-height: 36px;
-	color: #000000;
-}
-.newschecknumber-left{
-	width: 68px;
-	height: 36px;
-	margin: 0 0 0 10px;
-	border: solid 1px #D5D5D5;
-	border-right: none;
 	float: left;
-}
-.newschecknumber-left>p{
-	margin-bottom: 0;
-}
-.newschecknumber-right{
-	width: 148px;
-	height: 36px;
-	border: solid 1px #D5D5D5;
 	border-left: none;
 	outline: none;
-}
-.newschecknumber-getnumber{
-	width: 70px;
-	height: 36px;
-	border: solid 1px #122B40;
-	background: #323232;
-	float: right;
-	margin-left: 10px;
-}
-.newschecknumber-getnumber>a{
-	color: white;
-	font-size: 12px;
 }
 .password{
 	width: 305px;
@@ -369,7 +336,7 @@
 	line-height: 40px;
 	outline: none;
 }
-.phone-right-ts,.password-right-ts,.repassword-right-ts{
+.phone-right-ts,.password-right-ts,.repassword-right-ts,.email-right-ts{
 	width: 18px;
 	height: 18px;
 	float: right;
@@ -391,12 +358,94 @@
 	text-align: center;
 	margin-right: 1px;
 }
-.checknumber-number>:hover{
+.pic{
+	float: right;
+	width: 120px;
+	height: 38px;
+}
+.pic:hover{
 	cursor: pointer;
 }
-.checknumber-number{
-	text-decoration: underline line-through overline ;
+.emailnum{
+	width: 307px;
+	height: 38px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 36px;
+	color: #000000;
 }
-.num{
-	font-family: "goudy stout";
+.emailnum-left{
+	width: 68px;
+	height: 36px;
+	margin: 0 0 0 10px;
+	border: solid 1px #D5D5D5;
+	border-right: none;
+	float: left;
+}
+.emailnum-left>p{
+	margin-bottom: 0;
+}
+.emailnum-right{
+	width: 148px;
+	height: 36px;
+	border: solid 1px #D5D5D5;
+	border-left: none;
+	outline: none;
+}
+.emailnum-getnumber{
+	width: 70px;
+	height: 36px;
+	border: solid 1px #122B40;
+	background: #323232;
+	color: white;
+	float: right;
+	margin-left: 10px;
+}
+.emailnum-getnumber:hover{
+	cursor: pointer;
+}
+.form-contain-emailnum{
+	width: 338px;
+	height: 66px;
+	padding: 0 0 0 8px;
+	color: #666666;
+
+}
+
+.email{
+	width: 305px;
+	height: 36px;
+}
+.email-left{
+	width: 60px;
+	height: 36px;
+	margin: 0 0 0 10px;
+	border: solid 1px #D5D5D5;
+	border-right: none;
+	float: left;
+	
+}
+.email-left>p{
+	font-size: 12px;
+	line-height: 36px;
+	text-align: center;
+	margin-bottom: 0px;
+	color: #000000;
+}
+.box4{
+	width: 235px;
+	height: 36px;
+	float: right;
+	border: solid 1px #D5D5D5;
+	border-left: none;
+	
+}
+.email-right{
+	width: 200px;
+	height: 35px;
+	float: left;
+	font-size: 12px;
+	outline: none;
+	border: none;
+	border-bottom: 1px #D5D5D5 solid;
 }

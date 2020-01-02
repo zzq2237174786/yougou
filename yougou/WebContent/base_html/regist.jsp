@@ -81,14 +81,15 @@
 			<div class="contain-bottom">
 				<div class="form-top">
 					<div class="form-head">
-						<a href="/yougou/base_html/login.jsp"><div class="form-login">
+						<a href="login.html"><div class="form-login">
 								<input type="submit" class="form-loginbtn" value="登录"/>
 						</div></a>
-						<a href="/yougou/base_html/regist.jsp"><div class="for-regist">
+						<a href="regist.html"><div class="for-regist">
 								<input type="submit" class="form-registbtn" value="注册"/>
 						</div></a>
 					</div>
 					<div class="form-contain">
+					<!--手机号的录入-->
 						<div class="form-contain-phone">
 							<div class="phone">
 								<div class="phone-left"><p>手机号</p></div>
@@ -102,28 +103,45 @@
 								<span class="phone-check-text">请输入手机号码</span>
 							</div>
 						</div>
+						<!--验证码，防止恶意登陆-->
 						<div class="form-contain-checknum">
 							<div class="checknumber">
 								<div class="checknumber-left">验证码</div>
 								<input class="checknumber-right" type="text"/>
-								<div class="checknumber-number"><span id="tips" class="num">8888</span></div>
+								<div class="pic" title="点击更新"><canvas id="verifyCode" ></canvas></div>
 							</div>
 							<div class="checknumber-check">
 								<img class="checknumber-ts" src="/yougou/img/ts_03.png"/>
 								<span class="checknumber-check-text">请输入验证码</span>
 							</div>
 						</div>
+						<!--邮箱账号的录入-->
 						<div class="form-contain-email">
-							<div class="newschecknumber">
-								<div class="newschecknumber-left"><p>短信验证码</p></div>
-								<input class="newschecknumber-right" type="text"/>
-								<div class="newschecknumber-getnumber"><a href="">获取验证码</a></div>
+							<div class="email">
+								<div class="email-left"><p>邮箱账号</p></div>
+								<div class="box4">
+									<input class="email-right" placeholder="请输入邮箱账号" type="text"/>
+									<img class="email-right-ts"  style="display: none;" src="/yougou/img/yes-ts_03.png" />
+								</div>
 							</div>
-							<div class="newschecknumber-check">
-								<img class="newschecknumber-ts" src="/yougou/img/ts_03.png"/>
-								<span class="newschecknumber-check-text">请输入短信验证码</span>
+							<div class="email-check">
+								<img class="email-ts" src="/yougou/img/ts_03.png"/>
+								<span class="email-check-text">请输入邮箱账号</span>
 							</div>
 						</div>
+						<!--邮箱验证码进行密码巡回-->
+						<div class="form-contain-emailnum">
+							<div class="emailnum">
+								<div class="emailnum-left"><p>邮箱验证码</p></div>
+								<input class="emailnum-right" type="text"/>
+								<div class="emailnum-getnumber">获取验证码</div>
+							</div>
+							<div class="emailnum-check">
+								<img class="emailnum-ts" src="/yougou/img/ts_03.png"/>
+								<span class="emailnum-check-text">请输入邮箱验证码</span>
+							</div>
+						</div>
+						<!--密码-->
 						<div class="form-contain-password">
 							<div class="password">
 								<div class="password-left"><p>密码</p></div>
@@ -142,6 +160,7 @@
 								</div>
 							</div>
 						</div>
+						<!--确认密码-->
 						<div class="form-contain-repassword">
 							<div class="repassword">
 								<div class="repassword-left"><p>确认密码</p></div>
@@ -155,6 +174,7 @@
 								<span class="repassword-check-text">请重复输入密码</span>
 							</div>
 						</div>
+						<!--协议-->
 						<div class="zhuce-xieyi">
 							<div class="zhuce-xieyi-left"><input type="checkbox" checked="checked" class="zhuce-chec"/></div>
 							<div class="zhuce-xieyi-right"><a href="">我已阅读并同意《优购会员注册协议》</a></div>
