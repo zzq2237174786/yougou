@@ -107,6 +107,7 @@ $(function(){
   	if(a == s && b == '666'){
   		window.location.href = '/yougou/base_html/login.jsp'
   	}else{
+  		refresh();
   		alert('账号或者验证码有误，请重新输入');
   	}
   });

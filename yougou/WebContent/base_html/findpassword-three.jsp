@@ -97,8 +97,8 @@
 							<div class="checknum-wz">看不清？换一张</div>
 						</div>
 						<div class="foot-bootom-user">
-							<div class="user-zhanghao">验证手机号：</div>
-							<div class="user-input">185****7265</div>
+							<div class="user-zhanghao">验证邮箱号：</div>
+							<div class="user-input">243331205@qq.com</div>
 							<div class="user-ts-btn"><button class="check-btn" type="submit">获取验证码</button></div>
 						</div>
 						<div class="foot-bootom-user">
@@ -117,7 +117,7 @@
 		<div class="findpassword-footer">
 			<div class="question">收不到验证短信吗？</div>
 			<div class="footer-que1">
-				<div><img src="/yougou/img/point.png" alt="" />　若当前号码已停用，请利用注册邮箱找回。</div>
+				<div><img src="/yougou/img/point.png" alt="" />　若当前邮箱已停用，请利用手机账号找回。</div>
 			</div>
 			<div class="footer-que1">
 				<div><img src="/yougou/img/point.png" alt="" />　请确认短信是否被拦截。</div>

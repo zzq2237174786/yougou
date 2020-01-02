@@ -97,9 +97,9 @@
 						<div class="foot-bootom-con">
 							<div class="con-top">
 								<input class="radiobtn" type="radio" />
-								<div>通过绑定手机号码找回</div>
+								<div>通过绑定的邮箱账号找回</div>
 							</div>
-							<div class="con-bottom">您的手机185****7265将收到验证码，通过绑定手机收到的验证码完成密码重置，本服务完全免费。</div>
+							<div class="con-bottom">您的邮箱243331205@qq.com将收到验证码，通过绑定邮箱收到的验证码完成密码重置，本服务完全免费。</div>
 						</div>
 						<div class="foot-bootom-next">
 							<div class="bootom-next">下一步</div>
@@ -113,7 +113,7 @@
 		<div class="findpassword-footer">
 			<div class="question">遇到问题吗？</div>
 			<div class="footer-que1">
-				<div><img src="/yougou/img/point.png" alt="" />　暂不支持邮箱找回：若已绑定手机号，可通过手机登陆或手机号验证找回密码；若未绑定手机号，请绑定手机号并完善信息，以获得更好的购物体验；</div>
+				<div><img src="/yougou/img/point.png" alt="" />　暂不支持手机号码找回：若已绑定邮箱号，可通过邮箱账号验证找回密码；若未绑定邮箱账号，请绑定邮箱账号并完善信息，以获得更好的购物体验；</div>
 			</div>
 			<div class="footer-que1">
 				<div><img src="/yougou/img/point.png" alt="" />　若当前号码已不用/丢失，或无法收到验证码？请确认是否被其他软件所拦截；</div>
