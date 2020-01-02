@@ -7,7 +7,6 @@
 		<title>订单管理</title>
 		<link rel="stylesheet" type="text/css" href="/yougou/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="/yougou/css/backstage.css"/>
-		
 		<link rel="stylesheet" type="text/css" href="/yougou/css/backstage_order.css"/>
 	</head>
 	<body>
@@ -51,14 +50,14 @@
 							<div class="">
 								<img src="/yougou/img/商品管理.png" />
 							</div>
-							<a href="backstage_goods.jsp"><p>商品管理</p></a>
+							<a href="backstage_stock.jsp"><p>商品库存</p></a>
 							
 						</li>
 						<li>
 							<div class="">
 								<img src="/yougou/img/我的卡券.png" />
 							</div>							
-							<p>促销互动</p>	
+							<a href="backstage_goods.jsp"><p>商品管理</p></a>	
 						</li>
 						<li>
 							<div class="">
@@ -89,7 +88,7 @@
 							<div class="">
 								<img src="/yougou/img/账户信息.png" />
 							</div>							
-							<a href="baskstage_manage.jsp"><p>账户管理</p></a>	
+							<a href="baskstage_manage.jsp"><p>会员管理</p></a>	
 						</li>
 						<li>
 							<div class="">
@@ -110,7 +109,17 @@
 							<!--<input type="button" class="off-select" id="off-select" value="取消" />-->
 						</li>
 					</ul>
-						
+					<div class="content-top">
+							<a class="current choosed" href="javascript:void(0)">
+								未发货订单
+							</a>
+							<a class="current zeronum" href="backstage_delivered.jsp">
+								已发货订单
+							</a>
+							<a class="current zeronum" href="backstage_sign.jsp">
+								已完成订单
+							</a>
+						</div>	
 						
 						
 						
@@ -172,7 +181,7 @@
 											订单时间：<p class="order-num">1027583A</p>
 										</div>
 										<div class="order-confirm">
-											<input type="button" id="confirm-btn" value="确认发货" />
+											<input type="button"  class="confirm-content" id="confirm-content" value="确认发货" />
 										</div>
 									</div>
 								</li>

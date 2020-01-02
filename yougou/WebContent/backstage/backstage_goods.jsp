@@ -1,5 +1,8 @@
+<%@page import="com.yougou.dto.zz.BackGoods"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,35 +12,53 @@
 		<link rel="stylesheet" type="text/css" href="/yougou/css/backstage.css"/>
 		<link rel="stylesheet" type="text/css" href="/yougou/css/backstage_goods.css"/>
 	</head>
+	<%--
+		List<BackGoods> list = (List<BackGoods>)request.getSession().getAttribute("bgList");
+		
+	--%>
 	<body>
-		<div class="modal fade" data-backdrop="static" id="myModal" >
-		  <div class="modal-dialog">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        
-		      </div>
-		      <div class="modal-body">
-		      		 <!--表单元素-->
-		        <div class="form-group">
-		           	<label>名称:</label>
-		           	<input type="text" class="form-control" />
-		        </div>
-		        <div class="form-group">
-	              	<label>尺码:</label>
-	              	<input type="text" class="form-control" />
-	            </div>
-	            <div class="form-group">
-	              	<label>数量:</label>
-	              	<input type="text" class="form-control" />
-	            </div>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-		        <button type="button" class="btn btn-primary">提交</button>
-		      </div>
-		    </div><!-- /.modal-content -->
-		  </div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
+		
+   		
+   		<table>
+   			<thead>
+   				<tr>
+   					<th>序号</th>
+   					<th>姓名</th>
+   					<th>性别</th>
+   					<th>成绩</th>
+   					<th>操作</th>
+   				</tr>
+   			</thead>
+   			<tbody>
+   				
+   				<c:forEach items="${bgList}" var="s" varStatus="i">
+   					
+   						<tr>
+   							<td>
+   								
+   								${s.goodsId }
+   							</td>
+   							<td>
+   								${s.goodsName }
+   								
+   							</td>
+   							<td>
+   								${s.goodsOldPrice }
+   								
+   							</td>
+   							<td>
+   								${s.goodsNewPrice  }
+   								
+   							</td>
+   							
+   						</tr>	
+   				</c:forEach>
+   			</tbody>
+   		</table>
+   
+		
+		
+		
 		<!--头部-->
 		<header>
 			<!--导航栏-->
@@ -68,7 +89,7 @@
 							<img src="/yougou/img/小乔.jpg"/>
 						</div>
 						<div class="left-info col-lg-7">
-							<p>xxx</p>
+							<p>管理员</p>
 							<p>欢迎登录</p>
 						</div>
 					</div>
@@ -166,7 +187,7 @@
 								<input class="btn btn-default btn-on" type="button" value="上架">
 							</li>
 							<li class="goods-true">
-								<input class="btn btn-default btn-true" type="button" value="确认">
+								<input class="btn btn-default btn-true" type="button" value="确认修改">
 								
 							</li>					
 						</ul>

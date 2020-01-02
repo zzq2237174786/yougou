@@ -22,8 +22,7 @@
     font-weight: bold;
 }
 .content-body{
-	/*height: 164px;*/
-	/*width: 802px;*/
+	
 	border: 1px solid #E3E3E3;
 }
 .content-top{
@@ -31,7 +30,7 @@
 	line-height: 35px;
 }
 .content-top>a{
-	/*width: 110px;*/
+	width: 110px;
 	display: inline-block;
 	border: 1px solid  #E3E3E3;
 	margin-right: 5px;
@@ -159,9 +158,9 @@
 	float: right;
 	margin-right: 5px;
 }
-.confirm-btn{
-	padding-top: 20px;
-	height: 30px;
+.order-confirm .confirm-content{
+	margin-top: 25px;
+	
 	
 }
 .addcart{
