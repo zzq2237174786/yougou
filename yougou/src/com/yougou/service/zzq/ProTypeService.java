@@ -11,4 +11,10 @@ public interface ProTypeService {
 	public String getTCProType(ProTypeData product);
 	//查询关于三级分类的数据
 	public String getCCProType(ProTypeData product);
+	
+	//下一页
+	public String nextBrandProType(ProTypeData product);
+	public String nextOCProType(ProTypeData product);
+	public String nextTCProType(ProTypeData product);
+	public String nextCCProType(ProTypeData product);
 }

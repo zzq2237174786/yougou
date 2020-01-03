@@ -177,13 +177,12 @@ $(function() {
 				var pageCurrent = event.getCurrent();
 				//做请求数据了吧
 				$.get('/yougou/proType.do', {
-					page: pageCurrent,
-					pagesize: 12,
+					'page': pageCurrent,
+					'pageSize': 12,
 					'ocId': ocId,
 					'tcId': tcId,
 					'ccId': ccId,
 					'goodsBrand':goodsBrand,
-					'pageSize':12,
 					'method':'nextGoodsType'
 				}, function(re) {
 					
@@ -195,11 +194,11 @@ $(function() {
 						str += `
      							<li>
 									<div class="imgbox">
-									<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}"><img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}" /><a/>
+									<a href="/yougou/base_html/pro_center.jsp?goodsId=${listArr[i].goodsId}"><img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goodsTImg}" /><a/>
 									</div>
 									<div class="product-info">
-										<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}">${listArr[i].goods_desc}</a>
-										<p><span class="price">￥${listArr[i].price}</span><span class="old-price">￥888</span></p>
+										<a href="/yougou/base_html/pro_center.jsp?goodsId=${listArr[i].goodsId}">${listArr[i].goodsName}</a>
+										<p><span class="price">￥${listArr[i].goodsNewPrice}</span><span class="old-price">￥${listArr[i].goodsOldPrice}</span></p>
 									</div>
 								</li>
           					`;
