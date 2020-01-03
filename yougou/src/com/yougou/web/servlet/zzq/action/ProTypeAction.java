@@ -47,7 +47,7 @@ public class ProTypeAction extends DispatcherAction{
 			data = pts.getTCProType(product);
 
 		}else {
-			product.setGoodsOC(ptf.getOcId());
+			 product.setGoodsOC(ptf.getOcId());
 			data = pts.getOCProType(product);
 		}
 			
