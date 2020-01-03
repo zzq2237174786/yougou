@@ -14,6 +14,9 @@
 	<action path="index" class="com.yougou.web.servlet.zzq.action.IndexAction"  form="com.yougou.web.servlet.zzq.form.IndexForm">
 	</action>
 	
+	<!-- 分类页面 -->
+	<action path="proType" class="com.yougou.web.servlet.zzq.action.ProTypeAction"  form="com.yougou.web.servlet.zzq.form.ProTypeForm">
+	</action>
 	
 	
 </actions>
