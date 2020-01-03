@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<class name="com.yougou.dto.zzq.ProTypeData" >
+		<id name="goodsId" column="goods_id"/>
+		<property name="goodsName" column="goods_name"/>
+		<property name="goodsBrand" column="goods_brand"/>
+		<property name="goodsOldPrice" column="goods_oldprice"/>
+		<property name="goodsNewPrice" column="goods_newprice"/>
+		<property name="goodsTImg" column="goods_timg"/>
+		<property name="goodsOC" column="goods_oc"/>
+		<property name="goodsTC" column="goods_tc"/>
+		<property name="goodsCC" column="goods_cc"/>		
+		<property name="goodsCount" column="goodsCount"/>
+		<property name="goodsStyle" column="goods_style"/>
+
+		<!-- 根据goods_id查询商品详细信息 -->
+		<select sqlId="selectBrand" parameterType="com.yougou.dto.zzq.ProTypeData" resultType="com.yougou.dto.zzq.ProTypeData">
+			select  goods_id , goods_name, goods_timg, goods_oldprice, goods_newprice from goods where goods_brand = #{goodsBrand} and goods_putaway = 1 limit #{page},#{pageSize}
+		</select >
+		
+		<!-- 查取商品总数 -->
+		<select sqlId="selectCount" parameterType="com.yougou.dto.zzq.ProTypeData" resultType="com.yougou.dto.zzq.ProTypeData">
+			select count(*) as goodsCount from goods where goods_brand= #{goodsBrand} and goods_putaway = 1
+		</select >
+			<select sqlId="selectCount1" parameterType="com.yougou.dto.zzq.ProTypeData" resultType="com.yougou.dto.zzq.ProTypeData">
+			select count(*) as goodsCount from goods where goods_oc= #{goodsOC} and goods_putaway = 1
+		</select >
+			<select sqlId="selectCount2" parameterType="com.yougou.dto.zzq.ProTypeData" resultType="com.yougou.dto.zzq.ProTypeData">
+			select count(*) as goodsCount from goods where goods_tc= #{goodsTC} and goods_putaway = 1
+		</select >
+			<select sqlId="selectCount3" parameterType="com.yougou.dto.zzq.ProTypeData" resultType="com.yougou.dto.zzq.ProTypeData">
+			select count(*) as goodsCount from goods where goods_cc= #{goodsCC} and goods_putaway = 1
+		</select >
+		
+		<!--  根据商品级别分类查 -->
+		<select sqlId="selectOC" parameterType="com.yougou.dto.zzq.ProTypeData" resultType="com.yougou.dto.zzq.ProTypeData">
+		select  goods_id , goods_name, goods_timg, goods_oldprice, goods_newprice from goods where goods_oc = #{goodsOC} and goods_putaway = 1 limit #{page},#{pageSize}
+		</select>
+		
+		<select sqlId="selectTC" parameterType="com.yougou.dto.zzq.ProTypeData" resultType="com.yougou.dto.zzq.ProTypeData">
+			select  goods_id , goods_name, goods_timg, goods_oldprice, goods_newprice from goods where goods_tc = #{goodsTC} and goods_putaway = 1 limit #{page},#{pageSize}
+		</select >
+		
+		<select sqlId="selectCC" parameterType="com.yougou.dto.zzq.ProTypeData" resultType="com.yougou.dto.zzq.ProTypeData">
+			select  goods_id , goods_name, goods_timg, goods_oldprice, goods_newprice from goods where goods_cc like  #{goodsCC} and goods_putaway = 1 limit #{page},#{pageSize}
+		</select >
+		
+	</class>

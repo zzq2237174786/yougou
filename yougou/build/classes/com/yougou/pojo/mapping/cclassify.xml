@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<class name="com.yougou.pojo.CClassify" table="cclassify">
+		<id name="ccId" column="cc_id"/>
+		<property name="ccName" column="cc_name"/>
+		<property name="ccParent" column="cc_parent"/>
+
+		<!-- 查询有没有 -->
+		<select sqlId="selectOne" parameterType="com.yougou.pojo.CClassify" resultType="com.yougou.pojo.CClassify">
+			select * from cclassify where cc_parent like #{ccParent} 
+		</select >
+	
+	</class>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<class name="com.yougou.pojo.Style" table="style">
+		<id name="styleId" column="style_id"/>
+		<property name="styleName" column="style_name"/>
+		<property name="styleParent" column="style_parent"/>
+
+		<!-- 查询有没有 -->
+		<select sqlId="selectTenData" parameterType="com.yougou.pojo.Style" resultType="com.yougou.pojo.Style">
+			select * from style limit 1,10
+		</select >
+	
+		<select sqlId="selectTwo" parameterType="com.yougou.pojo.Style" resultType="com.yougou.pojo.Style">
+			select * from style where style_parent like #{styleParent}
+		</select >
+	</class>

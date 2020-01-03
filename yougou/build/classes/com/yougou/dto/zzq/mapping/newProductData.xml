@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<class name="com.yougou.dto.zzq.NewProductData">
+		<property name="goodsTImg" column="goods_timg"/>
+		<property name="goodsName" column="goods_name"/>
+		<property name="goodsId" column="goods_id"/>
+		<property name="goodsNewPrice" column="goods_newprice"/>
+		<property name="brandSImg" column="brand_simg"/>
+		<property name="goodsOC" column="goods_oc"/>
+		<property name="goodsStyle" column="goods_style"/>
+		<property name="brandId" column="brand_id"/>
+		<property name="page" column="page"/>
+		<property name="pageSize" column="pageSize"/>
+
+		<!-- 查询有没有 -->
+		<select sqlId="selectOne" parameterType="com.yougou.dto.zzq.NewProductData" resultType="com.yougou.dto.zzq.NewProductData">
+			select goods_timg,goods_name,goods_style,goods_id,goods_newprice,brand_simg,brand_id from goods as g inner join brand as b on g.goods_brand = b.brand_id  where goods_oc = #{goodsOC} limit #{page},#{pageSize}
+		</select >
+	
+	</class>

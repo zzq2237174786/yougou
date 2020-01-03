@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<class name="com.yougou.dto.zzq.BigBrandData">
+		<property name="pageSize" column="pageSize"/>
+		<property name="page" column="page"/>
+		<property name="brandId" column="brand_id"/>
+		<property name="brandSImg" column="brand_simg"/>
+
+
+		<!-- 查询有没有 -->
+		<select sqlId="selectOne" parameterType="com.yougou.dto.zzq.BigBrandData" resultType="com.yougou.dto.zzq.BigBrandData">
+			select brand_id,brand_simg from brand limit #{page},#{pageSize}
+		</select >
+	
+	</class>

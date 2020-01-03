@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<class name="com.yougou.pojo.TClassify" table="tclassify">
+		<id name="tcId" column="tc_id"/>
+		<property name="tcName" column="tc_name"/>
+		<property name="tcParent" column="tc_parent"/>
+
+		<!-- 查询有没有 -->
+		<select sqlId="selectOne" parameterType="com.yougou.pojo.TClassify" resultType="com.yougou.pojo.TClassify">
+			select * from tclassify where tc_parent like #{tcParent}
+		</select >
+	
+	</class>

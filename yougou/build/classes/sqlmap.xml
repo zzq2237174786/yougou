@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<properties>		
+		<mappings>
+			<mapping path="com/yougou/pojo/mapping/users.xml"/>
+			<mapping path="com/yougou/pojo/mapping/oclassify.xml"/>
+			<mapping path="com/yougou/pojo/mapping/tclassify.xml"/>
+			<mapping path="com/yougou/pojo/mapping/cclassify.xml"/>
+			<mapping path="com/yougou/pojo/mapping/goods.xml"/>
+			<!-- 新品推荐商品 -->
+			<mapping path="com/yougou/dto/zzq/mapping/newProductData.xml"/>
+			<!-- 大牌推荐 -->
+			<mapping path="com/yougou/dto/zzq/mapping/bigBrandData.xml"/>
+			<!-- 品类分类 -->
+			<mapping path="com/yougou/dto/zzq/mapping/proTypeData.xml"/>
+			<!-- 商品分类 -->
+			<mapping path="com/yougou/pojo/mapping/style.xml"/>
+			<!-- 品牌 -->
+			<mapping path="com/yougou/pojo/mapping/brand.xml"/>
+		</mappings>
+	</properties>
+	

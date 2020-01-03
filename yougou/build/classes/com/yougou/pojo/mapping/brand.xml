@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<class name="com.yougou.pojo.Brand" table="brand">
+		<id name="brandId" column="brand_id"/>
+		<property name="brandName" column="brand_name"/>
+		<property name="brandInfo" column="brand_info"/>
+		<property name="brandLImg" column="brand_limg"/>
+		<property name="brandSImg" column="brand_simg"/>
+		<property name="brandParent" column="brand_parent"/>
+
+		<!-- 查询有没有 -->
+		<select sqlId="selectOne" parameterType="com.yougou.pojo.Brand" resultType="com.yougou.pojo.Brand">
+			select * from brand where brand_id = #{brandId}
+		</select >
+		
+			<select sqlId="selectTwo" parameterType="com.yougou.pojo.Brand" resultType="com.yougou.pojo.Brand">
+			select brand_name,brand_id from brand where brand_parent like #{brandParent}
+		</select >
+	
+	</class>
