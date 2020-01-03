@@ -1,5 +1,8 @@
 package com.yougou.test.hj;
 
-public class TestDemo {
+import com.yougou.web.servlet.hj.action.SendEmail;
 
+public class TestDemo {
+	SendEmail s = new SendEmail();
+	
 }

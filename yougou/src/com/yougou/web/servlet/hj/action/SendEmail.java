@@ -10,9 +10,9 @@ public class SendEmail {
             email.setCharset("UTF-8");
             email.addTo(emailaddress);// 收件地址
 
-            email.setFrom("yougoumarket@126.com", "yougou商城");//此处填邮箱地址和用户名,用户名可以任意填写
+            email.setFrom("243331205@qq.com", "yougou商城");//此处填邮箱地址和用户名,用户名可以任意填写
 
-            email.setAuthentication("bailianshopping@126.com", "Zsy971223");
+            email.setAuthentication("243331205@qq.com", "lkwozxzkjsxvcajg");
 
             email.setSubject("yougou");//此处填写邮件名，邮件名可任意填写
             email.setMsg("您的验证码是：123456");
