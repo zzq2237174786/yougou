@@ -40,9 +40,10 @@ $(function() {
 			console.log(obj.message);
 			return;
 		};
+
 		//OK的分类
-		console.log(obj);
 		var listArr = obj.data;
+		console.log(listArr);
 		var ccData;
 		var tcData;
 		var str1 = ` `;
@@ -55,7 +56,7 @@ $(function() {
 			 tcData = listArr[i].ocData;
 			//循环分类里面的二级分类
 			for(var j = 0; j < tcData.length; j++){
-				if(j>3){continue;}
+				if(j>3){break;}
 				str2+=`<li><a href="/yougou/base_html/pro_type.jsp?ocId=${listArr[i].ocId}&tcId=${tcData[j].tcId}">${tcData[j].tcName}</a><ul>`;
 				//拿到数据
 			 ccData = tcData[j].tcData;
@@ -73,7 +74,6 @@ $(function() {
 				str2+=`	</ul> </li>`;
 			}
 			str2+=`	</ul> </div>`;
-			console.log("进入");
 		};
 		//添加到页面
 		$('#nav-type').append(str1);

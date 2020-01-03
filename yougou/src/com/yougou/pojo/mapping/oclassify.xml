@@ -8,5 +8,7 @@
 		<select sqlId="selectOne" parameterType="com.yougou.pojo.OClassify" resultType="com.yougou.pojo.OClassify">
 			select * from oclassify where oc_id = #{ocId}
 		</select >
-	
+		<select sqlId="selectAll" parameterType="com.yougou.pojo.OClassify" resultType="com.yougou.pojo.OClassify">
+			select * from oclassify 
+		</select >
 	</class>

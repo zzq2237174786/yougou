@@ -6,7 +6,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.yougou.service.base.BaseServcie;
 import com.yougou.service.zzq.BaseService;
 import com.yougou.service.zzq.impl.BaseServcieImpl;
 import com.yougou.util.JsonSuccess;

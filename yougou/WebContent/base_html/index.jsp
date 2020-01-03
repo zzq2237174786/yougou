@@ -142,10 +142,10 @@
 					<h1>新品推荐</h1>
 					<ul>
 						<li>
-							<a href="javaScript:;" class="title-active">家居</a>
+							<a href="javaScript:;" class="title-active">男女鞋</a>
 						</li>
 						<li>
-							<a href="javaScript:;">数码</a>
+							<a href="javaScript:;">运动</a>
 						</li>
 					</ul>
 				</div>
@@ -186,10 +186,10 @@
 					<h1>今日主推大牌</h1>
 					<ul>
 						<li>
-							<a href="javaScript:;" class="title-active">文具</a>
+							<a href="javaScript:;" class="title-active">男女鞋</a>
 						</li>
 						<li>
-							<a href="javaScript:;">美食</a>
+							<a href="javaScript:;">运动</a>
 						</li>
 					</ul>
 				</div>

@@ -136,6 +136,11 @@
 							<a href="">分类</a>
 						</li>
 					</ul>
+					
+					<ul class="breadcrumb">
+						<li>品牌</li>
+						<li>百丽</li>
+					</ul>				
 				</div>
 
 				<!--分类导航和内容-->
@@ -143,66 +148,34 @@
 					<!--左边的导航栏-->
 					<div class="type-nav">
 						<!--搜索结果-->
-						<p>共>666个结果</p>
+						<p id="nav-count">共>666个结果</p>
 
 						<!--导航列表-->
-						<ul class="type-navlist">
+						<ul class="type-navlist" id="navlist">
 							<!--品牌-->
-							<li>
+							<li id="nav-brand">
 								<p class="type-navlist-type"><span></span>品牌</p>
 								<!--详情-->
 								<div class="type-navlist-content">
-									<ul>
-										<li>
-											<a href="">百丽</a>
-										</li>
-										<li>
-											<a href="">天意美</a>
-										</li>
-										<li>
-											<a href="">百思图</a>
-										</li>
-										<li>
-											<a href="">他他</a>
-										</li>
-										<li>
-											<a href="">森达</a>
-										</li>
-										<li>
-											<a href="">思加图</a>
-										</li>
-										<li>
-											<a href="">拔佳</a>
-										</li>
+									<ul id="nav-brand-ul">
 									</ul>
 								</div>
 							</li>
 							<!--种类-->
-							<li>
+							<li id="nav-type">
 								<p class="type-navlist-type"><span></span>品类</p>
 								<!--详情-->
 								<div class="type-navlist-content">
-									<ul>
-										<li>
-											<a href="">女士鞋子</a>
-										</li>
-										<li>
-											<a href="">女士单鞋</a>
-										</li>
-										<li>
-											<a href="">女士凉鞋</a>
-										</li>
+									<ul id="nav-type-ul">
+									</ul>
 								</div>
 							</li>
 							<!--价格-->
-							<li>
+							<li id="nav-price">
 								<p class="type-navlist-type"><span></span>价格</p>
 								<!--详情-->
 								<div class="type-navlist-content">
-									<ul>
-										<li>
-											<a href="">500-100</a>
-										</li>
+									<ul id="nav-price-ul">
 										<li>
 											<a href="">101-200</a>
 										</li>
@@ -224,136 +197,16 @@
 									</ul>
 								</div>
 							</li>
-							<!--尺码-->
-							<li>
-								<p class="type-navlist-type"><span></span>尺码</p>
-								<!--详情-->
-								<div class="type-navlist-content">
-									<ul>
-										<li>
-											<a href="">28cm</a>
-										</li>
-										<li>
-											<a href="">30</a>
-										</li>
-										<li>
-											<a href="">31</a>
-										</li>
-										<li>
-											<a href="">32</a>
-										</li>
-										<li>
-											<a href="">33</a>
-										</li>
-										<li>
-											<a href="">34</a>
-										</li>
-										<li>
-											<a href="">35</a>
-										</li>
-										<li>
-											<a href="">36</a>
-										</li>
-										<li>
-											<a href="">37</a>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<!--颜色-->
-							<li>
-								<p class="type-navlist-type"><span></span>颜色</p>
-								<!--详情-->
-								<div class="type-navlist-content">
-									<ul>
-										<li>
-											<a href="">黑色</a>
-										</li>
-										<li>
-											<a href="">白色</a>
-										</li>
-										<li>
-											<a href="">粉色</a>
-										</li>
-										<li>
-											<a href="">棕色</a>
-										</li>
-										<li>
-											<a href="">青色</a>
-										</li>
-										<li>
-											<a href="">黄色</a>
-										</li>
-										<li>
-											<a href="">拼色</a>
-										</li>
-										<li>
-											<a href="">七彩</a>
-										</li>
-										<li>
-											<a href="">紫色</a>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<!--款式季节-->
-							<li>
-								<p class="type-navlist-type"><span></span>季节款式</p>
-								<!--详情-->
-								<div class="type-navlist-content">
-									<ul>
-										<li>
-											<a href="">春季</a>
-										</li>
-										<li>
-											<a href="">夏季</a>
-										</li>
-										<li>
-											<a href="">秋季</a>
-										</li>
-										<li>
-											<a href="">冬季</a>
-										</li>
-									</ul>
-								</div>
-							</li>
 							<!--风格-->
-							<li>
+							<li id="nav-style">
 								<p class="type-navlist-type"><span></span>风格</p>
 								<!--详情-->
 								<div class="type-navlist-content">
-									<ul>
-										<li>
-											<a href="">休闲</a>
-										</li>
-										<li>
-											<a href="">简约</a>
-										</li>
-										<li>
-											<a href="">复古</a>
-										</li>
-										<li>
-											<a href="">欧美</a>
-										</li>
-										<li>
-											<a href="">帅气</a>
-										</li>
-										<li>
-											<a href="">潮流</a>
-										</li>
-										<li>
-											<a href="">英伦</a>
-										</li>
-										<li>
-											<a href="">性感</a>
-										</li>
-										<li>
-											<a href="">甜美</a>
-										</li>
+									<ul id="nav-style-ul">
 									</ul>
 								</div>
 							</li>
-							</ul>
+						</ul>
 					</div>
 
 					<!--右边的内容-->
@@ -410,12 +263,10 @@
 
 </html>
 <!--js-->
+
 <script type="text/javascript" src="/yougou/js/jquery.min.js"></script>
 <script type="text/javascript" src="/yougou/js/bootstrap.js"></script>
 <script type="text/javascript" src="/yougou/js/ydxLazyLoad.js"></script>
 <script type="text/javascript" src="/yougou/js/jquery.pagination.js"></script>
 <script src="/yougou/js/base.js"></script>
 <script src="/yougou/js/pro_type.js"></script>
-<script>
-
-</script>

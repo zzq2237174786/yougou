@@ -109,10 +109,13 @@ a.big-banner-active{
 	width: 210px;
 	height: 270px;
 	padding: 30px 0px;
+	background: white;
 }
+
 .new-product-img>a>img{
 	width: 210px;
 	height: 210px;
+	transform: scale(0.9);
 }
 .slideshow-banner>ul>li{
 	width: 230px;
@@ -193,7 +196,7 @@ a.big-banner-active{
 	display: none;
 	left: 0px;
 	top: 0px;
-	background: #000000;
+	background: #000;
 	opacity: 0.8;
 	position: absolute;
 	text-align: center;
@@ -313,7 +316,7 @@ a.big-banner-active{
 	display: none;
 	width: 231px;
 	height: 250px;
-	line-height: 50px;
+	padding-top:100px;
 	font-size: 16px;
 	color: white;
 	text-align: center;
@@ -357,6 +360,7 @@ a.big-banner-active{
 .fashion-content4 ul li img{
 	width: 231px;
 	height: 231px;
+	transform: scale(0.9);
 }
 .fashion-content4 ul li.fashion-content4-four{
 	margin-right: 0px;

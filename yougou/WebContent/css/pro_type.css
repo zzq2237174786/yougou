@@ -13,6 +13,14 @@
 	font-weight: bold;
 }
 
+.type .type-title>.breadcrumb{
+	margin-right:100px;
+}
+
+.type .type-title ul{
+	float:left;
+}
+
 /*分类的内容*/
 /*左边的导航列表*/
 .type .type-nav{

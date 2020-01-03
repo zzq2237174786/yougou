@@ -59,14 +59,13 @@ $(function() {
 
 	//新品推荐数据加载 参数 加载的样式 谁加载 分类
 	var NPloading = function(catId, module) {
-		//文具
-		$.get(URL + 'api_goods.php', {
-			'cat_id': catId,
-			'page': 1,
-			'pagesize': 12
+		$.get('/yougou/index.do', {
+			'page': 15,
+			'pageSize': 12,
+			'method':'getNewProduct',
+			'cartId': catId,
 		}, function(re) {
 			var obj = JSON.parse(re);
-			console.log(obj);
 			//验证数据
 			if(obj.code != 0) {
 				console.log(obj.message);
@@ -80,12 +79,12 @@ $(function() {
 				var str = `
        		<li>
 				<div class="new-product-img">
-						<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}"><img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}"/></a>
+						<a href="/yougou/base_html/pro_center.jsp?goodsId=${listArr[i].goodsId}"><img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goodsTImg}"/></a>
 				</div>
-				<img src="/yougou/img/new-product1-brand.png" />
-				<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}">${listArr[i].goods_name}</a>
+				<img src="${listArr[i].brandSImg}" />
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${listArr[i].goodsId}">${listArr[i].goodsStyle}</a>
 				<div class="price">
-					<span>￥${listArr[i].price}</span>
+					<span>￥ ${listArr[i].goodsNewPrice}</span>
 					<a href="javaScript:;" class="glyphicon glyphicon-heart my-collect"></a>
 				</div>
 			</li>
@@ -96,14 +95,14 @@ $(function() {
 			//把前四个商品在加载一遍 做障眼法
 			for(var j = 0; j < 4; j++) {
 				var str = `
-       		<li>
+			<li>
 				<div class="new-product-img">
-						<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[j].goods_id}"><img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[j].goods_thumb}"/></a>
+						<a href="/yougou/base_html/pro_center.jsp?goodsId=${listArr[j].goodsId}"><img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[j].goodsTImg}"/></a>
 				</div>
-				<img src="/yougou/img/new-product1-brand.png" />
-				<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[j].goods_id}">${listArr[j].goods_name}</a>
+				<img src="${listArr[j].brandSImg}" />
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${listArr[j].goodsId}">${listArr[j].goodsStyle}</a>
 				<div class="price">
-					<span>￥${listArr[j].price}</span>
+					<span>￥ ${listArr[j].goodsNewPrice}</span>
 					<a href="javaScript:;" class="glyphicon glyphicon-heart my-collect"></a>
 				</div>
 			</li>
@@ -120,21 +119,20 @@ $(function() {
 
 	//新品轮播图家居 加载数据
 	var module1 = $('#newSildeshow1');
-	var catId1 = 45;
+	var catId1 = 'oc1';
 	NPloading(catId1, module1);
 	//新品轮播图数码 加载数据
 	var module2 = $('#newSildeshow2');
-	var catId2 = 69;
+	var catId2 = 'oc3';
 	NPloading(catId2, module2);
 });
 
 //今日大牌数据加载
 $(function() {
-	//文具
-	$.get(URL + 'api_goods.php', {
-		'cat_id': 62,
-		'page': 1,
-		'pagesize': 3
+	$.get('/yougou/index.do', {
+		'page': 15,
+		'pageSize': 3,
+		'method':'getBigBrand',
 	}, function(re) {
 		var obj = JSON.parse(re);
 		//验证数据
@@ -144,13 +142,13 @@ $(function() {
 		};
 		//有商品，渲染到页面
 		var listArr = obj.data;
-
+		console.log(listArr);
 		//数据渲染
 		for(var i = 0; i < listArr.length; i++) {
 			var str = `
        			<li>
-					<img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}"/>
-					<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}"><img src="/yougou/img/whiteL-keds.png" /></a>
+					<img src="/yougou/img/loading.gif" lazyLoadSrc="/yougou/img/brand${i+1}.jpg"/>
+					<a href="/yougou/base_html/pro_type.jsp?goodsBrand=${listArr[i].brandId}"><img src="${listArr[i].brandSImg}" /></a>
 				</li>
      			 `;
 			//内部组装一个添加一个
@@ -159,11 +157,11 @@ $(function() {
 		$('#recommend-brands1 [lazyLoadSrc]').YdxLazyLoad();
 	});
 
-	//美食
-	$.get(URL + 'api_goods.php', {
-		'cat_id': 92,
-		'page': 1,
-		'pagesize': 3
+
+	$.get('/yougou/index.do', {
+		'page': 12,
+		'pageSize': 3,
+		'method':'getBigBrand',
 	}, function(re) {
 		var obj = JSON.parse(re);
 		//验证数据
@@ -178,8 +176,8 @@ $(function() {
 		for(var i = 0; i < listArr.length; i++) {
 			var str = `
        			<li>
-					<img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}"/>
-					<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}"><img src="/yougou/img/whiteL-keds.png" /></a>
+					<img src="/yougou/img/loading.gif" lazyLoadSrc="/yougou/img/brand${i+4}.jpg"/>
+					<a href="/yougou/base_html/pro_type.jsp?goodsBrand=${listArr[i].brandId}"><img src="${listArr[i].brandSImg}" /></a>
 				</li>
      			 `;
 			//内部组装一个添加一个
@@ -192,9 +190,11 @@ $(function() {
 //品牌潮流 
 $(function() {
 	//第二行
-	$.get(URL + 'api_goods.php', {
-		'page': 6,
-		'pagesize': 4
+	$.get('/yougou/index.do', {
+		'page':16,
+		'pageSize': 4,
+		'method':'getNewProduct',
+		'cartId': 'oc4',
 	}, function(re) {
 		var obj = JSON.parse(re);
 		//验证数据
@@ -211,15 +211,15 @@ $(function() {
 			if(i == listArr.length - 1) {
 				str = `
        					<li class="fashion-content2-four">
-							<img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}"/>
-							<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}">${listArr[i].goods_desc}</a>
+							<img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goodsTImg}"/>
+							<a href="/yougou/base_html/pro_center.jsp?goodsId=${listArr[i].goodsId}">${listArr[i].goodsStyle}</a>
 						</li>
      			    `;
 			} else {
 				str = `
        			<li>
-					<img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}"/>
-					<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}">${listArr[i].goods_desc}</a>
+					<img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goodsTImg}"/>
+					<a href="/yougou/base_html/pro_center.jsp?goodsId${listArr[i].goodsId}">${listArr[i].goodsStyle}</a>
 				</li>
      			 `;
 			}
@@ -230,9 +230,11 @@ $(function() {
 	});
 
 	//第四行
-	$.get(URL + 'api_goods.php', {
-		'page': 15,
-		'pagesize': 8
+	$.get('/yougou/index.do', {
+		'page': 50,
+		'pageSize': 8,
+		'method':'getNewProduct',
+		'cartId': 'oc6',
 	}, function(re) {
 		var obj = JSON.parse(re);
 		//验证数据
@@ -249,20 +251,20 @@ $(function() {
 			if(i == 3 || i == 7) {
 				str = `
        					<li class="fashion-content4-four">
-								<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}">
-								<img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}"/>
-								<h3>${listArr[i].goods_name}</h3>
-									<p>Seanker</p>
+								<a href="/yougou/base_html/pro_center.jsp?goodsId=${listArr[i].goodId}">
+								<img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goodsTImg}"/>
+								<h3>${listArr[i].goodsName}</h3>
+									<p>${listArr[i].brandId}</p>
 								</a>
 							</li>
      			    `;
 			} else {
 				str = `
        			<li>
-								<a href="/yougou/base_html/pro_center.jsp?goods_id=${listArr[i].goods_id}">
-								<img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goods_thumb}"/>
-								<h3>${listArr[i].goods_name}</h3>
-									<p>Seanker</p>
+								<a href="/yougou/base_html/pro_center.jsp?goodsId=${listArr[i].goodsId}">
+								<img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goodsTImg}"/>
+								<h3>${listArr[i].goodsName}</h3>
+									<p>${listArr[i].brandId}</p>
 								</a>
 							</li>
      			 `;

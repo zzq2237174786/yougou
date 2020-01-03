@@ -85,7 +85,4 @@ public class BaseServcieImpl implements BaseService{
 		JSONArray jsonData = JSONArray.fromObject(listOCData);
 		return jsonData.toString();
 	}
-
-
-
 }
