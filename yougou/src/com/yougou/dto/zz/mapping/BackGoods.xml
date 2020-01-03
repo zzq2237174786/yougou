@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="com.yougou.dto.zz.BackGoods">
+		
+		<property name="goodsId" column="goods_id"/>
+		<property name="goodsName" column="goods_name"/>
+		<property name="goodsOldPrice" column="goods_oldprice"/>
+		<property name="goodsNewPrice" column="goods_newprice"/>
+		<property name="goodsPutaway" column="goods_putaway"/>
+
+		<!-- 查询有没有 -->
+		<select sqlId="selectOne" parameterType="com.yougou.dto.zz.BackGoods" resultType="com.yougou.dto.zz.BackGoods">
+			select goods_id,goods_name,goods_oldprice,goods_newprice,goods_putaway from goods
+		</select >
+	
+	</class>
