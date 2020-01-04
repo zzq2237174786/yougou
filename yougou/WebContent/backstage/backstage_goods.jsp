@@ -14,47 +14,12 @@
 	</head>
 	<%--
 		List<BackGoods> list = (List<BackGoods>)request.getSession().getAttribute("bgList");
-		
+		System.out.println(list);
 	--%>
 	<body>
 		
    		
-   		<table>
-   			<thead>
-   				<tr>
-   					<th>序号</th>
-   					<th>姓名</th>
-   					<th>性别</th>
-   					<th>成绩</th>
-   					<th>操作</th>
-   				</tr>
-   			</thead>
-   			<tbody>
-   				
-   				<c:forEach items="${bgList}" var="s" varStatus="i">
-   					
-   						<tr>
-   							<td>
-   								
-   								${s.goodsId }
-   							</td>
-   							<td>
-   								${s.goodsName }
-   								
-   							</td>
-   							<td>
-   								${s.goodsOldPrice }
-   								
-   							</td>
-   							<td>
-   								${s.goodsNewPrice  }
-   								
-   							</td>
-   							
-   						</tr>	
-   				</c:forEach>
-   			</tbody>
-   		</table>
+   		
    
 		
 		
@@ -114,7 +79,7 @@
 							<div class="">
 								<img src="/yougou/img/订单管理.png" />
 							</div>							
-							<a href="backstage_order.jsp"><p>订单管理</p>	</a>
+							<a href="backorder.do?method=getOrder"><p>订单管理</p>	</a>
 						</li>
 						<li>
 							<div class="">

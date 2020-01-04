@@ -8,7 +8,7 @@ import com.yougou.dao.impl.BaseDaoImpl;
 import com.yougou.db.DBHelper;
 import com.yougou.dto.zz.BackGoods;
 import com.yougou.service.zz.BackGoodsService;
-import net.sf.json.JSONArray;
+
 
 public class BackGoodsServiceImpl implements BackGoodsService {
 	private Logger log = Logger.getLogger(BackGoodsServiceImpl.class);

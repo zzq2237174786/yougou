@@ -20,6 +20,7 @@
 			<mapping path="com/yougou/dto/zz/mapping/backGoods.xml"/>
 			<!-- 订单 -->
 			<mapping path="com/yougou/dto/zz/mapping/order.xml"/>
+			
 		</mappings>
 	</properties>
 	

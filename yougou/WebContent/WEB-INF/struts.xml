@@ -22,5 +22,10 @@
 	<action path="backlogin" class="com.yougou.web.servlet.zz.action.BackGoodsAction"  form="com.yougou.web.servlet.zz.form.BackGoodsForm">
 			<result name="index" path="/backstage/backstage_goods.jsp"></result>
 	</action>
-
+	
+	<!-- 后台订单 -->
+	<action path="backorder" class="com.yougou.web.servlet.zz.action.OrderAction"  form="com.yougou.web.servlet.zz.form.OrderForm">
+			<result name="unorder" path="/backstage/backstage_order.jsp"></result>
+	</action>
+	
 </actions>
