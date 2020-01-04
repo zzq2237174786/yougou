@@ -108,7 +108,7 @@
 							</nav>
 						</div>
 						<!--搜索框 logo-serach-->
-						<div class="col-md-2 logo-search" style="margin-left: 900px;">
+						<div class="col-md-2 logo-search">
 							<input type="text" />
 							<a href=""><span></span></a>
 						</div>
@@ -184,6 +184,18 @@
 								<img class="big-img" src="img/pro01.png" />
 						</div>-->
 				</div>
+				
+				<div class="tc">
+				<div class="lineSize">
+				<!--<span class="close">X</span>-->
+				<h3 class="con">尺码对照表<span class="close1">X</span></h3>
+				<a href="javaScript:;" id="goodsSizeSpec">
+												
+				</a>
+				<!-- <button class="btn-default" id="sure">确定</button> -->
+				</div>
+				<!--<div class="bk"></div>-->
+				</div>
 
 				<div class="col-md-6">
 					<div class="media" id="pro-right">
@@ -194,82 +206,27 @@
 							<p class="detail9"></p>
 
 							<h3 class="detail3"></h3>
-							<p class="detail4"> ¥ 1,799 </p>
+							<p class="detail4"></p>
 							<div class="container detail5"></div>
 							<!--<div class="row">-->
 							<div class="col-md-6">
 								<div class="media">
 									<div class="media-body detail6">
 										<p>颜色：
-											<a href="">
-												<img data-toggle="tooltip" data-placement="left" title="颜色：黑色" src="/yougou/img/small.jpg" id="cart" />
-												<img data-toggle="tooltip" data-placement="left" title="颜色：灰色" src="/yougou/img/small.jpg">
-												<img data-toggle="tooltip" data-placement="left" title="颜色：灰蓝" src="/yougou/img/small.jpg">
+											<a href="" id="goodsColor">
+											
+												
 											</a>
 
 										</p>
-										<p class="detail7">尺码：
-											<a href="javaScript:;">
-												<button class=" btn btn-default" id="xx1">34</button>
-												<button class=" btn btn-default" id="xx1">35</button>
-												<button class=" btn btn-default" id="xx1">36</button>
-												<button class=" btn btn-default" id="xx1">37</button>
-												<button class=" btn btn-default" id="xx1">38</button>
-												<button class=" btn btn-default" id="xx1">39</button>
+										<span id="single">尺码：</span>
+										<p class="detail7">
+											<a href="javaScript:;" id="goodsSize">
+												
 											</a>
 											<!--模态框-->
-											<span data-toggle="modal" data-target="#myModal" id="look"><img src="/yougou/img/rule.png"/>查看尺码表</span>
-											<!--只能作为body子集-->
-											<div class="modal fade" data-backdrop="static" id="myModal">
-												<!--窗口层-->
-												<div class="modal-dialog">
-													<!--内容层-->
-													<div class="modal-content">
-														<!--分头部，身体，底部-->
-														<div class="model-header">
-															<h3 class="modal-title text-primary">尺码对照表<span class="close" data-dismiss="modal">&times;</span></h3>
-														</div>
-														<div class="modal-body">
-															<!--表格-->
-															<table class=" table text-center">
-																<tr class="text-center">
-																	<th style="line-height: 100px;" class="text-center" colspan="11">女鞋尺码表</th>
-																</tr>
-																<tr>
-																	<td style="line-height: 100px;">法国码</td>
-																	<td style="line-height: 100px;">32</td>
-																	<td style="line-height: 100px;">33</td>
-																	<td style="line-height: 100px;">34</td>
-																	<td style="line-height: 100px;">35</td>
-																	<td style="line-height: 100px;">36</td>
-																	<td style="line-height: 100px;">37</td>
-																	<td style="line-height: 100px;">38</td>
-																	<td style="line-height: 100px;">39</td>
-																	<td style="line-height: 100px;">40</td>
-																	<td style="line-height: 100px;">41</td>
-																	<td style="line-height: 100px;">42</td>
-																</tr>
-																<tr>
-																	<td style="line-height: 100px;">国际码</td>
-																	<td style="line-height: 100px;">210</td>
-																	<td style="line-height: 100px;">215</td>
-																	<td style="line-height: 100px;">220</td>
-																	<td style="line-height: 100px;">225</td>
-																	<td style="line-height: 100px;">230</td>
-																	<td style="line-height: 100px;">235</td>
-																	<td style="line-height: 100px;">240</td>
-																	<td style="line-height: 100px;">245</td>
-																	<td style="line-height: 100px;">250</td>
-																	<td style="line-height: 100px;">255</td>
-																	<td style="line-height: 100px;">260</td>
-																</tr>
-															</table>
-														</div>
-													</div>
-
-												</div>
-
-											</div>
+											<span id="look"><img src="/yougou/img/rule.png"/>查看尺码表>></span>
+											
 
 										</p>
 										<p>&nbsp;数量：
@@ -283,23 +240,7 @@
 										<!--<input class="form-control" type="number" placeholder="1"style="width: 100px;height: 40px;" />-->
 										<!--<p><span class="minus">-</span><span class="num">0</span><span class="add">+</span></p>-->
 										
-										<div class="tc">
-											<div class="line">
-											<!--<span class="close">X</span>-->
-											<h3 class="con">您尚未选择尺码<span class="close">X</span></h3>
-
-											<span class="xx current">32</span>
-											<span class="xx">33</span>
-											<span class="xx">34</span>
-											<span class="xx">35</span>
-											<span class="xx">36</span>
-											<span class="xx">37</span>
-											<span class="xx">38</span>
-											<span class="xx">39</span>
-											<button class="btn-default" id="sure">确定</button>
-											</div>
-											<!--<div class="bk"></div>-->
-										</div>
+										
 
 										<!--模态框-->
 
@@ -363,7 +304,7 @@
 
 										</div>
 
-										<img id="img_" src="/yougou/img/picsmall01.jpg">
+										<!-- <img id="img_" src="/yougou/img/picsmall01.jpg"> -->
 										<div class="form-inline">
 											<a href="javaScript:;"><button class="form-control" style="background: #333;color: white;padding-left: 30px;padding-right: 30px;margin-right: 20px;margin-top: 20px;" id="addcart">加入购物袋</button></a>
 											<a href="javaScript:;"><button data-toggle="modal" data-target="#myModal1" class="form-control" style="padding-left: 30px;padding-right: 30px;margin-top: 20px;">立即购买</button></a>
@@ -398,50 +339,11 @@
 
 			<div class="goods">
 				<table class="table">
-					<tr class="text-center">
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="鞋底材质：橡胶底">鞋底材质：橡胶底</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="靴筒内里材质：人造短绒毛">靴筒内里材质：人造短绒毛</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="内增高：无">内增高：无</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="鞋面材质：牛皮革">鞋面材质：牛皮革</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="闭合方式：侧拉链系带">闭合方式：侧拉链系带</td>
-					</tr>
+				<tr class="text-center" id="goodsInfo">
+				</tr>
+					
 
-					<tr class="text-center">
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="鞋头：圆头">鞋头：圆头</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="靴筒口围：29CM">靴筒口围：29CM</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="配跟：无">配跟：无</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="款式：马丁靴">款式：马丁靴</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="面料图案：纯色">面料图案：纯色</td>
-					</tr>
-
-					<tr class="text-center">
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="鞋跟形状：方跟">鞋跟形状：方跟</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="36码鞋长参考(女)：23CM">36码鞋长参考(女)：23CM</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="流行元素：纯色">流行元素：纯色</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="36码鞋宽参考(女)：9.5CM">36码鞋宽参考(女)：9.5CM</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="风格：英伦">风格：英伦</td>
-					</tr>
-
-					<tr class="text-center">
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="鞋跟：3.5CM">鞋跟：3.5CM</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="色系：黑色">色系：黑色</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="性别：女子">性别：女子</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="筒高数值：18.5CM">筒高数值：18.5CM</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="靴筒筒面材质：羊皮革">靴筒筒面材质：羊皮革</td>
-					</tr>
-
-					<tr class="text-center">
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="里料材质：人造毛绒">里料材质：人造毛绒</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="制作工艺：胶贴皮鞋">制作工艺：胶贴皮鞋</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="鞋垫材质：人造短毛绒">鞋垫材质：人造短毛绒</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="季节：冬季">季节：冬季</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="前掌高度：1.5CM">前掌高度：1.5CM</td>
-					</tr>
-
-					<tr class="text-center">
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="皮质特征：油蜡皮">皮质特征：油蜡皮</td>
-						<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="防水台高度：无">防水台高度：无</td>
-					</tr>
+					
 
 				</table>
 
@@ -451,64 +353,21 @@
 				<h1>尺码信息</h1>
 			</div>
 
-			<div class="goods">
-				<table class="table">
-					<tr class="text-center">
-						<td style="line-height: 100px;">法国码</td>
-						<td style="line-height: 100px;">32</td>
-						<td style="line-height: 100px;">33</td>
-						<td style="line-height: 100px;">34</td>
-						<td style="line-height: 100px;">35</td>
-						<td style="line-height: 100px;">36</td>
-						<td style="line-height: 100px;">37</td>
-						<td style="line-height: 100px;">38</td>
-						<td style="line-height: 100px;">39</td>
-						<td style="line-height: 100px;">40</td>
-						<td style="line-height: 100px;">41</td>
-						<td style="line-height: 100px;">42</td>
+			<div class="goods" id="info">
+				<!-- <table class="table">
+					<tr class="text-center" id="info" width="200px">
+				
 					</tr>
-
-					<tr class="text-center">
-						<td style="line-height: 100px;">国际码</td>
-						<td style="line-height: 100px;">210</td>
-						<td style="line-height: 100px;">215</td>
-						<td style="line-height: 100px;">220</td>
-						<td style="line-height: 100px;">225</td>
-						<td style="line-height: 100px;">230</td>
-						<td style="line-height: 100px;">235</td>
-						<td style="line-height: 100px;">240</td>
-						<td style="line-height: 100px;">245</td>
-						<td style="line-height: 100px;">250</td>
-						<td style="line-height: 100px;">255</td>
-						<td style="line-height: 100px;">260</td>
-					</tr>
-				</table>
+				</table> -->
 			</div>
 
 			<div class="jumbotron text-center">
 				<h1>商品详情</h1>
 			</div>
 
-			<p align="center">
-				<img src="/yougou/img/bg01.jpg" />
-				<img src="/yougou/img/bg02.jpg" />
-				<img src="/yougou/img/bg03.jpg" />
-				<img src="/yougou/img/bg04.jpg" />
-				<img src="/yougou/img/bg05.jpg" />
-				<img src="/yougou/img/bg06.jpg" />
-				<img src="/yougou/img/bg07.jpg" />
-				<img src="/yougou/img/bg08.jpg" />
-				<img src="/yougou/img/bg09.jpg" />
-				<img src="/yougou/img/bg10.jpg" />
-				<img src="/yougou/img/bg11.jpg" />
-				<img src="/yougou/img/bg12.jpg" />
-				<img src="/yougou/img/bg13.jpg" />
-				<img src="/yougou/img/bg14.jpg" />
-				<img src="/yougou/img/bg15.jpg" />
-				<img src="/yougou/img/bg16.jpg" />
-				<img src="/yougou/img/bg17.jpg" />
-				<img src="/yougou/img/bg18.jpg" />
-				<img src="/yougou/img/bg19.jpg" />
+			<p align="center" id="goodsDetails">
+				
+				
 			</p>
 
 			<!--缩略图-->
@@ -516,13 +375,8 @@
 				<div class="row">
 					<div class="col-md-12">
 						<!--缩略图-->
-						<div class="thumbnail center-block">
-							<img src="/yougou/img/bg20.jpg" />
-							<!--对图片描述-->
-							<div class="caption text-center">
-								<p>BeLLE（百丽），百变所以美丽。主张多变多元的新生代态度，不断融合潮流趋势， 拥抱不同的生活体验与生活经历。将女性的百变魅力注入到鞋履设计中， 让女人在不同的人生阶段，不同的场合，不同的潮流趋势下，尽显自己自信的一面。 致力于为现代都市女性提供充满自由的行走体验。
-								</p>
-							</div>
+						<div class="thumbnail center-block" id="brandDesc">
+							
 						</div>
 					</div>
 				</div>

@@ -38,6 +38,7 @@ public class LXServiceImpl implements LXService {
 			change.setGoodsSales(goods.getGoodsSales());
 			change.setGoodsColor(goods.getGoodsColor());
 			change.setGoodsSizeSpec(Resolver.resolverSize(goods.getGoodsSizeSpec()));
+			change.setGoodsInfo(Resolver.resolver(goods.getGoodsInfo()));
 			change.setBrandName(goods.getBrandName());
 			change.setBrandLImg(goods.getBrandLImg());
 			change.setBrandSImg(goods.getBrandSImg());

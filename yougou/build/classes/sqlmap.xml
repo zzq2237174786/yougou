@@ -16,6 +16,11 @@
 			<mapping path="com/yougou/pojo/mapping/style.xml"/>
 			<!-- 品牌 -->
 			<mapping path="com/yougou/pojo/mapping/brand.xml"/>
+			<!-- 后台商品数据 -->
+			<mapping path="com/yougou/dto/zz/mapping/backGoods.xml"/>
+			<!-- 订单 -->
+			<mapping path="com/yougou/dto/zz/mapping/order.xml"/>
+			
 		</mappings>
 	</properties>
 	

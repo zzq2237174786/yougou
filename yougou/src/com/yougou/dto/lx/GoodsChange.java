@@ -15,13 +15,20 @@ public class GoodsChange {
 	private int goodsCollect;
 	private int goodsSales;
 	private String goodsColor;
-	private String goodsSizeSpec;
+	private List<String> goodsSizeSpec;
+	private List<String> goodsInfo;
 	
 	private String brandId;
 	private String brandName;
 	private String brandLImg;
 	private String brandSImg;
 	private String brandInfo;
+	public List<String> getGoodsInfo() {
+		return goodsInfo;
+	}
+	public void setGoodsInfo(List<String> goodsInfo) {
+		this.goodsInfo = goodsInfo;
+	}
 	public String getBrandId() {
 		return brandId;
 	}
@@ -121,10 +128,10 @@ public class GoodsChange {
 	public void setGoodsColor(String goodsColor) {
 		this.goodsColor = goodsColor;
 	}
-	public String getGoodsSizeSpec() {
+	public List<String> getGoodsSizeSpec() {
 		return goodsSizeSpec;
 	}
-	public void setGoodsSizeSpec(String goodsSizeSpec) {
+	public void setGoodsSizeSpec(List<String> goodsSizeSpec) {
 		this.goodsSizeSpec = goodsSizeSpec;
 	}
 	

@@ -3,7 +3,7 @@ var goodsId=parseInt(getUrlVal('goods_id'));
 $(function(){
 	$.get('/yougou/goods.do',{
 		'method': 'showInfo',
-		'goodsId':'100012055'
+		'goodsId':'100013180'
 	},function(re){
 		var obj=JSON.parse(re);
 		console.log(obj);
@@ -12,44 +12,149 @@ $(function(){
 			return;
 		};
 		
-		var goodsArr=obj.data.goodsDetails;
+		var goodsArr=obj.data;
 		//$('.detail2').html(obj.data.goodsName);
-//		var goodsImg = goodsArr.goodsImg;
-//		var Img=JSON.parse(goodsImg);
-		var str=``;
+		var goodsImg = goodsArr.goodsImg;
+		//console.log(goodsImg);
+		goodsImg=JSON.parse(goodsImg);
+		console.log(goodsImg);
 		// 拿到图片
-		for(var i=0;i<goodsArr.length;i++){
-			str+=`
+		for(var i=0;i<goodsImg.length;i++){
+			var str1=`
           <li>
-            <img src="${goodsArr[i].group1.goodsSImg}"/>
+            <img src="${goodsImg[i].goodsSImg}"/>
           </li>
       `;
-      	$('.small a').html(str);
-      	$('.big a').html(str);
-      	$('.pro-big').html(str);
+      		var str2=`
+      	  <li>
+            <img src="${goodsImg[i].goodsMImg}"/>
+          </li>
+      `;
+            var str3=`
+  	      <li>
+            <img src="${goodsImg[i].goodsLImg}"/>
+          </li>
+      `;
+      	$('.small a').append(str2);
+      	$('.big a').append(str2);
+      	$('.pro-big').append(str3);
       	
 		}
 		
-		
+			//商品品牌图片
 			var str1=`
-			<p><strong>${obj.data[0].goodsName}</strong></p>
+			<img src="${goodsArr.brandSImg}"</img>
 			`;
 			$('.detail2').html(str1);
-			
+			//商品名称
 			var str1=`
-			<p>${obj.data[0].goods_desc}</p>
+			<p>${goodsArr.goodsName}</p>
 			`;
 			$('.detail9').html(str1);
-			
+			//商品现价
 			var str1=`
-			${obj.data[0].price}
+			<strong>${goodsArr.goodsNewPrice}</strong>
 			`;
 			$('.detail3').html('¥'+str1);
-			
+			//商品原价
 			var str1=`
-			<p>${obj.data[0].star_number}</p>
+			${goodsArr.goodsOldPrice}
 			`;
-			$('#star').html('点赞数💗：'+str1);
+			$('.detail4').html('¥'+str1);
+			//商品颜色
+			var goodsCImg=goodsArr.goodsCImg;//商品颜色图
+			goodsCImg=JSON.parse(goodsCImg);
+			var goodsColor=goodsArr.goodsColor;//商品颜色名
+			var str1=`
+			<div id="chooseColor">
+			<img data-toggle="tooltip" data-placement="left" title="${goodsColor}" src="${goodsCImg.goodsCSImg}" id="img_" />
+			<img src="/yougou/img/choose.png" id="scolor"/>
+			</div>
+			`;
+			$('#goodsColor').append(str1);
+			var str1=`
+			<div class="sub_menu">
+			<img data-toggle="tooltip" data-placement="left" title="${goodsColor}" src="${goodsCImg.goodsCMImg}"/>
+			</div>
+			`;
+			$('#goodsColor').append(str1);
+			
+			//商品尺码
+			var goodsSize=goodsArr.goodsSize;
+			for(var i=0;i<goodsSize.length;i++){
+				var index=goodsSize[i].lastIndexOf('\-');
+				goodsSize[i]=goodsSize[i].substring(index+1);
+				console.log("===="+goodsSize[i]);
+				var str=`
+				<span class="goodsSize">
+				<span id="xx1">${goodsSize[i]}</span>
+				<img src="/yougou/img/choose.png" id="scolor"/>
+				</span>
+				`;
+				$('#goodsSize').append(str);
+			}
+			
+			//国际尺码
+			var goodsSizeSpec=goodsArr.goodsSizeSpec;
+			console.log(goodsSizeSpec);
+			//goodsSizeSpec=JSON.parse(goodsSizeSpec);
+			//console.log(goodsSizeSpec.line1);
+			//var filedAll = goodsSizeSpec.line1.split(",");
+			for(var i=0;i<goodsSizeSpec.length;i++){
+				console.log(goodsSizeSpec[i]);
+				var str=`
+				<span id="Spec">${goodsSizeSpec[i]}</span>
+				`;
+				$('#goodsSizeSpec').append(str);
+			}
+			
+			
+			//商品收藏数
+			/*var str1=`
+			<p class="glyphicon glyphicon-heart">${goodsArr.goodsCollect}</p>
+			`;
+			$('#star').html('收藏数：'+str1);*/
+			
+			//商品信息
+			var goodsInfo=goodsArr.goodsInfo;
+			//console.log(goodsInfo);
+			for(var i=0;i<goodsInfo.length;i++){
+				console.log(goodsInfo[i]);
+					var str=`
+					<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="${goodsInfo[i]}">${goodsInfo[i]}</td>
+					`;
+					$('#goodsInfo').append(str);
+				
+			}
+			
+			//尺码信息
+			var goodsSizeSpec=goodsArr.goodsSizeSpec;
+			for(var i=0;i<goodsSizeSpec.length;i++){
+				var str=`
+				<span id="fo" data-toggle="tooltip" data-placement="left" title="${goodsSizeSpec[i]}">${goodsSizeSpec[i]}</span>
+				`;
+				$('#info').append(str);
+			}
+			
+			//商品详情
+			var goodsDetails=goodsArr.goodsDetails;
+			for(var i=0;i<goodsDetails.length;i++){
+				var str=`
+				<img src="${goodsDetails[i]}" />
+				`;
+				$('#goodsDetails').append(str);
+			}
+			
+			//品牌缩略图
+			var brandLImg=goodsArr.brandLImg;
+			var brandInfo=goodsArr.brandInfo;
+			var str=`
+			<img src="${brandLImg}" />
+			<div class="caption text-center">
+				<p id="brandL">${brandInfo}</p>
+			</div>
+			`;
+			$('#brandDesc').append(str);
 			
 			 bigImg();
 	})
@@ -58,12 +163,14 @@ $(function(){
 
 // 拿过来goods_id
 $(function(){
-	$.get(URL+'api_goods.php',{
-		'cat_id': 62,
-		'page': 1,
-		'pagesize': 10
+	$.get('/yougou/index.do', {
+		'page': 15,
+		'pageSize': 12,
+		'method':'getNewProduct',
+		'cartId': 'oc1',
 	},function(re){
 		var obj=JSON.parse(re);
+		console.log(obj);
 		if(obj.code!=0){
 			console.log(obj.message);
 			return;
@@ -76,151 +183,151 @@ $(function(){
          <ul class="active1">
 					<li class="shoes1">
 						<a href="">
-							<img src="${goodsArr[0].goods_thumb}" />
+							<img src="${goodsArr[0].goodsTImg}" />
 						</a>
 
 						<a href="">
-							<p><strong>${goodsArr[0].goods_name}</strong></p>
-							<p>${goodsArr[0].goods_desc}</p>
+							<img src="${goodsArr[0].brandSImg}" id="goodsTImg"/>
+							<p>${goodsArr[0].goodsName}</p>
 						</a>
-						<h1><p><strong>¥${goodsArr[0].price}</p></strong></h1>
+						<h1><p><strong>¥${goodsArr[0].goodsNewPrice}</p></strong></h1>
 					</li>
 					
 					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[1].goods_thumb}" />
-						</a>
+					<a href="">
+						<img src="${goodsArr[1].goodsTImg}" />
+					</a>
 
-						<a href="">
-							<p><strong>${goodsArr[1].goods_name}</strong></p>
-							<p>${goodsArr[1].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[1].price}</p></strong></h1>
-					</li>
+					<a href="">
+						<img src="${goodsArr[1].brandSImg}" id="goodsTImg"/>
+						<p>${goodsArr[1].goodsName}</p>
+					</a>
+					<h1><p><strong>¥${goodsArr[1].goodsNewPrice}</p></strong></h1>
+				</li>
 					
-					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[2].goods_thumb}" />
-						</a>
+				<li class="shoes1">
+				<a href="">
+					<img src="${goodsArr[2].goodsTImg}" />
+				</a>
 
-						<a href="">
-							<p><strong>${goodsArr[2].goods_name}</strong></p>
-							<p>${goodsArr[2].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[2].price}</p></strong></h1>
-					</li>
+				<a href="">
+					<img src="${goodsArr[2].brandSImg}" id="goodsTImg"/>
+					<p>${goodsArr[2].goodsName}</p>
+				</a>
+				<h1><p><strong>¥${goodsArr[2].goodsNewPrice}</p></strong></h1>
+			</li>
 					
-					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[3].goods_thumb}" />
-						</a>
+			<li class="shoes1">
+			<a href="">
+				<img src="${goodsArr[3].goodsTImg}" />
+			</a>
 
-						<a href="">
-							<p><strong>${goodsArr[3].goods_name}</strong></p>
-							<p>${goodsArr[3].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[3].price}</p></strong></h1>
-					</li>
+			<a href="">
+				<img src="${goodsArr[3].brandSImg}" id="goodsTImg"/>
+				<p>${goodsArr[3].goodsName}</p>
+			</a>
+			<h1><p><strong>¥${goodsArr[3].goodsNewPrice}</p></strong></h1>
+		</li>
 				</ul>
 				
 				<ul class="active1">
-					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[4].goods_thumb}" />
-						</a>
+				<li class="shoes1">
+				<a href="">
+					<img src="${goodsArr[4].goodsTImg}" />
+				</a>
 
-						<a href="">
-							<p><strong>${goodsArr[4].goods_name}</strong></p>
-							<p>${goodsArr[4].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[4].price}</p></strong></h1>
-					</li>
+				<a href="">
+					<img src="${goodsArr[4].brandSImg}" id="goodsTImg"/>
+					<p>${goodsArr[4].goodsName}</p>
+				</a>
+				<h1><p><strong>¥${goodsArr[4].goodsNewPrice}</p></strong></h1>
+			</li>
 					
-					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[5].goods_thumb}" />
-						</a>
+			<li class="shoes1">
+			<a href="">
+				<img src="${goodsArr[5].goodsTImg}" />
+			</a>
 
-						<a href="">
-							<p><strong>${goodsArr[5].goods_name}</strong></p>
-							<p>${goodsArr[5].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[5].price}</p></strong></h1>
-					</li>
+			<a href="">
+				<img src="${goodsArr[5].brandSImg}" id="goodsTImg"/>
+				<p>${goodsArr[5].goodsName}</p>
+			</a>
+			<h1><p><strong>¥${goodsArr[5].goodsNewPrice}</p></strong></h1>
+		</li>
 					
-					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[6].goods_thumb}" />
-						</a>
+		<li class="shoes1">
+		<a href="">
+			<img src="${goodsArr[6].goodsTImg}" />
+		</a>
 
-						<a href="">
-							<p><strong>${goodsArr[6].goods_name}</strong></p>
-							<p>${goodsArr[6].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[6].price}</p></strong></h1>
-					</li>
+		<a href="">
+			<img src="${goodsArr[6].brandSImg}" id="goodsTImg"/>
+			<p>${goodsArr[6].goodsName}</p>
+		</a>
+		<h1><p><strong>¥${goodsArr[6].goodsNewPrice}</p></strong></h1>
+	</li>
 					
-					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[7].goods_thumb}" />
-						</a>
+	<li class="shoes1">
+	<a href="">
+		<img src="${goodsArr[7].goodsTImg}" />
+	</a>
 
-						<a href="">
-							<p><strong>${goodsArr[7].goods_name}</strong></p>
-							<p>${goodsArr[7].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[7].price}</p></strong></h1>
-					</li>
+	<a href="">
+		<img src="${goodsArr[7].brandSImg}" id="goodsTImg"/>
+		<p>${goodsArr[7].goodsName}</p>
+	</a>
+	<h1><p><strong>¥${goodsArr[7].goodsNewPrice}</p></strong></h1>
+</li>
 				</ul>
 				
 				<ul class="active1">
-					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[8].goods_thumb}" />
-						</a>
+				<li class="shoes1">
+				<a href="">
+					<img src="${goodsArr[8].goodsTImg}" />
+				</a>
 
-						<a href="">
-							<p><strong>${goodsArr[8].goods_name}</strong></p>
-							<p>${goodsArr[8].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[8].price}</p></strong></h1>
-					</li>
+				<a href="">
+					<img src="${goodsArr[8].brandSImg}" id="goodsTImg"/>
+					<p>${goodsArr[8].goodsName}</p>
+				</a>
+				<h1><p><strong>¥${goodsArr[8].goodsNewPrice}</p></strong></h1>
+			</li>
 					
-					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[9].goods_thumb}" />
-						</a>
+			<li class="shoes1">
+			<a href="">
+				<img src="${goodsArr[9].goodsTImg}" />
+			</a>
 
-						<a href="">
-							<p><strong>${goodsArr[9].goods_name}</strong></p>
-							<p>${goodsArr[9].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[9].price}</p></strong></h1>
-					</li>
+			<a href="">
+				<img src="${goodsArr[9].brandSImg}" id="goodsTImg"/>
+				<p>${goodsArr[9].goodsName}</p>
+			</a>
+			<h1><p><strong>¥${goodsArr[9].goodsNewPrice}</p></strong></h1>
+		</li>
 					
-					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[1].goods_thumb}" />
-						</a>
+		<li class="shoes1">
+		<a href="">
+			<img src="${goodsArr[10].goodsTImg}" />
+		</a>
 
-						<a href="">
-							<p><strong>${goodsArr[1].goods_name}</strong></p>
-							<p>${goodsArr[1].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[1].price}</p></strong></h1>
-					</li>
+		<a href="">
+			<img src="${goodsArr[10].brandSImg}" id="goodsTImg"/>
+			<p>${goodsArr[10].goodsName}</p>
+		</a>
+		<h1><p><strong>¥${goodsArr[10].goodsNewPrice}</p></strong></h1>
+	</li>
 					
-					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[0].goods_thumb}" />
-						</a>
+	<li class="shoes1">
+	<a href="">
+		<img src="${goodsArr[11].goodsTImg}" />
+	</a>
 
-						<a href="">
-							<p><strong>${goodsArr[0].goods_name}</strong></p>
-							<p>${goodsArr[0].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[0].price}</p></strong></h1>
-					</li>
+	<a href="">
+		<img src="${goodsArr[11].brandSImg}" id="goodsTImg"/>
+		<p>${goodsArr[11].goodsName}</p>
+	</a>
+	<h1><p><strong>¥${goodsArr[11].goodsNewPrice}</p></strong></h1>
+</li>
 				</ul>
 				
       `;
@@ -322,8 +429,8 @@ function bigImg(){
 
 $(function(){
     $('#addcart').click(function(){
-    $('.tc').fadeIn();
-    $('#sure').click(function(){
+    //$('.tc').fadeIn();
+    //$('#sure').click(function(){
     	 // var id = $(this).attr('id');
         var fly = $('#img_').clone().css('opacity','0.7');
         fly.css({
@@ -345,20 +452,28 @@ $(function(){
         },1000,function(){$(this).remove()});
         var str=parseInt($('#num').text())+1;
         $('#num').text(str).css('display','block');
-		$('.tc').fadeOut();
+		//$('.tc').fadeOut();
 	});
-	$('.close').click(function(){
+	/*$('.close').click(function(){
 		$('.tc').fadeOut();
-	});
+	});*/
     });
-});	
-$('#buy').click(function(){
+
+/*$('#buy').click(function(){
     $('#tc').fadeIn();
 });
-	$('#close').click(function(){
-		$('#tc').fadeOut();
-	});
-	
+$('#close').click(function(){
+	$('#tc').fadeOut();
+});*/
+//点击查看尺码表弹出国际尺码表
+$(function(){	
+$('#look').click(function(){
+	$('.tc').fadeIn();
+});
+$('.close1').click(function(){
+	$('.tc').fadeOut();
+});
+});
 /* 点击尺码弹窗中的尺码页面上的尺码会相应的被选中 */
 
 var oPoint=document.querySelector('.detail7');

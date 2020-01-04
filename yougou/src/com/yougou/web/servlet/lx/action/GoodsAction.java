@@ -20,7 +20,7 @@ public class GoodsAction extends DispatcherAction {
 	public ActionForward showInfo(HttpServletRequest request, HttpServletResponse response ,ActionForm form) throws ServletException, IOException{
 		LXService lx = new LXServiceImpl();
 		GoodsBrand goods = new GoodsBrand();
-		goods.setGoodsId("100030205");
+		goods.setGoodsId("100013180");
 		//拿到数据
 		String data = lx.getGoodsInfo(goods);
 		//成功..

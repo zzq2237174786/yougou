@@ -39,15 +39,22 @@ public class Resolver {
 	}	
 	
 	//拆分尺码
-	public static String resolverSize(String msg){
+	public static List<String> resolverSize(String msg){
 		if(msg==null) {return null;}
 		JSONObject obj= JSONObject.fromObject(msg);
 		List<String> list = new ArrayList<>();
 		for(int i = 0; i < obj.size(); i++) {
 			String str = obj.getString("line"+(i+1));
-			list.add(str);
+			//System.out.println(str);
+			String[] filedAll = str.split(",");
+			for (int j = 0; j < filedAll.length; j++) {
+				list.add(filedAll[j]);
+			}
+			//list.add(filedAll[i]);
+			//list=resolver(str);
+			//System.out.println(list);
 		}
-		return JSONArray.fromObject(list).toString();
+		return list;
 	}	
 	
 	

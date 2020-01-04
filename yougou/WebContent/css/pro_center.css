@@ -187,16 +187,117 @@ strong button{
 	height: 500px;
 	background: #333;
 }
-.detail2{
-	padding-top: 20px;
+.detail2 img{
+	width:110px;
+	height:72px;
+	
 }
-
+.detail9 p{
+	font-size:16px;
+}
+.detail3{
+	font-size:30px;
+}
 .detail4{
 	margin-top: -30px;
-	margin-left: 85px;
-	padding-left: 20px;
+	margin-left: 80px;
+	padding-left: 12px;
 	text-decoration: line-through;
 }
+#goodsColor{
+	display:inline-block;
+	height:42px;
+}
+/* 颜色图下面的子颜色图 */
+.sub_menu{
+	position:absolute;
+	display:none;
+}
+/*鼠标移入将子颜色图显示出来*/
+#goodsColor:hover .sub_menu{
+	display: block;
+}
+#chooseColor{
+	width:51px;
+	height:42px;
+	border:1px solid gainsboro;
+}
+#chooseColor:hover{
+	border-color:black;
+}
+#scolor,#cart{
+	border:none;
+}
+#scolor{
+	margin-left:-7px;
+}
+#xx1{
+	display:inline-block;
+	width:40px;
+	/* border:1px solid gainsboro; */
+	text-align:center;
+	color:grey;
+}
+.goodsSize{
+	display:inline-block;
+	width:51px;
+	border:1px solid gainsboro;
+	margin-bottom:5px;
+}
+#goodsSize{
+	display:inline-block;
+	width:300px;
+	margin-left:50px;
+}
+#goodsSizeSpec{
+	display:inline-block;
+	width:900px;
+	padding-left:13px;
+}
+#Spec{
+	display:inline-block;
+	width:65px;
+	margin-right:5px;
+	margin-top:20px;
+	/* border-bottom:1px solid gainsboro; */
+	text-align:center;
+	color:grey;
+}
+#fo{
+	display:inline-block;
+	width:65px;
+	margin-left:25px;
+	margin-top:20px;
+	/* border-bottom:1px solid gainsboro; */
+	text-align:center;
+	color:grey;
+}
+#brandL{
+	margin:0 71px;
+	text-align:left;
+	font-size:12px;
+}
+#goodsTImg{
+	width:50px;
+	height:50px;
+	margin-left:80px;
+}
+#single{
+	display:inline-block;
+	margin-top:20px;
+}
+
+.lineSize{
+	margin-top:50%;
+	margin-left:-40%;
+	width:900px;
+	height:200px;
+	background:white;
+}
+/* .size1{
+	display:inline-block;
+	margin-top:-20px;
+} */ 
 .detail5{
 	padding-top: 50px;
 	border-bottom: 1px solid gainsboro;
@@ -219,6 +320,9 @@ strong button{
 .detail7{
 	padding-bottom: 30px;
 }
+#img_{
+	border:none;
+}
 .detail7 a .btn{
 	padding-left: 20px;
 	padding-right: 20px;
@@ -227,8 +331,8 @@ strong button{
 	text-decoration: none;
 }
 .detail7 span{
-	margin-top: -80px;
-	margin-left: 460px;
+	/* margin-top: -80px; */
+	/* margin-left: 460px; */
 	color: black;
 }
 /*妯℃�佹*/
@@ -272,15 +376,15 @@ strong button{
 	z-index: 100;
 	display: none;
 }
-.close{
+.close1{
 	position: absolute;
 	right: 10px;
-	top: -5px;
+	/* top: -5px; */
 	/*color: #fff;*/
-	font-size: 36px;
+	font-size: 20px;
 	/*z-index:100;*/
 	cursor: pointer;
-	color: white;
+	color: gainsboro;
 }
 .tc h3{
 	font-size: 14px;
@@ -357,6 +461,7 @@ strong button{
 #cha{
 	color: gray;
 	font-size: 30px;
+	margin-top:-10px;
 }
 .current{
 	background: gainsboro;
@@ -367,10 +472,12 @@ strong button{
 #look{
 	color: gray;
 	font-size: 12px;
+	display:inline-block;
+	width:100px;
 }
 #num{
 	display: none;
-	width: 20px;
+	width: 25px;
 	height: 20px;
 	margin-left: 1100px;
 	margin-top: 75px;
