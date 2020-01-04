@@ -18,5 +18,9 @@
 	<action path="proType" class="com.yougou.web.servlet.zzq.action.ProTypeAction"  form="com.yougou.web.servlet.zzq.form.ProTypeForm">
 	</action>
 	
-	
+	<!-- 后台商品数据 -->
+	<action path="backlogin" class="com.yougou.web.servlet.zz.action.BackGoodsAction"  form="com.yougou.web.servlet.zz.form.BackGoodsForm">
+			<result name="index" path="/backstage/backstage_goods.jsp"></result>
+	</action>
+
 </actions>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<class name="com.yougou.dto.zz.Order">
+		
+		<property name="orderId" column="order_id"/>
+		<property name="stockId" column="stock_id"/>
+		<property name="goodsId" column="goods_id"/>
+		<property name="goodsName" column="goods_name"/>
+		<property name="goodsColor" column="goods_color"/>
+		<property name="goodsSize" column="goods_size"/>
+		<property name="orderNum" column="order_num"/>
+		<property name="orderMsum" column="order_msum"/>
+		<property name="usersRegion" column="users_region"/>
+		<property name="userAddress" column="user_address"/>
+		<property name="usersName" column="users_name"/>
+		<property name="userPhone" column="user_phone"/>
+		<property name="orderDate" column="order_date"/>
+		<!-- 查询有没有 -->
+		<select sqlId="selectOne" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
+			SELECT goods_name,goods_color,order_num,order_msum,users_region,users_address,users_name,users_phone,order_id,order_date,stock.goods_size FROM dorder
+ 			INNER JOIN stock  on dorder.stock_id=stock.stock_id INNER JOIN goods  ON stock.goods_id=goods.goods_idINNER JOIN address  ON dorder.address_id=address.address_id
+		</select >
+	
+	</class>
