@@ -253,4 +253,64 @@ public class ProTypeServiceImpl implements ProTypeService{
 		}
 		return null;
 	}
+
+	//广告下一页
+	public String nextBrandProType(ProTypeData product) {
+		try {
+			Connection conn = DBHelper.getConnection();
+			//查询商品数据
+			String sqlId = "selectBrand";
+			List<ProTypeData> allData = (List<ProTypeData>)bd.selectMethod(product, conn, sqlId);
+			String goodsdata = JSONArray.fromObject(allData).toString();
+			return goodsdata;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	//一级分类下一页
+	public String nextOCProType(ProTypeData product) {
+		try {
+			Connection conn = DBHelper.getConnection();
+			//查询数据
+			String sqlId4 = "selectOC";
+			List<ProTypeData> allData = (List<ProTypeData>)bd.selectMethod(product, conn, sqlId4);
+			String goodsdata = JSONArray.fromObject(allData).toString();
+			return goodsdata;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	//二级分类 下一页
+	public String nextTCProType(ProTypeData product) {
+		try {
+			Connection conn = DBHelper.getConnection();
+			//查询数据
+			String sqlId4 = "selectTC";
+			List<ProTypeData> allData = (List<ProTypeData>)bd.selectMethod(product, conn, sqlId4);
+			String goodsdata = JSONArray.fromObject(allData).toString();
+			return goodsdata;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	//三级分类 下一页
+	public String nextCCProType(ProTypeData product) {
+		try {
+			Connection conn = DBHelper.getConnection();
+			//查询数据
+			String sqlId4 = "selectCC";
+			List<ProTypeData> allData = (List<ProTypeData>)bd.selectMethod(product, conn, sqlId4);
+			String goodsdata = JSONArray.fromObject(allData).toString();
+			return goodsdata;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
