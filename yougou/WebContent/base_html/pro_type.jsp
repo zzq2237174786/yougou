@@ -132,15 +132,7 @@
 						<li>
 							<a href="">首页</a>
 						</li>
-						<li>
-							<a href="">分类</a>
-						</li>
-					</ul>
-					
-					<ul class="breadcrumb">
-						<li>品牌</li>
-						<li>百丽</li>
-					</ul>				
+					</ul>			
 				</div>
 
 				<!--分类导航和内容-->

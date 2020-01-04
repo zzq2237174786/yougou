@@ -83,6 +83,45 @@ $(function() {
 		//商品总条数
 		var allProduct = data.goodsCount;
 		
+		
+		//品牌进入头部设置
+		var goodsBrandInfo = data.goodsBrandInfo;
+		if(goodsBrandInfo){
+			goodsBrandInfo = JSON.parse(data.goodsBrandInfo);
+			var brand = ``;
+			//品牌推荐 添加品牌信息
+			var simg = goodsBrandInfo.brandSImg;
+			var limg = goodsBrandInfo.brandLImg;
+			var info = goodsBrandInfo.brandInfo;
+
+			if(simg){
+				brand+=`
+					<div class="brandInfo"><img src="${simg}" id="brandSImg"/></div>
+				`;			
+			}
+			if(limg){
+				brand+=`
+					<div class="brandInfo"><img src="${limg}" id="brandLImg"/></div>
+				`;
+			}
+			if(info){
+				brand+=`
+					<div class="brandInfo"><p id="brandInfo">${info}</p></div>
+				`;
+			}
+			//添加信息
+			var brandBC = `
+				<li>
+					<a href="javaScirpt:;" id="goodsBrand" values="${goodsBrandInfo.brandId}">${goodsBrandInfo.brandName}</a>
+				</li>
+			`;
+			
+			//面包屑设置
+			$('.type-content').prepend(brand);
+			$('.breadcrumb').append(brandBC);
+		}
+		
+		
 		//获取品牌分类
 		var goodsBrandType = data.goodsBrandType;
 		if(!goodsBrandType){
@@ -94,7 +133,7 @@ $(function() {
 			brandStr = ``;
 			for (var i = 0; i < brandArr.length; i++) {
 				brandStr+=`
-					<li><a href="">${brandArr[i].brandName}</a></li>
+					<li><a href="javaScript:;" class="goodsBrand" values="${brandArr[i].brandId}">${brandArr[i].brandName}</a></li>
 				`;
 			}
 			$('#nav-brand-ul').append(brandStr);

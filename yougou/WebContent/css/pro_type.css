@@ -197,3 +197,20 @@
 .pagination>.page-prev, .pagination>.page-next{
 	width:64px;
 }
+
+
+/*js添加的元素的一些css样式*/
+.brandInfo{
+	width:1010px;
+}
+.brandInfo:after{
+	content:"";
+	display:block;
+	clear: both;  
+}
+#brandSImg{
+	float:right;
+}
+#brandLImg , #brandInfo{
+	margin-left:15px;
+}
