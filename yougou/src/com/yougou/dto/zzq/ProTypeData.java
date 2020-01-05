@@ -1,4 +1,7 @@
 package com.yougou.dto.zzq;
+
+import java.util.List;
+
 /**
  * 分类页面数据查询
  * @author Administrator
@@ -22,6 +25,10 @@ public class ProTypeData {
 	private int pageSize;
 	private String goodsType;
 	private String goodsBrandInfo;
+	private List<Object> breadcrumb; //面包屑
+	
+	private int minPrice;
+	private int maxPrice;
 	
 	public String getGoodsOC() {
 		return goodsOC;
@@ -125,6 +132,23 @@ public class ProTypeData {
 	}
 	public void setGoodsBrandInfo(String goodsBrandInfo) {
 		this.goodsBrandInfo = goodsBrandInfo;
-	}	
-	
+	}
+	public List<Object> getBreadcrumb() {
+		return breadcrumb;
+	}
+	public void setBreadcrumb(List<Object> breadcrumb) {
+		this.breadcrumb = breadcrumb;
+	}
+	public int getMinPrice() {
+		return minPrice;
+	}
+	public void setMinPrice(int minPrice) {
+		this.minPrice = minPrice;
+	}
+	public int getMaxPrice() {
+		return maxPrice;
+	}
+	public void setMaxPrice(int maxPrice) {
+		this.maxPrice = maxPrice;
+	}		
 }

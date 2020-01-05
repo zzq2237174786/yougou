@@ -17,4 +17,10 @@ public interface ProTypeService {
 	public String nextOCProType(ProTypeData product);
 	public String nextTCProType(ProTypeData product);
 	public String nextCCProType(ProTypeData product);
+	
+	
+	//分类 层层进入
+	public String innerProType(ProTypeData product);
+	
+	public String innerNextProType(ProTypeData product);
 }
