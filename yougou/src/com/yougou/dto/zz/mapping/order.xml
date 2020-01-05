@@ -67,7 +67,7 @@
 		</select >
 		
 		<!-- 查询完成订单 -->
-		<select sqlId="selectThree" parameterType="com.yougou.dto.zz.order" resultType="com.yougou.dto.zz.order">
+		<select sqlId="selectThree" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
 			SELECT goods_name,goods_color,order_num,order_msum,users_region,users_address,users_name,users_phone,corder.users_num,order_id,order_date,stock.goods_size FROM corder
  			INNER JOIN stock  on corder.stock_id=stock.stock_id INNER JOIN goods  ON stock.goods_id=goods.goods_id INNER JOIN address  ON corder.address_id=address.address_id
 		</select >
