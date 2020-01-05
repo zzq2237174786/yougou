@@ -12,31 +12,7 @@
 	</head>
 	<body>
 	
-	<table>
-   			<thead>
-   				<tr>
-   					<th>序号</th>
-   					<th>姓名</th>
-   					<th>性别</th>
-   					<th>成绩</th>
-   					<th>操作</th>
-   				</tr>
-   			</thead>
-   			<tbody>
-   				
-   				<c:forEach items="${unoList}" var="s" varStatus="i">
-   					
-   						<tr>
-   							<td>
-   								
-   								${s.orderId }
-   							</td>
-   							
-   							
-   						</tr>	
-   				</c:forEach>
-   			</tbody>
-   		</table>
+	
 		<!--头部-->
 		<header>
 			<!--导航栏-->
@@ -140,15 +116,13 @@
 							<a class="current choosed" href="javascript:void(0)">
 								未发货订单
 							</a>
-							<a class="current zeronum" href="backstage_delivered.jsp">
+							<a class="current zeronum" href="backorder.do?method=getDOrder">
 								已发货订单
 							</a>
-							<a class="current zeronum" href="backstage_sign.jsp">
+							<a class="current zeronum" href="backorder.do?method=getCOrder">
 								已完成订单
 							</a>
 						</div>	
-						
-						
 						
 					
 					<!--内容菜单-->
@@ -168,138 +142,54 @@
 							
 							<!--有数据-->
 							<ul class="goods">
+								<c:forEach items="${unoList}" var="s" varStatus="i">
 								<li>
 									<div class="goods-list">
 										<div class="goods-info">
 											<p>
-												adidas阿迪达斯2019中性EC ORG单肩包ED6877
+												${s.goodsName }
+												
 											</p>
 											<p>
 												<span class="goods-color">
 													颜色：
-													<em>黑</em>
+													<em>${s.goodsColor }</em>
 													&nbsp;&nbsp;尺码：
-													<em>F</em>
+													<em>${s.goodsSize }</em>
 													&nbsp;&nbsp;数量：
-													<em>1</em>
+													<em>${s.orderNum }</em>
 													&nbsp;&nbsp;价格：
-													<em>1000000000000</em>
+													<em>${s.orderMsum }</em>
 												</span>	
 											</p>
 										</div>
 										<div class="haved-info">
 											<span class="haved-ard">
-												天津市宁河区潘庄镇大龙湾村
-												详细地址。。。
+												${s.usersRegion }
+												${s.usersAddress }
 											</span>
 											<span class="order-haved">
-												周哈哈
+												${s.usersName }
 											</span>
 											<span id="">
 												收
 											</span>
 											<span class="order-tel">
-												138****8888
+												${s.usersPhone }
 											</span>
 										</div>
 										<!--订单时间-->
 										<div class="order-info">
-											订单时间：<p class="order-time">2020-1-1</p>
-											订单时间：<p class="order-num">1027583A</p>
+											订单时间：<p class="order-time">${s.orderDate }</p>
+											订单编号：<p class="order-num">${s.orderId }</p>
 										</div>
 										<div class="order-confirm">
 											<input type="button"  class="confirm-content" id="confirm-content" value="确认发货" />
 										</div>
 									</div>
 								</li>
-								<li>
-									<div class="goods-list">
-										<div class="goods-info">
-											<p>
-												adidas阿迪达斯2019中性EC ORG单肩包ED6877
-											</p>
-											<p>
-												<span class="goods-color">
-													颜色：
-													<em>黑</em>
-													&nbsp;&nbsp;尺码：
-													<em>F</em>
-													&nbsp;&nbsp;数量：
-													<em>1</em>
-													&nbsp;&nbsp;价格：
-													<em>1000000000000</em>
-												</span>	
-											</p>
-										</div>
-										<div class="haved-info">
-											<span class="haved-ard">
-												天津市宁河区潘庄镇大龙湾村
-												详细地址。。。
-											</span>
-											<span class="order-haved">
-												周哈哈
-											</span>
-											<span id="">
-												收
-											</span>
-											<span class="order-tel">
-												138****8888
-											</span>
-										</div>
-										<!--订单时间-->
-										<div class="order-info">
-											订单时间：<p class="order-time">2020-1-1</p>
-											订单时间：<p class="order-num">1027583A</p>
-										</div>
-										<div class="order-confirm">
-											<input type="button" id="confirm-btn" value="确认发货" />
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="goods-list">
-										<div class="goods-info">
-											<p>
-												adidas阿迪达斯2019中性EC ORG单肩包ED6877
-											</p>
-											<p>
-												<span class="goods-color">
-													颜色：
-													<em>黑</em>
-													&nbsp;&nbsp;尺码：
-													<em>F</em>
-													&nbsp;&nbsp;数量：
-													<em>1</em>
-													&nbsp;&nbsp;价格：
-													<em>1000000000000</em>
-												</span>	
-											</p>
-										</div>
-										<div class="haved-info">
-											<span class="haved-ard">
-												天津市宁河区潘庄镇大龙湾村
-												详细地址。。。
-											</span>
-											<span class="order-haved">
-												周哈哈
-											</span>
-											<span id="">
-												收
-											</span>
-											<span class="order-tel">
-												138****8888
-											</span>
-										</div>
-										<!--订单时间-->
-										<div class="order-info">
-											订单时间：<p class="order-time">2020-1-1</p>
-											订单编号：<p class="order-num">1027583A</p>
-										</div>
-										<div class="order-confirm">
-											<input type="button" id="confirm-btn" value="确认发货" />
-										</div>
-									</div>
-								</li>
+								
+								</c:forEach>
 								
 							</ul>
 							<!--<div class="body-bottom">

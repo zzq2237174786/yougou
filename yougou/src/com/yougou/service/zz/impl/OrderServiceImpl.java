@@ -15,10 +15,41 @@ public class OrderServiceImpl implements OrderService{
 	private Logger log = Logger.getLogger(OrderServiceImpl.class);
 	private  BaseDao bd = new BaseDaoImpl();
 	@Override
-	public List<Order> getAllOrder(Order order) {
+//	查询未发
+	public List<Order> getAllUnOrder(Order order) {
 		System.out.println("进入orderServiceImpl");
 		Connection conn=DBHelper.getConnection();
 		String sqlId="selectOne";		
+		try {
+			//拿数据
+			List<Order> list = (List<Order>) bd.selectMethod(order, conn, sqlId);
+			System.out.println("orderServiceImpl的list"+list);
+			return list;
+		} catch (Exception e) {
+			log.error("失败",e);
+		}
+		return null;
+	}
+//	查询已发
+	public List<Order> getAllDOrder(Order order) {
+		System.out.println("进入orderServiceImpl");
+		Connection conn=DBHelper.getConnection();
+		String sqlId="selectTwo";		
+		try {
+			//拿数据
+			List<Order> list = (List<Order>) bd.selectMethod(order, conn, sqlId);
+			System.out.println("orderServiceImpl的list"+list);
+			return list;
+		} catch (Exception e) {
+			log.error("失败",e);
+		}
+		return null;
+	}
+//	查询完成
+	public List<Order> getAllCOrder(Order order) {
+		System.out.println("进入orderServiceImpl");
+		Connection conn=DBHelper.getConnection();
+		String sqlId="selectThree";		
 		try {
 			//拿数据
 			List<Order> list = (List<Order>) bd.selectMethod(order, conn, sqlId);

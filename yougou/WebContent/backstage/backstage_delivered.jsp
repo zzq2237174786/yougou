@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -110,13 +111,13 @@
 						</li>
 					</ul>
 					<div class="content-top">
-							<a class="current zeronum" href="backstage_order.jsp">
+							<a class="current zeronum" href="backorder.do?method=getUnOrder">
 								未发货订单
 							</a>
 							<a class="current choosed" href="javascript:void(0)">
 								已发货订单
 							</a>
-							<a class="current zeronum" href="backstage_sign.jsp">
+							<a class="current zeronum" href="backorder.do?method=getCOrder">
 								已完成订单
 							</a>
 						</div>	
@@ -142,50 +143,56 @@
 							<!--有数据-->
 							<ul class="goods">
 								
+								<c:forEach items="${doList}" var="s" varStatus="i">
+								
 								<li>
 									<div class="goods-list">
 										<div class="goods-info">
 											<p>
-												adidas阿迪达斯2019中性EC ORG单肩包ED6877
+												${s.goodsName }
+												
 											</p>
+											
 											<p>
 												<span class="goods-color">
 													颜色：
-													<em>黑</em>
+													<em>${s.goodsColor }</em>
 													&nbsp;&nbsp;尺码：
-													<em>F</em>
+													<em>${s.goodsSize }</em>
 													&nbsp;&nbsp;数量：
-													<em>1</em>
+													<em>${s.orderNum }</em>
 													&nbsp;&nbsp;价格：
-													<em>1000000000000</em>
+													<em>${s.orderMsum }</em>
 												</span>	
 											</p>
 										</div>
 										<div class="haved-info">
 											<span class="haved-ard">
-												天津市宁河区潘庄镇大龙湾村
-												详细地址。。。
+												${s.usersRegion }
+												${s.usersAddress }
 											</span>
 											<span class="order-haved">
-												周哈哈
+												${s.usersName }
 											</span>
 											<span id="">
 												收
 											</span>
 											<span class="order-tel">
-												138****8888
+												${s.usersPhone }
 											</span>
 										</div>
 										<!--订单时间-->
 										<div class="order-info">
-											订单时间：<p class="order-time">2020-1-1</p>
-											订单时间：<p class="order-num">1027583A</p>
+											订单时间：<p class="order-time">${s.orderDate }</p>
+											订单编号：<p class="order-num">${s.orderId }</p>
 										</div>
 										<div class="order-confirm">
-											<p class="confirm-content">未送达</p>
+											<p class="confirm-content">为送达</p>
 										</div>
 									</div>
 								</li>
+								
+								</c:forEach>
 								
 							</ul>
 							<!--<div class="body-bottom">
