@@ -2,55 +2,19 @@ package com.yougou.web.servlet.hj.form;
 
 import com.yougou.web.core.ActionForm;
 
-/**
- * 保存页面的参数
- * @author Administrator
- *
- */
 public class LoginForm extends ActionForm{
-	private String uname;
-	private String upwd;
-	private String sex;
-	private String first;
-	private String second;
-	
-	public String getFirst() {
-		return first;
+	private String usersNum;
+	private String usersPwd;
+	public String getUsersNum() {
+		return usersNum;
 	}
-	public void setFirst(String first) {
-		this.first = first;
+	public void setUsersNum(String usersNum) {
+		this.usersNum = usersNum;
 	}
-	public String getSecond() {
-		return second;
+	public String getUsersPwd() {
+		return usersPwd;
 	}
-	public void setSecond(String second) {
-		this.second = second;
-	}
-	public String getUname() {
-		return uname;
-	}
-	public void setUname(String uname) {
-		this.uname = uname;
-	}
-	public String getUpwd() {
-		return upwd;
-	}
-	public void setUpwd(String upwd) {
-		this.upwd = upwd;
-	}
-	public String getSex() {
-		return sex;
-	}
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
-	@Override
-	public String toString() {
-		return "LoginForm [uname=" + uname + ", upwd=" + upwd + ", sex=" + sex + ", first=" + first + ", second="
-				+ second + "]";
-	}
-	
-	
-	
-	
+	public void setUsersPwd(String usersPwd) {
+		this.usersPwd = usersPwd;
+	}	
 }
