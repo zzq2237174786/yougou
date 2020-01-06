@@ -60,5 +60,35 @@ public class OrderServiceImpl implements OrderService{
 		}
 		return null;
 	}
+	//加到发送订单
+	public boolean insertDOrder(Order order) {
+		Connection conn=DBHelper.getConnection();
+		String sqlId="insertTwo";
+		boolean flag=false;
+		try {
+			flag=bd.insertMethod(order, conn, sqlId);
+			
+			System.out.println("orderServiceImpl的list"+flag);
+			
+		} catch (Exception e) {
+			log.error("失败",e);
+		}
+		return true;
+	}
+	//删除未发订单
+	public boolean deleteUnOrder(Order order) {
+		Connection conn=DBHelper.getConnection();
+		String sqlId="deleteOne";
+		boolean flag=false;
+		try {
+			flag=bd.deleteMethod(order, conn, sqlId);
+			
+			System.out.println("orderServiceImpl的list"+flag);
+			
+		} catch (Exception e) {
+			log.error("失败",e);
+		}
+		return true;
+	}
 
 }
