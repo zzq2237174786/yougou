@@ -26,15 +26,16 @@ public class OrderAction extends DispatcherAction{
 	public ActionForward getUnOrder(HttpServletRequest request, HttpServletResponse response ,ActionForm form) throws ServletException, IOException{
 		Order order =new Order();
 		List<Order> list =os.getAllUnOrder(order);
-		System.out.println("orderAction的list"+list);
+		
 		request.getSession().setAttribute("unoList",list );
+		System.out.println("进入");
 		return new ActionForward("unorder");
 	}
 	//获取订单方法
 	public ActionForward getDOrder(HttpServletRequest request, HttpServletResponse response ,ActionForm form) throws ServletException, IOException{
 		Order order =new Order();
 		List<Order> list =os.getAllDOrder(order);
-		System.out.println("orderAction的list"+list);
+		
 		request.getSession().setAttribute("doList",list );
 		return new ActionForward("dorder");
 	}
@@ -42,10 +43,22 @@ public class OrderAction extends DispatcherAction{
 	public ActionForward getCOrder(HttpServletRequest request, HttpServletResponse response ,ActionForm form) throws ServletException, IOException{
 		Order order =new Order();
 		List<Order> list =os.getAllCOrder(order);
-		System.out.println("orderAction的list"+list);
-		request.getSession().setAttribute("coList",list );
+		
+		request.getSession().setAttribute("coList",list ); 
 		return new ActionForward("corder");
 	}
+	//操作订单
+	public ActionForward operateUnOrder(HttpServletRequest request, HttpServletResponse response ,ActionForm form) throws ServletException, IOException{
+		OrderForm of=(OrderForm)form;
+		Order order =new Order();
+		System.out.println("order=="+of.getOrderId());
+		order.setOrderId(of.getOrderId());
+		boolean flage=false;
+		flage=os.operateUnOrder(order);
+		
+		return new ActionForward("sorder");
+	}	
+		
 	
 		
 }

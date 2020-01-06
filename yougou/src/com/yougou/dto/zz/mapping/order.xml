@@ -10,6 +10,7 @@
 		<property name="goodsId" column="goods_id"/>
 		<property name="goodsSize" column="goods_size"/>
 		<property name="orderMsum" column="order_msum"/>
+		<property name="addressId" column="address_id"/>
 		<property name="usersRegion" column="users_region"/>
 		<property name="usersAddress" column="users_address"/>
 		<property name="usersName" column="users_name"/>
@@ -30,16 +31,22 @@
  			where unorder.users_num= #{usersNum}
 		</select >
 		
-		<!-- 删除未发订单 -->
-		<select sqlId="deleteOne" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
-			delete from unorder where order_id= #{orderId} 
+		<!-- 用户查询未发订单 -->
+		<select sqlId="selectOneId" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
+			SELECT order_id,stock_id,order_num,address_id,order_date,order_msum,users_num from unorder 
+			WHERE order_id=#{orderId}
 		</select >
 		
+		<!-- 删除未发订单 -->
+		<delete sqlId="deleteOne" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
+			delete from unorder where order_id= #{orderId} 
+		</delete >
+		
 		<!-- 增加未发订单 -->
-		<select sqlId="insertOne" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
+		<insert sqlId="insertOne" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
 			insert into unorder (order_id,stock_id,order_num,address_id,order_date,order_msum,users_num) values 
 			(#{orderId},#{stockId},#{orderNum},#{addressId},#{orderDate},#{orderMsum},#{usersNum})
-		</select >
+		</insert >
 		
 		
 		<!-- 查询已发订单 -->
@@ -56,15 +63,15 @@
 		</select >
 		
 		<!-- 增加已发订单 -->
-		<select sqlId="insertTwo" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
+		<insert sqlId="insertTwo" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
 			insert into dorder (order_id,stock_id,order_num,address_id,order_date,order_msum,users_num) values 
 			(#{orderId},#{stockId},#{orderNum},#{addressId},#{orderDate},#{orderMsum},#{usersNum})
-		</select >
+		</insert >
 	
 		<!-- 删除已发订单 -->
-		<select sqlId="deleteTwo" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
+		<delete sqlId="deleteTwo" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
 			delete from dorder where order_id= #{orderId} 
-		</select >
+		</delete >
 		
 		<!-- 查询完成订单 -->
 		<select sqlId="selectThree" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
@@ -80,8 +87,8 @@
 		</select >
 		
 		<!-- 增加完成订单 -->
-		<select sqlId="insertThree" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
+		<insert sqlId="insertThree" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
 			insert into corder (order_id,stock_id,order_num,address_id,order_date,order_msum,users_num) values 
 			(#{orderId},#{stockId},#{orderNum},#{addressId},#{orderDate},#{orderMsum},#{usersNum})
-		</select >	
+		</insert >	
 	</class>

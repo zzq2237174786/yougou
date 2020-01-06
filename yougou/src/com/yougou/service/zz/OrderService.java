@@ -15,4 +15,5 @@ public interface OrderService {
 	public List<Order> getAllCOrder(Order order);
 	public boolean deleteUnOrder(Order order);
 	public boolean insertDOrder(Order order);
+	public boolean operateUnOrder(Order order);
 }

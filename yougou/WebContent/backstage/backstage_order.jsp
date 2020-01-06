@@ -10,6 +10,30 @@
 		<link rel="stylesheet" type="text/css" href="/yougou/css/backstage.css"/>
 		<link rel="stylesheet" type="text/css" href="/yougou/css/backstage_order.css"/>
 	</head>
+	<script type="text/javascript">
+	
+		
+	 function Order(orderId){
+		this.orderId = orderId;
+		this.method = 'operateUnOrder';
+	 }
+	
+	function operateOrder(name){
+		//拿到值，封装成json对象
+		var orderId = name
+		var order = new Order(orderId);
+		$.ajax({
+			type:"post",
+			url:"/yougou/backorder.do",
+			data:order,
+			success:function(resText){	
+				location.reload();
+			}
+		});
+	}
+	
+	
+	</script>
 	<body>
 	
 	
@@ -143,7 +167,7 @@
 							<!--有数据-->
 							<ul class="goods">
 								<c:forEach items="${unoList}" var="s" varStatus="i">
-								<li>
+								<li id="orderLi">
 									<div class="goods-list">
 										<div class="goods-info">
 											<p>
@@ -181,10 +205,10 @@
 										<!--订单时间-->
 										<div class="order-info">
 											订单时间：<p class="order-time">${s.orderDate }</p>
-											订单编号：<p class="order-num">${s.orderId }</p>
+											订单编号：<p class="order-num ordernum">${s.orderId }</p>
 										</div>
 										<div class="order-confirm">
-											<input type="button"  class="confirm-content" id="confirm-content" value="确认发货" />
+											<input type="button" name="${s.orderId}" class="confirm-content" id="confirm-content"  onclick="operateOrder(this.name)" value="确认发货" />
 										</div>
 									</div>
 								</li>

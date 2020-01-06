@@ -35,6 +35,9 @@
 	<!-- 后台订单 -->
 	<action path="backorder" class="com.yougou.web.servlet.zz.action.OrderAction"  form="com.yougou.web.servlet.zz.form.OrderForm">
 			<result name="unorder" path="/backstage/backstage_order.jsp"></result>
+			<result name="dorder" path="/backstage/backstage_delivered.jsp"></result>
+			<result name="corder" path="/backstage/backstage_sign.jsp"></result>
+			<result name="sorder" path="/backstage/backorder.do?method=getUnOrder"></result>
 	</action>
 	
 </actions>

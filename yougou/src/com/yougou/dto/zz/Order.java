@@ -14,12 +14,22 @@ public class Order {
 	private String goodsName;
 	private String goodsColor;
 	private String goodsSize;
-	//地址
+	//地址	
 	private String usersRegion;
 	private String usersAddress;
 	private String usersName;
 	private String usersPhone;
+	//账号
+	private String usersNum;
 	
+	
+	
+	public String getUsersNum() {
+		return usersNum;
+	}
+	public void setUsersNum(String usersNum) {
+		this.usersNum = usersNum;
+	}
 	public String getOrderId() {
 		return orderId;
 	}

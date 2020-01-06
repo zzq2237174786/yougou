@@ -187,7 +187,7 @@
 											订单编号：<p class="order-num">${s.orderId }</p>
 										</div>
 										<div class="order-confirm">
-											<p class="confirm-content">为送达</p>
+											<p class="confirm-content">未送达</p>
 										</div>
 									</div>
 								</li>
