@@ -9,7 +9,23 @@ public class ProTypeForm extends ActionForm{
 	private String goodsBrand;
 	private String page;
 	private String pageSize;
+	private String goodsStyle;
+	private String goodsPrice;
 	
+	
+	
+	public String getGoodsStyle() {
+		return goodsStyle;
+	}
+	public void setGoodsStyle(String goodsStyle) {
+		this.goodsStyle = goodsStyle;
+	}
+	public String getGoodsPrice() {
+		return goodsPrice;
+	}
+	public void setGoodsPrice(String goodsPrice) {
+		this.goodsPrice = goodsPrice;
+	}
 	public String getOcId() {
 		return ocId;
 	}

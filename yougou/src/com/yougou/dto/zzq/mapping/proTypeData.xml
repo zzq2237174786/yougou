@@ -44,4 +44,22 @@
 			select  goods_id , goods_name, goods_timg, goods_oldprice, goods_newprice from goods where goods_cc like  #{goodsCC} and goods_putaway = 1 limit #{page},#{pageSize}
 		</select >
 		
+		
+		
+		<!-- 根据层级分类查询 -->
+		<select sqlId="selectInner" parameterType="com.yougou.dto.zzq.ProTypeData" resultType="com.yougou.dto.zzq.ProTypeData">
+			 select  goods_id , goods_name, goods_timg, goods_oldprice, goods_newprice from goods where 
+			 goods_oc like  #{goodsOC} and  goods_tc like #{goodsTC}  and goods_cc like #{goodsCC} and goods_putaway = 1
+			 and goods_style like #{goodsStyle} and goods_brand like #{goodsBrand} and goods_newprice &gt; #{minPrice} 
+			 and goods_newprice &lt;  #{maxPrice} 
+			 limit #{page},#{pageSize}
+		</select >
+		
+		<select sqlId="selectCount4" parameterType="com.yougou.dto.zzq.ProTypeData" resultType="com.yougou.dto.zzq.ProTypeData">
+			 select count(*) as goodsCount from goods where  goods_oc like  #{goodsOC} and  goods_tc like #{goodsTC}  and goods_cc like #{goodsCC} and goods_putaway = 1
+			 and goods_style like #{goodsStyle} and goods_brand like #{goodsBrand} and goods_newprice &gt; #{minPrice} 
+			 and goods_newprice &lt;  #{maxPrice} 
+			 limit #{page},#{pageSize}
+		</select >
+		
 	</class>

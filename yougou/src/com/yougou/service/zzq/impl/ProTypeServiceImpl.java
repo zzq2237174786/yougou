@@ -22,12 +22,12 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 public class ProTypeServiceImpl implements ProTypeService{
-	private BaseDao bd = new BaseDaoImpl();
 	private Logger log = Logger.getLogger(ProTypeServiceImpl.class);
 
 	//查询分类商品
 	public String getBrandProType(ProTypeData product) {
 		try {
+		    BaseDao bd = new BaseDaoImpl();
 			//查询商品总数
 			Connection conn = DBHelper.getConnection();
 			String sqlId = "selectCount";
@@ -82,6 +82,8 @@ public class ProTypeServiceImpl implements ProTypeService{
 				
 		} catch (Exception e) {
 			log.error("商品首页品牌分类查询错误",e);
+		}finally {
+			DBHelper.closeConnection();
 		}
 		
 		
@@ -91,7 +93,7 @@ public class ProTypeServiceImpl implements ProTypeService{
 	//一级分类数据
 	public String getOCProType(ProTypeData product) {
 		try {
-			
+		    BaseDao bd = new BaseDaoImpl();
 			//查询商品总数
 			Connection conn = DBHelper.getConnection();
 			String sqlId = "selectCount1";
@@ -138,19 +140,32 @@ public class ProTypeServiceImpl implements ProTypeService{
 			List<ProTypeData> allData = (List<ProTypeData>)bd.selectMethod(product, conn, sqlId4);
 			String goodsdata = JSONArray.fromObject(allData).toString();
 			product.setGoodsData(goodsdata);
-
+			
+			//查找面包屑 
+			List<Object> breadcrumb = new ArrayList<>();
+			String sqlId5 = "selectOne";
+			OClassify oc = new OClassify();
+			oc.setOcId(product.getGoodsOC());
+			List<OClassify> oclist = (List<OClassify>)bd.selectMethod(oc, conn, sqlId5);
+			OClassify ocData = oclist.get(0);
+			breadcrumb.add(ocData);
+			product.setBreadcrumb(breadcrumb);
+			
+			
 			
 			return JSONObject.fromObject(product).toString();
 		} catch (Exception e) {
 			e.printStackTrace();			
-		}	
+		}finally {
+			DBHelper.closeConnection();
+		}
 		return null;
 	}
 
 	//查询二级分类
 	public String getTCProType(ProTypeData product) {
 	try {
-			
+		     BaseDao bd = new BaseDaoImpl();
 			//查询商品总数
 			Connection conn = DBHelper.getConnection();
 			String sqlId = "selectCount2";
@@ -197,18 +212,39 @@ public class ProTypeServiceImpl implements ProTypeService{
 			List<ProTypeData> allData = (List<ProTypeData>)bd.selectMethod(product, conn, sqlId4);
 			String goodsdata = JSONArray.fromObject(allData).toString();
 			product.setGoodsData(goodsdata);
-
+			
+			
+		//查找面包屑 
+			List<Object> breadcrumb = new ArrayList<>();
+			String sqlId5 = "selectOne";
+			OClassify oc = new OClassify();
+			oc.setOcId(product.getGoodsOC());
+			List<OClassify> oclist = (List<OClassify>)bd.selectMethod(oc, conn, sqlId5);
+			OClassify ocData = oclist.get(0);
+			breadcrumb.add(ocData);
+			
+			String sqlId6 = "selectTwo";
+			TClassify tc = new TClassify();
+			tc.setTcId(product.getGoodsTC());
+			List<TClassify> tclist = (List<TClassify>)bd.selectMethod(tc, conn, sqlId6);
+			TClassify tcData = tclist.get(0);
+			breadcrumb.add(tcData);	
+					
+			product.setBreadcrumb(breadcrumb);
 			
 			return JSONObject.fromObject(product).toString();
 		} catch (Exception e) {
 			e.printStackTrace();			
-		}	
+		}finally {
+			DBHelper.closeConnection();
+		}
 		return null;
 	}
 
 	//查询三级分类
 	public String getCCProType(ProTypeData product) {
 	try {
+		    BaseDao bd = new BaseDaoImpl();
 			//查询商品总数
 			Connection conn = DBHelper.getConnection();
 			String sqlId = "selectCount3";
@@ -247,9 +283,35 @@ public class ProTypeServiceImpl implements ProTypeService{
 			String goodsdata = JSONArray.fromObject(allData).toString();
 			product.setGoodsData(goodsdata);
 			
+			//查找面包屑 
+			List<Object> breadcrumb = new ArrayList<>();
+			String sqlId5 = "selectOne";
+			OClassify oc = new OClassify();
+			oc.setOcId(product.getGoodsOC());
+			List<OClassify> oclist = (List<OClassify>)bd.selectMethod(oc, conn, sqlId5);
+			OClassify ocData = oclist.get(0);
+			breadcrumb.add(ocData);
+			
+			String sqlId6 = "selectTwo";
+			TClassify tc = new TClassify();
+			tc.setTcId(product.getGoodsTC());
+			List<TClassify> tclist = (List<TClassify>)bd.selectMethod(tc, conn, sqlId6);
+			TClassify tcData = tclist.get(0);
+			breadcrumb.add(tcData);	
+			
+			CClassify cc = new CClassify();
+			cc.setCcId(product.getGoodsCC());
+			List<CClassify> cclist = (List<CClassify>)bd.selectMethod(cc, conn, sqlId6);
+			CClassify ccData = cclist.get(0);
+			breadcrumb.add(ccData);	
+			
+			product.setBreadcrumb(breadcrumb);
+			
 			return JSONObject.fromObject(product).toString();
 		} catch (Exception e) {
 			e.printStackTrace();			
+		}finally {
+			DBHelper.closeConnection();
 		}
 		return null;
 	}
@@ -257,6 +319,7 @@ public class ProTypeServiceImpl implements ProTypeService{
 	//广告下一页
 	public String nextBrandProType(ProTypeData product) {
 		try {
+		   BaseDao bd = new BaseDaoImpl();
 			Connection conn = DBHelper.getConnection();
 			//查询商品数据
 			String sqlId = "selectBrand";
@@ -265,6 +328,8 @@ public class ProTypeServiceImpl implements ProTypeService{
 			return goodsdata;
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			DBHelper.closeConnection();
 		}
 		return null;
 	}
@@ -272,6 +337,7 @@ public class ProTypeServiceImpl implements ProTypeService{
 	//一级分类下一页
 	public String nextOCProType(ProTypeData product) {
 		try {
+		    BaseDao bd = new BaseDaoImpl();
 			Connection conn = DBHelper.getConnection();
 			//查询数据
 			String sqlId4 = "selectOC";
@@ -280,6 +346,8 @@ public class ProTypeServiceImpl implements ProTypeService{
 			return goodsdata;
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			DBHelper.closeConnection();
 		}
 		return null;
 	}
@@ -287,6 +355,7 @@ public class ProTypeServiceImpl implements ProTypeService{
 	//二级分类 下一页
 	public String nextTCProType(ProTypeData product) {
 		try {
+		    BaseDao bd = new BaseDaoImpl();
 			Connection conn = DBHelper.getConnection();
 			//查询数据
 			String sqlId4 = "selectTC";
@@ -295,6 +364,8 @@ public class ProTypeServiceImpl implements ProTypeService{
 			return goodsdata;
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			DBHelper.closeConnection();
 		}
 		return null;
 	}
@@ -302,12 +373,85 @@ public class ProTypeServiceImpl implements ProTypeService{
 	//三级分类 下一页
 	public String nextCCProType(ProTypeData product) {
 		try {
+		    BaseDao bd = new BaseDaoImpl();
 			Connection conn = DBHelper.getConnection();
 			//查询数据
 			String sqlId4 = "selectCC";
 			List<ProTypeData> allData = (List<ProTypeData>)bd.selectMethod(product, conn, sqlId4);
 			String goodsdata = JSONArray.fromObject(allData).toString();
 			return goodsdata;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBHelper.getConnection();
+		}
+		return null;
+	}
+
+	
+	
+	
+	//查询层层分类
+	public String innerProType(ProTypeData product) {
+		try {
+		    BaseDao bd = new BaseDaoImpl();
+			Connection conn = DBHelper.getConnection();
+			String sqlId1 = "selectCount4";
+			
+			//先看有没有条数 
+			List<ProTypeData> countData = (List<ProTypeData>)bd.selectMethod(product, conn, sqlId1);
+			long count = countData.get(0).getGoodsCount();
+			if(count==0) {
+				return null;
+			}
+			
+			product.setGoodsCount(count);
+			
+			String sqlId2 = null;
+			//查询品类分类
+			if(!"%%".equals(product.getGoodsCC())) {
+				product.setGoodsType(null);
+			}else if(!"%%".equals(product.getGoodsTC())) {
+				CClassify cc = new CClassify();
+				cc.setCcParent(product.getGoodsTC());
+				String sqlId3 = "selectOne";
+				List<CClassify> TClistData = (List<CClassify>)bd.selectMethod(cc, conn, sqlId3);
+				//变成json格式字符串
+				String goodsType = JSONArray.fromObject(TClistData).toString();
+				product.setGoodsType(goodsType);
+			}else if(!"%%".equals(product.getGoodsOC())) {
+				TClassify tc = new TClassify();
+				tc.setTcParent(product.getGoodsOC());
+				String sqlId3 = "selectOne";
+				List<TClassify> TClistData = (List<TClassify>)bd.selectMethod(tc, conn, sqlId3);
+				//变成json格式字符串
+				String goodsType = JSONArray.fromObject(TClistData).toString();
+				product.setGoodsType(goodsType);
+			}
+			
+			
+			String sqlId3 = "selectInner";
+			List<ProTypeData> allData = (List<ProTypeData>)bd.selectMethod(product, conn, sqlId3);
+			
+			product.setGoodsData(JSONArray.fromObject(allData).toString());
+			
+			return JSONObject.fromObject(product).toString();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	//分页下一页
+	public String innerNextProType(ProTypeData product) {
+		try {
+		    BaseDao bd = new BaseDaoImpl();
+			Connection conn = DBHelper.getConnection();
+						
+			String sqlId3 = "selectInner";
+			List<ProTypeData> allData = (List<ProTypeData>)bd.selectMethod(product, conn, sqlId3);
+						
+			return JSONArray.fromObject(allData).toString();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

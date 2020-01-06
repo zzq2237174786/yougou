@@ -140,25 +140,25 @@
 					<!--左边的导航栏-->
 					<div class="type-nav">
 						<!--搜索结果-->
-						<p id="nav-count">共>666个结果</p>
+						<p id="nav-count">共>0个结果</p>
 
 						<!--导航列表-->
 						<ul class="type-navlist" id="navlist">
+							<!--种类-->
+							<li id="nav-kind">
+								<p class="type-navlist-type"><span></span>品类</p>
+								<!--详情-->
+								<div class="type-navlist-content">
+									<ul id="nav-kind-ul">
+									</ul>
+								</div>
+							</li>
 							<!--品牌-->
 							<li id="nav-brand">
 								<p class="type-navlist-type"><span></span>品牌</p>
 								<!--详情-->
 								<div class="type-navlist-content">
 									<ul id="nav-brand-ul">
-									</ul>
-								</div>
-							</li>
-							<!--种类-->
-							<li id="nav-type">
-								<p class="type-navlist-type"><span></span>品类</p>
-								<!--详情-->
-								<div class="type-navlist-content">
-									<ul id="nav-type-ul">
 									</ul>
 								</div>
 							</li>
@@ -169,22 +169,22 @@
 								<div class="type-navlist-content">
 									<ul id="nav-price-ul">
 										<li>
-											<a href="">101-200</a>
+											<a href="javaScript:;" class="goodsPrice" values="101-200">101-200</a>
 										</li>
 										<li>
-											<a href="">201-300</a>
+											<a href="javaScript:;" class="goodsPrice" values="201-300">201-300</a>
 										</li>
 										<li>
-											<a href="">301-500</a>
+											<a href="javaScript:;" class="goodsPrice" values="301-500">301-500</a>
 										</li>
 										<li>
-											<a href="">501-700</a>
+											<a href="javaScript:;" class="goodsPrice" values="501-700">501-700</a>
 										</li>
 										<li>
-											<a href="">701-1000</a>
+											<a href="javaScript:;" class="goodsPrice" values="701-1000">701-1000</a>
 										</li>
 										<li>
-											<a href="">1000以上</a>
+											<a href="javaScript:;" class="goodsPrice" values="1000">1000以上</a>
 										</li>
 									</ul>
 								</div>
