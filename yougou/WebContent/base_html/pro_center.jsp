@@ -212,12 +212,9 @@
 							<div class="col-md-6">
 								<div class="media">
 									<div class="media-body detail6">
-										<p>颜色：
-											<a href="" id="goodsColor">
-											
-												
-											</a>
-
+										<p style="margin:0">颜色：
+											<a href="javaScript:;" id="goodsColor"></a>
+											<ul class="brotherColor"></ul>
 										</p>
 										<span id="single">尺码：</span>
 										<p class="detail7">
@@ -337,15 +334,8 @@
 				<h1>商品信息</h1>
 			</div>
 
-			<div class="goods">
-				<table class="table">
-				<tr class="text-center" id="goodsInfo">
-				</tr>
-					
-
-					
-
-				</table>
+			<div class="goods" id="goodsInfo">
+				
 
 			</div>
 

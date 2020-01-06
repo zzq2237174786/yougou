@@ -1,9 +1,9 @@
 //拿过来goods_id
-var goodsId=parseInt(getUrlVal('goods_id'));
+var goodsId=parseInt(getUrlVal('goodsId'));
 $(function(){
 	$.get('/yougou/goods.do',{
 		'method': 'showInfo',
-		'goodsId':'100013180'
+		'goodsId':'goodsId'
 	},function(re){
 		var obj=JSON.parse(re);
 		console.log(obj);
@@ -17,7 +17,7 @@ $(function(){
 		var goodsImg = goodsArr.goodsImg;
 		//console.log(goodsImg);
 		goodsImg=JSON.parse(goodsImg);
-		console.log(goodsImg);
+		//console.log(goodsImg);
 		// 拿到图片
 		for(var i=0;i<goodsImg.length;i++){
 			var str1=`
@@ -65,6 +65,13 @@ $(function(){
 			var goodsCImg=goodsArr.goodsCImg;//商品颜色图
 			goodsCImg=JSON.parse(goodsCImg);
 			var goodsColor=goodsArr.goodsColor;//商品颜色名
+			
+			//兄弟颜色信息
+			var goodsCLink=goodsArr.goodsCLink;
+//			var goodsImg=JSON.parse(goodsCLink[0].goodsCImg);
+//			var linkColor=goodsCLink[0].goodsColor;
+			//console.log(goodsImg.goodsCSImg);
+			
 			var str1=`
 			<div id="chooseColor">
 			<img data-toggle="tooltip" data-placement="left" title="${goodsColor}" src="${goodsCImg.goodsCSImg}" id="img_" />
@@ -79,16 +86,34 @@ $(function(){
 			`;
 			$('#goodsColor').append(str1);
 			
+			for(var i=0;i<goodsCLink.length;i++){
+				var goodsImg=JSON.parse(goodsCLink[i].goodsCImg);
+				var linkColor=goodsCLink[i].goodsColor;
+				var str1=`
+				<li>
+				<div id="chooseColor">
+				<a href="javaScript:;">
+					<img data-toggle="tooltip" data-placement="left" title="${linkColor}" src="${goodsImg.goodsCSImg}" id="img_" />
+					<img src="/yougou/img/choose.png" id="scolor1"/>
+				</a>
+				</div>
+					<div class="sub_menu">
+					<img data-toggle="tooltip" data-placement="left" title="${linkColor}" src="${goodsImg.goodsCMImg}" id="subImg"/>
+					</div>
+				</li>
+				`;
+				$('.brotherColor').append(str1);
+			}
+			
 			//商品尺码
 			var goodsSize=goodsArr.goodsSize;
 			for(var i=0;i<goodsSize.length;i++){
 				var index=goodsSize[i].lastIndexOf('\-');
 				goodsSize[i]=goodsSize[i].substring(index+1);
-				console.log("===="+goodsSize[i]);
+				//console.log("===="+goodsSize[i]);
 				var str=`
 				<span class="goodsSize">
 				<span id="xx1">${goodsSize[i]}</span>
-				<img src="/yougou/img/choose.png" id="scolor"/>
 				</span>
 				`;
 				$('#goodsSize').append(str);
@@ -96,12 +121,12 @@ $(function(){
 			
 			//国际尺码
 			var goodsSizeSpec=goodsArr.goodsSizeSpec;
-			console.log(goodsSizeSpec);
+			//console.log(goodsSizeSpec);
 			//goodsSizeSpec=JSON.parse(goodsSizeSpec);
 			//console.log(goodsSizeSpec.line1);
 			//var filedAll = goodsSizeSpec.line1.split(",");
 			for(var i=0;i<goodsSizeSpec.length;i++){
-				console.log(goodsSizeSpec[i]);
+				//console.log(goodsSizeSpec[i]);
 				var str=`
 				<span id="Spec">${goodsSizeSpec[i]}</span>
 				`;
@@ -119,9 +144,9 @@ $(function(){
 			var goodsInfo=goodsArr.goodsInfo;
 			//console.log(goodsInfo);
 			for(var i=0;i<goodsInfo.length;i++){
-				console.log(goodsInfo[i]);
+				//console.log(goodsInfo[i]);
 					var str=`
-					<td style="line-height: 100px;" data-toggle="tooltip" data-placement="left" title="${goodsInfo[i]}">${goodsInfo[i]}</td>
+					<span id="fo1" data-toggle="tooltip" data-placement="left" title="${goodsInfo[i]}">${goodsInfo[i]}</span>
 					`;
 					$('#goodsInfo').append(str);
 				
@@ -159,6 +184,7 @@ $(function(){
 			 bigImg();
 	})
 })
+
 
 
 // 拿过来goods_id
@@ -426,38 +452,42 @@ function bigImg(){
 	});
 };
 
+	
+
+
 
 $(function(){
     $('#addcart').click(function(){
-    //$('.tc').fadeIn();
-    //$('#sure').click(function(){
-    	 // var id = $(this).attr('id');
-        var fly = $('#img_').clone().css('opacity','0.7');
-        fly.css({
-            'z-index': 90,
-            'display': 'block',
-            'position': 'absolute',
-           // 'top': $('#img_'+id).offset().top +'px',
-            'top': $('#img_').offset().top +'px',
-            'left': $('#img_').offset().left +'px',
-            'width': $('#img_').width() +'px',
-            'height': $('#img_').height() +'px'
-        });
-        $('body').append(fly);
-        fly.animate({
-            top:$('#end').offset().top,
-            left:$('#end').offset().left,
-            width:50,
-            height:50
-        },1000,function(){$(this).remove()});
-        var str=parseInt($('#num').text())+1;
-        $('#num').text(str).css('display','block');
-		//$('.tc').fadeOut();
-	});
-	/*$('.close').click(function(){
+    		var fly = $('#img_').clone().css('opacity','0.7');
+    		fly.css({
+    			'z-index': 90,
+    			'display': 'block',
+    			'position': 'absolute',
+    			// 'top': $('#img_'+id).offset().top +'px',
+    			'top': $('#img_').offset().top +'px',
+    			'left': $('#img_').offset().left +'px',
+    			'width': $('#img_').width() +'px',
+    			'height': $('#img_').height() +'px'
+    		});
+    		$('body').append(fly);
+    		fly.animate({
+    			top:$('#end').offset().top,
+    			left:$('#end').offset().left,
+    			width:50,
+    			height:50
+    		},1000,function(){$(this).remove()});
+    		var str=parseInt($('#num').text())+1;
+    		$('#num').text(str).css('display','block');
+    		//$('.tc').fadeOut();
+    	});
+    /*$('.close').click(function(){
 		$('.tc').fadeOut();
 	});*/
     });
+    		
+    //$('.tc').fadeIn();
+    //$('#sure').click(function(){
+    	 // var id = $(this).attr('id');
 
 /*$('#buy').click(function(){
     $('#tc').fadeIn();
@@ -522,3 +552,22 @@ var aSpan=oPoint.querySelectorAll('#xx1');
 	  	// 设置累加后的值
 	  	$(this).siblings('.cart-num').html(nowNum);
 	});
+	
+	
+	
+	//选择尺码
+	var str=`
+	<img src="/yougou/img/choose.png" id="scolor2"/>
+	`;
+		$('#goodsSize').on('click','.goodsSize',function(){
+			$(this).css('border-color','black');
+			$(this).append(str);
+			$('#goodsSize').on('click','.goodsSize',function(){
+				$(this).siblings('.goodsSize').children('#scolor2').remove();
+				$(this).siblings('.goodsSize').css('border-color','gainsboro');
+				
+				
+			});
+		});	
+	
+	

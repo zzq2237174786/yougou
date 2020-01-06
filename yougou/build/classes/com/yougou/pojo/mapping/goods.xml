@@ -19,11 +19,18 @@
 		<property name="brandLImg" column="brand_limg"/>
 		<property name="brandSImg" column="brand_simg"/>
 		<property name="brandInfo" column="brand_info"/>
+		
+		<property name="goodsCLink" column="goods_clink"></property>
 
 		<!-- 根据goods_id查询商品详细信息 -->
 		<select sqlId="selectOne" parameterType="com.yougou.dto.lx.GoodsBrand" resultType="com.yougou.dto.lx.GoodsBrand">
 			select goods_name,goods_img,goods_cimg,goods_size,goods_details,goods_brand,goods_oldprice,goods_newprice
-			, goods_collect , goods_sales , goods_color , goods_sizespec,goods_info,brand_id,brand_name,brand_limg,brand_simg,brand_info from goods As g INNER JOIN brand as b ON g.goods_brand=b.brand_id  where goods_id = #{goodsId}
+			, goods_collect , goods_sales , goods_color , goods_sizespec,goods_info,brand_id,brand_name,brand_limg,brand_simg,brand_info,goods_clink from goods As g INNER JOIN brand as b ON g.goods_brand=b.brand_id  where goods_id = #{goodsId}
 		</select >
+		
+		<!-- 根据goods_clink查询商品颜色信息 -->
+		<select sqlId="selectTwo" parameterType="com.yougou.dto.lx.GoodsBrand" resultType="com.yougou.dto.lx.GoodsBrand">
+			select goods_cimg , goods_color from goods where goods_id = #{goodsId}
+		</select>
 		
 	</class>

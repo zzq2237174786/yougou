@@ -204,10 +204,12 @@ strong button{
 	padding-left: 12px;
 	text-decoration: line-through;
 }
-#goodsColor{
+#goodsColor,.brotherColor{
 	display:inline-block;
 	height:42px;
+	
 }
+
 /* 颜色图下面的子颜色图 */
 .sub_menu{
 	position:absolute;
@@ -217,11 +219,32 @@ strong button{
 #goodsColor:hover .sub_menu{
 	display: block;
 }
+.brotherColor{
+	margin-left:110px;
+	margin-top:-120px;
+	margin-bottom:14px;
+}
+.brotherColor>li:hover .sub_menu{
+	display: block;
+}
+.brotherColor>li{
+	float:left;
+	position:relative;
+}
+#subImg{
+	border:1px solid gainsboro;
+}
+
 #chooseColor{
 	width:51px;
 	height:42px;
 	border:1px solid gainsboro;
+	margin-right:10px;
 }
+.goodsSize:hover{
+	border-color:black;
+}
+
 #chooseColor:hover{
 	border-color:black;
 }
@@ -230,7 +253,22 @@ strong button{
 }
 #scolor{
 	margin-left:-7px;
+	margin-top:-12px;
+	/* display:none; */
 }
+#scolor1{
+	border:none;
+	margin-left:-7px;
+	margin-top:-12px;
+	display:none;
+}
+#scolor2{
+	border:none;
+	margin-left:-7px;
+	margin-top:-12px;
+}
+
+
 #xx1{
 	display:inline-block;
 	width:40px;
@@ -271,6 +309,7 @@ strong button{
 	/* border-bottom:1px solid gainsboro; */
 	text-align:center;
 	color:grey;
+	font-size:12px;
 }
 #brandL{
 	margin:0 71px;
@@ -293,6 +332,17 @@ strong button{
 	width:900px;
 	height:200px;
 	background:white;
+	border:1px solid gainsboro;
+	/* position:fixed;
+	z-index:100px; */
+}
+#fo1{
+	display:inline-block;
+	width:130px;
+	height:80px;
+	font-size:12px;
+	color:grey;
+	margin-left:80px;
 }
 /* .size1{
 	display:inline-block;
@@ -306,7 +356,7 @@ strong button{
 	padding-top: 20px;
 }
 .detail6 p{
-	padding-bottom: 20px;
+	/* padding-bottom: 20px; */
 }
 .detail6 p a{
 	text-decoration: none;
@@ -459,7 +509,8 @@ strong button{
 	
 }
 #cha{
-	color: gray;
+	display:inline-block;
+	color: black;
 	font-size: 30px;
 	margin-top:-10px;
 }

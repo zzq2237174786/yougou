@@ -23,6 +23,16 @@ public class GoodsChange {
 	private String brandLImg;
 	private String brandSImg;
 	private String brandInfo;
+	
+	private List<GoodsCLink> goodsCLink;
+	
+	
+	public List<GoodsCLink> getGoodsCLink() {
+		return goodsCLink;
+	}
+	public void setGoodsCLink(List<GoodsCLink> goodsCLink) {
+		this.goodsCLink = goodsCLink;
+	}
 	public List<String> getGoodsInfo() {
 		return goodsInfo;
 	}
