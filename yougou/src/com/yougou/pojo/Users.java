@@ -7,6 +7,7 @@ public class Users implements Serializable{
 	private byte[] usersPwd;
 	private int usersMSum;
 	private int usersPTime;
+	private String usersEmail;
 	
 
 	public byte[] getUsersPwd() {
@@ -42,4 +43,13 @@ public class Users implements Serializable{
 	public void setUsersNum(String usersNum) {
 		this.usersNum = usersNum;
 	}
+
+	public String getUsersEmail() {
+		return usersEmail;
+	}
+
+	public void setUsersEmail(String usersEmail) {
+		this.usersEmail = usersEmail;
+	}
+	
 }

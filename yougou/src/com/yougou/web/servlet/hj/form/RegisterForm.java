@@ -7,50 +7,41 @@ import com.yougou.web.core.ActionForm;
  * @author Administrator
  *
  */
-public class LoginForm extends ActionForm{
-	private String uname;
-	private String upwd;
-	private String sex;
-	private String first;
-	private String second;
+public class RegisterForm extends ActionForm{
+	private String usersName;
+	private String usersPwd;
+	private String usersEmail;
+	private String usersPTime;
+	private String usersMSum;
 	
-	public String getFirst() {
-		return first;
+	public String getUsersName() {
+		return usersName;
 	}
-	public void setFirst(String first) {
-		this.first = first;
+	public void setUsersName(String usersName) {
+		this.usersName = usersName;
 	}
-	public String getSecond() {
-		return second;
+	public String getUsersPwd() {
+		return usersPwd;
 	}
-	public void setSecond(String second) {
-		this.second = second;
+	public void setUsersPwd(String usersPwd) {
+		this.usersPwd = usersPwd;
 	}
-	public String getUname() {
-		return uname;
+	public String getUsersEmail() {
+		return usersEmail;
 	}
-	public void setUname(String uname) {
-		this.uname = uname;
+	public void setUsersEmail(String usersEmail) {
+		this.usersEmail = usersEmail;
 	}
-	public String getUpwd() {
-		return upwd;
+	public String getUsersPTime() {
+		return usersPTime;
 	}
-	public void setUpwd(String upwd) {
-		this.upwd = upwd;
+	public void setUsersPTime(String usersPTime) {
+		this.usersPTime = usersPTime;
 	}
-	public String getSex() {
-		return sex;
+	public String getUsersMSum() {
+		return usersMSum;
 	}
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
-	@Override
-	public String toString() {
-		return "LoginForm [uname=" + uname + ", upwd=" + upwd + ", sex=" + sex + ", first=" + first + ", second="
-				+ second + "]";
-	}
-	
-	
-	
-	
+	public void setUsersMSum(String usersMSum) {
+		this.usersMSum = usersMSum;
+	}	
 }

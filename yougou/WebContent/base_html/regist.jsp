@@ -73,6 +73,7 @@
 		
 		</header>
 		<!--身体-->
+	<form action="/yougou/register.do?method=register" method="post">
 		<div class="contain">
 			<div class="contain-top">
 				<div class="contain-top-logo"><a href=""><img src="/yougou/img/logo.png"/></a></div>
@@ -81,11 +82,11 @@
 			<div class="contain-bottom">
 				<div class="form-top">
 					<div class="form-head">
-						<a href="login.html"><div class="form-login">
-								<input type="submit" class="form-loginbtn" value="登录"/>
+						<a href="/yougou/base_html/login.jsp"><div class="form-login">
+								<input type="button" class="form-loginbtn" value="登录"/>
 						</div></a>
 						<a href="regist.html"><div class="for-regist">
-								<input type="submit" class="form-registbtn" value="注册"/>
+								<input type="button" class="form-registbtn" value="注册"/>
 						</div></a>
 					</div>
 					<div class="form-contain">
@@ -94,7 +95,7 @@
 							<div class="phone">
 								<div class="phone-left"><p>手机号</p></div>
 								<div class="box1">
-									<input class="phone-right" placeholder="请输入手机号码" type="text"/>
+									<input class="phone-right" placeholder="请输入手机号码" type="text" name="usersNum"/>
 									<img class="phone-right-ts"  style="display: none;" src="/yougou/img/yes-ts_03.png" />
 								</div>
 							</div>
@@ -120,7 +121,7 @@
 							<div class="email">
 								<div class="email-left"><p>邮箱账号</p></div>
 								<div class="box4">
-									<input class="email-right" placeholder="请输入邮箱账号" type="text"/>
+									<input class="email-right" placeholder="请输入邮箱账号" type="text" name="users_email"/>
 									<img class="email-right-ts"  style="display: none;" src="/yougou/img/yes-ts_03.png" />
 								</div>
 							</div>
@@ -146,7 +147,7 @@
 							<div class="password">
 								<div class="password-left"><p>密码</p></div>
 								<div class="box2">
-									<input class="password-right" maxlength="15" placeholder="由字母、数字、符号组成" type="password"/>
+									<input class="password-right" maxlength="15" placeholder="由字母、数字、符号组成" type="password" name="usersPwd"/>
 									<img class="password-right-ts" style="display: none;" src="/yougou/img/yes-ts_03.png" />
 								</div>
 							</div>
@@ -180,13 +181,18 @@
 							<div class="zhuce-xieyi-right"><a href="">我已阅读并同意《优购会员注册协议》</a></div>
 						</div>
 						<div class="zhuce-btn">
-							<input type="submit" class="zhuece-loginbtn" value="确认并登陆" title="登录"/>
+							<input type="button" class="zhuece-loginbtn" value="确认并登陆" title="登录"/>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="blank"></div>
 		</div>
+	</form>
+		
+		
+		
+		
 		<div class="login-footer">
 			<p>Copyright © 2011-2014 Yougou Technology Co., Ltd.</p>
 			<p>粤ICP备09070608号-4</p>

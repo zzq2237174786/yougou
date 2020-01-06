@@ -1,12 +1,14 @@
 $(function(){
-  var isUser = false;
-  var isPwd = false;
-  var userVal = null;
-  var pwdVal = null;
+  var isUser = false; //用户验证
+  var isPwd = false;  // 密码验证
+  var isCode = false; //验证码验证
+  var userVal = null; //用户值
+  var pwdVal = null; //密码值
+  var emailVal = null; //邮箱值
   var repwdVal = null;
   var phonechecknumber = null;
   var checknumber = null;
-  var phonenumber = null;
+//  var phonenumber = null;
   
   	//验证码字符
 	var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -110,6 +112,7 @@ $(function(){
 	}
 //点击图片进行切换
   $('.pic').click(function(){
+	s='';
   	refresh();
   });
   //手机号码获取焦点
@@ -123,6 +126,7 @@ $(function(){
     //提示显示
     $('.checknumber-check').show();
   });
+  
   
   //邮箱验证码获取焦点
   $('.email-right').focus(function(){
@@ -194,6 +198,9 @@ $(function(){
       isUser = false;
     }else{
       //要发送请求查看后台数据库没有此注册过
+    	
+    	
+    	
       //这里接口有问题 
       $('.phone-check-text').hide();
       $('.phone-right-ts').show();
@@ -212,17 +219,24 @@ $(function(){
     //验证
     if(checknumber == ''){
       $('.checknumber-check-text').html('验证码不能为空').css('color','#333333');
-      isPwd = false;
+      $('.checknumber-check-text').show();
+      $('.checknumber-ts').show();
+      isCode = false;
       return;
     };
-    //6-20位数字  定正则
-    if(checknumber != s){
+   
+    if(checknumber.toLocaleLowerCase()!= s.toLocaleLowerCase()){
       $('.checknumber-check-text').html('验证码有误,请重新输入！').css('color', '#333333');
-      isPwd = false;
+      $('.checknumber-check-text').show();
+      $('.checknumber-ts').show();
+      isCode = false;
+      //重新生成验证码
+	  s='';
+	  refresh();
     }else{
       $('.checknumber-check-text').hide();
       $('.checknumber-ts').hide();
-      isPwd = true;
+      isCode = true;
     };
   });
   
@@ -246,7 +260,7 @@ $(function(){
       //设置不能注册
       isUser = false;
     }else{
-      //要发送请求查看后台数据库没有此注册过
+      emailVal = phonechecknumber;
       //这里接口有问题 
       $('.email-check-text').hide();
       //设置能注册
@@ -311,17 +325,18 @@ $(function(){
   //点击注册
   $('.zhuece-loginbtn').click(function(){
     //点击注册按钮时候看所有项都为true才能请求后台
-    if(isUser == false || isPwd == false){
+    if(isUser == false || isPwd == false || isCode == false){
       return;
     };
     console.log('可以注册了');
     console.log(userVal);
     console.log(pwdVal);
     //请求注册之前查看每项都OK发起请求
-    $.post(URL + 'api_user.php', {
-      status : 'register',
-      username : userVal,
-      password : pwdVal
+    $.post('/yougou/login.do', {
+      method : 'register',
+      usersName : userVal,
+      usersPwd: pwdVal,
+      usersEmail :  emailVal,    
     }, function(re){
       var obj = JSON.parse(re);
       console.log(obj);

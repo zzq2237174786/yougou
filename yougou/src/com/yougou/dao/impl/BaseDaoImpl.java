@@ -146,9 +146,27 @@ public class BaseDaoImpl implements BaseDao {
 		String sql = element.getTextTrim();
 		// 将标识替换为问号
 		String regex = "#[{](\\w+)[}]";
+		Pattern pt = Pattern.compile(regex);
+		Matcher ma = pt.matcher(sql);
+		int parameterCount = 0;
+		// 查找
+		while (ma.find()) {
+			parameterCount++;
+			// 将得到的值存入map集合
+			map.put(parameterCount, ma.group(1));
+		}
 		sql = sql.replaceAll(regex, "?");
+		// 查询
 		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setObject(1, "");
+		// 设值
+		Set<Map.Entry<Integer, String>> set = map.entrySet();
+		for (Map.Entry<Integer, String> entry : set) {
+			// 通过属性得到对象的属性值
+			Field field = PC.getDeclaredField(entry.getValue());
+			field.setAccessible(true);
+			// 设值
+			ps.setObject(entry.getKey(), field.get(obj));
+		}
 		int result = ps.executeUpdate();
 		if (result > 0) {
 			return true;
@@ -235,7 +253,7 @@ public class BaseDaoImpl implements BaseDao {
 				ps.setObject(entry.getKey(), field.get(p));
 			}
 			result = ps.executeUpdate();
-			//有一条数据没差进去就失败
+			// 有一条数据没差进去就失败
 			if (result <= 0) {
 				return false;
 			}

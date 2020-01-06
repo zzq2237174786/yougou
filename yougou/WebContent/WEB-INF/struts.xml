@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
+	<!-- 登录 -->
 	<action path="login" class="com.yougou.web.servlet.hj.action.LoginAction" form="com.yougou.web.servlet.hj.form.LoginForm">
-		<result name="show" path="main.jsp"></result>
+		<result name="index" path="index.jsp"></result>
 	</action>
+	
+	<!-- 注册 -->
+	<action path="register" class="com.yougou.web.servlet.hj.action.RegisterAction" form="com.yougou.web.servlet.hj.form.RegisterForm">
+		<result name="index" path="index.jsp"></result>
+	</action>
+	
+	<!-- 基础分类 -->
 	<action path="base" class="com.yougou.web.servlet.zzq.action.BaseAction" >
 		<result name="show" path="main.jsp"></result>
 	</action>
 	
+	<!-- 商品详情-->
 	<action path="goods" class="com.yougou.web.servlet.lx.action.GoodsAction"  form="com.yougou.web.servlet.lx.form.GoodsForm">
 	</action>
 	

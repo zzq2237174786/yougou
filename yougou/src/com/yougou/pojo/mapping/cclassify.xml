@@ -8,5 +8,7 @@
 		<select sqlId="selectOne" parameterType="com.yougou.pojo.CClassify" resultType="com.yougou.pojo.CClassify">
 			select * from cclassify where cc_parent like #{ccParent} 
 		</select >
-	
+		<select sqlId="selectTwo" parameterType="com.yougou.pojo.CClassify" resultType="com.yougou.pojo.CClassify">
+			select * from cclassify where cc_id like #{ccId} 
+		</select >
 	</class>
