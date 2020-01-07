@@ -4,6 +4,7 @@ $(function() {
 	var newSlideShow = function() {
 		//获取每一个内容的宽度 4个一组
 		var liWidth = 920;
+		
 		//4个一组
 		var liCount = 4;
 		//定义两个信号量
