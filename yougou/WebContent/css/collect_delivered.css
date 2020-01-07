@@ -131,8 +131,11 @@
 	float: right;
 	margin-right: 5px;
 }
+.order-confirm .confirm-btn {
+    margin-top: 25px;
+}
 .confirm-btn{
-	padding-top: 20px;
+	
 	height: 30px;
 	
 }
