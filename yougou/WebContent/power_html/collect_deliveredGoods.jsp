@@ -285,19 +285,19 @@
 							<a class="current zeronum" href="collect_order.jsp">
 								未发货
 								<span>
-									1
+									
 								</span>
 							</a>
 							<a class="current choosed" href="javascript:void(0)">
 								已发货
-								<span>
-									0
+								<span id="span1">
+								
 								</span>
 							</a>
 							<a class="current zeronum" href="collect_singGoods.jsp">
 								已收货
 								<span>
-									0
+								
 								</span>
 							</a>
 						</div>
@@ -364,20 +364,13 @@
 											订单编号：<p class="order-num">1027583A</p>
 										</div>
 										<div class="order-confirm">
-											<input type="button" id="confirm-btn" value="确认收货" />
+											<input type="button" class="confirm-btn" id="confirm-btn" value="确认收货" />
 										</div>
 									</div>
 								</li>
 								
 							</ul>
-							<div class="body-bottom">
-								<div class="nogoods">
-									暂无订单,请先去<a href="index.jsp">优购</a>
-								</div>
-								<div class="havegoods">		
-									
-								</div>
-							</div>
+							
 						</div>
 
 						
@@ -574,7 +567,7 @@
 		
 	</body>
 </html>
-<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/collect.js" type="text/javascript" charset="utf-8"></script>
+<script src="/yougou/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/yougou/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+<script src="/yougou/js/base.js" type="text/javascript" charset="utf-8"></script>
+<script src="/yougou/js/backorder.js" type="text/javascript" charset="utf-8"></script>
