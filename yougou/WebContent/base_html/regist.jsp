@@ -121,7 +121,7 @@
 							<div class="email">
 								<div class="email-left"><p>邮箱账号</p></div>
 								<div class="box4">
-									<input class="email-right" placeholder="请输入邮箱账号" type="text" name="users_email"/>
+									<input class="email-right" placeholder="请输入邮箱账号" type="text" name="usersEmail"/>
 									<img class="email-right-ts"  style="display: none;" src="/yougou/img/yes-ts_03.png" />
 								</div>
 							</div>
@@ -147,7 +147,7 @@
 							<div class="password">
 								<div class="password-left"><p>密码</p></div>
 								<div class="box2">
-									<input class="password-right" maxlength="15" placeholder="由字母、数字、符号组成" type="password" name="usersPwd"/>
+									<input class="password-right" maxlength="15" placeholder="由6~15位字母、数字或符号组成" type="password" name="usersPwd"/>
 									<img class="password-right-ts" style="display: none;" src="/yougou/img/yes-ts_03.png" />
 								</div>
 							</div>
@@ -178,10 +178,10 @@
 						<!--协议-->
 						<div class="zhuce-xieyi">
 							<div class="zhuce-xieyi-left"><input type="checkbox" checked="checked" class="zhuce-chec"/></div>
-							<div class="zhuce-xieyi-right"><a href="">我已阅读并同意《优购会员注册协议》</a></div>
+							<div class="zhuce-xieyi-right"><a href="javaScript:;">我已阅读并同意《优购会员注册协议》</a></div>
 						</div>
 						<div class="zhuce-btn">
-							<input type="button" class="zhuece-loginbtn" value="确认并登陆" title="登录"/>
+							<input type="button" class="zhuece-loginbtn" value="确认并注册" title="登录"/>
 						</div>
 					</div>
 				</div>

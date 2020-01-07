@@ -4,6 +4,7 @@
 		<property name="usersPwd" column="users_pwd"/>
 		<property name="usersMSum" column="users_msum"/>
 		<property name="usersPTime" column="users_ptime"/>
+		<property name="usersEmail" column="users_email"/>
 
 		<!-- 查询有没有 -->
 		<select sqlId="selectOne" parameterType="com.yougou.pojo.Users" resultType="com.yougou.pojo.Users">
@@ -11,7 +12,7 @@
 		</select >
 		
 		<insert sqlId="insertOne" parameterType="com.yougou.pojo.Users">
-			insert into users(users_num,users_pwd,users_msum,users_ptime) values (#{usersNum},#{usersPwd},#{usersMSum},#{usersPTime})
+			insert into users(users_num,users_pwd,users_msum,users_ptime,users_email) values (#{usersNum},#{usersPwd},#{usersMSum},#{usersPTime},#{usersEmail})
 		</insert>
 		
 		<delete sqlId="deleteOne"  parameterType="com.yougou.pojo.Users">

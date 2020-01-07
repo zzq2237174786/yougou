@@ -8,17 +8,18 @@ import com.yougou.web.core.ActionForm;
  *
  */
 public class RegisterForm extends ActionForm{
-	private String usersName;
+	private String usersNum;
 	private String usersPwd;
 	private String usersEmail;
 	private String usersPTime;
 	private String usersMSum;
 	
-	public String getUsersName() {
-		return usersName;
+
+	public String getUsersNum() {
+		return usersNum;
 	}
-	public void setUsersName(String usersName) {
-		this.usersName = usersName;
+	public void setUsersNum(String usersNum) {
+		this.usersNum = usersNum;
 	}
 	public String getUsersPwd() {
 		return usersPwd;

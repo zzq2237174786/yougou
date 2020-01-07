@@ -16,9 +16,9 @@ function getUrlVal(property) {
 
 //判断用户是否登录
 function checkLogin() {
-	if(localStorage.getItem('username') && localStorage.getItem('token')) {
+	if(localStorage.getItem('usersNum')) {
 		//用户登录了
-		$('#username').show().html('欢迎！'+localStorage.getItem('username'));
+		$('#username').show().html('欢迎！'+localStorage.getItem('usersNum'));
 		$('#exit-btn').show();
 		$('#register-btn, #login-btn').hide();
 		$('#username').siblings('p').hide();
@@ -122,15 +122,14 @@ $(function() {
 	//点击退出
 	$('#exit-btn').click(function() {
 		//清除本地存储
-		localStorage.removeItem('username');
-		localStorage.removeItem('token');
+		localStorage.removeItem('usersNum');
 		checkLogin();
 		location.href = '/yougou/base_html/index.jsp'
 	});
 
 	//点击购物车
 	$('#cart-btn').click(function() {
-		if(localStorage.getItem('username') && localStorage.getItem('token')) {
+		if(localStorage.getItem('usersNum')) {
 			//跳购物车
 			location.href = '/yougou/base_html/login_cart.jsp';
 		} else {
@@ -140,7 +139,7 @@ $(function() {
 	});
 	//点击收藏
 	$('#collect-btn').click(function() {
-		if(localStorage.getItem('username') && localStorage.getItem('token')) {
+		if(localStorage.getItem('usersNum')) {
 			//跳收藏页面
 			location.href = '/yougou/power_html/collect.jsp';
 		} else {
@@ -150,7 +149,7 @@ $(function() {
 	});
 	//产品点击跳购物车
 		$('#centerToCart').click(function() {
-		if(localStorage.getItem('username') && localStorage.getItem('token')) {
+		if(localStorage.getItem('usersNum')) {
 			//跳购物车
 			location.href = '/yougou/power_html/login_cart.jsp';
 		} else {
@@ -161,7 +160,7 @@ $(function() {
 	
 	//产品点击跳购物车
 		$('#centerToOrder').click(function() {
-		if(localStorage.getItem('username') && localStorage.getItem('token')) {
+		if(localStorage.getItem('usersNum')) {
 			//跳订单页面
 			location.href = '/yougou/power_html/order_submit.jsp';
 		} else {
@@ -171,7 +170,7 @@ $(function() {
 	});
 	//产品点击跳收藏
 		$('#centerToCollect').click(function() {
-		if(localStorage.getItem('username') && localStorage.getItem('token')) {
+		if(localStorage.getItem('usersNum')) {
 			//跳购物车
 			location.href = '/yougou/power_html/collect.jsp';
 		} else {
@@ -216,7 +215,7 @@ $(function(){
 /*点击爱心 收藏商品*/
 var clickCollect = function(){
 	$('.my-collect').each(function(){
-		if(localStorage.getItem('username') && localStorage.getItem('token')) {
+		if(localStorage.getItem('usersNum')) {
 			$(this).attr({
 				'data-toggle':'modal',
 				'data-target':'collect-modal'

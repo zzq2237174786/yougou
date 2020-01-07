@@ -2,13 +2,21 @@ $(function(){
   var isUser = false; //用户验证
   var isPwd = false;  // 密码验证
   var isCode = false; //验证码验证
+  var isEmail = false;//邮箱验证
+  var isCPwd = false;//账号验证
+  var isEmailCode = false; // 邮箱验证码
+  
+  
   var userVal = null; //用户值
   var pwdVal = null; //密码值
   var emailVal = null; //邮箱值
+  var emailCodeVal = null; //邮箱验证码的值
   var repwdVal = null;
-  var phonechecknumber = null;
   var checknumber = null;
 //  var phonenumber = null;
+  
+  //定义一个全局的邮箱验证的值
+  var emailCode = null;
   
   	//验证码字符
 	var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -128,11 +136,119 @@ $(function(){
   });
   
   
-  //邮箱验证码获取焦点
+  //邮箱获取焦点
   $('.email-right').focus(function(){
     //提示显示
-    $('.email-check').show();
+    $('.email-check').show();  
   });
+  
+  
+  
+  //邮箱验证码获取焦点
+  $('.emailnum-right').focus(function() {
+	//提示显示	  
+	 $('.emailnum-check').show(); 
+  });
+  
+  
+  //点击获取验证码做短信验证
+  $('.emailnum-getnumber').click(function() {
+	  //拿到值
+	  emailVal = $('.email-right').val();
+	  //验证
+	  if(emailVal == ''||emailVal == null){
+	  $('.email-check').show();
+      $('.email-check-text').html('邮箱账号不能为空').css('color','#333333');
+      $('.email-check-text').show();
+      $('.email-ts').show();
+      $('.email-right-ts').hide();
+      //设置不能注册
+      isEmail = false;
+      return;
+	  };
+	  //3-20位  定正则
+	  var re = /^[a-zA-Z\d]+([-_\.][a-zA-Z\d]+)*@[a-zA-Z\d]+\.[a-zA-Z\d]{2,4}$/g;
+	  if(!re.test(emailVal)){
+      $('.email-check-text').html('邮箱格式错误').css('color', '#333333');
+      $('.email-check-text').show();
+      $('.email-ts').show();
+      $('.email-right-ts').hide();
+      //设置不能注册
+      isEmail = false;
+      return;
+	  }else{
+		  $('.email-check-text').hide();
+		  $('.email-ts').hide();
+		  $('.email-right-ts').show();
+		  isEmail = true;
+	  };
+    
+	  //ajax请求验证码 赋值
+	  $.ajax({
+  		url:'/yougou/register.do',
+  		type:'post',
+  		async: false,
+  		data: {
+  			method: 'getEmailCode',
+  			usersEmail: emailVal
+  		},
+  		success: function(re) {
+  			console.log(re);
+  				var reslut = JSON.parse(re); 			
+  				if(reslut.code==0){
+  					emailCode = reslut.data;
+  					$('.emailnum-check').show();
+  					$('.emailnum-check-text').html('验证码发送成功').css('color','#333333');
+  			 	    $('.emailnum-check-text').show();
+  			 	    $('.emailnum-ts').show();
+  			      //设置不能注册
+  			 	   isEmailCode = true;
+  				}else{
+  					$('.emailnum-check').show();
+  					$('.emailnum-check-text').html('验证码发送失败，点击重新发送').css('color','#333333');
+  			 	    $('.emailnum-check-text').show();
+  			 	    $('.emailnum-ts').show();
+  			      //设置不能注册
+  			 	   isEmailCode = false;
+  				}
+  			}
+  		});
+  });
+  
+  
+  //邮箱验证码失去焦点判断
+  $('.emailnum-right').blur(function() {
+	//拿到值
+	    emailCodeVal = $(this).val();
+	    //验证
+	    if(emailCodeVal == ''||emailCodeVal == null){
+	      $('.emailnum-check-text').html('请输入邮箱验证码').css('color','#333333');
+	      $('.emailnum-check-text').show();
+	      $('.emailnum-ts').show();
+	      //设置不能注册
+	      isEmailCode = false;
+	      return;
+	    };
+	    //3-20位  定正则
+	    var re = /^[0-9]{4}$/;
+	    if(!re.test(emailCodeVal)){
+	    	$('.emailnum-check-text').html('验证码格式错误').css('color','#333333');
+	 	    $('.emailnum-check-text').show();
+	 	    $('.emailnum-ts').show();
+	      //设置不能注册
+	 	   isEmailCode = false;
+	 	   return;
+	    }else{
+	 	    $('.emailnum-check').hide();;
+	 	    isEmailCode = true;
+	    }
+	    if(emailCodeVal==emailCode&&emailCodeVal!=null){
+	    	isEmailCode = true;
+	    }else{
+	    	isEmailCode = false;
+	    }    
+	  });
+   
   
   //密码获取焦点
   $('.password-right').focus(function(){
@@ -140,30 +256,38 @@ $(function(){
   	$('.password-check').show();
                 function checkStrong(val) {
                     var modes = 0;
-                    if (val.length < 6) return 0;
-                    if (/\d/.test(val)) modes++; //数字
-                    if (/[a-z]/.test(val)) modes++; //小写
-                    if (/[A-Z]/.test(val)) modes++; //大写  
-                    if (/\W/.test(val)) modes++; //特殊字符
-                    if (val.length > 12) return 3;
+                    if (val.length < 6){ return 0;}
+                    if (/\d/.test(val)){ modes++; }//数字
+                    if (/[a-z]/.test(val)){ modes++;}//小写
+                    if (/[A-Z]/.test(val)){ modes++;}//大写  
+                    if (/\W/.test(val)) {modes++;} //特殊字符
+                    if (val.length > 12){modes++;}
                     return modes;
                 };
+                
                 $(".password-right").keyup(function() {
                     var val = $(this).val();
                     var num = checkStrong(val);
                     switch (num) {
                         case 0:
+                        	$('.password-high').css('background', '#D5D5D5');
+                            $('.password-middle').css('background', '#D5D5D5');
+                            $('.password-low').css('background', '#D5D5D5');
                             break;
                         case 1:
                             $('.password-high').css('background', 'red');
+                            $('.password-middle').css('background', '#D5D5D5');
+                            $('.password-low').css('background', '#D5D5D5');                           
                             break;
-                        case 2:
+                       case 2: case 3:
                             $('.password-middle').css('background', 'yellow');
                             $('.password-high').css('background', '#D5D5D5');
+                            $('.password-low').css('background', '#D5D5D5');
                             break;
-                         case 3:
+                       case 4: case 5:
                             $('.password-low').css('background', 'green');
                             $('.password-middle').css('background', '#D5D5D5');
+                            $('.password-high').css('background', '#D5D5D5');
                             break;
                         default:
                             break;
@@ -182,26 +306,54 @@ $(function(){
   //手机号码失去焦点
   $('.phone-right').blur(function(){
     //拿到值
-    phonenumber = $(this).val();
+    userVal = $(this).val();
     //验证
-    if(userVal == ''){
+    if(userVal == ''||userVal == null){
       $('.phone-check-text').html('手机号不能为空').css('color','#333333');
+      $('.phone-check-text').show();
+      $('.phone-right-ts').hide();
+      $('.phone-ts').show();
       //设置不能注册
       isUser = false;
       return;
     };
     //3-20位  定正则
     var re = /^[1][3,4,5,7,8][0-9]{9}$/g;
-    if(!re.test(phonenumber)){
-      $('.phone-check-text').html('格式错误,必须为11位数字').css('color', '#333333');
+    if(!re.test(userVal)){
+      $('.phone-check-text').html('格式错误,手机号非法').css('color', '#333333');
+      $('.phone-check-text').show();
+      $('.phone-right-ts').hide();
+      $('.phone-ts').show();
       //设置不能注册
       isUser = false;
     }else{
       //要发送请求查看后台数据库没有此注册过
-    	
-    	
-    	
-      //这里接口有问题 
+    	$.ajax({
+    		url:'/yougou/register.do',
+    		type:'post',
+    		async: false,
+    		data: {
+    			method: 'usersNumVerify',
+    			usersNum: userVal
+    		},
+    		success: function(re) {
+    				//如果数据库没有此账号 就是true
+    				if("false"==re.trim()){
+    					  $('.phone-check-text').html('账号已被注册').css('color', '#333333');
+    	    		      $('.phone-check-text').show();
+    	    		      $('.phone-right-ts').hide();
+    	    		      $('.phone-ts').show();
+    	    		      isUser = false;
+    				}else{
+    					  isUser = true;
+    				}
+    			}
+    		});
+    	   	
+    	if(!isUser){
+    		return; 
+    	}
+      //成功
       $('.phone-check-text').hide();
       $('.phone-right-ts').show();
       $('.phone-ts').hide();
@@ -211,13 +363,13 @@ $(function(){
   });
   
   
-  
+
   //验证码失去焦点
   $('.checknumber-right').blur(function(){
     //拿到值
     checknumber = $(this).val();
     //验证
-    if(checknumber == ''){
+    if(checknumber == ''||checknumber == null){
       $('.checknumber-check-text').html('验证码不能为空').css('color','#333333');
       $('.checknumber-check-text').show();
       $('.checknumber-ts').show();
@@ -233,6 +385,7 @@ $(function(){
       //重新生成验证码
 	  s='';
 	  refresh();
+	  return;
     }else{
       $('.checknumber-check-text').hide();
       $('.checknumber-ts').hide();
@@ -245,28 +398,31 @@ $(function(){
   //邮箱去焦点
   $('.email-right').blur(function(){
     //拿到值
-    phonechecknumber = $(this).val();
+	  emailVal = $(this).val();
     //验证
-    if(phonechecknumber == ''){
-      $('.email-check-text').html('邮箱验证码不能为空').css('color','#333333');
+    if(emailVal == ''||emailVal == null){
+      $('.email-check-text').html('邮箱账号不能为空').css('color','#333333');
+      $('.email-check-text').show();
+      $('.email-ts').show();
+      $('.email-right-ts').hide();
       //设置不能注册
-      isUser = false;
+      isEmail = false;
       return;
     };
     //3-20位  定正则
     var re = /^[a-zA-Z\d]+([-_\.][a-zA-Z\d]+)*@[a-zA-Z\d]+\.[a-zA-Z\d]{2,4}$/g;
-    if(!re.test(phonechecknumber)){
+    if(!re.test(emailVal)){
       $('.email-check-text').html('格式错误,请重新输入').css('color', '#333333');
+      $('.email-check-text').show();
+      $('.email-ts').show();
+      $('.email-right-ts').hide();
       //设置不能注册
-      isUser = false;
+      isEmail = false;
     }else{
-      emailVal = phonechecknumber;
-      //这里接口有问题 
       $('.email-check-text').hide();
-      //设置能注册
       $('.email-ts').hide();
       $('.email-right-ts').show();
-      isUser = true;
+      isEmail = true;
     };
   });
   
@@ -277,16 +433,23 @@ $(function(){
     //拿到值
     pwdVal = $(this).val();
     //验证
-    if(pwdVal == ''){
+    if(pwdVal == ''||pwdVal == null){
       $('.password-check-text').html('密码不能为空').css('color','#333333');
+      $('.password-check-text').show();
+      $('.password-ts').show();
+      $('.password-right-ts').hide();
       isPwd = false;
       return;
     };
-    //6-20位数字  定正则
-    var re = /([0-9a-zA-Z][!@#%^&()*])/g;
+    //6-15位数字  定正则
+    var re = /^[a-zA-Z0-9!@#^&().?*]{6,15}$/;
     if(!re.test(pwdVal)){
       $('.password-check-text').html('密码格式有误').css('color', '#333333');
+      $('.password-check-text').show();
+      $('.password-ts').show();
+      $('.password-right-ts').hide();
       isPwd = false;
+      return;
     }else{
       $('.password-check-text').hide();
       $('.password-ts').hide();
@@ -296,70 +459,83 @@ $(function(){
   });
   
   
-  
-  
+   
   //确认密码失去焦点
   $('.repassword-right').blur(function(){
-    //拿到值
-    repwdVal = $(this).val();
-    //验证
-    if(repwdVal == ''){
-      $('.repassword-check-text').html('密码不能为空').css('color','#333333');
-      isPwd = false;
-      return;
-    };
-    if(pwdVal==repwdVal){
-    	$('.repassword-check-text').hide();
-      $('.repassword-ts').hide();
-      $('.repassword-right-ts').show();
-      isPwd = true;
-    }else{
-    	$('.repassword-check-text').html('密码错误,请重新输入！').css('color', '#333333');
-    	return false;
-    };
+	    //拿到值
+	    repwdVal = $(this).val();
+	    //验证
+	    if(repwdVal == ''||repwdVal == null){
+	      $('.repassword-check-text').html('密码不能为空').css('color','#333333');
+	      $('.repassword-check-text').show();
+	      $('.repassword-ts').show();
+	      $('.repassword-right-ts').hide();
+	      isCPwd = false;
+	      return;
+	    };
+	    if(pwdVal==repwdVal){
+	     $('.repassword-check-text').hide();
+	      $('.repassword-ts').hide();
+	      $('.repassword-right-ts').show();
+	      isCPwd = true;
+	      return;
+	    }else{
+	    	$('.repassword-check-text').html('密码不匹配,请重新输入').css('color', '#333333');
+	    	  $('.repassword-check-text').show();
+	          $('.repassword-ts').show();
+	          $('.repassword-right-ts').hide();
+	    	return false;
+	    };
   });
   
+  //查看是否
   
   
   
   //点击注册
   $('.zhuece-loginbtn').click(function(){
+	if(emailCodeVal!=emailCode.trim()||emailCodeVal==null){
+		$('.emailnum-check').show();
+    	$('.emailnum-check-text').html('验证码错误').css('color','#333333');
+ 	    $('.emailnum-check-text').show();
+ 	    $('.emailnum-ts').show();	
+	}
     //点击注册按钮时候看所有项都为true才能请求后台
-    if(isUser == false || isPwd == false || isCode == false){
+    if(isUser == false || isPwd == false || isCode == false || isEmail==false || isCPwd==false || isEmailCode == false){
       return;
     };
     console.log('可以注册了');
     console.log(userVal);
     console.log(pwdVal);
+    console.log(emailVal);
     //请求注册之前查看每项都OK发起请求
-    $.post('/yougou/login.do', {
+    $.post('/yougou/register.do', {
       method : 'register',
-      usersName : userVal,
+      usersNum : userVal,
       usersPwd: pwdVal,
-      usersEmail :  emailVal,    
+      usersEmail : emailVal   
     }, function(re){
       var obj = JSON.parse(re);
       console.log(obj);
-      //验证
-      if(obj.code == 2001){
-        $('.phone-right').html('用户名已存在').css('color', '#333333');
-        //设置不能注册
-        isUser = false;
-        return;
-      };
-      
+       
       if(obj.code != 0){return;}
       //注册成功 把文本框清空,设置不能注册
       $('.phone-right, .password-right').val('');     
-      isUser = false;
-      isPwd = false;
+      var isUser = false; //用户验证
+      var isPwd = false;  // 密码验证
+      var isCode = false; //验证码验证
+      var isEmail = false;//邮箱验证
+      var isCPwd = false;//账号验证
+      var isEmailCode = false; // 邮箱验证码
+      
+      
       $('.phone-check-text, .password-right').hide();
       //跳转到登录页面
       alert('注册成功，2秒之后跳转登录页面');
       setTimeout(function(){
         //跳转到登录页面
-        window.location.href = 'login.jsp';
-      },2000);
+        window.location.href = '/yougou/base_html/login.jsp';
+      },2000); 
     });
   });
 });
