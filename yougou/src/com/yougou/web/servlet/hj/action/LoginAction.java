@@ -1,6 +1,7 @@
 package com.yougou.web.servlet.hj.action;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.lx.pojo.User;
 import com.sun.corba.se.impl.encoding.CodeSetConversion.BTCConverter;
+import com.yougou.dto.hj.UsersInfo;
 import com.yougou.dto.zzq.ProTypeData;
 import com.yougou.pojo.Users;
 import com.yougou.service.hj.UsersService;
@@ -52,7 +54,10 @@ public class LoginAction extends DispatcherAction{
 			if(usersPwds.equals(usersPwdy)) {
 				//账号存在 密码一致
 				String msg = "{\"code\": 0, \"message\":\"登录成功\" ,\"data\":\""+usersNum+"\"}";
-				//将账号存入ssision中
+				//将账号登录的信息存放到存入ssision中
+				UsersInfo usersInfo = new UsersInfo();
+//				usersInfo.setLoginTime(new Date());
+				
 				request.getSession().setAttribute("usersNum", usersNum);
 				//还可以存时间 
 				af.setData(msg);
