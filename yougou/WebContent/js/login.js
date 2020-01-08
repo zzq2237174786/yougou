@@ -1,6 +1,6 @@
 $(function(){
       //判断跳详情还是首页
-	  var goodsId=parseInt(getUrlVal('goods_id'));
+	  var goodsId=parseInt(getUrlVal('goodsId'));
 	  var isUser = false;
 	  var isPwd = false;
 	
@@ -100,7 +100,7 @@ $(function(){
       sessionStorage.setItem('usersNum', obj.data);
       //跳首页还是详情
       if(goodsId){
-        location.href = '/yougou/pro_center.jsp?goodsId='+goodsId;
+        location.href = '/yougou/base_html/pro_center.jsp?goodsId='+goodsId;
       }else{
         location.href = '/yougou/base_html/index.jsp';      
       };
