@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,6 +11,16 @@
 		<link rel="stylesheet" type="text/css" href="/yougou/css/collectBase.css"/>
 		<link rel="stylesheet" type="text/css" href="/yougou/css/collect_order.css"/>
 	</head>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<body>
 		<!--头部-->
 		<div class="header">
@@ -45,21 +56,21 @@
 				<ul class="nav navbar-nav navbar-right">
 					<!--登录注册-->
 					<li>
-						<a href="login.jsp" id="login-btn">登录</a>
+						<a href="/yougou/base_html/login.jsp" id="login-btn">登录</a>
 						<span id="username"></span>
 						<p>/</p>
-						<a href="register.jsp" id="register-btn">注册</a>
+						<a href="/yougou/base_html/register.jsp" id="register-btn">注册</a>
 						<a href="javaScript:;" id="exit-btn">退出</a>
 					</li>
 					<!--收藏-->
-					<li id="collect_btn">
-						<a href="login.jsp">
+					<li id="collect-btn">
+						<a href="/yougou/power_html/collect_order.jsp">
 							<span class="glyphicon glyphicon-heart"></span> 收藏
 						</a>
 					</li>
 					<!--购物袋-->
 					<li id="cart-btn">
-						<a href="login.jsp">
+						<a href="/yougou/power_html/login_cart.jsp">
 							<span class="glyphicon glyphicon-shopping-cart"></span> 购物车
 						</a>
 					</li>
@@ -87,38 +98,38 @@
 			<div class=" logo-nav">
 				<div class="container">
 					<div class="row">
-					<!--导航条-->
-					<div class="col-md-10">
-						<nav class="navbar ">
-							<ul class="nav navbar-nav" id="nav-type">
-								<li class="nav-log">
-									<a href=""><img src="/yougou/img/nav-logo.png" /></a>
-								</li>
-								<li>
-									<a href="index.jsp">首页</a>
-								</li>
-								<!--分类-->
-							</ul>
-						</nav>
+						<!--导航条-->
+						<div class="col-md-10">
+							<nav class="navbar ">
+								<ul class="nav navbar-nav" id="nav-type">
+									<li class="nav-log">
+										<a href=""><img src="/yougou/img/nav-logo.png" /></a>
+									</li>
+									<li>
+										<a href="/yougou/base_html/index.jsp">首页</a>
+									</li>
+									<!--分类-->
+								</ul>
+							</nav>
+						</div>
+
+						<!--搜索框 logo-serach-->
+						<div class="col-md-2 logo-search">
+							<input type="text" />
+							<a href=""><span></span></a>
+						</div>
 					</div>
 
-					<!--搜索框 logo-serach-->
-					<div class="col-md-2 logo-search">
-						<input type="text" />
-						<a href=""><span></span></a>
+					<!--导航条下的内容-->
+					<div class="nav-content" id="nav-content">
+						<!--分类下的内容-->
 					</div>
-				</div>
-
-				<!--导航条下的内容-->
-				<div class="nav-content" id="nav-content">
-					<!--分类下的内容-->
-				</div>
 				</div>
 			</div>
 
 		</div>
 
-				
+					
 		<!--内容部分-->
 		<section>
 			<div class="container">
@@ -284,20 +295,20 @@
 						<div class="content-top">
 							<a class="current choosed" href="javascript:void(0)">
 								未发货
-								<span>
-									1
+								<span id="span1">
+								 
 								</span>
 							</a>
-							<a class="current zeronum" href="collect_deliveredGoods.jsp">
+							<a class="current zeronum"  href="javascript:void(0);οnclick=getdorder();">
 								已发货
 								<span>
-									0
+								
 								</span>
 							</a>
-							<a class="current zeronum" href="collect_singGoods.jsp">
+							<a class="current zeronum" href="javascript:void(0);οnclick=getcorder();">
 								已收货
 								<span>
-									0
+									
 								</span>
 							</a>
 						</div>
@@ -318,7 +329,6 @@
 							<!--有数据-->
 							<ul class="goods">
 								<li>
-									
 									<a href="pro-center.jsp"><img src="/yougou/img/101244991_01_s.jpg"/></a>
 									<div class="goods-list">
 										<div class="goods-info">
@@ -366,14 +376,7 @@
 								</li>
 								
 							</ul>
-							<div class="body-bottom">
-								<div class="nogoods">
-									暂无订单,请先去<a href="index.jsp">优购</a>
-								</div>
-								<div class="havegoods">		
-									
-								</div>
-							</div>
+							
 						</div>
 
 						
@@ -570,7 +573,16 @@
 		
 	</body>
 </html>
-<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/collect.js" type="text/javascript" charset="utf-8"></script>
+<script src="/yougou/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/yougou/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+<script src="/yougou/js/base.js" type="text/javascript" charset="utf-8"></script>
+<script src="/yougou/js/backorder.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+
+
+
+
+
+
