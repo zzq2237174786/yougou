@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<class name="com.yougou.dto.lx.GoodsCart" table="cart">
+		<id name="cartId" column="cart_id"/> 
+		<!-- <property name="cartId" column="cart_id"/> -->
+		<property name="stockId" column="stock_id"/>
+		<property name="cartNum" column="cart_num"/>
+		<property name="cartPitch" column="cart_pitch"/>
+		<property name="usersNum" column="users_num"/>
+		<property name="goodsId" column="goods_id"/>
+		<property name="goodsSize" column="goods_size"/>
+		<property name="stockNum" column="stock_num"/>
+		<property name="goodsImg" column="goods_img"/>
+		<property name="goodsName" column="goods_name"/>
+		<property name="goodsColor" column="goods_color"/>
+		<property name="goodsNewPrice" column="goods_newprice"/>
+
+		<!-- 根据goods_id查询商品信息，商品尺寸goods_size，商品尺寸所对应的商品库存数量stock_num -->
+		<select sqlId="selectOne" parameterType="com.yougou.dto.lx.GoodsCart" resultType="com.yougou.dto.lx.GoodsCart">
+			select goods_name , goods_img , goods_color , goods_newprice , s.goods_size , stock_num from stock as s INNER JOIN goods as g ON s.goods_id=g.goods_id where s.goods_id = #{goodsId} 
+		</select >
+		
+		<!-- 根据goods_id获取到存货的stock_id -->
+		<select sqlId="selectTwo" parameterType="com.yougou.dto.lx.GoodsCart" resultType="com.yougou.dto.lx.GoodsCart">
+			select stock_id from stock where goods_id = #{goodsId}
+		</select>
+		
+		<!-- 根据car_id往购物车表中添加商品,购物车件数cart_num由前台页面获得，cart_pitch默认不选中值为0-->
+		<insert sqlId="insertOne" parameterType="com.yougou.dto.lx.GoodsCart" resultType="com.yougou.dto.lx.GoodsCart">
+			insert into cart(cart_id,stock_id,cart_num,cart_pitch,users_num) values(#{cartId},#{stockId},#{cartNum},#{cartPitch},#{usersNum})
+		</insert>
+		
+		<!-- 根据users_num从购物车表中查出一个用户对应的所有的stock_id -->
+		<select sqlId="selectThree" parameterType="com.yougou.dto.lx.GoodsCart" resultType="com.yougou.dto.lx.GoodsCart">
+			select stock_id from cart where users_num=#{usersNum}
+		</select>
+		
+		<!-- 根据购物车表中的stock_id去查库存表中的goodsId -->
+		<select sqlId="selectFour" parameterType="com.yougou.dto.lx.GoodsCart" resultType="com.yougou.dto.lx.GoodsCart">
+			select goods_id from stock where stock_id=#{stockId}
+		</select>
+		
+	</class>

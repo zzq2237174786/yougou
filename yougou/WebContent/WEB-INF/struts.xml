@@ -40,4 +40,7 @@
 			<result name="sorder" path="/backstage/backorder.do?method=getUnOrder"></result>
 	</action>
 	
+	<!-- 购物车 -->
+	<action path="cart" class="com.yougou.web.servlet.lx.action.CartAction"  form="com.yougou.web.servlet.lx.form.CartForm">
+	</action>
 </actions>
