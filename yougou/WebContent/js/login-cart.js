@@ -1,10 +1,11 @@
-	//请求数据
+
+
+	 //请求数据
 	//var cartId=parseInt(getUrlVal('cartId'));
   		$(function(){
   			//根据userStockt请求stocktId
   			$.get('/yougou/cart.do',{
   				'method': 'userStock',
-  				'usersNum':'121212'
   				},
   			function(re){
   				var obj=JSON.parse(re);

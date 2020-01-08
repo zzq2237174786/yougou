@@ -97,7 +97,7 @@ $(function(){
       };
       //成功登录  到底是跳转到首页还是其它商品详情？
       //把用户名和token存到本地
-      localStorage.setItem('usersNum', obj.data);
+      sessionStorage.setItem('usersNum', obj.data);
       //跳首页还是详情
       if(goodsId){
         location.href = '/yougou/pro_center.jsp?goodsId='+goodsId;

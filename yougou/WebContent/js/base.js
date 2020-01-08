@@ -16,9 +16,9 @@ function getUrlVal(property) {
 
 //判断用户是否登录
 function checkLogin() {
-	if(localStorage.getItem('usersNum')) {
+	if(sessionStorage.getItem('usersNum')) {
 		//用户登录了
-		$('#username').show().html('欢迎！'+localStorage.getItem('usersNum'));
+		$('#username').show().html('欢迎！'+sessionStorage.getItem('usersNum'));
 		$('#exit-btn').show();
 		$('#register-btn, #login-btn').hide();
 		$('#username').siblings('p').hide();
@@ -132,7 +132,7 @@ $(function() {
 			success: function(re) {
 				if("true"==re){
 					//清除本地存储
-					localStorage.removeItem('usersNum');
+					sessionStorage.removeItem('usersNum');
 					checkLogin();
 					location.href = '/yougou/base_html/index.jsp'
 				}
@@ -152,7 +152,7 @@ $(function() {
 //	});
 //	//点击收藏
 	$('#collect-btn').click(function() {
-		if(localStorage.getItem('usersNum')) {
+		if(sessionStorage.getItem('usersNum')) {
 			//跳收藏页面
 			location.href = '/yougou/power_html/collect.jsp';
 		} else {
@@ -224,7 +224,7 @@ $(function(){
 /*点击爱心 收藏商品*/
 var clickCollect = function(){
 	$('.my-collect').each(function(){
-		if(localStorage.getItem('usersNum')) {
+		if(sessionStorage.getItem('usersNum')) {
 			$(this).attr({
 				'data-toggle':'modal',
 				'data-target':'collect-modal'
@@ -237,5 +237,22 @@ var clickCollect = function(){
 		};
 	});
 };
+
+
+//搜索跳搜索页面
+$(function() {
+	//点击搜索跳转
+	$('#search').click(function() {
+		//获取文本框搜索的值
+		var values = $('#searchVal').val();
+		location.href="/yougou/base_html/search.jsp?values="+values;
+	});
+});
+
+
+
+
+
+
 
 

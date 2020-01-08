@@ -161,7 +161,7 @@ public class LXServiceImpl implements LXService {
 	public String getUserStock(GoodsCart cart) {
 		Connection conn=DBHelper.getConnection();
 		BaseDao dao=new BaseDaoImpl();
-		GoodsCart carts=null;
+//		GoodsCart carts=null;
 		String allStockIds="";
 		try {
 			List<GoodsCart> allCarts = (List<GoodsCart>)dao.selectMethod(cart, conn, "selectThree");
@@ -171,7 +171,7 @@ public class LXServiceImpl implements LXService {
 			}
 			cart.setStockId(allStockIds);
 			//carts = allCarts.get(0);
-			cart.setUsersNum(carts.getUsersNum());
+//			cart.setUsersNum(carts.getUsersNum());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{
