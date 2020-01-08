@@ -4,7 +4,6 @@ $(function() {
 	var newSlideShow = function() {
 		//获取每一个内容的宽度 4个一组
 		var liWidth = 920;
-		
 		//4个一组
 		var liCount = 4;
 		//定义两个信号量
@@ -220,7 +219,7 @@ $(function() {
 				str = `
        			<li>
 					<img src="/yougou/img/loading.gif" lazyLoadSrc="${listArr[i].goodsTImg}"/>
-					<a href="/yougou/base_html/pro_center.jsp?goodsId${listArr[i].goodsId}">${listArr[i].goodsStyle}</a>
+					<a href="/yougou/base_html/pro_center.jsp?goodsId=${listArr[i].goodsId}">${listArr[i].goodsStyle}</a>
 				</li>
      			 `;
 			}

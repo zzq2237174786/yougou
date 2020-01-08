@@ -121,23 +121,36 @@ $(function() {
 
 	//点击退出
 	$('#exit-btn').click(function() {
-		//清除本地存储
-		localStorage.removeItem('usersNum');
-		checkLogin();
-		location.href = '/yougou/base_html/index.jsp'
+		//清除session中的缓存
+		$.ajax({
+			url:'/yougou/login.do',
+			type:'post',
+			data: {
+				method:"exitLogin"
+			}, 
+			async: false,
+			success: function(re) {
+				if("true"==re){
+					//清除本地存储
+					localStorage.removeItem('usersNum');
+					checkLogin();
+					location.href = '/yougou/base_html/index.jsp'
+				}
+			}
+		});
 	});
 
-	//点击购物车
-	$('#cart-btn').click(function() {
-		if(localStorage.getItem('usersNum')) {
-			//跳购物车
-			location.href = '/yougou/base_html/login_cart.jsp';
-		} else {
-			//跳登录
-			location.href = '/yougou/base_html/login.jsp';
-		}
-	});
-	//点击收藏
+//	//点击购物车
+//	$('#cart-btn').click(function() {
+//		if(localStorage.getItem('usersNum')) {
+//			//跳购物车
+//			location.href = '/yougou/base_html/login_cart.jsp';
+//		} else {
+//			//跳登录
+//			location.href = '/yougou/base_html/login.jsp';
+//		}
+//	});
+//	//点击收藏
 	$('#collect-btn').click(function() {
 		if(localStorage.getItem('usersNum')) {
 			//跳收藏页面
@@ -147,41 +160,37 @@ $(function() {
 			location.href = '/yougou/base_html/login.jsp';
 		}
 	});
-	//产品点击跳购物车
-		$('#centerToCart').click(function() {
-		if(localStorage.getItem('usersNum')) {
-			//跳购物车
-			location.href = '/yougou/power_html/login_cart.jsp';
-		} else {
-			//跳登录
-			location.href = '/yougou/base_html/login.jsp';
-		}
-	});
-	
-	//产品点击跳购物车
-		$('#centerToOrder').click(function() {
-		if(localStorage.getItem('usersNum')) {
-			//跳订单页面
-			location.href = '/yougou/power_html/order_submit.jsp';
-		} else {
-			//跳登录
-			location.href = '/yougou/base_html/login.jsp';
-		}
-	});
-	//产品点击跳收藏
-		$('#centerToCollect').click(function() {
-		if(localStorage.getItem('usersNum')) {
-			//跳购物车
-			location.href = '/yougou/power_html/collect.jsp';
-		} else {
-			//跳登录
-			location.href = '/yougou/base_html/login.jsp';
-		}
-	});
-	
-	
-	
-	
+//	//产品点击跳购物车
+//		$('#centerToCart').click(function() {
+//		if(localStorage.getItem('usersNum')) {
+//			//跳购物车
+//			location.href = '/yougou/power_html/login_cart.jsp';
+//		} else {
+//			//跳登录
+//			location.href = '/yougou/base_html/login.jsp';
+//		}
+//	});
+//	
+//	//产品点击跳购物车
+//		$('#centerToOrder').click(function() {
+//		if(localStorage.getItem('usersNum')) {
+//			//跳订单页面
+//			location.href = '/yougou/power_html/order_submit.jsp';
+//		} else {
+//			//跳登录
+//			location.href = '/yougou/base_html/login.jsp';
+//		}
+//	});
+//	//产品点击跳收藏
+//		$('#centerToCollect').click(function() {
+//		if(localStorage.getItem('usersNum')) {
+//			//跳购物车
+//			location.href = '/yougou/power_html/collect.jsp';
+//		} else {
+//			//跳登录
+//			location.href = '/yougou/base_html/login.jsp';
+//		}
+//	});	
 });
 
 //窗口滚动事件
@@ -228,3 +237,5 @@ var clickCollect = function(){
 		};
 	});
 };
+
+

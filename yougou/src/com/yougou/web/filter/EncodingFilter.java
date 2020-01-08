@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 /*
  * 转码过滤器
  */
-public class encodingFilter implements Filter{
+public class EncodingFilter implements Filter{
 	private String oldEncoding = null;
 	private String newEncoding = null;
 	

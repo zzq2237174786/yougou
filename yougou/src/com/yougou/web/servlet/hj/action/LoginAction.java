@@ -56,9 +56,12 @@ public class LoginAction extends DispatcherAction{
 				String msg = "{\"code\": 0, \"message\":\"登录成功\" ,\"data\":\""+usersNum+"\"}";
 				//将账号登录的信息存放到存入ssision中
 				UsersInfo usersInfo = new UsersInfo();
-//				usersInfo.setLoginTime(new Date());
-				
-				request.getSession().setAttribute("usersNum", usersNum);
+				usersInfo.setLoginTime(new Date());
+				System.out.println(request.getLocalAddr());
+				usersInfo.setUsersIp(request.getRemoteAddr());
+				usersInfo.setUsersNum(usersNum);				
+				//将信息存放到session中
+				request.getSession().setAttribute("usersInfo", usersInfo);
 				//还可以存时间 
 				af.setData(msg);
 				return af;
@@ -70,5 +73,16 @@ public class LoginAction extends DispatcherAction{
 				return af;
 			}		
 		}
+	}
+
+	
+   public ActionForward exitLogin(HttpServletRequest request, HttpServletResponse response ,ActionForm form) throws ServletException, IOException{
+		//退出登录 清除session中的数据
+	   request.getSession().removeAttribute("usersInfo");
+	   request.getSession().removeAttribute("loginMsg");
+	   //返回成功
+	   ActionForward af = new ActionForward();
+	   af.setData("true");
+	   return af;
 	}
 }
