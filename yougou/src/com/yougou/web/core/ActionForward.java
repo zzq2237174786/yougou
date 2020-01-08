@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
 
-import com.yougou.web.filter.encodingFilter;
+import com.yougou.web.filter.EncodingFilter;
 
 import jdk.nashorn.api.scripting.AbstractJSObject;
 import net.sf.json.JSONArray;
