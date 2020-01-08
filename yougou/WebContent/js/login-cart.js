@@ -1,7 +1,11 @@
 	//请求数据
-//		var goodsId=parseInt(getUrlVal('goods_id'));
+	//var cartId=parseInt(getUrlVal('cartId'));
   		$(function(){
-  			$.get(URL+'api_goods.php',{'goods_id':34233},
+  			//根据userStockt请求stocktId
+  			$.get('/yougou/cart.do',{
+  				'method': 'userStock',
+  				'usersNum':'121212'
+  				},
   			function(re){
   				var obj=JSON.parse(re);
   				console.log(obj);
@@ -11,41 +15,143 @@
   					return;
   				}
   				var listArr=obj.data;
-  				//遍历数组数据
-  				for(var i=0;i<listArr.length;i++){
-  					var str=`
-  						<tr class="del-all">
-					<td class="form-inline">
-						<input class="check" type="checkbox"/>&nbsp;&nbsp;<img lazyLoadSrc="${listArr[i].goods_thumb}" src="/yougou/img/loading.gif" />
-					</td>
-					<td title="${listArr[i].goods_name}">${listArr[i].goods_name}</td>
-					<td class="cart-desc">${listArr[i].goods_desc}</td>
-					<td class="unit-price">${listArr[i].price}</td>
-					<td>
-						<span class="minus">-</span>
-						<span class="cart-num">1</span>
-						<span class="add">+</span>
-					</td>
-					<td class="subtotal" style="font-weight: bold;">${listArr[i].price}</td>
-					<td>
-						<a href="javascript:;">
-							<p>移入收藏夹 </p>
-						</br>
-						<p class="del-btn">删除</p>
-						</a>
-					</td>
-				</tr>
-  					`;
-  					//组装好一个添加一个
-  					$('#table').append(str);
-  				};
-  				//预加载图片
-  				$('#table [lazyLoadSrc]').YdxLazyLoad();
-  				//数据结构渲染到页面之后进行交互操作
-  				cartEvent();
+  				var allStock=listArr.stockId;
+  				var filedAll = allStock.split(",");
+  				console.log(filedAll);
+  				//遍历数组数据拿到每一个stockId
+  				for(var i=0;i<filedAll.length;i++){
+  					var stockId=filedAll[i];
+  					if(stockId==""){
+  						return;
+  					}
+  					//根据stockId请求goodsId
+  					$.get('/yougou/cart.do',{
+  		  				'method': 'goodStock',
+  		  				'stockId':stockId
+  		  				},
+  		  			function(re){
+  		  				var obj=JSON.parse(re);
+  		  				console.log(obj);
+  		  				//验证
+  		  				if(obj.code!=0){
+  		  					console.log(obj.message);
+  		  					return;
+  		  				}
+  		  				//拿到每一个goodsId
+  		  				var goodsId=obj.data.goodsId;
+  		  				//根据goodsId请求商品信息
+  		  			$.get('/yougou/cart.do',{
+  		  				'method': 'cartInfo',
+  		  				'goodsId':goodsId
+  		  				},
+  		  			function(re){
+  		  				var obj=JSON.parse(re);
+  		  				console.log(obj);
+  		  				//验证
+  		  				if(obj.code!=0){
+  		  					console.log(obj.message);
+  		  					return;
+  		  				}
+  		  				var cartGoods=obj.data;
+  		  				var goodsImg=cartGoods.goodsImg;
+  		  				goodsImg=JSON.parse(goodsImg);
+  		  				//渲染数据
+  		  			var str=`
+						<tr class="del-all">
+  		  					<td class="form-inline">
+  		  						<input class="check" type="checkbox"/>&nbsp;&nbsp;<img lazyLoadSrc="${goodsImg[0].goodsSImg}" src="/yougou/img/loading.gif" />
+  		  					</td>
+  		  					<td title="${cartGoods.goodsName}">${cartGoods.goodsName}</td>
+  		  					<td class="cart-desc">${cartGoods.goodsColor}<p>${cartGoods.goodsSize}</p></td>
+  		  					<td class="unit-price">${cartGoods.goodsNewPrice}</td>
+  		  					<td>
+  		  						<span class="minus">-</span>
+  		  						<span class="cart-num">1</span>
+  		  						<span class="add">+</span>
+  		  					</td>
+  		  					<td class="subtotal" style="font-weight: bold;">${cartGoods.goodsNewPrice}</td>
+  		  					<td>
+  		  						<a href="javascript:;">
+  		  						<p>移入收藏夹 </p>
+  		  						<p class="del-btn">删除</p>
+  		  						</a>
+  		  					</td>
+  		  				</tr>
+					`;
+					//组装好一个添加一个
+					$('#table').append(str);
+					//预加载图片
+					$('#table [lazyLoadSrc]').YdxLazyLoad();
+//  		  				
+//  		  				}
+//  		  				)
+//  				}
+//  				)	
+//  				}
+//  			});
+//  		});
+					//数据结构渲染到页面之后进行交互操作
+					cartEvent();
+//					console.log("----");
+					
+					
+					
+					
+  		  				}
+  		  				)
+  		  				}
+  		  				)
+  				}
   				
+  			
+  			
+  				
+  				
+  				
+  				
+  				}
+  				)
+  		})
+  			//点击加
+  			$('#table').on('click','.add',function(){
+	  				//拿到元素中的number值进行++
+	  				var nowNum=parseInt($(this).siblings('.cart-num').html());
+	  				nowNum++;
+	  				//设置限购最大值
+	  				nowNum=nowNum>=10?10:nowNum;
+	  				//设置累加后的值
+	  				$(this).siblings('.cart-num').html(nowNum);
+	  				//求小计
+	  				var unitPrice=parseInt($(this).parent().siblings('.unit-price').html());
+	  				var subtotal=$(this).parent().siblings('.subtotal');
+	  				subtotal.html(nowNum*unitPrice+'.00');
+	  				//求总价
+	  				total();
+	  			});			
+  			//点击减
+  			$('#table').on('click','.minus',function(){
+				//拿到元素中的number值进行++
+				var nowNum=parseInt($(this).siblings('.cart-num').html());
+				nowNum--;
+				//设置限购最大值
+				nowNum=nowNum<=1?1:nowNum;
+				//设置累加后的值
+				$(this).siblings('.cart-num').html(nowNum);
+				//求小计
+				var unitPrice=parseInt($(this).parent().siblings('.unit-price').html());
+				var subtotal=$(this).parent().siblings('.subtotal');
+				subtotal.html(nowNum*unitPrice+'.00');
+				//求总价
+				total();
+			});
+  			
+  			//点击清空购物袋
+  			$('#del-all').click(function(){
+  				var tr=$('.del-all');
+  				tr.remove();
+  				$('#table').append('<strong>'+'购物车为空，请去选择心仪的商品吧！'+'</strong>');
   			});
-  		});
+					
   		
   		//购物车交互操作
   		function cartEvent(){
@@ -79,40 +185,6 @@
   				total();
   			});
   			
-  			//点击加
-  			$('.add').click(function(){
-  				//拿到元素中的number值进行++
-  				var nowNum=parseInt($(this).siblings('.cart-num').html());
-  				nowNum++;
-  				//设置限购最大值
-  				nowNum=nowNum>=10?10:nowNum;
-  				//设置累加后的值
-  				$(this).siblings('.cart-num').html(nowNum);
-  				//求小计
-  				var unitPrice=parseInt($(this).parent().siblings('.unit-price').html());
-  				var subtotal=$(this).parent().siblings('.subtotal');
-  				subtotal.html(nowNum*unitPrice+'.00');
-  				//求总价
-  				total();
-  			});
-  			
-  			//点击减
-  			$('.minus').click(function(){
-  				//拿到元素中的number值进行++
-  				var nowNum=parseInt($(this).siblings('.cart-num').html());
-  				nowNum--;
-  				//设置限购最大值
-  				nowNum=nowNum<=1?1:nowNum;
-  				//设置累加后的值
-  				$(this).siblings('.cart-num').html(nowNum);
-  				//求小计
-  				var unitPrice=parseInt($(this).parent().siblings('.unit-price').html());
-  				var subtotal=$(this).parent().siblings('.subtotal');
-  				subtotal.html(nowNum*unitPrice+'.00');
-  				//求总价
-  				total();
-  			});
-  			
   			//点击删除
   			$('.del-btn').click(function(){
   				var tr=$(this).parent().parent().parent();
@@ -121,12 +193,6 @@
   				total();
   			});
   			
-  			//点击清空购物袋
-  			$('#del-all').click(function(){
-  				var tr=$('.del-all');
-  				tr.remove();
-  				$('#table').append('<strong>'+'购物车为空，请去选择心仪的商品吧！'+'</strong>');
-  			});
   		};
   		
   		//求总价方法
@@ -144,10 +210,13 @@
   		
   		
 //拿过来goods_id
-var goodsId=parseInt(getUrlVal('goods_id'));
+//var goodsId=parseInt(getUrlVal('goods_id'));
 $(function(){
-	$.get(URL+'api_goods.php',{
-		'goods_id':goodsId
+	$.get('/yougou/index.do',{
+		'page': 15,
+		'pageSize': 12,
+		'method':'getNewProduct',
+		'cartId': 'oc'+Math.ceil(Math.random()*6),
 	},function(re){
 		var obj=JSON.parse(re);
 		if(obj.code!=0){
@@ -161,151 +230,151 @@ $(function(){
 			str+=`
          <ul class="active88">
 					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[0].goods_thumb}" />
-						</a>
+					<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[0].goodsId}">
+					<img src="${goodsArr[0].goodsTImg}" />
+				</a>
 
-						<a href="">
-							<p><strong>${goodsArr[0].goods_name}</strong></p>
-							<p>${goodsArr[0].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[0].price}</p></strong></h1>
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[0].goodsId}">
+					<img src="${goodsArr[0].brandSImg}" id="goodsTImg"/>
+					<p>${goodsArr[0].goodsName}</p>
+				</a>
+				<h1><p><strong>¥${goodsArr[0].goodsNewPrice}</p></strong></h1>
 					</li>
 					
 					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[1].goods_thumb}" />
-						</a>
+					<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[1].goodsId}">
+					<img src="${goodsArr[1].goodsTImg}" />
+				</a>
 
-						<a href="">
-							<p><strong>${goodsArr[1].goods_name}</strong></p>
-							<p>${goodsArr[1].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[1].price}</p></strong></h1>
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[1].goodsId}">
+					<img src="${goodsArr[1].brandSImg}" id="goodsTImg"/>
+					<p>${goodsArr[1].goodsName}</p>
+				</a>
+				<h1><p><strong>¥${goodsArr[1].goodsNewPrice}</p></strong></h1>
 					</li>
 					
 					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[2].goods_thumb}" />
-						</a>
+					<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[2].goodsId}">
+					<img src="${goodsArr[2].goodsTImg}" />
+				</a>
 
-						<a href="">
-							<p><strong>${goodsArr[2].goods_name}</strong></p>
-							<p>${goodsArr[2].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[2].price}</p></strong></h1>
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[2].goodsId}">
+					<img src="${goodsArr[2].brandSImg}" id="goodsTImg"/>
+					<p>${goodsArr[2].goodsName}</p>
+				</a>
+				<h1><p><strong>¥${goodsArr[2].goodsNewPrice}</p></strong></h1>
 					</li>
 					
 					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[3].goods_thumb}" />
-						</a>
+					<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[3].goodsId}">
+					<img src="${goodsArr[3].goodsTImg}" />
+				</a>
 
-						<a href="">
-							<p><strong>${goodsArr[3].goods_name}</strong></p>
-							<p>${goodsArr[3].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[3].price}</p></strong></h1>
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[3].goodsId}">
+					<img src="${goodsArr[3].brandSImg}" id="goodsTImg"/>
+					<p>${goodsArr[3].goodsName}</p>
+				</a>
+				<h1><p><strong>¥${goodsArr[3].goodsNewPrice}</p></strong></h1>
 					</li>
 				</ul>
 				
 				<ul class="active88">
 					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[4].goods_thumb}" />
-						</a>
+					<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[4].goodsId}">
+					<img src="${goodsArr[4].goodsTImg}" />
+				</a>
 
-						<a href="">
-							<p><strong>${goodsArr[4].goods_name}</strong></p>
-							<p>${goodsArr[4].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[4].price}</p></strong></h1>
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[4].goodsId}">
+					<img src="${goodsArr[4].brandSImg}" id="goodsTImg"/>
+					<p>${goodsArr[4].goodsName}</p>
+				</a>
+				<h1><p><strong>¥${goodsArr[4].goodsNewPrice}</p></strong></h1>
 					</li>
 					
 					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[5].goods_thumb}" />
-						</a>
+					<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[5].goodsId}">
+					<img src="${goodsArr[5].goodsTImg}" />
+				</a>
 
-						<a href="">
-							<p><strong>${goodsArr[5].goods_name}</strong></p>
-							<p>${goodsArr[5].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[5].price}</p></strong></h1>
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[5].goodsId}">
+					<img src="${goodsArr[5].brandSImg}" id="goodsTImg"/>
+					<p>${goodsArr[5].goodsName}</p>
+				</a>
+				<h1><p><strong>¥${goodsArr[5].goodsNewPrice}</p></strong></h1>
 					</li>
 					
 					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[6].goods_thumb}" />
-						</a>
+					<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[6].goodsId}">
+					<img src="${goodsArr[6].goodsTImg}" />
+				</a>
 
-						<a href="">
-							<p><strong>${goodsArr[6].goods_name}</strong></p>
-							<p>${goodsArr[6].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[6].price}</p></strong></h1>
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[6].goodsId}">
+					<img src="${goodsArr[6].brandSImg}" id="goodsTImg"/>
+					<p>${goodsArr[6].goodsName}</p>
+				</a>
+				<h1><p><strong>¥${goodsArr[6].goodsNewPrice}</p></strong></h1>
 					</li>
 					
 					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[7].goods_thumb}" />
-						</a>
+					<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[7].goodsId}">
+					<img src="${goodsArr[7].goodsTImg}" />
+				</a>
 
-						<a href="">
-							<p><strong>${goodsArr[7].goods_name}</strong></p>
-							<p>${goodsArr[7].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[7].price}</p></strong></h1>
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[7].goodsId}">
+					<img src="${goodsArr[7].brandSImg}" id="goodsTImg"/>
+					<p>${goodsArr[7].goodsName}</p>
+				</a>
+				<h1><p><strong>¥${goodsArr[7].goodsNewPrice}</p></strong></h1>
 					</li>
 				</ul>
 				
 				<ul class="active88">
 					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[8].goods_thumb}" />
-						</a>
+					<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[8].goodsId}">
+					<img src="${goodsArr[8].goodsTImg}" />
+				</a>
 
-						<a href="">
-							<p><strong>${goodsArr[8].goods_name}</strong></p>
-							<p>${goodsArr[8].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[8].price}</p></strong></h1>
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[8].goodsId}">
+					<img src="${goodsArr[8].brandSImg}" id="goodsTImg"/>
+					<p>${goodsArr[8].goodsName}</p>
+				</a>
+				<h1><p><strong>¥${goodsArr[8].goodsNewPrice}</p></strong></h1>
 					</li>
 					
 					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[9].goods_thumb}" />
-						</a>
+					<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[9].goodsId}">
+					<img src="${goodsArr[9].goodsTImg}" />
+				</a>
 
-						<a href="">
-							<p><strong>${goodsArr[9].goods_name}</strong></p>
-							<p>${goodsArr[9].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[9].price}</p></strong></h1>
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[9].goodsId}">
+					<img src="${goodsArr[9].brandSImg}" id="goodsTImg"/>
+					<p>${goodsArr[9].goodsName}</p>
+				</a>
+				<h1><p><strong>¥${goodsArr[9].goodsNewPrice}</p></strong></h1>
 					</li>
 					
 					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[1].goods_thumb}" />
-						</a>
+					<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[10].goodsId}">
+					<img src="${goodsArr[10].goodsTImg}" />
+				</a>
 
-						<a href="">
-							<p><strong>${goodsArr[1].goods_name}</strong></p>
-							<p>${goodsArr[1].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[1].price}</p></strong></h1>
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[10].goodsId}">
+					<img src="${goodsArr[10].brandSImg}" id="goodsTImg"/>
+					<p>${goodsArr[10].goodsName}</p>
+				</a>
+				<h1><p><strong>¥${goodsArr[10].goodsNewPrice}</p></strong></h1>
 					</li>
 					
 					<li class="shoes1">
-						<a href="">
-							<img src="${goodsArr[0].goods_thumb}" />
-						</a>
+					<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[11].goodsId}">
+					<img src="${goodsArr[11].goodsTImg}" />
+				</a>
 
-						<a href="">
-							<p><strong>${goodsArr[0].goods_name}</strong></p>
-							<p>${goodsArr[0].goods_desc}</p>
-						</a>
-						<h1><p><strong>¥${goodsArr[0].price}</p></strong></h1>
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[11].goodsId}">
+					<img src="${goodsArr[11].brandSImg}" id="goodsTImg"/>
+					<p>${goodsArr[11].goodsName}</p>
+				</a>
+				<h1><p><strong>¥${goodsArr[11].goodsNewPrice}</p></strong></h1>
 					</li>
 				</ul>
 				

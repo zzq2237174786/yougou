@@ -92,7 +92,7 @@
 			<!--logo下的分类-->
 			<div class=" logo-nav">
 				<div class="container">
-					<div class="row">
+					<div class="row" >
 						<!--导航条-->
 						<div class="col-md-10">
 							<nav class="navbar ">
@@ -113,8 +113,8 @@
 							<a href=""><span></span></a>
 						</div>
 						<span id="num" class="badge">0</span>
-						<span class="glyphicon glyphicon-shopping-cart" id="end"></span> 购物车
-					</div>
+						<a href="/yougou/power_html/login_cart.jsp"><span class="glyphicon glyphicon-shopping-cart" id="end"></span>购物车</a>
+						
 			
 					<!--导航条下的内容-->
 					<div class="nav-content" id="nav-content">
@@ -127,7 +127,7 @@
 
 		<!--导航路径  面包屑-->
 		<!--<div class="container"style="padding-top: 150px;margin-left: -20px;">-->
-		<ul class="breadcrumb" id="location">
+		<!-- <ul class="breadcrumb" id="location">
 			<li id="position">您当前位置：</li>
 			<li>
 				<a href="">首页</a>
@@ -139,7 +139,7 @@
 				<a href="">女士靴子</a>
 			</li>
 			<li>中靴</li>
-		</ul>
+		</ul> -->
 
 		<!--选项卡-->
 		<!--左图右文字-->
@@ -218,7 +218,7 @@
 										</p>
 										<span id="single">尺码：</span>
 										<p class="detail7">
-											<a href="javaScript:;" id="goodsSize">
+											<a href="javaScript:;" id="goodsSize" class="CartSize">
 												
 											</a>
 											<!--模态框-->
@@ -302,9 +302,20 @@
 										</div>
 
 										<!-- <img id="img_" src="/yougou/img/picsmall01.jpg"> -->
+										
 										<div class="form-inline">
 											<a href="javaScript:;"><button class="form-control" style="background: #333;color: white;padding-left: 30px;padding-right: 30px;margin-right: 20px;margin-top: 20px;" id="addcart">加入购物袋</button></a>
 											<a href="javaScript:;"><button data-toggle="modal" data-target="#myModal1" class="form-control" style="padding-left: 30px;padding-right: 30px;margin-top: 20px;">立即购买</button></a>
+										</div>
+										<!-- 尺码弹窗 -->
+										<div class="CartTc">
+											<div class="CartLine">
+											<!--<span class="close">X</span>-->
+											<h3 class="con">您尚未选择尺码<span class="CartClose">X</span></h3>
+											<a href="javaScript:;" id="CartSize" class="CartSize">
+												
+											</a>
+											</div>
 										</div>
 
 										<div class="form-inline" style="margin-top: 30px;">

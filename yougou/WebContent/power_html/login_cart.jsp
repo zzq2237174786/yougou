@@ -76,7 +76,7 @@
 		<div class="container">
 			<div class="navbar-header">
 				<a href="/yougou/base_html/index.jsp"><img src="/yougou/img/logo.png"/></a>
-				<img src="img/carlogo.jpg" />
+				<img src="/yougou/img/carlogo.jpg" />
 			</div>
 			<div class="navbar-left">
 				<ul class="nav navbar-nav">
@@ -106,7 +106,11 @@
 				</tr>	
 			</table>
 		</div>
-		
+		<!--翻页-->
+		<div class="nav-page">
+			<span>1</span> - <span>5</span> / 页
+			<span><a href="">下一页></a></span>
+		</div>
 		<div class="container" id="logincar">
 			<div class="logincar">
 				<a href="index.html">

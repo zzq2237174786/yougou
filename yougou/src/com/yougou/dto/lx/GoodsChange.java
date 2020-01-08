@@ -24,6 +24,8 @@ public class GoodsChange {
 	private String brandSImg;
 	private String brandInfo;
 	
+	
+	
 	private List<GoodsCLink> goodsCLink;
 	
 	

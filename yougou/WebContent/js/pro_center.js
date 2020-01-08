@@ -3,7 +3,7 @@ var goodsId=parseInt(getUrlVal('goodsId'));
 $(function(){
 	$.get('/yougou/goods.do',{
 		'method': 'showInfo',
-		'goodsId':'goodsId'
+		'goodsId':goodsId
 	},function(re){
 		var obj=JSON.parse(re);
 		console.log(obj);
@@ -13,6 +13,9 @@ $(function(){
 		};
 		
 		var goodsArr=obj.data;
+		
+		
+		
 		//$('.detail2').html(obj.data.goodsName);
 		var goodsImg = goodsArr.goodsImg;
 		//console.log(goodsImg);
@@ -75,7 +78,7 @@ $(function(){
 			var str1=`
 			<div id="chooseColor">
 			<img data-toggle="tooltip" data-placement="left" title="${goodsColor}" src="${goodsCImg.goodsCSImg}" id="img_" />
-			<img src="/yougou/img/choose.png" id="scolor"/>
+			<img src="/yougou/img/choose.png" id="scolor" />
 			</div>
 			`;
 			$('#goodsColor').append(str1);
@@ -92,7 +95,7 @@ $(function(){
 				var str1=`
 				<li>
 				<div id="chooseColor">
-				<a href="javaScript:;">
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsCLink[i].goodsId}">
 					<img data-toggle="tooltip" data-placement="left" title="${linkColor}" src="${goodsImg.goodsCSImg}" id="img_" />
 					<img src="/yougou/img/choose.png" id="scolor1"/>
 				</a>
@@ -117,8 +120,9 @@ $(function(){
 				</span>
 				`;
 				$('#goodsSize').append(str);
+				$('#CartSize').append(str);
 			}
-			
+			$('#CartSize').append('<button class="btn-default" id="sure">确定</button>');
 			//国际尺码
 			var goodsSizeSpec=goodsArr.goodsSizeSpec;
 			//console.log(goodsSizeSpec);
@@ -193,7 +197,7 @@ $(function(){
 		'page': 15,
 		'pageSize': 12,
 		'method':'getNewProduct',
-		'cartId': 'oc1',
+		'cartId': 'oc'+Math.ceil(Math.random()*6),
 	},function(re){
 		var obj=JSON.parse(re);
 		console.log(obj);
@@ -208,11 +212,11 @@ $(function(){
 			str+=`
          <ul class="active1">
 					<li class="shoes1">
-						<a href="">
+						<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[0].goodsId}">
 							<img src="${goodsArr[0].goodsTImg}" />
 						</a>
 
-						<a href="">
+						<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[0].goodsId}">
 							<img src="${goodsArr[0].brandSImg}" id="goodsTImg"/>
 							<p>${goodsArr[0].goodsName}</p>
 						</a>
@@ -220,11 +224,11 @@ $(function(){
 					</li>
 					
 					<li class="shoes1">
-					<a href="">
+					<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[1].goodsId}">
 						<img src="${goodsArr[1].goodsTImg}" />
 					</a>
 
-					<a href="">
+					<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[1].goodsId}">
 						<img src="${goodsArr[1].brandSImg}" id="goodsTImg"/>
 						<p>${goodsArr[1].goodsName}</p>
 					</a>
@@ -232,11 +236,11 @@ $(function(){
 				</li>
 					
 				<li class="shoes1">
-				<a href="">
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[2].goodsId}">
 					<img src="${goodsArr[2].goodsTImg}" />
 				</a>
 
-				<a href="">
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[2].goodsId}">
 					<img src="${goodsArr[2].brandSImg}" id="goodsTImg"/>
 					<p>${goodsArr[2].goodsName}</p>
 				</a>
@@ -244,11 +248,11 @@ $(function(){
 			</li>
 					
 			<li class="shoes1">
-			<a href="">
+			<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[3].goodsId}">
 				<img src="${goodsArr[3].goodsTImg}" />
 			</a>
 
-			<a href="">
+			<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[3].goodsId}">
 				<img src="${goodsArr[3].brandSImg}" id="goodsTImg"/>
 				<p>${goodsArr[3].goodsName}</p>
 			</a>
@@ -258,11 +262,11 @@ $(function(){
 				
 				<ul class="active1">
 				<li class="shoes1">
-				<a href="">
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[4].goodsId}">
 					<img src="${goodsArr[4].goodsTImg}" />
 				</a>
 
-				<a href="">
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[4].goodsId}">
 					<img src="${goodsArr[4].brandSImg}" id="goodsTImg"/>
 					<p>${goodsArr[4].goodsName}</p>
 				</a>
@@ -270,11 +274,11 @@ $(function(){
 			</li>
 					
 			<li class="shoes1">
-			<a href="">
+			<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[5].goodsId}">
 				<img src="${goodsArr[5].goodsTImg}" />
 			</a>
 
-			<a href="">
+			<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[5].goodsId}">
 				<img src="${goodsArr[5].brandSImg}" id="goodsTImg"/>
 				<p>${goodsArr[5].goodsName}</p>
 			</a>
@@ -282,11 +286,11 @@ $(function(){
 		</li>
 					
 		<li class="shoes1">
-		<a href="">
+		<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[6].goodsId}">
 			<img src="${goodsArr[6].goodsTImg}" />
 		</a>
 
-		<a href="">
+		<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[6].goodsId}">
 			<img src="${goodsArr[6].brandSImg}" id="goodsTImg"/>
 			<p>${goodsArr[6].goodsName}</p>
 		</a>
@@ -294,11 +298,11 @@ $(function(){
 	</li>
 					
 	<li class="shoes1">
-	<a href="">
+	<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[7].goodsId}">
 		<img src="${goodsArr[7].goodsTImg}" />
 	</a>
 
-	<a href="">
+	<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[7].goodsId}">
 		<img src="${goodsArr[7].brandSImg}" id="goodsTImg"/>
 		<p>${goodsArr[7].goodsName}</p>
 	</a>
@@ -308,11 +312,11 @@ $(function(){
 				
 				<ul class="active1">
 				<li class="shoes1">
-				<a href="">
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[8].goodsId}">
 					<img src="${goodsArr[8].goodsTImg}" />
 				</a>
 
-				<a href="">
+				<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[8].goodsId}">
 					<img src="${goodsArr[8].brandSImg}" id="goodsTImg"/>
 					<p>${goodsArr[8].goodsName}</p>
 				</a>
@@ -320,11 +324,11 @@ $(function(){
 			</li>
 					
 			<li class="shoes1">
-			<a href="">
+			<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[9].goodsId}">
 				<img src="${goodsArr[9].goodsTImg}" />
 			</a>
 
-			<a href="">
+			<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[9].goodsId}">
 				<img src="${goodsArr[9].brandSImg}" id="goodsTImg"/>
 				<p>${goodsArr[9].goodsName}</p>
 			</a>
@@ -332,11 +336,11 @@ $(function(){
 		</li>
 					
 		<li class="shoes1">
-		<a href="">
+		<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[10].goodsId}">
 			<img src="${goodsArr[10].goodsTImg}" />
 		</a>
 
-		<a href="">
+		<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[10].goodsId}">
 			<img src="${goodsArr[10].brandSImg}" id="goodsTImg"/>
 			<p>${goodsArr[10].goodsName}</p>
 		</a>
@@ -344,11 +348,11 @@ $(function(){
 	</li>
 					
 	<li class="shoes1">
-	<a href="">
+	<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[11].goodsId}">
 		<img src="${goodsArr[11].goodsTImg}" />
 	</a>
 
-	<a href="">
+	<a href="/yougou/base_html/pro_center.jsp?goodsId=${goodsArr[11].goodsId}">
 		<img src="${goodsArr[11].brandSImg}" id="goodsTImg"/>
 		<p>${goodsArr[11].goodsName}</p>
 	</a>
@@ -452,12 +456,30 @@ function bigImg(){
 	});
 };
 
-	
+//通过goodsId请求到stockId
+//$(function(){
+//	$.get('/yougou/cart.do',{
+//		'method': 'cartInfo',
+//		'goodsId':goodsId
+//	},function(re){
+//		var obj=JSON.parse(re);
+//		console.log(obj);
+//		if(obj.code!=0){
+//			console.log(obj.message);
+//			return;
+//		};
+//	});
+//});
+
 
 
 
 $(function(){
+	
     $('#addcart').click(function(){
+    	if($('#scolor2').length>0){
+    		//库存id
+    		var stockId=goodsId+'-'+$('.goodsSize #xx1').html();
     		var fly = $('#img_').clone().css('opacity','0.7');
     		fly.css({
     			'z-index': 90,
@@ -476,8 +498,84 @@ $(function(){
     			width:50,
     			height:50
     		},1000,function(){$(this).remove()});
-    		var str=parseInt($('#num').text())+1;
-    		$('#num').text(str).css('display','block');
+    		//var str=parseInt($('#num').text())+1;
+    		//var nowNum=0;
+    		
+    		// 拿到元素中的number值
+		  	var str=parseInt($('.cart-num').html());
+		  	$('#num').text(str).css('display','block');
+		  	//购买件数cart_num
+		  	var cartNum=$('#num').html();
+		  	$.get('/yougou/cart.do',{
+				'method': 'saveGoods',
+				'stockId':stockId,
+				'cartNum':cartNum,
+				'cartPitch':0,
+				'usersNum':'121212'
+			},function(re){
+				var obj=JSON.parse(re);
+				console.log(obj);
+				var goodsArr=obj.data;
+				if(obj.code!=0){
+					console.log(obj.message);
+					return;
+				};
+			}
+			)
+		  	
+		  	
+    	}else{
+    		$('.CartTc').fadeIn();
+    		$('.CartClose').click(function(){
+    			$('.CartTc').fadeOut();
+    		});
+    			$('#sure').click(function(){
+    				if($('#scolor2').length>0){
+    				//库存id
+    		    	var stockId=goodsId+'-'+$('.goodsSize #xx1').html();
+    				$('.CartTc').fadeOut();
+    				var fly = $('#img_').clone().css('opacity','0.7');
+    	    		fly.css({
+    	    			'z-index': 90,
+    	    			'display': 'block',
+    	    			'position': 'absolute',
+    	    			// 'top': $('#img_'+id).offset().top +'px',
+    	    			'top': $('#img_').offset().top +'px',
+    	    			'left': $('#img_').offset().left +'px',
+    	    			'width': $('#img_').width() +'px',
+    	    			'height': $('#img_').height() +'px'
+    	    		});
+    	    		$('body').append(fly);
+    	    		fly.animate({
+    	    			top:$('#end').offset().top,
+    	    			left:$('#end').offset().left,
+    	    			width:50,
+    	    			height:50
+    	    		},1000,function(){$(this).remove()});
+    	    		
+    	    		// 拿到元素中的number值
+    			  	var str=parseInt($('.cart-num').html());
+    			  	$('#num').text(str).css('display','block');
+    			  	
+    			  //购买件数cart_num
+    			  	var cartNum=$('#num').html();
+    			  	$.get('/yougou/cart.do',{
+    					'method': 'saveGoods',
+    					'stockId':stockId,
+    					'cartNum':cartNum,
+    					'cartPitch':0,
+    					'usersNum':'121212'
+    				},function(re){
+    					//var obj=JSON.parse(re);
+    					console.log("----"+re);
+    					//location.href="login.jsp?cartId="+${};
+    				}
+    				)
+    			  	
+    		}
+    			});
+    		
+    	}
     		//$('.tc').fadeOut();
     	});
     /*$('.close').click(function(){
@@ -506,34 +604,36 @@ $('.close1').click(function(){
 });
 /* 点击尺码弹窗中的尺码页面上的尺码会相应的被选中 */
 
-var oPoint=document.querySelector('.detail7');
-var aSpan=oPoint.querySelectorAll('#xx1');
 
+//var list=document.getElementsByClassName('.goodsSize');
 // 尺码信号量
-	var n=0;
-	var x=0;
+//	var n=0;
+//	var x=0;
 	// 点击尺码
-	$('.xx').each(function(i){
+//	for(var i=0;i<list.length;i++){
+//	$('list').each(function(i){
 		// 点哪个this就是哪个
-		$(this).click(function(){
+		//$(this).click(function(){
 			// 联动
-			n=i;
-			x=i;
+//			n=i;
+//			x=i;
 			// 当前元素添加类名，其他兄弟元素移除类名
-			$('.xx').eq(x).addClass('current').siblings('.xx').removeClass('current');
-		});
+//			$('aSpan').eq(x).addClass('current').siblings('.xx').removeClass('current');
+//			$('list').eq(x).css('border-color','black').css('border-color','gainsboro');
+//			$('list').eq(x).append(str).children('#scolor2').remove();
+//		});
 		/*
 		 * //尺码跟随 x++; if(x>9){ x=0; } size();
 		 */
-	});
-	
+//	});
+//	}
 /*
  * //尺码方法封装 function size(){ //排他 for(var i=0;i<aSpan.length;i++){ //先让每一个变为空
  * aSpan[i].className=''; }; //再让当前点击的小圆点变色 aSpan[x].className='current'; };
  */
 	// 点击加
 	$('.add').click(function(){
-	  	// 拿到元素中的number值进行++
+	  	 //拿到元素中的number值进行++
 	  	var nowNum=parseInt($(this).siblings('.cart-num').html());
 	  	nowNum++;
 	  	// 设置限购最大值
@@ -556,18 +656,21 @@ var aSpan=oPoint.querySelectorAll('#xx1');
 	
 	
 	//选择尺码
+	//var list=document.getElementsByClassName('.goodsSize');
+	//var list=$('#goodsSize').find(".goodsSize").length;
+	//console.log(list);
 	var str=`
 	<img src="/yougou/img/choose.png" id="scolor2"/>
 	`;
-		$('#goodsSize').on('click','.goodsSize',function(){
+		$('.CartSize').on('click','.goodsSize',function(){
 			$(this).css('border-color','black');
 			$(this).append(str);
-			$('#goodsSize').on('click','.goodsSize',function(){
+			//$('#CartSize .goodsSize').eq(0).append(str);
+			$('.CartSize').on('click','.goodsSize',function(){
 				$(this).siblings('.goodsSize').children('#scolor2').remove();
 				$(this).siblings('.goodsSize').css('border-color','gainsboro');
 				
 				
 			});
+			
 		});	
-	
-	

@@ -25,14 +25,14 @@ public class GoodsAction extends DispatcherAction {
 	public ActionForward showInfo(HttpServletRequest request, HttpServletResponse response ,ActionForm form) throws ServletException, IOException{
 		LXService lx = new LXServiceImpl();
 		GoodsBrand goods = new GoodsBrand();
-		/*GoodsForm gf=(GoodsForm)form;
-		//String goodsId=request.getParameter(form1.getGoodsId());
+		GoodsForm gf=(GoodsForm)form;
+		String goodsId=gf.getGoodsId();
 		try {
 			BeanUtils.copyProperties(goods, gf);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}*/
-		goods.setGoodsId("100088651");
+		}
+		goods.setGoodsId(goodsId);
 		//拿到数据
 		String data = lx.getGoodsInfo(goods);
 		System.out.println(data);

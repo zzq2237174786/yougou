@@ -33,4 +33,7 @@
 			select goods_cimg , goods_color from goods where goods_id = #{goodsId}
 		</select>
 		
+		
+		
+		
 	</class>

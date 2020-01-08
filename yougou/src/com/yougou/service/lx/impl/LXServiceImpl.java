@@ -9,12 +9,15 @@ import net.sf.json.JSONObject;
 import com.yougou.dao.BaseDao;
 import com.yougou.dao.impl.BaseDaoImpl;
 import com.yougou.db.DBHelper;
+import com.yougou.dto.lx.CartChange;
 import com.yougou.dto.lx.GoodsBrand;
 import com.yougou.dto.lx.GoodsCLink;
+import com.yougou.dto.lx.GoodsCart;
 import com.yougou.dto.lx.GoodsChange;
 import com.yougou.pojo.Goods;
 import com.yougou.service.lx.LXService;
 import com.yougou.util.Resolver;
+import com.yougou.web.servlet.lx.form.CartForm;
 
 public class LXServiceImpl implements LXService {
 
@@ -75,10 +78,130 @@ public class LXServiceImpl implements LXService {
 			e.printStackTrace();
 		} finally {
 			DBHelper.closeConnection();
-			// System.out.println("查询出了商品信息");
 		}
 		JSONObject jsonData = JSONObject.fromObject(change);
 		return jsonData.toString();
 	}
+	
+	//根据商品id获取存货表中的stock_id
+	@Override
+	public String getStockInfo(GoodsCart cart) {
+		Connection conn=DBHelper.getConnection();
+		BaseDao dao=new BaseDaoImpl();
+		GoodsCart carts=null;
+		try {
+			List<GoodsCart> allCarts = (List<GoodsCart>)dao.selectMethod(cart, conn, "selectTwo");
+			System.out.println(allCarts);
+			carts = allCarts.get(0);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			DBHelper.closeConnection();
+		}
+		
+		JSONObject jsonData = JSONObject.fromObject(carts);
+		return jsonData.toString();
+	}
+	//根据存货表中的goods_id获得商品信息，商品尺寸goods_size，商品尺寸所对应的商品库存数量stock_num
+	@Override
+	public String getCartInfo(GoodsCart cartInfo) {
+		Connection conn=DBHelper.getConnection();
+		BaseDao dao=new BaseDaoImpl();
+		CartChange change=new CartChange();
+		GoodsCart carts=null;
+		try {
+			List<GoodsCart> allCarts = (List<GoodsCart>)dao.selectMethod(cartInfo, conn, "selectOne");
+			System.out.println(allCarts);
+			carts = allCarts.get(0);
+			change.setGoodsImg(Resolver.resolverImg(carts.getGoodsImg()));
+			change.setGoodsName(carts.getGoodsName());
+			change.setGoodsColor(carts.getGoodsColor());
+			change.setGoodsNewPrice(carts.getGoodsNewPrice());
+			change.setGoodsSize(carts.getGoodsSize());
+			change.setStockNum(carts.getStockNum());
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			DBHelper.closeConnection();
+		}
+		
+		JSONObject jsonData = JSONObject.fromObject(change);
+		return jsonData.toString();
+	}
+	//根据cart_id向购物车表中插入订单信息
+	@Override
+	public String getDetailInfo(GoodsCart carts) {
+		Connection conn=DBHelper.getConnection();
+		BaseDao dao=new BaseDaoImpl();
+		CartForm form=new CartForm();
+		carts.setCartId(CartForm.getUUID());
+		carts.getCartId();
+		carts.getStockId();
+		carts.getCartNum();
+		carts.getCartPitch();
+		carts.getUsersNum();
+		boolean insertInfo=false;
+		try {
+			insertInfo=dao.insertMethod(carts, conn, "insertOne");
+			//System.out.println("插入"+insertInfo);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			DBHelper.closeConnection();
+		}
+		JSONObject jsonData = JSONObject.fromObject(carts);
+		return jsonData.toString();
+	}
 
+	//根据users_num从购物车表中查出一个用户对应的所有的stock_id 
+	@Override
+	public String getUserStock(GoodsCart cart) {
+		Connection conn=DBHelper.getConnection();
+		BaseDao dao=new BaseDaoImpl();
+		GoodsCart carts=null;
+		String allStockIds="";
+		try {
+			List<GoodsCart> allCarts = (List<GoodsCart>)dao.selectMethod(cart, conn, "selectThree");
+			for (GoodsCart goodsCart : allCarts) {
+				allStockIds+=goodsCart.getStockId()+",";
+				
+			}
+			cart.setStockId(allStockIds);
+			//carts = allCarts.get(0);
+			cart.setUsersNum(carts.getUsersNum());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			DBHelper.closeConnection();
+		}
+		
+		JSONObject jsonData = JSONObject.fromObject(cart);
+		return jsonData.toString();
+	}
+	//根据购物车表中的stock_id去查库存表中的goodsId 
+	@Override
+	public String getGoodsId(GoodsCart cart) {
+		Connection conn=DBHelper.getConnection();
+		BaseDao dao=new BaseDaoImpl();
+		GoodsCart carts=null;
+		try {
+			List<GoodsCart> allCarts = (List<GoodsCart>)dao.selectMethod(cart, conn, "selectFour");
+			System.out.println(allCarts);
+			carts = allCarts.get(0);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			DBHelper.closeConnection();
+		}
+		
+		JSONObject jsonData = JSONObject.fromObject(carts);
+		return jsonData.toString();
+	}
+
+	
+	
 }
