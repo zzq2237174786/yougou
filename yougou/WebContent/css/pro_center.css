@@ -384,7 +384,7 @@ strong button{
 .CartLine{
 	border: 1px solid gainsboro;
 	width: 500px;
-	height: 100px;
+	/* height: 100px; */
 	background: white;
 }
 /* .size1{

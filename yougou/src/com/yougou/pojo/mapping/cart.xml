@@ -29,14 +29,19 @@
 			insert into cart(cart_id,stock_id,cart_num,cart_pitch,users_num) values(#{cartId},#{stockId},#{cartNum},#{cartPitch},#{usersNum})
 		</insert>
 		
-		<!-- 根据users_num从购物车表中查出一个用户对应的所有的stock_id -->
+		<!-- 根据users_num从购物车表中查出一个用户对应的所有的stock_id,cart_id -->
 		<select sqlId="selectThree" parameterType="com.yougou.dto.lx.GoodsCart" resultType="com.yougou.dto.lx.GoodsCart">
-			select stock_id from cart where users_num=#{usersNum}
+			select stock_id , cart_id from cart where users_num=#{usersNum}
 		</select>
 		
 		<!-- 根据购物车表中的stock_id去查库存表中的goodsId -->
 		<select sqlId="selectFour" parameterType="com.yougou.dto.lx.GoodsCart" resultType="com.yougou.dto.lx.GoodsCart">
 			select goods_id from stock where stock_id=#{stockId}
 		</select>
+		
+		<!-- 根据购物车表中的cart_id去删除订单信息 -->
+		<delete sqlId="deleteOne" parameterType="com.yougou.dto.lx.GoodsCart" resultType="com.yougou.dto.lx.GoodsCart">
+			delete from cart where cart_Id=#{cartId}
+		</delete>
 		
 	</class>

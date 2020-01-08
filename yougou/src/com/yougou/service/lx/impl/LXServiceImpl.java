@@ -156,22 +156,23 @@ public class LXServiceImpl implements LXService {
 		return jsonData.toString();
 	}
 
-	//根据users_num从购物车表中查出一个用户对应的所有的stock_id 
+	//根据users_num从购物车表中查出一个用户对应的所有的stock_id 和cart_id;
 	@Override
 	public String getUserStock(GoodsCart cart) {
 		Connection conn=DBHelper.getConnection();
 		BaseDao dao=new BaseDaoImpl();
-//		GoodsCart carts=null;
+		//GoodsCart carts=null;
 		String allStockIds="";
+		String allCartIds="";
 		try {
 			List<GoodsCart> allCarts = (List<GoodsCart>)dao.selectMethod(cart, conn, "selectThree");
 			for (GoodsCart goodsCart : allCarts) {
 				allStockIds+=goodsCart.getStockId()+",";
-				
+				allCartIds+=goodsCart.getCartId()+",";
 			}
 			cart.setStockId(allStockIds);
+			cart.setCartId(allCartIds);
 			//carts = allCarts.get(0);
-//			cart.setUsersNum(carts.getUsersNum());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{
@@ -201,7 +202,24 @@ public class LXServiceImpl implements LXService {
 		JSONObject jsonData = JSONObject.fromObject(carts);
 		return jsonData.toString();
 	}
-
+	//根据购物车表中的cart_id去删除购物车表中的订单信息
+	@Override
+	public String deleteGoods(GoodsCart cart) {
+		Connection conn=DBHelper.getConnection();
+		BaseDao dao=new BaseDaoImpl();
+		boolean deleteInfo=false;
+		try {
+			deleteInfo=dao.deleteMethod(cart, conn, "deleteOne");
+			System.out.println("删除"+deleteInfo);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			DBHelper.closeConnection();
+		}
+		JSONObject jsonData = JSONObject.fromObject(cart);
+		return jsonData.toString();
+	}
 	
 	
 }

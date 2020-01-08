@@ -17,14 +17,23 @@
   				}
   				var listArr=obj.data;
   				var allStock=listArr.stockId;
+  				var allCartId=listArr.cartId;
   				var filedAll = allStock.split(",");
+  				var cartAll=allCartId.split(",");
   				console.log(filedAll);
+  				console.log(cartAll);
   				//遍历数组数据拿到每一个stockId
   				for(var i=0;i<filedAll.length;i++){
   					var stockId=filedAll[i];
   					if(stockId==""){
   						return;
   					}
+  					
+  					var cartId=cartAll[i];
+	  				if(cartId==""){
+	  					return;
+	  				}
+  					
   					//根据stockId请求goodsId
   					$.get('/yougou/cart.do',{
   		  				'method': 'goodStock',
@@ -56,6 +65,7 @@
   		  				var cartGoods=obj.data;
   		  				var goodsImg=cartGoods.goodsImg;
   		  				goodsImg=JSON.parse(goodsImg);
+  		  	
   		  				//渲染数据
   		  			var str=`
 						<tr class="del-all">
@@ -72,9 +82,9 @@
   		  					</td>
   		  					<td class="subtotal" style="font-weight: bold;">${cartGoods.goodsNewPrice}</td>
   		  					<td>
-  		  						<a href="javascript:;">
   		  						<p>移入收藏夹 </p>
-  		  						<p class="del-btn">删除</p>
+  		  						<a href="javascript:;">
+  		  						<p class="del-btn" name="${cartId}">删除</p>
   		  						</a>
   		  					</td>
   		  				</tr>
@@ -83,6 +93,7 @@
 					$('#table').append(str);
 					//预加载图片
 					$('#table [lazyLoadSrc]').YdxLazyLoad();
+  		  				
 //  		  				
 //  		  				}
 //  		  				)
@@ -94,6 +105,41 @@
 					//数据结构渲染到页面之后进行交互操作
 					cartEvent();
 //					console.log("----");
+					//遍历数组数据拿到每一个cartId
+//					for(var i=0;i<cartAll.length;i++){
+//						var cartId=cartAll[i];
+//						console.log(cartId);
+//						if(cartId==""){
+//							return;
+//						}
+					//点击删除
+		  			$('.del-btn').click(function(){
+		  				/*alert("您确定要删除该订单吗？");*/
+		  				var tr=$(this).parent().parent().parent();
+		  				tr.remove();
+		  				//求总计
+		  				total();
+		  				//console.log("-----")
+		  					//根据cartId去调deleteGoods
+		  					$.get('/yougou/cart.do',{
+		  		  				'method': 'deleteGoods',
+		  		  				'cartId':cartId
+		  		  				},
+		  		  			function(re){
+		  		  				var obj=JSON.parse(re);
+		  		  				console.log("删除"+obj);
+		  		  				//验证
+		  		  				if(obj.code!=0){
+		  		  					console.log(obj.message);
+		  		  					return;
+		  		  				}
+		  		  				
+		  		  				}
+		  		  				)
+		  					
+		  				
+		  				
+		  			});
 					
 					
 					
@@ -186,13 +232,7 @@
   				total();
   			});
   			
-  			//点击删除
-  			$('.del-btn').click(function(){
-  				var tr=$(this).parent().parent().parent();
-  				tr.remove();
-  				//求总计
-  				total();
-  			});
+  			
   			
   		};
   		

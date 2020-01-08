@@ -18,4 +18,6 @@ public interface LXService {
 	public String getUserStock(GoodsCart cart);
 	//根据购物车表中的stock_id去查库存表中的goodsId 
 	public String getGoodsId(GoodsCart cart);
+	//根据购物车表中的cart_id去删除购物车表中的订单信息
+	public String deleteGoods(GoodsCart cart);
 }

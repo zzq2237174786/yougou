@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.beanutils.BeanUtils;
 
+import com.yougou.dto.hj.UsersInfo;
 import com.yougou.dto.lx.GoodsBrand;
 import com.yougou.dto.lx.GoodsCLink;
 import com.yougou.dto.lx.GoodsCart;
@@ -84,7 +85,7 @@ public class CartAction extends DispatcherAction {
 		fa.setData(data);
 		return fa;
 	}
-	//根据users_num从购物车表中查出一个用户对应的所有的stock_id 
+	//根据users_num从购物车表中查出一个用户对应的所有的stock_id 和 cart_id
 	public ActionForward userStock(HttpServletRequest request, HttpServletResponse response ,ActionForm form) throws ServletException, IOException{
 		LXService lx = new LXServiceImpl();
 		GoodsCart cart=new GoodsCart();
@@ -92,11 +93,12 @@ public class CartAction extends DispatcherAction {
 		String usersNum=cf.getUsersNum();
 		//String stockId=cf.getStockId();
 		System.out.println("用户"+usersNum);
-		cart.setUsersNum(usersNum);
+		UsersInfo userInfo=(UsersInfo)request.getSession().getAttribute("usersInfo");
+		cart.setUsersNum(userInfo.getUsersNum());
 		//cart.setStockId(stockId);
 		//拿到数据
 		String data = lx.getUserStock(cart);
-		System.out.println(data);
+		System.out.println("stock_id 和 cart_id"+data);
 		//成功..
 		ActionForward fa=new ActionForward();
 		data=JsonSuccess.success(data);;
@@ -114,6 +116,22 @@ public class CartAction extends DispatcherAction {
 		//拿到数据
 		String data = lx.getGoodsId(cart);
 		System.out.println(data);
+		//成功..
+		ActionForward fa=new ActionForward();
+		data=JsonSuccess.success(data);;
+		fa.setData(data);
+		return fa;
+	}
+	//根据购物车表中的cart_id去删除购物车表中的订单信息
+	public ActionForward deleteGoods(HttpServletRequest request, HttpServletResponse response ,ActionForm form) throws ServletException, IOException{
+		LXService lx = new LXServiceImpl();
+		GoodsCart cart=new GoodsCart();
+		CartForm cf=(CartForm)form;
+		cart.setCartId(cf.getCartId());
+		
+		//拿到数据
+		String data = lx.deleteGoods(cart);
+		System.out.println("删除数据"+data);
 		//成功..
 		ActionForward fa=new ActionForward();
 		data=JsonSuccess.success(data);;

@@ -475,8 +475,9 @@ function bigImg(){
 
 
 $(function(){
-	
+	var usersNum=sessionStorage.getItem('usersNum');
     $('#addcart').click(function(){
+    	if(usersNum) {
     	if($('#scolor2').length>0){
     		//库存id
     		var stockId=goodsId+'-'+$('.goodsSize #xx1').html();
@@ -511,7 +512,7 @@ $(function(){
 				'stockId':stockId,
 				'cartNum':cartNum,
 				'cartPitch':0,
-				'usersNum':'121212'
+				'usersNum':usersNum
 			},function(re){
 				var obj=JSON.parse(re);
 				console.log(obj);
@@ -565,7 +566,7 @@ $(function(){
     					'stockId':stockId,
     					'cartNum':cartNum,
     					'cartPitch':0,
-    					'usersNum':'121212'
+    					'usersNum':usersNum
     				},function(re){
     					//var obj=JSON.parse(re);
     					console.log("----"+re);
@@ -578,11 +579,17 @@ $(function(){
     		
     	}
     		//$('.tc').fadeOut();
+    	}else{
+    		window.location.href="login.jsp?goodsId="+goodsId;
+    
+    	}
     	});
     /*$('.close').click(function(){
 		$('.tc').fadeOut();
 	});*/
     });
+
+
     		
     //$('.tc').fadeIn();
     //$('#sure').click(function(){
