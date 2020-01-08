@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<class name="com.yougou.dto.zzq.SearchData">
+		<id name="goodsId" column="goods_id"/>
+		<property name="pageSize" column="pageSize"/>
+		<property name="page" column="page"/>
+		<property name="term" column="term"/>
+		<property name="goodsCount" column="goodsCount"/>
+		<property name="goodsName" column="goods_name"/>
+		<property name="goodsTImg" column="goods_timg"/>
+		<property name="goodsOldPrice" column="goods_oldprice"/>
+		<property name="goodsNewPrice" column="goods_newprice"/>
+		
+		<!-- 查询有没有 -->
+		<select sqlId="selectOne" parameterType="com.yougou.dto.zzq.SearchData" resultType="com.yougou.dto.zzq.NewProductData">
+			select goods_id , goods_name, goods_timg, goods_oldprice, goods_newprice from goods where goods_name like #{term} and goods_putaway = 1 limit #{page},#{pageSize}
+		</select >
+	
+	
+		<select sqlId="selectTwo" parameterType="com.yougou.dto.zzq.SearchData" resultType="com.yougou.dto.zzq.SearchData">
+			select count(*) as goodsCount from goods where goods_name like #{term} and goods_putaway = 1
+		</select >
+		
+	</class>
