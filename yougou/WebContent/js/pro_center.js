@@ -553,6 +553,7 @@ $(function(){
     	    			height:50
     	    		},1000,function(){$(this).remove()});
     	    		
+    	    		
     	    		// 拿到元素中的number值
     			  	var str=parseInt($('.cart-num').html());
     			  	$('#num').text(str).css('display','block');
