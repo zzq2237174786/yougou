@@ -125,6 +125,7 @@
 		  		  				'method': 'deleteGoods',
 		  		  				'cartId':cartId
 		  		  				},
+		  		  				
 		  		  			function(re){
 		  		  				var obj=JSON.parse(re);
 		  		  				console.log("删除"+obj);

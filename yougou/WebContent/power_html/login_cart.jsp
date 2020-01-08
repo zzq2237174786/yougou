@@ -113,7 +113,7 @@
 		</div>
 		<div class="container" id="logincar">
 			<div class="logincar">
-				<a href="index.html">
+				<a href="/yougou/base_html/index.jsp">
 					<button class="btn btn-primary">继续购物</button>
 				</a>
 				<a href="javascript:;">
