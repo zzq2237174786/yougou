@@ -38,6 +38,9 @@
 			<result name="dorder" path="/backstage/backstage_delivered.jsp"></result>
 			<result name="corder" path="/backstage/backstage_sign.jsp"></result>
 			<result name="sorder" path="/backstage/backorder.do?method=getUnOrder"></result>
+			<result name="unordernum" path="/power_html/collect_order.jsp"></result>
+			<result name="dordernum" path="/power_html/collect_deliveredGoods.jsp"></result>
+			<result name="cordernum" path="/power_html/collect_singGoods.jsp"></result>
 	</action>
 	
 	<!-- 购物车 -->
