@@ -91,7 +91,7 @@ public class LXServiceImpl implements LXService {
 		GoodsCart carts=null;
 		try {
 			List<GoodsCart> allCarts = (List<GoodsCart>)dao.selectMethod(cart, conn, "selectTwo");
-			System.out.println(allCarts);
+			//System.out.println(allCarts);
 			carts = allCarts.get(0);
 			
 		} catch (Exception e) {
@@ -103,7 +103,7 @@ public class LXServiceImpl implements LXService {
 		JSONObject jsonData = JSONObject.fromObject(carts);
 		return jsonData.toString();
 	}
-	//根据存货表中的goods_id获得商品信息，商品尺寸goods_size，商品尺寸所对应的商品库存数量stock_num
+	//根据存货表中的cart_id获得商品信息，商品尺寸goods_size，商品尺寸所对应的商品库存数量stock_num
 	@Override
 	public String getCartInfo(GoodsCart cartInfo) {
 		Connection conn=DBHelper.getConnection();

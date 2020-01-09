@@ -30,7 +30,7 @@ public class CartAction extends DispatcherAction {
 		GoodsCart cart=new GoodsCart();
 		CartForm cf=(CartForm)form;
 		String goodsId=cf.getGoodsId();
-		System.out.println("商品的"+goodsId);
+		//System.out.println("商品的"+goodsId);
 		cart.setGoodsId(goodsId);
 		//拿到数据
 		String data = lx.getStockInfo(cart);
@@ -42,14 +42,14 @@ public class CartAction extends DispatcherAction {
 		return fa;
 	}
 	
-	//根据存货表中的goods_id获得商品信息，商品尺寸goods_size，商品尺寸所对应的商品库存数量stock_num
+	//根据存货表中的cart_id获得商品信息，商品尺寸goods_size，商品尺寸所对应的商品库存数量stock_num
 	public ActionForward cartInfo(HttpServletRequest request, HttpServletResponse response ,ActionForm form) throws ServletException, IOException{
 		LXService lx = new LXServiceImpl();
 		GoodsCart cart=new GoodsCart();
 		CartForm cf=(CartForm)form;
-		String goodsId=cf.getGoodsId();
+		String stockId=cf.getStockId();
 		//System.out.println("商品的"+stockId);
-		cart.setGoodsId(goodsId);
+		cart.setStockId(stockId);
 		
 //		int page = Integer.parseInt(cf.getPage());
 //		int pageSize = Integer.parseInt(cf.getPageSize());

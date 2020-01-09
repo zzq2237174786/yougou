@@ -10,7 +10,7 @@ public interface LXService {
 	public String getGoodsInfo(GoodsBrand good);
 	//根据商品id获取存货表中的stock_id
 	public String getStockInfo(GoodsCart cart);
-	//根据存货表中的goods_id获得商品信息，商品尺寸goods_size，商品尺寸所对应的商品库存数量stock_num
+	//根据存货表中的stock_id获得商品信息，商品尺寸goods_size，商品尺寸所对应的商品库存数量stock_num
 	public String getCartInfo(GoodsCart cartInfo);
 	//根据cart_id向购物车表中插入订单信息
 	public String getDetailInfo(GoodsCart cart);
