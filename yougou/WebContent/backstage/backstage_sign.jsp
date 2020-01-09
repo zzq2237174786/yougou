@@ -12,17 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="/yougou/css/backstage_order.css"/>
 	</head>
 	<script src="/yougou/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript">
-		var length =0;
-		
-		$(function name() {
-			length +=${fn:length(list)};
-			$("#pagination").hide();
-			if(length>3){
-				$("#pagination").show();		 
-			}
-		});
-	</script>
+	
 	<body>
 	
 		<!--头部-->
@@ -55,7 +45,7 @@
 							<img src="/yougou/img/小乔.jpg"/>
 						</div>
 						<div class="left-info col-lg-7">
-							<p>xxx</p>
+							<p>管理员</p>
 							<p>欢迎登录</p>
 						</div>
 					</div>
@@ -65,14 +55,14 @@
 							<div class="">
 								<img src="/yougou/img/商品管理.png" />
 							</div>
-							<a href="backstage_stock.jsp"><p>商品库存</p></a>
+							<a href="backlogin.do?method=getBackGoods"><p>商品管理</p></a>
 							
 						</li>
 						<li>
 							<div class="">
 								<img src="/yougou/img/我的卡券.png" />
 							</div>							
-							<a href="backstage_goods.jsp"><p>商品管理</p></a>	
+							<a href="javascript:void(0)"><p>库存管理</p></a>	
 						</li>
 						<li>
 							<div class="">
@@ -103,7 +93,7 @@
 							<div class="">
 								<img src="/yougou/img/账户信息.png" />
 							</div>							
-							<a href="baskstage_manage.jsp"><p>会员管理</p></a>	
+							<a href="backusers.do?method=getAllUsers"><p>会员管理</p></a>	
 						</li>
 						<li>
 							<div class="">
@@ -214,36 +204,24 @@
 					<!--分页-->
 					<div class="row  type-page">
 						<div class="pagination" id="pagination" style="display:none">
-						<c:if test="${pageNo eq 1}">
-							<a href="javascript:void(0)">上</a>
-								<c:forEach var="i" begin="${pageNo}" end="${pageNo+1 }">
-									<c:if test="${i ne pageNo}">
-										<a href="backorder.do?method=getCOrder&pageNo=${i}">${i}</a>
+						<c:if test="${maxNo gt 1}">
+							<c:if test="${pageNo eq 1}">
+								<a href="javascript:void(0)">上</a>
+									<c:forEach var="i" begin="${pageNo}" end="${pageNo+1 }">
+										<c:if test="${i ne pageNo}">
+											<a href="backorder.do?method=getCOrder&pageNo=${i}">${i}</a>
+											
+										</c:if>
+										<c:if test="${i eq pageNo}">
+											<span class="active">${i}</span>
+										</c:if>
 										
-									</c:if>
-									<c:if test="${i eq pageNo}">
-										<span class="active">${i}</span>
-									</c:if>
-									
-								</c:forEach>
-								<a href="backorder.do?method=getCOrder&pageNo=${pageNo+1}">下</a>
-							</c:if>
-							<c:if test="${pageNo eq maxNo}">
-								<a href="backorder.do?method=getCOrder&pageNo=${pageNo-1}">上</a>
-								<c:forEach var="i" begin="${pageNo-1}" end="${maxNo }">
-									<c:if test="${i ne pageNo}">
-										<a href="backorder.do?method=getCOrder&pageNo=${i}">${i}</a>
-									</c:if>
-									<c:if test="${i eq pageNo}">
-										<span class="active">${i}</span>
-									</c:if>
-								</c:forEach>
-								<a href="backorder.do?method=getCOrder&pageNo=${pageNo+1}">下</a>
-							</c:if>
-							<c:if test="${pageNo ne maxNo and pageNo ne 1}">
-								
+									</c:forEach>
+									<a href="backorder.do?method=getCOrder&pageNo=${pageNo+1}">下</a>
+								</c:if>
+								<c:if test="${pageNo eq maxNo}">
 									<a href="backorder.do?method=getCOrder&pageNo=${pageNo-1}">上</a>
-									<c:forEach var="i" begin="${pageNo-1}" end="${pageNo+1 }">
+									<c:forEach var="i" begin="${pageNo-1}" end="${maxNo }">
 										<c:if test="${i ne pageNo}">
 											<a href="backorder.do?method=getCOrder&pageNo=${i}">${i}</a>
 										</c:if>
@@ -252,8 +230,22 @@
 										</c:if>
 									</c:forEach>
 									<a href="backorder.do?method=getCOrder&pageNo=${pageNo+1}">下</a>
-								
-							</c:if>
+								</c:if>
+								<c:if test="${pageNo ne maxNo and pageNo ne 1}">
+									
+										<a href="backorder.do?method=getCOrder&pageNo=${pageNo-1}">上</a>
+										<c:forEach var="i" begin="${pageNo-1}" end="${pageNo+1 }">
+											<c:if test="${i ne pageNo}">
+												<a href="backorder.do?method=getCOrder&pageNo=${i}">${i}</a>
+											</c:if>
+											<c:if test="${i eq pageNo}">
+												<span class="active">${i}</span>
+											</c:if>
+										</c:forEach>
+										<a href="backorder.do?method=getCOrder&pageNo=${pageNo+1}">下</a>
+									
+								</c:if>
+						</c:if>
 						</div>
 					</div>
 					

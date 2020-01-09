@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -40,7 +41,7 @@
 							<img src="/yougou/img/小乔.jpg"/>
 						</div>
 						<div class="left-info col-lg-7">
-							<p>xxx</p>
+							<p>管理员</p>
 							<p>欢迎登录</p>
 						</div>
 					</div>
@@ -50,19 +51,19 @@
 							<div class="">
 								<img src="/yougou/img/商品管理.png" />
 							</div>
-							<a href="backstage_goods.jsp"><p>商品管理</p></a>
+							<a href="backlogin.do?method=getBackGoods"><p>商品管理</p></a>
 						</li>
 						<li>
 							<div class="">
 								<img src="/yougou/img/我的卡券.png" />
 							</div>							
-							<p>促销互动</p>	
+							<p>库存管理</p>	
 						</li>
 						<li>
 							<div class="">
 								<img src="/yougou/img/订单管理.png" />
 							</div>							
-							<a href="backstage_order.jsp"><p>订单管理</p></a>
+							<a href="backorder.do?method=getUnOrder"><p>订单管理</p></a>
 						</li>
 						<li>
 							<div class="">
@@ -119,44 +120,73 @@
 						<li>操作</li>
 					</ul>
 					<!--详细内容-->
-					<div class="tab-body col-lg-12">						
-						<ul class="tab-detail">
-							<li class="member-id">yg000001</li>
-							<li class="member-tel">13888888888</li>
-							<li class="rigtime">2019-12-26</li>
-							<li class="buying-times">3</li>
-							<li class="buying-water">976</li>
-							<li class="member-operate">
-								<input class="btn btn-default btn-off" type="button" value="禁止">
-								<input class="btn btn-default btn-on" type="button" value="允许">
-							</li>
-						</ul>
-						<ul class="tab-detail">
-							<li class="member-id">yg000001</li>
-							<li class="member-tel">13888888888</li>
-							<li class="rigtime">2019-12-26</li>
-							<li class="buying-times">3</li>
-							<li class="buying-water">976</li>					
-						</ul>
-						<ul class="tab-detail">
-							<li class="member-id">yg000001</li>
-							<li class="member-tel">13888888888</li>
-							<li class="rigtime">2019-12-26</li>
-							<li class="buying-times">3</li>
-							<li class="buying-water">976</li>					
-						</ul>
-						<ul class="tab-detail">
-							<li class="member-id">yg000001</li>
-							<li class="member-tel">13888888888</li>
-							<li class="rigtime">2019-12-26</li>
-							<li class="buying-times">3</li>
-							<li class="buying-water">976</li>					
-						</ul>
+					<div class="tab-body col-lg-12">
+					
+							<c:forEach items="${uList}" var="s" varStatus="i">	
+											
+								<ul class="tab-detail">
+									<li class="member-id">${s.usersNum}</li>
+									<li class="member-tel">${s.usersNum}</li>
+									<li class="rigtime">${s.usersEmail }</li>
+									<li class="buying-times">${s.usersPTime}</li>
+									<li class="buying-water">${s.usersMSum}</li>
+									<li class="member-operate">
+										<input class="btn btn-default btn-off" type="button" value="禁止">
+										<input class="btn btn-default btn-on" type="button" value="允许">
+									</li>
+								</ul>
+							
+							</c:forEach>
+						
+						
 					</div>
 					
 					<!--分页-->
 					<div class="row  type-page">
-						<div class="pagination"></div>
+						<div class="pagination">
+						<c:if test="${maxNo gt 1}">
+							<c:if test="${pageNo eq 1}">
+								<a href="javascript:void(0)">上</a>
+									<c:forEach var="i" begin="${pageNo}" end="${pageNo+1 }">
+										<c:if test="${i ne pageNo}">
+											<a href="backorder.do?method=getCOrder&pageNo=${i}">${i}</a>
+											
+										</c:if>
+										<c:if test="${i eq pageNo}">
+											<span class="active">${i}</span>
+										</c:if>
+										
+									</c:forEach>
+									<a href="backorder.do?method=getCOrder&pageNo=${pageNo+1}">下</a>
+								</c:if>
+								<c:if test="${pageNo eq maxNo}">
+									<a href="backorder.do?method=getCOrder&pageNo=${pageNo-1}">上</a>
+									<c:forEach var="i" begin="${pageNo-1}" end="${maxNo }">
+										<c:if test="${i ne pageNo}">
+											<a href="backorder.do?method=getCOrder&pageNo=${i}">${i}</a>
+										</c:if>
+										<c:if test="${i eq pageNo}">
+											<span class="active">${i}</span>
+										</c:if>
+									</c:forEach>
+									<a href="backorder.do?method=getCOrder&pageNo=${pageNo+1}">下</a>
+								</c:if>
+								<c:if test="${pageNo ne maxNo and pageNo ne 1}">
+									
+										<a href="backorder.do?method=getCOrder&pageNo=${pageNo-1}">上</a>
+										<c:forEach var="i" begin="${pageNo-1}" end="${pageNo+1 }">
+											<c:if test="${i ne pageNo}">
+												<a href="backorder.do?method=getCOrder&pageNo=${i}">${i}</a>
+											</c:if>
+											<c:if test="${i eq pageNo}">
+												<span class="active">${i}</span>
+											</c:if>
+										</c:forEach>
+										<a href="backorder.do?method=getCOrder&pageNo=${pageNo+1}">下</a>
+									
+								</c:if>
+						</c:if>
+						</div>
 					</div>
 					
 				</div>

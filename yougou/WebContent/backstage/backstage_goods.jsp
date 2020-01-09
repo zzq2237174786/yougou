@@ -63,14 +63,14 @@
 								<img src="/yougou/img/商品管理.png" />
 							</div>
 							
-							<a href="backstage_stock.jsp"><p>商品库存</p></a>
+							<a href="backstage_stock.jsp"><p>商品管理</p></a>
 							
 						</li>
 						<li>
 							<div class="">
 								<img src="/yougou/img/我的卡券.png" />
 							</div>							
-							<p>商品管理</p>
+							<p>库存管理</p>
 							<p class="current"></p>
 						</li>
 						<li>
@@ -101,7 +101,7 @@
 							<div class="">
 								<img src="/yougou/img/账户信息.png" />
 							</div>							
-							<a href="baskstage_manage.jsp"><p>会员管理</p></a>	
+							<a href="backusers.do?method=getAllUsers"><p>会员管理</p></a>	
 						</li>
 						<li>
 							<div class="">
