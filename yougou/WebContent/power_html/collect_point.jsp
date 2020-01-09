@@ -52,7 +52,7 @@
 						<a href="javaScript:;" id="exit-btn">退出</a>
 					</li>
 					<!--收藏-->
-					<li id="collect_btn">
+					<li id="/yougou/power_html/collect_btn">
 						<a href="login.jsp">
 							<span class="glyphicon glyphicon-heart"></span> 收藏
 						</a>
@@ -127,7 +127,7 @@
 						您当前的位置：
 						<a href="index.jsp">首页</a>
 						>
-						<a href="collect_my.jsp">我的优购</a>
+						<a href="/yougou/power_html/collect_my.jsp">我的优购</a>
 						>积分查询/兑换
 					</p>
 				</div>
@@ -137,7 +137,7 @@
 					<div class="umenu col-lg-2 col-lg-offset-1" id="umenu ">
 						<!--我的优购-->
 						<div class="myyougou ">
-							<a class="text-center" href="collect_my.jsp ">
+							<a class="text-center" href="/yougou/power_html/collect_my.jsp ">
 								<span class="text-center">我的优购</span>
 							</a>
 						</div>
@@ -145,50 +145,50 @@
 						<!--交易中心-->
 						<ul class="jiaoyizx">
 							<li class=" ultitle ">交易中心</li>
-							<li class="current myorder"><a href="collect_order.jsp">
+							<li class="current myorder"><a href="/yougou/power_html/collect_order.jsp">
 								<span>
 								我的订单
 							</span></a></li>
 							<li class="current myfavor"><a href=" collect.jsp"><span>
 								我的收藏
 							</span></a></li>
-							<li class="current mycomment"><a href="collect_comment.jsp"><span>
+							<li class="current mycomment"><a href="/yougou/power_html/collect_comment.jsp"><span>
 								商品评论/晒单
 							</span></a></li>
-							<li class="current mymessage"><a href=" collect_message.jsp"><span>
+							<li class="current mymessage"><a href=" /yougou/power_html/collect_message.jsp"><span>
 								站内消息
 							</span></a></li>							
 						</ul>
 						<!--我的资产-->
 						<ul class="wodezc">
 							<li class=" ultitle ">我的资产</li>
-							<li class="current mycoupon"><a href="collect_coupon.jsp"><span>
+							<li class="current mycoupon"><a href="/yougou/power_html/collect_coupon.jsp"><span>
 								我的优惠券
 							</span></a></li>
-							<li class="current mygiftcard"><a href="collect_giftcard.jsp"><span>
+							<li class="current mygiftcard"><a href="/yougou/power_html/collect_giftcard.jsp"><span>
 								我的礼品卡
 							</span></a></li>
-							<li class="present mypoint"><a href="collect_point.jsp"><span>
+							<li class="present mypoint"><a href="/yougou/power_html/collect_point.jsp"><span>
 								我的积分
 							</span></a></li>
 						</ul>
 						<!--个人设置-->
 						<ul class="gerensz">
 							<li class="ultitle ">个人设置</li>
-							<li class="current mysafeset"><a href="collect_safeSet.jsp"><span>
+							<li class="current mysafeset"><a href="/yougou/power_html/collect_safeSet.jsp"><span>
 								安全设置
 							</span></a></li>
-							<li class="current myaddress"><a href="collect_address.jsp"><span>
+							<li class="current myaddress"><a href="/yougou/power_html/collect_address.jsp"><span>
 								我的收获地址
 							</span></a></li>
 						</ul>
 						<!--售后服务-->
 						<ul class="shouhoufw">
 							<li class="ultitle">售后服务</li>
-							<li class="current mysafeset"><a href="collect_afterService.jsp"><span>
+							<li class="current mysafeset"><a href="/yougou/power_html/collect_afterService.jsp"><span>
 								查看退换货
 							</span></a></li>
-							<li class="current myaddress"><a href="collect_applicationService.jsp"><span>
+							<li class="current myaddress"><a href="/yougou/power_html/collect_applicationService.jsp"><span>
 								申请退换货
 							</span></a></li>
 						</ul>

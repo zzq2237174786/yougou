@@ -5,10 +5,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>站内消息</title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-		<link rel="stylesheet" type="text/css" href="css/collect-message.css"/>
-		<link rel="stylesheet" type="text/css" href="css/base.css"/>
-		<link rel="stylesheet" type="text/css" href="css/collectBase.css"/>
+		<link rel="stylesheet" type="text/css" href="/yougou/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="/yougou/css/collect_message.css"/>
+		<link rel="stylesheet" type="text/css" href="/yougou/css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="/yougou/css/collectBase.css"/>
 	</head>
 	<body>
 		<!--头部-->
@@ -23,7 +23,7 @@
 						<!--二维码-->
 						<div class="attention-code">
 							<div class="code">
-								<img src="img/weChat.jpg" />
+								<img src="/yougou/img/weChat.jpg" />
 								<span class="title">关注公众号</span>
 							</div>
 						</div>
@@ -34,7 +34,7 @@
 						<!--二维码-->
 						<div class="app-code">
 							<div class="code">
-								<img src="img/app.jpg" />
+								<img src="/yougou/img/app.jpg" />
 								<span class="title">优购APP下载</span>
 							</div>
 						</div>
@@ -45,21 +45,21 @@
 				<ul class="nav navbar-nav navbar-right">
 					<!--登录注册-->
 					<li>
-						<a href="login.html" id="login-btn">登录</a>
+						<a href="login.jsp" id="login-btn">登录</a>
 						<span id="username"></span>
 						<p>/</p>
-						<a href="register.html" id="register-btn">注册</a>
+						<a href="register.jsp" id="register-btn">注册</a>
 						<a href="javaScript:;" id="exit-btn">退出</a>
 					</li>
 					<!--收藏-->
-					<li id="/yougou/power_html/collect-btn">
-						<a href="login.html">
+					<li id="/yougou/power_html/collect_btn">
+						<a href="login.jsp">
 							<span class="glyphicon glyphicon-heart"></span> 收藏
 						</a>
 					</li>
 					<!--购物袋-->
 					<li id="cart-btn">
-						<a href="login.html">
+						<a href="login.jsp">
 							<span class="glyphicon glyphicon-shopping-cart"></span> 购物车
 						</a>
 					</li>
@@ -78,7 +78,7 @@
 				<!--logo-->
 				<div class="row">
 					<div class="col-md-2 col-md-offset-5 logo-header">
-						<a href=""><img src="img/logo.png" /></a>
+						<a href=""><img src="/yougou/img/logo.png" /></a>
 					</div>
 				</div>
 			</div>
@@ -92,10 +92,10 @@
 						<nav class="navbar ">
 							<ul class="nav navbar-nav" id="nav-type">
 								<li class="nav-log">
-									<a href=""><img src="img/nav-logo.png" /></a>
+									<a href=""><img src="/yougou/img/nav-logo.png" /></a>
 								</li>
 								<li>
-									<a href="index.html">首页</a>
+									<a href="index.jsp">首页</a>
 								</li>
 								<!--分类-->
 							</ul>
@@ -125,9 +125,9 @@
 				<div class="row col-lg-10 col-lg-offset-1">
 					<p class="curmbs">
 						您当前的位置：
-						<a href="index.html">首页</a>
+						<a href="index.jsp">首页</a>
 						>
-						<a href="/yougou/power_html/collect-my.html">我的优购</a>
+						<a href="/yougou/power_html/collect_my.jsp">我的优购</a>
 						>站内消息
 					</p>
 				</div>
@@ -137,7 +137,7 @@
 					<div class="umenu col-lg-2 col-lg-offset-1" id="umenu ">
 						<!--我的优购-->
 						<div class="myyougou ">
-							<a class="text-center" href="/yougou/power_html/collect-my.html ">
+							<a class="text-center" href="/yougou/power_html/collect_my.jsp ">
 								<span class="text-center">我的优购</span>
 							</a>
 						</div>
@@ -145,50 +145,50 @@
 						<!--交易中心-->
 						<ul class="jiaoyizx">
 							<li class=" ultitle ">交易中心</li>
-							<li class="current myorder"><a href="/yougou/power_html/collect-order.html">
+							<li class="current myorder"><a href="/yougou/power_html/collect_order.jsp">
 								<span>
 								我的订单
 							</span></a></li>
-							<li class="current myfavor"><a href=" /yougou/power_html/collect.html"><span>
+							<li class="current myfavor"><a href=" /yougou/power_html/collect.jsp"><span>
 								我的收藏
 							</span></a></li>
-							<li class="current mycomment"><a href="/yougou/power_html/collect-comment.html"><span>
+							<li class="current mycomment"><a href="/yougou/power_html/collect_comment.jsp"><span>
 								商品评论/晒单
 							</span></a></li>
-							<li class="present mymessage"><a href=" /yougou/power_html/collect-message.html"><span>
+							<li class="present mymessage"><a href=" /yougou/power_html/collect_message.jsp"><span>
 								站内消息
 							</span></a></li>							
 						</ul>
 						<!--我的资产-->
 						<ul class="wodezc">
 							<li class=" ultitle ">我的资产</li>
-							<li class="current mycoupon"><a href="/yougou/power_html/collect-coupon.html"><span>
+							<li class="current mycoupon"><a href="/yougou/power_html/collect_coupon.jsp"><span>
 								我的优惠券
 							</span></a></li>
-							<li class="current mygiftcard"><a href="colect-giftcard.html"><span>
+							<li class="current mygiftcard"><a href="/yougou/power_html/collect_giftcard.jsp"><span>
 								我的礼品卡
 							</span></a></li>
-							<li class="current mypoint"><a href="/yougou/power_html/collect-point.html"><span>
+							<li class="current mypoint"><a href="/yougou/power_html/collect_point.jsp"><span>
 								我的积分
 							</span></a></li>
 						</ul>
 						<!--个人设置-->
 						<ul class="gerensz">
 							<li class="ultitle ">个人设置</li>
-							<li class="current mysafeset"><a href="/yougou/power_html/collect-safeSet.html"><span>
+							<li class="current mysafeset"><a href="/yougou/power_html/collect_safeSet.jsp"><span>
 								安全设置
 							</span></a></li>
-							<li class="current myaddress"><a href="/yougou/power_html/collect-address.html"><span>
+							<li class="current myaddress"><a href="/yougou/power_html/collect_address.jsp"><span>
 								我的收获地址
 							</span></a></li>
 						</ul>
 						<!--售后服务-->
 						<ul class="shouhoufw">
 							<li class="ultitle">售后服务</li>
-							<li class="current mysafeset"><a href="/yougou/power_html/collect-afterService.html"><span>
+							<li class="current mysafeset"><a href="/yougou/power_html/collect_afterService.jsp"><span>
 								查看退换货
 							</span></a></li>
-							<li class="current myaddress"><a href="/yougou/power_html/collect-applicationService.html"><span>
+							<li class="current myaddress"><a href="/yougou/power_html/collect_applicationService.jsp"><span>
 								申请退换货
 							</span></a></li>
 						</ul>
@@ -201,7 +201,7 @@
 							<li class="hotmiddle">
 								<dl>
 									<dt>
-										<a href="javascript:void(0)"><img src="img/101244991_01_s.jpg"/></a>
+										<a href="javascript:void(0)"><img src="/yougou/img/101244991_01_s.jpg"/></a>
 									</dt>
 									<dd>
 										<p class="hotgoodsname">
@@ -215,7 +215,7 @@
 								</dl>
 								<dl>
 									<dt>
-										<a href="javascript:void(0)"><img src="img/101301590_01_s.jpg"/></a>
+										<a href="javascript:void(0)"><img src="/yougou/img/101301590_01_s.jpg"/></a>
 									</dt>
 									<dd>
 										<p class="hotgoodsname">
@@ -229,7 +229,7 @@
 								</dl>
 								<dl>
 									<dt>
-										<a href="javascript:void(0)"><img src="img/100990096_01_s.jpg"/></a>
+										<a href="javascript:void(0)"><img src="/yougou/img/100990096_01_s.jpg"/></a>
 									</dt>
 									<dd>
 										<p class="hotgoodsname">
@@ -243,7 +243,7 @@
 								</dl>
 								<dl>
 									<dt>
-										<a href="javascript:void(0)"><img src="img/101306504_01_s.jpg"/></a>
+										<a href="javascript:void(0)"><img src="/yougou/img/101306504_01_s.jpg"/></a>
 									</dt>
 									<dd>
 										<p class="hotgoodsname">
@@ -257,7 +257,7 @@
 								</dl>
 								<dl>
 									<dt>
-										<a href="javascript:void(0)"><img src="img/101306504_01_s.jpg"/></a>
+										<a href="javascript:void(0)"><img src="/yougou/img/101306504_01_s.jpg"/></a>
 									</dt>
 									<dd>
 										<p class="hotgoodsname">
@@ -472,25 +472,25 @@
 					<div class="footer-help-center">
 						<ul class="ul-left">
 							<li class="li-one">
-								<a href="javaScript:;"><img src="img/footer-img1.png" /></a>
+								<a href="javaScript:;"><img src="/yougou/img/footer-img1.png" /></a>
 							</li>
 							<li>
-								<a href="javaScript:;"><img src="img/footer-img2.jpg" /></a>
+								<a href="javaScript:;"><img src="/yougou/img/footer-img2.jpg" /></a>
 							</li>
 							<li>
-								<a href="javaScript:;"><img src="img/footer-img3.png" /></a>
+								<a href="javaScript:;"><img src="/yougou/img/footer-img3.png" /></a>
 							</li>
 							<li>
-								<a href="javaScript:;"><img src="img/footer-img4.png" /></a>
+								<a href="javaScript:;"><img src="/yougou/img/footer-img4.png" /></a>
 							</li>
 						</ul>
 						<ul class="ul-right">
 							<li>
-								<a><img src="img/app.jpg" class="ul-right-img1" /></a>
+								<a><img src="/yougou/img/app.jpg" class="ul-right-img1" /></a>
 								<a class="a-title">扫描下载手机客户端</a>
 							</li>
 							<li>
-								<a><img src="img/weChat.jpg" /></a>
+								<a><img src="/yougou/img/weChat.jpg" /></a>
 								<a class="a-title">关注公众号</a>
 							</li>
 						</ul>

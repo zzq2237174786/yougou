@@ -5,10 +5,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>商品点评</title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-		<link rel="stylesheet" type="text/css" href="css/collect_comment.css"/>
-		<link rel="stylesheet" type="text/css" href="css/base.css"/>
-		<link rel="stylesheet" type="text/css" href="css/collectBase.css"/>
+		<link rel="stylesheet" type="text/css" href="/yougou/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="/yougou/css/collect_comment.css"/>
+		<link rel="stylesheet" type="text/css" href="/yougou/css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="/yougou/css/collectBase.css"/>
 	</head>
 	<body>
 		<!--头部-->
@@ -23,7 +23,7 @@
 						<!--二维码-->
 						<div class="attention-code">
 							<div class="code">
-								<img src="img/weChat.jpg" />
+								<img src="/yougou/img/weChat.jpg" />
 								<span class="title">关注公众号</span>
 							</div>
 						</div>
@@ -34,7 +34,7 @@
 						<!--二维码-->
 						<div class="app-code">
 							<div class="code">
-								<img src="img/app.jpg" />
+								<img src="/yougou/img/app.jpg" />
 								<span class="title">优购APP下载</span>
 							</div>
 						</div>
@@ -78,7 +78,7 @@
 				<!--logo-->
 				<div class="row">
 					<div class="col-md-2 col-md-offset-5 logo-header">
-						<a href=""><img src="img/logo.png" /></a>
+						<a href=""><img src="/yougou/img/logo.png" /></a>
 					</div>
 				</div>
 			</div>
@@ -92,7 +92,7 @@
 						<nav class="navbar ">
 							<ul class="nav navbar-nav" id="nav-type">
 								<li class="nav-log">
-									<a href=""><img src="img/nav-logo.png" /></a>
+									<a href=""><img src="/yougou/img/nav-logo.png" /></a>
 								</li>
 								<li>
 									<a href="index.jsp">首页</a>
@@ -201,7 +201,7 @@
 							<li class="hotmiddle">
 								<dl>
 									<dt>
-										<a href="javascript:void(0)"><img src="img/101244991_01_s.jpg"/></a>
+										<a href="javascript:void(0)"><img src="/yougou/img/101244991_01_s.jpg"/></a>
 									</dt>
 									<dd>
 										<p class="hotgoodsname">
@@ -215,7 +215,7 @@
 								</dl>
 								<dl>
 									<dt>
-										<a href="javascript:void(0)"><img src="img/101301590_01_s.jpg"/></a>
+										<a href="javascript:void(0)"><img src="/yougou/img/101301590_01_s.jpg"/></a>
 									</dt>
 									<dd>
 										<p class="hotgoodsname">
@@ -229,7 +229,7 @@
 								</dl>
 								<dl>
 									<dt>
-										<a href="javascript:void(0)"><img src="img/100990096_01_s.jpg"/></a>
+										<a href="javascript:void(0)"><img src="/yougou/img/100990096_01_s.jpg"/></a>
 									</dt>
 									<dd>
 										<p class="hotgoodsname">
@@ -243,7 +243,7 @@
 								</dl>
 								<dl>
 									<dt>
-										<a href="javascript:void(0)"><img src="img/101306504_01_s.jpg"/></a>
+										<a href="javascript:void(0)"><img src="/yougou/img/101306504_01_s.jpg"/></a>
 									</dt>
 									<dd>
 										<p class="hotgoodsname">
@@ -257,7 +257,7 @@
 								</dl>
 								<dl>
 									<dt>
-										<a href="javascript:void(0)"><img src="img/101306504_01_s.jpg"/></a>
+										<a href="javascript:void(0)"><img src="/yougou/img/101306504_01_s.jpg"/></a>
 									</dt>
 									<dd>
 										<p class="hotgoodsname">
@@ -448,25 +448,25 @@
 					<div class="footer-help-center">
 						<ul class="ul-left">
 							<li class="li-one">
-								<a href="javaScript:;"><img src="img/footer-img1.png" /></a>
+								<a href="javaScript:;"><img src="/yougou/img/footer-img1.png" /></a>
 							</li>
 							<li>
-								<a href="javaScript:;"><img src="img/footer-img2.jpg" /></a>
+								<a href="javaScript:;"><img src="/yougou/img/footer-img2.jpg" /></a>
 							</li>
 							<li>
-								<a href="javaScript:;"><img src="img/footer-img3.png" /></a>
+								<a href="javaScript:;"><img src="/yougou/img/footer-img3.png" /></a>
 							</li>
 							<li>
-								<a href="javaScript:;"><img src="img/footer-img4.png" /></a>
+								<a href="javaScript:;"><img src="/yougou/img/footer-img4.png" /></a>
 							</li>
 						</ul>
 						<ul class="ul-right">
 							<li>
-								<a><img src="img/app.jpg" class="ul-right-img1" /></a>
+								<a><img src="/yougou/img/app.jpg" class="ul-right-img1" /></a>
 								<a class="a-title">扫描下载手机客户端</a>
 							</li>
 							<li>
-								<a><img src="img/weChat.jpg" /></a>
+								<a><img src="/yougou/img/weChat.jpg" /></a>
 								<a class="a-title">关注公众号</a>
 							</li>
 						</ul>
