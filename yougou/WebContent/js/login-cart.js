@@ -3,7 +3,15 @@
 	 //请求数据
 	//var cartId=parseInt(getUrlVal('cartId'));
   		$(function(){
-  			//根据userStockt请求stocktId
+  			//ajax改为同步
+  			$.ajaxSetup({
+  				asynsc:false
+  			});
+  			
+  			
+  			var cartId=null;
+  			
+  			//根据userStockt请求stocktId和cartId
   			$.get('/yougou/cart.do',{
   				'method': 'userStock',
   				},
@@ -21,42 +29,32 @@
   				var filedAll = allStock.split(",");
   				var cartAll=allCartId.split(",");
   				console.log(filedAll);
-  				console.log(cartAll);
+  				//console.log(cartAll);
   				//遍历数组数据拿到每一个stockId
+  				
   				for(var i=0;i<filedAll.length;i++){
   					var stockId=filedAll[i];
   					if(stockId==""){
   						return;
-  					}
-  					
-  					var cartId=cartAll[i];
+ 					}
+  					cartId=cartAll[i];
 	  				if(cartId==""){
 	  					return;
 	  				}
-  					
   					//根据stockId请求goodsId
-  					$.get('/yougou/cart.do',{
-  		  				'method': 'goodStock',
+  		  				//根据goodsId请求商品信息
+  		  			$.ajax({
+  		  				url:'/yougou/cart.do',
+  		  				type:'get',
+	  		  			async: false,
+	  		  			data:{
+  		  				'method': 'cartInfo',
   		  				'stockId':stockId
   		  				},
-  		  			function(re){
+  		  			success:function(re){
   		  				var obj=JSON.parse(re);
   		  				console.log(obj);
-  		  				//验证
-  		  				if(obj.code!=0){
-  		  					console.log(obj.message);
-  		  					return;
-  		  				}
-  		  				//拿到每一个goodsId
-  		  				var goodsId=obj.data.goodsId;
-  		  				//根据goodsId请求商品信息
-  		  			$.get('/yougou/cart.do',{
-  		  				'method': 'cartInfo',
-  		  				'goodsId':goodsId
-  		  				},
-  		  			function(re){
-  		  				var obj=JSON.parse(re);
-  		  				console.log(obj);
+  		  				//console.log("two"+cartId)
   		  				//验证
   		  				if(obj.code!=0){
   		  					console.log(obj.message);
@@ -65,12 +63,19 @@
   		  				var cartGoods=obj.data;
   		  				var goodsImg=cartGoods.goodsImg;
   		  				goodsImg=JSON.parse(goodsImg);
-  		  	
+  		  				//var cartAll=allCartId.split(",");
+  		  				//for(var j=0;j<cartAll.length;j++){
+ 		  					//for(var j=0;j<cartAll.length-1;j++){
+  		  					//var cartId=cartAll[i];
+//  		  					if(cartId==""){
+//  		  						return;
+//  		  					}
+  		  					//console.log(cartId)
   		  				//渲染数据
   		  			var str=`
 						<tr class="del-all">
   		  					<td class="form-inline">
-  		  						<input class="check" type="checkbox"/>&nbsp;&nbsp;<img lazyLoadSrc="${goodsImg[0].goodsSImg}" src="/yougou/img/loading.gif" />
+  		  						<input class="check" type="checkbox" id="${cartId}"/>&nbsp;&nbsp;<img lazyLoadSrc="${goodsImg[0].goodsSImg}" src="/yougou/img/loading.gif" />
   		  					</td>
   		  					<td title="${cartGoods.goodsName}">${cartGoods.goodsName}</td>
   		  					<td class="cart-desc">${cartGoods.goodsColor}<p>${cartGoods.goodsSize}</p></td>
@@ -84,16 +89,19 @@
   		  					<td>
   		  						<p>移入收藏夹 </p>
   		  						<a href="javascript:;">
-  		  						<p class="del-btn" name="${cartId}">删除</p>
+  		  						<p class="del-btn" id="${cartId}">删除</p>
   		  						</a>
   		  					</td>
   		  				</tr>
 					`;
+					
+ 		  							
 					//组装好一个添加一个
 					$('#table').append(str);
 					//预加载图片
 					$('#table [lazyLoadSrc]').YdxLazyLoad();
-  		  				
+  		  		
+  		  			
 //  		  				
 //  		  				}
 //  		  				)
@@ -113,56 +121,102 @@
 //							return;
 //						}
 					//点击删除
-		  			$('.del-btn').click(function(){
+					
+					
+					$('.del-btn').click(function(){
+		  				var id=$(this).attr('id');
+		  			//根据cartId去调deleteGoods
+	  					$.get('/yougou/cart.do',{
+	  		  				'method': 'deleteGoods',
+	  		  				'cartId':id
+	  		  				},
+	  		  			function(re){
+	  		  				var obj=JSON.parse(re);
+	  		  				console.log("删除"+obj);
+	  		  				//验证
+	  		  				if(obj.code!=0){
+	  		  					console.log(obj.message);
+	  		  					return;
+	  		  				}
+	  		  				
+	  		  				}
+	  		  				)
 		  				/*alert("您确定要删除该订单吗？");*/
 		  				var tr=$(this).parent().parent().parent();
+		  				//var cartId1=$(this).attr('name');
 		  				tr.remove();
 		  				//求总计
 		  				total();
 		  				//console.log("-----")
-		  					//根据cartId去调deleteGoods
-		  					$.get('/yougou/cart.do',{
-		  		  				'method': 'deleteGoods',
-		  		  				'cartId':cartId
-		  		  				},
-		  		  				
-		  		  			function(re){
-		  		  				var obj=JSON.parse(re);
-		  		  				console.log("删除"+obj);
-		  		  				//验证
-		  		  				if(obj.code!=0){
-		  		  					console.log(obj.message);
-		  		  					return;
-		  		  				}
-		  		  				
-		  		  				}
-		  		  				)
+		  					
 		  					
 		  				
 		  				
 		  			});
+					
+					
 		  			
 		  			//点击清空购物袋
-		  			
+					$('#del-all').click(function(){
+						for(var j=0;j<cartAll.length;j++){
+							var carID=cartAll[j];
+		  				//var id=$('.del-btn').attr('class');
+		  			//根据cartId去调deleteGoods
+	  					$.get('/yougou/cart.do',{
+	  		  				'method': 'deleteGoods',
+	  		  				'cartId':carID
+	  		  				},
+	  		  			function(re){
+	  		  				var obj=JSON.parse(re);
+	  		  				console.log("删除"+obj);
+	  		  				//验证
+	  		  				if(obj.code!=0){
+	  		  					console.log(obj.message);
+	  		  					return;
+	  		  				}
+	  		  				
+	  		  				}
+	  		  				)
+		  				/*alert("您确定要删除该订单吗？");*/
+		  				var tr=$(this).parent().parent().parent();
+		  				//var cartId1=$(this).attr('name');
+		  				tr.remove();
+		  				//求总计
+		  				total();
+		  				//console.log("-----")
+		  					
+		  					
+		  				
+					}	
+		  			});
 					
 					
 					
 					
+  		  				/*}*/
+  		  				
   		  				}
-  		  				)
-  		  				}
-  		  				)
+  				})//ajax结束
+  				//}
+  				
+  			//)
+  			
+  				
+  				
+  				
+  				}
   				}
   				
+  		
+  		);
+  			/**************/
+  			//请求carId
   			
   			
-  				
-  				
-  				
-  				
-  				}
-  				)
-  		})
+  			
+  			
+  			/************/
+  		});
   			//点击加
   			$('#table').on('click','.add',function(){
 	  				//拿到元素中的number值进行++
@@ -200,7 +254,7 @@
   			$('#del-all').click(function(){
   				var tr=$('.del-all');
   				tr.remove();
-  				$('#table').append('<strong>'+'购物车为空，请去选择心仪的商品吧！'+'</strong>');
+  				$('#table').append('<a href="/yougou/base_html/index.jsp">'+'<strong>'+'购物车为空，请去选择心仪的商品吧！'+'</strong>'+'</a>');
   			});
 					
   		

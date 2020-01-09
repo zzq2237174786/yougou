@@ -48,7 +48,7 @@ public class CartAction extends DispatcherAction {
 		GoodsCart cart=new GoodsCart();
 		CartForm cf=(CartForm)form;
 		String stockId=cf.getStockId();
-		//System.out.println("商品的"+stockId);
+		System.out.println("商品的"+stockId);
 		cart.setStockId(stockId);
 		
 //		int page = Integer.parseInt(cf.getPage());
@@ -58,7 +58,7 @@ public class CartAction extends DispatcherAction {
 		
 		//拿到数据
 		String data = lx.getCartInfo(cart);
-		System.out.println(data);
+//		System.out.println(data);
 		//成功..
 		ActionForward fa=new ActionForward();
 		data=JsonSuccess.success(data);;

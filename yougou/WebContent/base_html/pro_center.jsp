@@ -304,8 +304,8 @@
 										<!-- <img id="img_" src="/yougou/img/picsmall01.jpg"> -->
 										
 										<div class="form-inline">
-											<a href="javaScript:;"><button class="form-control" style="background: #333;color: white;padding-left: 30px;padding-right: 30px;margin-right: 20px;margin-top: 20px;" id="addcart">加入购物袋</button></a>
-											<a href="javaScript:;"><button data-toggle="modal" data-target="#myModal1" class="form-control" style="padding-left: 30px;padding-right: 30px;margin-top: 20px;">立即购买</button></a>
+											<button class="form-control" style="background: #333;color: white;padding-left: 30px;padding-right: 30px;margin-right: 20px;margin-top: 20px;" id="addcart">加入购物袋</button>
+											<a href="javaScript:;"><button  class="form-control" style="padding-left: 30px;padding-right: 30px;margin-top: 20px;" id="come">立即购买</button></a>
 										</div>
 										<!-- 尺码弹窗 -->
 										<div class="CartTc">

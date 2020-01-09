@@ -16,7 +16,7 @@
 
 		<!-- 根据stock_id查询商品信息，商品尺寸goods_size，商品尺寸所对应的商品库存数量stock_num -->
 		<select sqlId="selectOne" parameterType="com.yougou.dto.lx.GoodsCart" resultType="com.yougou.dto.lx.GoodsCart">
-			select goods_name , goods_img , goods_color , goods_newprice , s.goods_size , stock_num from stock as s INNER JOIN goods as g ON s.goods_id=g.goods_id where stock_id  
+			select goods_name , goods_img , goods_color , goods_newprice , s.goods_size , stock_num from stock as s INNER JOIN goods as g ON s.goods_id=g.goods_id where stock_id = #{stockId}  
 		</select >
 		
 		<!-- 根据goods_id获取到存货的stock_id -->

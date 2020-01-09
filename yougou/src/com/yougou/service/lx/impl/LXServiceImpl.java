@@ -112,7 +112,8 @@ public class LXServiceImpl implements LXService {
 		GoodsCart carts=null;
 		try {
 			List<GoodsCart> allCarts = (List<GoodsCart>)dao.selectMethod(cartInfo, conn, "selectOne");
-			System.out.println(allCarts);
+//			System.out.println(allCarts);
+			System.out.println("存货的长度"+allCarts.size());
 			carts = allCarts.get(0);
 			change.setGoodsImg(Resolver.resolverImg(carts.getGoodsImg()));
 			change.setGoodsName(carts.getGoodsName());

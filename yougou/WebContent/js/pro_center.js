@@ -111,12 +111,13 @@ $(function(){
 			//商品尺码
 			var goodsSize=goodsArr.goodsSize;
 			for(var i=0;i<goodsSize.length;i++){
+				var stockId=goodsSize[i];
 				var index=goodsSize[i].lastIndexOf('\-');
 				goodsSize[i]=goodsSize[i].substring(index+1);
 				//console.log("===="+goodsSize[i]);
 				var str=`
 				<span class="goodsSize">
-				<span id="xx1">${goodsSize[i]}</span>
+				<span id="xx1" class="${stockId}" >${goodsSize[i]}</span>
 				</span>
 				`;
 				$('#goodsSize').append(str);
@@ -186,6 +187,7 @@ $(function(){
 			$('#brandDesc').append(str);
 			
 			 bigImg();
+			 //add();
 	})
 })
 
@@ -475,12 +477,42 @@ function bigImg(){
 
 
 $(function(){
-	var usersNum=sessionStorage.getItem('usersNum');
+	
+	var id=null;
+	var str=`
+	<img src="/yougou/img/choose.png" id="scolor2"/>
+	`;
+		$('.CartSize').on('click','.goodsSize',function(){
+			$(this).css('border-color','black');
+			$(this).append(str);
+			//var id=$(this).children.className;
+			id=$(this).children().attr('class');
+			//console.log(id);
+			//$('#CartSize .goodsSize').eq(0).append(str);
+			$('.CartSize').on('click','.goodsSize',function(){
+				$(this).siblings('.goodsSize').children('#scolor2').remove();
+				$(this).siblings('.goodsSize').css('border-color','gainsboro');
+				
+				
+			});
+			
+		});	
+	
+	
+	
+//function add(){
+		var usersNum=sessionStorage.getItem('usersNum');
+	
     $('#addcart').click(function(){
     	if(usersNum) {
     	if($('#scolor2').length>0){
+    		//$(document).on("click",".goodsSize",function(){
+    		//$(this).each(function(){
     		//库存id
-    		var stockId=goodsId+'-'+$('.goodsSize #xx1').html();
+    		//var stockId=goodsId+'-'+$('.goodsSize #xx1').html();
+    		//var stockId=document.getElementById("xx1").className;
+    			//var stockId=document.getElementById("xx1").className;
+    		//console.log("每个尺码上绑定的"+stockId)
     		var fly = $('#img_').clone().css('opacity','0.7');
     		fly.css({
     			'z-index': 90,
@@ -509,7 +541,7 @@ $(function(){
 		  	var cartNum=$('#num').html();
 		  	$.get('/yougou/cart.do',{
 				'method': 'saveGoods',
-				'stockId':stockId,
+				'stockId':id,
 				'cartNum':cartNum,
 				'cartPitch':0,
 				'usersNum':usersNum
@@ -523,71 +555,35 @@ $(function(){
 				};
 			}
 			)
-		  	
-		  	
-    	}else{
-    		$('.CartTc').fadeIn();
-    		$('.CartClose').click(function(){
-    			$('.CartTc').fadeOut();
-    		});
-    			$('#sure').click(function(){
-    				if($('#scolor2').length>0){
-    				//库存id
-    		    	var stockId=goodsId+'-'+$('.goodsSize #xx1').html();
-    				$('.CartTc').fadeOut();
-    				var fly = $('#img_').clone().css('opacity','0.7');
-    	    		fly.css({
-    	    			'z-index': 90,
-    	    			'display': 'block',
-    	    			'position': 'absolute',
-    	    			// 'top': $('#img_'+id).offset().top +'px',
-    	    			'top': $('#img_').offset().top +'px',
-    	    			'left': $('#img_').offset().left +'px',
-    	    			'width': $('#img_').width() +'px',
-    	    			'height': $('#img_').height() +'px'
-    	    		});
-    	    		$('body').append(fly);
-    	    		fly.animate({
-    	    			top:$('#end').offset().top,
-    	    			left:$('#end').offset().left,
-    	    			width:50,
-    	    			height:50
-    	    		},1000,function(){$(this).remove()});
-    	    		
-    	    		
-    	    		// 拿到元素中的number值
-    			  	var str=parseInt($('.cart-num').html());
-    			  	$('#num').text(str).css('display','block');
-    			  	
-    			  //购买件数cart_num
-    			  	var cartNum=$('#num').html();
-    			  	$.get('/yougou/cart.do',{
-    					'method': 'saveGoods',
-    					'stockId':stockId,
-    					'cartNum':cartNum,
-    					'cartPitch':0,
-    					'usersNum':usersNum
-    				},function(re){
-    					//var obj=JSON.parse(re);
-    					console.log("----"+re);
-    					//location.href="login.jsp?cartId="+${};
-    				}
-    				)
-    			  	
-    		}
-    			});
-    		
     	}
+    		//});
+    		//});		
+    	/*********/
     		//$('.tc').fadeOut();
     	}else{
     		window.location.href="login.jsp?goodsId="+goodsId;
-    
+    		
     	}
+    
     	});
+    
+    
+    //点击立即购买
+    $('#come').click(function(){
+    	if(usersNum) {
+    	window.location.href="/yougou/power_html/order_submit.jsp?stockId="+id;
+    	}else{
+    		window.location.href="/yougou/base_html/login.jsp";
+    	}
+    })
+    
+
+});
     /*$('.close').click(function(){
 		$('.tc').fadeOut();
 	});*/
-    });
+    
+    //});
 
 
     		
@@ -667,18 +663,4 @@ $('.close1').click(function(){
 	//var list=document.getElementsByClassName('.goodsSize');
 	//var list=$('#goodsSize').find(".goodsSize").length;
 	//console.log(list);
-	var str=`
-	<img src="/yougou/img/choose.png" id="scolor2"/>
-	`;
-		$('.CartSize').on('click','.goodsSize',function(){
-			$(this).css('border-color','black');
-			$(this).append(str);
-			//$('#CartSize .goodsSize').eq(0).append(str);
-			$('.CartSize').on('click','.goodsSize',function(){
-				$(this).siblings('.goodsSize').children('#scolor2').remove();
-				$(this).siblings('.goodsSize').css('border-color','gainsboro');
-				
-				
-			});
-			
-		});	
+	
