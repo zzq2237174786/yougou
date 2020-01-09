@@ -11,11 +11,9 @@
 		<link rel="stylesheet" type="text/css" href="/yougou/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="/yougou/css/backstage.css"/>
 		<link rel="stylesheet" type="text/css" href="/yougou/css/backstage_goods.css"/>
+	
+	
 	</head>
-	<%--
-		List<BackGoods> list = (List<BackGoods>)request.getSession().getAttribute("bgList");
-		System.out.println(list);
-	--%>
 	<body>
 		
    		
@@ -79,7 +77,7 @@
 							<div class="">
 								<img src="/yougou/img/订单管理.png" />
 							</div>							
-							<a href="backorder.do?method=getUnOrder"><p>订单管理</p>	</a>
+							<a href="backorder.do?method=getUnOrder"><p>订单管理</p></a>
 						</li>
 						<li>
 							<div class="">
@@ -144,24 +142,81 @@
 					<!--详细内容-->
 					<div class="tab-body col-lg-12">						
 						<ul class="tab-detail"id="ulList">
-							<li class="goods-name">鞋子</li>
-							<li class="goods-size">37</li>
-							<li class="goods-stock">3</li>
+						<c:forEach items="${bgList}" var="s" varStatus="i">
+							<li class="goods-name" style="line-height: 40px;">${s.goodsName }</li>
+							<li class="goods-size">${s.goodsOldPrice }</li>
+							<li class="goods-stock">${s.goodsOldPrice }</li>
 							<li class="goods-status">
 								<input class="btn btn-default btn-off" type="button" value="下架">
 								<input class="btn btn-default btn-on" type="button" value="上架">
 							</li>
 							<li class="goods-true">
-								<input class="btn btn-default btn-true" type="button" value="确认修改">
+								<input class="btn btn-default btn-true" name=${s.goodsId } type="button" value="确认修改">
 								
-							</li>					
+							</li>
+						</c:forEach>					
 						</ul>
 						
 					</div>
 					
 					<!--分页-->
 					<div class="row  type-page">
-						<div class="pagination"></div>
+						<div class="pagination">
+							
+		
+							<c:if test="${pageNo eq 1}">
+							<a href="javascript:void(0)">上</a>
+								<c:forEach var="i" begin="${pageNo}" end="${pageNo+6 }">
+									<c:if test="${i ne pageNo}">
+										<a href="backlogin.do?method=getBackGoods&pageNo=${i}">${i}</a>
+										
+									</c:if>
+									<c:if test="${i eq pageNo}">
+										<span class="active">${i}</span>
+									</c:if>
+									
+								</c:forEach>
+								<a href="backlogin.do?method=getBackGoods&pageNo=${pageNo+1}">下</a>
+							</c:if>
+							<c:if test="${pageNo eq maxNo}">
+								<a href="backlogin.do?method=getBackGoods&pageNo=${pageNo-1}">上</a>
+								<c:forEach var="i" begin="${pageNo-6}" end="${maxNo }">
+									<c:if test="${i ne pageNo}">
+										<a href="backlogin.do?method=getBackGoods&pageNo=${i}">${i}</a>
+									</c:if>
+									<c:if test="${i eq pageNo}">
+										<span class="active">${i}</span>
+									</c:if>
+								</c:forEach>
+								<a href="backlogin.do?method=getBackGoods&pageNo=${pageNo+1}">下</a>
+							</c:if>
+							<c:if test="${pageNo ne maxNo and pageNo ne 1}">
+								<c:if test="${pageNo le 4}">
+									<a href="backlogin.do?method=getBackGoods&pageNo=${pageNo-1}">上</a>
+									<c:forEach var="i" begin="1" end="7">
+										<c:if test="${i ne pageNo}">
+										<a href="backlogin.do?method=getBackGoods&pageNo=${i}">${i}</a>
+									</c:if>
+									<c:if test="${i eq pageNo}">
+										<span class="active">${i}</span>
+									</c:if>
+									</c:forEach>
+									<a href="backlogin.do?method=getBackGoods&pageNo=${pageNo+1}">下</a>
+								</c:if>
+								<c:if test="${pageNo gt 4}">
+									<a href="backlogin.do?method=getBackGoods&pageNo=${pageNo-1}">上</a>
+									<c:forEach var="i" begin="${pageNo-3 }" end="${pageNo+3 }">
+										<c:if test="${i ne pageNo}">
+											<a href="backlogin.do?method=getBackGoods&pageNo=${i}">${i}</a>
+										</c:if>
+										<c:if test="${i eq pageNo}">
+											<span class="active">${i}</span>
+										</c:if>
+									</c:forEach>
+									<a href="backlogin.do?method=getBackGoods&pageNo=${pageNo+1}">下</a>
+								</c:if>
+							</c:if>
+						</div>
 					</div>
 					
 				</div>

@@ -8,6 +8,14 @@ public class BackGoodsForm extends ActionForm {
 	private String goodsOldPrice;
 	private String goodsNewPrice;
 	private String goodsPutaway;
+	private String pageNo;
+	public String getPageNo() {
+		return pageNo;
+	}
+
+	public void setPageNo(String pageNo) {
+		this.pageNo = pageNo;
+	}
 
 	public String getGoodsId() {
 		return goodsId;

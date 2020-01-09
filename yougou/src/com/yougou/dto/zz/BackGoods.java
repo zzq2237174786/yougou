@@ -7,6 +7,14 @@ public class BackGoods {
 	private int goodsOldPrice;
 	private int goodsNewPrice;
 	private int goodsPutaway;
+	private int pageNo;
+	
+	public int getPageNo() {
+		return pageNo;
+	}
+	public void setPageNo(int pageNo) {
+		this.pageNo = pageNo;
+	}
 	public String getGoodsId() {
 		return goodsId;
 	}

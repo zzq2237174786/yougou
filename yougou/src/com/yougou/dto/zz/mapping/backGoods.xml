@@ -9,7 +9,7 @@
 
 		<!-- 查询有没有 -->
 		<select sqlId="selectOne" parameterType="com.yougou.dto.zz.BackGoods" resultType="com.yougou.dto.zz.BackGoods">
-			select goods_id,goods_name,goods_oldprice,goods_newprice,goods_putaway from goods
+			select goods_id,goods_name,goods_oldprice,goods_newprice,goods_putaway from goods limit 10 
 		</select >
 	
 	</class>

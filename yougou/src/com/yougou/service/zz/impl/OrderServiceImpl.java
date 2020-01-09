@@ -53,7 +53,6 @@ public class OrderServiceImpl implements OrderService{
 		try {
 			//拿数据
 			List<Order> list = (List<Order>) bd.selectMethod(order, conn, sqlId);
-			
 			return list;
 		} catch (Exception e) {
 			log.error("失败",e);
@@ -77,45 +76,109 @@ public class OrderServiceImpl implements OrderService{
 			Order dorder= list.get(0);
 			System.out.println(dorder.getOrderId());
 			flag2 =bd.deleteMethod(dorder, conn, sqlId2);
-//			System.out.println("2==="+flag2);
+		
 			flag1=bd.insertMethod(dorder, conn, sqlId3);
-//			System.out.println("1==="+flag1);
+		
 		} catch (Exception e) {
 			log.error("失败",e);
 		}
 		
 		return true;
+	}
+	//客户操作订单
+	public boolean operateDOrder(Order order) {
+		
+		Connection conn=DBHelper.getConnection();
+		String sqlId1="selectTwoId";
+		String sqlId2="deleteTwo";
+		String sqlId3="insertThree";
+		String sqlId4="updateTwo";
+		boolean flag1=false;
+		boolean flag2=false;
+		boolean flag3=false;
+		try {
+			//拿数据
+			List<Order> list = (List<Order>) bd.selectMethod(order, conn, sqlId1);		
+			
+			Order dorder= list.get(0);
+			int omsum=dorder.getOrderMsum();
+			
+			int umsum=dorder.getUsersMsum();
+			
+			int uptime=dorder.getUsersPtime();
+		
+			int unewmsum=umsum+omsum;
+			int unewptime=uptime+1;
+			dorder.setUsersPtime(unewptime);
+			dorder.setUsersMsum(unewmsum);
+			
+			flag2 =bd.deleteMethod(dorder, conn, sqlId2);
+
+			flag1=bd.insertMethod(dorder, conn, sqlId3);
+			flag3=bd.updateMethod(dorder, conn, sqlId4);
+			
+		} catch (Exception e) {
+			log.error("失败",e);
+		}
+		
+		return true;
+	}
+	//多条件查询
+	public List<Order> inquiryUnorder(Order order) {
+		Connection conn=DBHelper.getConnection();
+		String sqlId="selectByMore";		
+		try {
+			//拿数据
+			List<Order> list = (List<Order>) bd.selectMethod(order, conn, sqlId);			
+			return list;
+		} catch (Exception e) {
+			log.error("失败",e);
+		}
+		return null;
 	}
 	
-	//加到发送订单
-		public boolean insertDOrder(Order order) {
-			Connection conn=DBHelper.getConnection();
-			String sqlId="insertTwo";
-			boolean flag=false;
-			try {
-				flag=bd.insertMethod(order, conn, sqlId);
-				
-				System.out.println("orderServiceImpl的list"+flag);
-				
-			} catch (Exception e) {
-				log.error("失败",e);
-			}
-			return true;
-		}
-		
-	//删除未发订单
-	public boolean deleteUnOrder(Order order) {
+	//用户查未发
+	public List<Order> getAllUnOrderNum(Order order) {
 		Connection conn=DBHelper.getConnection();
-		String sqlId="deleteOne";
-		boolean flag=false;
+		String sqlId="selectOneNum";
+		
 		try {
-			flag=bd.deleteMethod(order, conn, sqlId);
-			
-			System.out.println("orderServiceImpl的list"+flag);
-			
+			//拿数据
+			List<Order> list = (List<Order>) bd.selectMethod(order, conn, sqlId);			
+			return list;
 		} catch (Exception e) {
 			log.error("失败",e);
 		}
-		return true;
+		return null;
 	}
+	
+	//用户查已发
+	public List<Order> getAllDOrderNum(Order order) {
+		Connection conn=DBHelper.getConnection();
+		String sqlId="selectTwoNum";		
+		try {
+			//拿数据
+			List<Order> list = (List<Order>) bd.selectMethod(order, conn, sqlId);
+			return list;
+		} catch (Exception e) {
+			log.error("失败",e);
+		}
+		return null;
+	}
+	
+	//用户查完成
+	public List<Order> getAllCOrderNum(Order order) {
+		Connection conn=DBHelper.getConnection();
+		String sqlId="selectThreeNum";		
+		try {
+			//拿数据
+			List<Order> list = (List<Order>) bd.selectMethod(order, conn, sqlId);
+			return list;
+		} catch (Exception e) {
+			log.error("失败",e);
+		}
+		return null;
+	}
+	
+	
 }

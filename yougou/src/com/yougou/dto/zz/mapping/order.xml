@@ -17,24 +17,33 @@
 		<property name="usersPhone" column="users_phone"/>
 		<property name="usersNum" column="users_num"/>
 		<property name="orderDate" column="order_date"/>
-		
+		<property name="goodsTimg" column="goods_timg"/>
+		<property name="usersMsum" column="users_msum"/>
+		<property name="usersPtime" column="users_ptime"/>
 		<!-- 查询未发订单 -->
 		<select sqlId="selectOne" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
 			SELECT goods_name,goods_color,order_num,order_msum,users_region,users_address,users_name,users_phone,unorder.users_num,order_id,order_date,stock.goods_size FROM unorder
  			INNER JOIN stock  on unorder.stock_id=stock.stock_id INNER JOIN goods  ON stock.goods_id=goods.goods_id INNER JOIN address  ON unorder.address_id=address.address_id
 		</select >
 		
-		<!-- 用户查询未发订单 -->
+		<!-- 用户根据用户名查询未发订单 -->
 		<select sqlId="selectOneNum" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
-			SELECT goods_name,goods_color,order_num,order_msum,users_region,users_address,users_name,users_phone,unorder.users_num,order_id,order_date,stock.goods_size FROM unorder
+			SELECT goods.goods_id,goods_timg,goods_name,goods_color,order_num,order_msum,users_region,users_address,users_name,users_phone,unorder.users_num,order_id,order_date,stock.goods_size FROM unorder
  			INNER JOIN stock  on unorder.stock_id=stock.stock_id INNER JOIN goods  ON stock.goods_id=goods.goods_id INNER JOIN address  ON unorder.address_id=address.address_id 
  			where unorder.users_num= #{usersNum}
 		</select >
 		
-		<!-- 用户查询未发订单 -->
+		<!-- 多条件查询 -->
+		<select sqlId="selectByMore" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
+			SELECT goods_name,goods_color,order_num,order_msum,users_region,users_address,users_name,users_phone,unorder.users_num,order_id,order_date,stock.goods_size FROM unorder
+ 			INNER JOIN stock  on unorder.stock_id=stock.stock_id INNER JOIN goods  ON stock.goods_id=goods.goods_id INNER JOIN address  ON unorder.address_id=address.address_id 
+ 			where order_id = #{orderId} 
+		</select >
+		
+		<!-- 根据id查数据 -->
 		<select sqlId="selectOneId" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
 			SELECT order_id,stock_id,order_num,address_id,order_date,order_msum,users_num from unorder 
-			WHERE order_id=#{orderId}
+			WHERE order_id= #{orderId}
 		</select >
 		
 		<!-- 删除未发订单 -->
@@ -48,7 +57,7 @@
 			(#{orderId},#{stockId},#{orderNum},#{addressId},#{orderDate},#{orderMsum},#{usersNum})
 		</insert >
 		
-		
+		<!-- 未完成!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 		<!-- 查询已发订单 -->
 		<select sqlId="selectTwo" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
 			SELECT goods_name,goods_color,order_num,order_msum,users_region,users_address,users_name,users_phone,dorder.users_num,order_id,order_date,stock.goods_size FROM dorder
@@ -57,11 +66,30 @@
 		
 		<!-- 用户查询未发订单 -->
 		<select sqlId="selectTwoNum" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
-			SELECT goods_name,goods_color,order_num,order_msum,users_region,users_address,users_name,users_phone,dorder.users_num,order_id,order_date,stock.goods_size FROM dorder
- 			INNER JOIN stock  on dorder.stock_id=stock.stock_id INNER JOIN goods  ON stock.goods_id=goods.goods_id INNER JOIN address  ON dorder.address_id=address.address_id 
+			 SELECT goods.goods_id,users_msum,users_ptime,goods_timg,goods_name,goods_color,order_num,order_msum,users_region,users_address,users_name,users_phone,dorder.users_num,order_id,order_date,stock.goods_size FROM dorder
+  			INNER JOIN stock  on dorder.stock_id=stock.stock_id 
+ INNER JOIN goods  ON stock.goods_id=goods.goods_id 
+ INNER JOIN address  ON dorder.address_id=address.address_id INNER JOIN users ON dorder.users_num=users.users_num
  			where dorder.users_num= #{usersNum}
 		</select >
-		
+		<!-- 更改账户信息 -->
+		<update sqlId="updateTwo" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
+			update users set  users_msum = #{usersMsum},users_ptime=#{usersPtime} where users_num = #{usersNum}
+		</update >
+		<!-- 多条件查询 -->
+		<select sqlId="selectByMore" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
+			SELECT goods_name,goods_color,order_num,order_msum,users_region,users_address,users_name,users_phone,dorder.users_num,order_id,order_date,stock.goods_size FROM dorder
+ 			INNER JOIN stock  on dorder.stock_id=stock.stock_id INNER JOIN goods  ON stock.goods_id=goods.goods_id INNER JOIN address  ON dorder.address_id=address.address_id 
+ 			where order_id = #{orderId} 
+		</select >
+		<!-- 根据id查数据 -->
+		<select sqlId="selectTwoId" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
+			 SELECT dorder.address_id,dorder.stock_id,users_msum,users_ptime,goods_timg,goods_name,goods_color,order_num,order_msum,users_region,users_address,users_name,users_phone,dorder.users_num,order_id,order_date,stock.goods_size FROM dorder
+  			INNER JOIN stock  on dorder.stock_id=stock.stock_id 
+ INNER JOIN goods  ON stock.goods_id=goods.goods_id 
+ INNER JOIN address  ON dorder.address_id=address.address_id INNER JOIN users ON dorder.users_num=users.users_num
+ 			where dorder.order_id= #{orderId}
+		</select >
 		<!-- 增加已发订单 -->
 		<insert sqlId="insertTwo" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
 			insert into dorder (order_id,stock_id,order_num,address_id,order_date,order_msum,users_num) values 
@@ -73,6 +101,8 @@
 			delete from dorder where order_id= #{orderId} 
 		</delete >
 		
+		<!-- 完成!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+		
 		<!-- 查询完成订单 -->
 		<select sqlId="selectThree" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
 			SELECT goods_name,goods_color,order_num,order_msum,users_region,users_address,users_name,users_phone,corder.users_num,order_id,order_date,stock.goods_size FROM corder
@@ -81,14 +111,23 @@
 		
 		<!-- 用户查询未发订单 -->
 		<select sqlId="selectThreeNum" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
-			SELECT goods_name,goods_color,order_num,order_msum,users_region,users_address,users_name,users_phone,corder.users_num,order_id,order_date,stock.goods_size FROM corder
+			SELECT  goods.goods_id,goods_timg,goods_name,goods_color,order_num,order_msum,users_region,users_address,users_name,users_phone,corder.users_num,order_id,order_date,stock.goods_size FROM corder
  			INNER JOIN stock  on corder.stock_id=stock.stock_id INNER JOIN goods  ON stock.goods_id=goods.goods_id INNER JOIN address  ON corder.address_id=address.address_id 
  			where corder.users_num= #{usersNum}
+		</select >
+		
+		<!-- 多条件查询 -->
+		<select sqlId="selectByMore" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
+			SELECT goods_name,goods_color,order_num,order_msum,users_region,users_address,users_name,users_phone,unorder.users_num,order_id,order_date,stock.goods_size FROM unorder
+ 			INNER JOIN stock  on unorder.stock_id=stock.stock_id INNER JOIN goods  ON stock.goods_id=goods.goods_id INNER JOIN address  ON unorder.address_id=address.address_id 
+ 			where order_id = #{orderId} 
 		</select >
 		
 		<!-- 增加完成订单 -->
 		<insert sqlId="insertThree" parameterType="com.yougou.dto.zz.Order" resultType="com.yougou.dto.zz.Order">
 			insert into corder (order_id,stock_id,order_num,address_id,order_date,order_msum,users_num) values 
 			(#{orderId},#{stockId},#{orderNum},#{addressId},#{orderDate},#{orderMsum},#{usersNum})
-		</insert >	
+		</insert >
+		
+			
 	</class>

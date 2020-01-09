@@ -19,6 +19,44 @@ public class OrderForm extends ActionForm {
 	private String usersAddress;
 	private String usersName;
 	private String usersPhone;
+	private String usersNum;
+	private String goodsTimg;
+	private String usersMsum;
+	private String usersPtime;
+	
+	public String getUsersMsum() {
+		return usersMsum;
+	}
+	public void setUsersMsum(String usersMsum) {
+		this.usersMsum = usersMsum;
+	}
+	
+	public String getUsersPtime() {
+		return usersPtime;
+	}
+	public void setUsersPtime(String usersPtime) {
+		this.usersPtime = usersPtime;
+	}
+	public String getGoodsTimg() {
+		return goodsTimg;
+	}
+	public void setGoodsTimg(String goodsTimg) {
+		this.goodsTimg = goodsTimg;
+	}
+	public String getPageNo() {
+		return pageNo;
+	}
+	public void setPageNo(String pageNo) {
+		this.pageNo = pageNo;
+	}
+	private String pageNo;
+	
+	public String getUsersNum() {
+		return usersNum;
+	}
+	public void setUsersNum(String usersNum) {
+		this.usersNum = usersNum;
+	}
 	public String getOrderId() {
 		return orderId;
 	}

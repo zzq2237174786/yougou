@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,9 +11,8 @@
 		<link rel="stylesheet" type="text/css" href="/yougou/css/backstage.css"/>
 		<link rel="stylesheet" type="text/css" href="/yougou/css/backstage_order.css"/>
 	</head>
+	<script src="/yougou/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
-	
-		
 	 function Order(orderId){
 		this.orderId = orderId;
 		this.method = 'operateUnOrder';
@@ -32,8 +32,24 @@
 		});
 	}
 	
+	function UnOrder(orderId) {
+		
+		this.orderId=orderId;
+		this.method='inquiryUnorder';
+	}
+	function inquiryUnorder(){
+		//拿到值，封装成json对象
+
+		alert("进入");
+		var ordernum = $('#ordernum').val();
+		alert(ordernum);
+		
+		location.href="/yougou/backorder.do?method=inquiryUnorder&orderId="+ordernum;
+	}
 	
 	</script>
+	
+	
 	<body>
 	
 	
@@ -128,12 +144,12 @@
 				<!--右侧主内容-->
 				<div class="col-lg-10  main-right">
 					<!--查找-->
-					<ul class="select">
-						<li>订单时间：<input type="text" class="order-time" id="order-time" /></li>
-						<li>订单编号：<input type="text" class="order-num" id="order-num" /></li>
+					<ul class="select" >
+						<li>订单时间：<input type="text" class="order-time" id="ordertime"/></li>
+						<li>订单编号：<input type="text" class="order-num" id="ordernum"/></li>
 						<li>
-							<input type="button" class="on-select" id="on-select" value="查询" />
-							<!--<input type="button" class="off-select" id="off-select" value="取消" />-->
+							<input type="button" class="on-select" id="on-select" onclick="inquiryUnorder()" value="查询" />
+							
 						</li>
 					</ul>
 					<div class="content-top">
@@ -229,7 +245,51 @@
 						
 					<!--分页-->
 					<div class="row  type-page">
-						<div class="pagination"></div>
+						<div class="pagination" id="pagination">
+						<c:if test="${pageNo eq 1}">
+							<a href="javascript:void(0)">上</a>
+								<c:forEach var="i" begin="${pageNo}" end="${pageNo+1 }">
+									<c:if test="${i ne pageNo}">
+										<a href="backorder.do?method=getUnOrder&pageNo=${i}">${i}</a>
+										
+									</c:if>
+									<c:if test="${i eq pageNo}">
+										<span class="active">${i}</span>
+									</c:if>
+									
+								</c:forEach>
+								<a href="backorder.do?method=getUnOrder&pageNo=${pageNo+1}">下</a>
+							</c:if>
+							<c:if test="${pageNo eq maxNo}">
+								<a href="backorder.do?method=getUnOrder&pageNo=${pageNo-1}">上</a>
+								<c:forEach var="i" begin="${pageNo-1}" end="${maxNo }">
+									<c:if test="${i ne pageNo}">
+										<a href="backorder.do?method=getUnOrder&pageNo=${i}">${i}</a>
+									</c:if>
+									<c:if test="${i eq pageNo}">
+										<span class="active">${i}</span>
+									</c:if>
+								</c:forEach>
+								<a href="backorder.do?method=getUnOrder&pageNo=${pageNo+1}">下</a>
+							</c:if>
+							<c:if test="${pageNo ne maxNo and pageNo ne 1}">
+								
+									<a href="backorder.do?method=getUnOrder&pageNo=${pageNo-1}">上</a>
+									<c:forEach var="i" begin="${pageNo-1}" end="${pageNo+1 }">
+										<c:if test="${i ne pageNo}">
+											<a href="backorder.do?method=getUnOrder&pageNo=${i}">${i}</a>
+										</c:if>
+										<c:if test="${i eq pageNo}">
+											<span class="active">${i}</span>
+										</c:if>
+									</c:forEach>
+									<a href="backorder.do?method=getUnOrder&pageNo=${pageNo+1}">下</a>
+								
+							</c:if>
+						
+						
+						
+						</div>
 					</div>
 					
 				</div>
@@ -244,3 +304,4 @@
 
 <script src="/yougou/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="/yougou/js/backstage_time.js" type="text/javascript" charset="utf-8"></script>
+<script src="/yougou/js/backorder.js" type="text/javascript" charset="utf-8"></script>

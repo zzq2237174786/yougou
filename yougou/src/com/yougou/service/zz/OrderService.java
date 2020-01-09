@@ -13,7 +13,12 @@ public interface OrderService {
 	public List<Order> getAllUnOrder(Order order);
 	public List<Order> getAllDOrder(Order order);
 	public List<Order> getAllCOrder(Order order);
-	public boolean deleteUnOrder(Order order);
-	public boolean insertDOrder(Order order);
 	public boolean operateUnOrder(Order order);
+	public boolean operateDOrder(Order order);
+	public List<Order> inquiryUnorder(Order order);
+	
+	//客户端
+	public List<Order> getAllUnOrderNum(Order order);
+	public List<Order> getAllDOrderNum(Order order);
+	public List<Order> getAllCOrderNum(Order order);
 }

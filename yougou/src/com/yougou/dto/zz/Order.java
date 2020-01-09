@@ -1,6 +1,6 @@
 package com.yougou.dto.zz;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Order {
 	private String orderId;
@@ -21,9 +21,32 @@ public class Order {
 	private String usersPhone;
 	//账号
 	private String usersNum;
+	private String goodsTimg;
+	private int usersMsum;
+	private int usersPtime;
 	
 	
 	
+	
+	public int getUsersMsum() {
+		return usersMsum;
+	}
+	public void setUsersMsum(int usersMsum) {
+		this.usersMsum = usersMsum;
+	}
+	
+	public int getUsersPtime() {
+		return usersPtime;
+	}
+	public void setUsersPtime(int usersPtime) {
+		this.usersPtime = usersPtime;
+	}
+	public String getGoodsTimg() {
+		return goodsTimg;
+	}
+	public void setGoodsTimg(String goodsTimg) {
+		this.goodsTimg = goodsTimg;
+	}
 	public String getUsersNum() {
 		return usersNum;
 	}
