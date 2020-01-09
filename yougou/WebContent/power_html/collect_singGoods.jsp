@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -45,21 +46,21 @@
 				<ul class="nav navbar-nav navbar-right">
 					<!--登录注册-->
 					<li>
-						<a href="login.jsp" id="login-btn">登录</a>
+						<a href="/yougou/base_html/login.jsp" id="login-btn">登录</a>
 						<span id="username"></span>
 						<p>/</p>
-						<a href="register.jsp" id="register-btn">注册</a>
+						<a href="/yougou/base_html/register.jsp" id="register-btn">注册</a>
 						<a href="javaScript:;" id="exit-btn">退出</a>
 					</li>
 					<!--收藏-->
-					<li id="collect_btn">
-						<a href="login.jsp">
+					<li id="collect-btn">
+						<a href="/yougou/power_html/collect_order.jsp">
 							<span class="glyphicon glyphicon-heart"></span> 收藏
 						</a>
 					</li>
 					<!--购物袋-->
 					<li id="cart-btn">
-						<a href="login.jsp">
+						<a href="/yougou/power_html/login_cart.jsp">
 							<span class="glyphicon glyphicon-shopping-cart"></span> 购物车
 						</a>
 					</li>
@@ -87,32 +88,32 @@
 			<div class=" logo-nav">
 				<div class="container">
 					<div class="row">
-					<!--导航条-->
-					<div class="col-md-10">
-						<nav class="navbar ">
-							<ul class="nav navbar-nav" id="nav-type">
-								<li class="nav-log">
-									<a href=""><img src="/yougou/img/nav-logo.png" /></a>
-								</li>
-								<li>
-									<a href="index.jsp">首页</a>
-								</li>
-								<!--分类-->
-							</ul>
-						</nav>
+						<!--导航条-->
+						<div class="col-md-10">
+							<nav class="navbar ">
+								<ul class="nav navbar-nav" id="nav-type">
+									<li class="nav-log">
+										<a href=""><img src="/yougou/img/nav-logo.png" /></a>
+									</li>
+									<li>
+										<a href="/yougou/base_html/index.jsp">首页</a>
+									</li>
+									<!--分类-->
+								</ul>
+							</nav>
+						</div>
+
+						<!--搜索框 logo-serach-->
+						<div class="col-md-2 logo-search">
+							<input type="text" />
+							<a href=""><span></span></a>
+						</div>
 					</div>
 
-					<!--搜索框 logo-serach-->
-					<div class="col-md-2 logo-search">
-						<input type="text" />
-						<a href=""><span></span></a>
+					<!--导航条下的内容-->
+					<div class="nav-content" id="nav-content">
+						<!--分类下的内容-->
 					</div>
-				</div>
-
-				<!--导航条下的内容-->
-				<div class="nav-content" id="nav-content">
-					<!--分类下的内容-->
-				</div>
 				</div>
 			</div>
 
@@ -126,9 +127,9 @@
 				<div class="row col-lg-10 col-lg-offset-1">
 					<p class="curmbs">
 						您当前的位置：
-						<a href="index.jsp" target="_blank">首页</a>
+						<a href="/yougou/base_html/index.jsp" target="_blank">首页</a>
 						>
-						<a href="collect_my.jsp">我的优购</a>
+						<a href="javascript:void(0)">我的优购</a>
 						>我的订单
 					</p>
 				</div>
@@ -138,7 +139,7 @@
 					<div class="umenu col-lg-2 col-lg-offset-1" id="umenu ">
 						<!--我的优购-->
 						<div class="myyougou ">
-							<a class="text-center" href="collect_my.jsp ">
+							<a class="text-center" href="javascript:void(0) ">
 								<span class="text-center">我的优购</span>
 							</a>
 						</div>
@@ -146,50 +147,50 @@
 						<!--交易中心-->
 						<ul class="jiaoyizx">
 							<li class="ultitle ">交易中心</li>
-							<li class="present myorder"><a href="collect_order.jsp">
+							<li class="present myorder"><a href="javascript:void(0)">
 								<span>
 								我的订单
 							</span></a></li>
-							<li class="current myfavor"><a href=" collect.jsp"><span>
+							<li class="current myfavor"><a href="/yougou/power_html/collect.jsp"><span>
 								我的收藏
 							</span></a></li>
-							<li class="current mycomment"><a href="collect_comment.jsp"><span>
+							<li class="current mycomment"><a href="/yougou/power_html/collect_comment.jsp"><span>
 								商品评论/晒单
 							</span></a></li>
-							<li class="current mymessage"><a href=" collect_message.jsp"><span>
+							<li class="current mymessage"><a href=" /yougou/power_html/collect_message.jsp"><span>
 								站内消息
 							</span></a></li>							
 						</ul>
 						<!--我的资产-->
 						<ul class="wodezc">
 							<li class=" ultitle ">我的资产</li>
-							<li class="current mycoupon"><a href="collect_coupon.jsp"><span>
+							<li class="current mycoupon"><a href="/yougou/power_html/collect_coupon.jsp"><span>
 								我的优惠券
 							</span></a></li>
-							<li class="current mygiftcard"><a href="collect_giftcard.jsp"><span>
+							<li class="current mygiftcard"><a href="/yougou/power_html/collect_giftcard.jsp"><span>
 								我的礼品卡
 							</span></a></li>
-							<li class="current mypoint"><a href="collect_point.jsp"><span>
+							<li class="current mypoint"><a href="/yougou/power_html/collect_point.jsp"><span>
 								我的积分
 							</span></a></li>
 						</ul>
 						<!--个人设置-->
 						<ul class="gerensz">
 							<li class="ultitle ">个人设置</li>
-							<li class="current mysafeset"><a href="collect_safeSet.jsp"><span>
+							<li class="current mysafeset"><a href="/yougou/power_html/collect_safeSet.jsp"><span>
 								安全设置
 							</span></a></li>
-							<li class="current myaddress"><a href="collect_address.jsp"><span>
+							<li class="current myaddress"><a href="/yougou/power_html/collect_address.jsp"><span>
 								我的收获地址
 							</span></a></li>
 						</ul>
 						<!--售后服务-->
 						<ul class="shouhoufw">
 							<li class="ultitle">售后服务</li>
-							<li class="current mysafeset"><a href="collect_afterService.jsp"><span>
+							<li class="current mysafeset"><a href="/yougou/power_html/collect_afterService.jsp"><span>
 								查看退换货
 							</span></a></li>
-							<li class="current myaddress"><a href="collect_applicationService.jsp"><span>
+							<li class="current myaddress"><a href="/yougou/power_html/collect_applicationService.jsp"><span>
 								申请退换货
 							</span></a></li>
 						</ul>
@@ -282,22 +283,22 @@
 					<div class="content col-lg-9" id="content">
 						<h2 class="content-title">我的订单</h2>
 						<div class="content-top">
-							<a class="current zeronum" href="collect_order.jsp">
+							<a class="current zeronum" href="backorder.do?method=getUnOrderNum">
 								未发货
 								<span>
-									0
+									
 								</span>
 							</a>
-							<a class="current zeronum" href="collect_deliveredGoods.jsp">
+							<a class="current zeronum" href="backorder.do?method=getDOrderNum">
 								已发货
-								<span>
-									0
+								<span >
+									
 								</span>
 							</a>
 							<a class="current choosed" href="javascript:void(0)">
 								已收货
-								<span>
-									1
+								<span id="span1">
+									
 								</span>
 							</a>
 						</div>
@@ -317,24 +318,24 @@
 							
 							<!--有数据-->
 							<ul class="goods">
+								<c:forEach items="${coList}" var="s" varStatus="i">
 								<li>
-									
-									<a href="pro-center.jsp"><img src="/yougou/img/101244991_01_s.jpg"/></a>
+									<a href="javascript:void(0)"><img src="${s.goodsTimg }"/></a>
 									<div class="goods-list">
 										<div class="goods-info">
 											<p>
-												<a href="pro-center.jsp" target="-blank">adidas阿迪达斯2019中性EC ORG单肩包ED6877</a>
+												<a href="javascript:void(0)" target="-blank">${s.goodsName }</a>
 											</p>
 											<p>
 												<span class="goods-color">
 													颜色：
-													<em>黑</em>
+													<em>${s.goodsColor }</em>
 													&nbsp;&nbsp;尺码：
-													<em>F</em>
+													<em>${s.goodsSize}</em>
 													&nbsp;&nbsp;数量：
-													<em>1</em>
+													<em>${s.orderNum }</em>
 													&nbsp;&nbsp;价格：
-													<em>1000</em>
+													<em>${s.orderMsum }</em>
 												
 												</span>
 											</p>
@@ -344,36 +345,31 @@
 										</div>
 										<div class="haved-info">
 											<span class="haved-ard">
-												天津市宁河区潘庄镇大龙湾村
-												详细地址。。。
+												${s.usersRegion }
+												${s.usersAddress }
 											</span>
 											<span class="order-haved">
-												周哈哈
+												${s.usersName }
 											</span>
 											<span id="">
 												收
 											</span>
 											<span class="order-tel">
-												138****8888
+												${s.usersPhone }
 											</span>
 										</div>
 										<!--订单时间-->
 										<div class="order-info">
-											订单时间：<p class="order-time">2020-1-1</p>
-											订单编号：<p class="order-num">1027583A</p>
+											订单时间：<p class="order-time">${s.orderDate }</p>
+											订单编号：<p class="order-num">${s.orderId}</p>
 										</div>
+										
 									</div>
 								</li>
+								</c:forEach>
 								
 							</ul>
-							<div class="body-bottom">
-								<div class="nogoods">
-									暂无订单,请先去<a href="index.jsp">优购</a>
-								</div>
-								<div class="havegoods">		
-									
-								</div>
-							</div>
+							
 						</div>
 
 						
@@ -570,7 +566,7 @@
 		
 	</body>
 </html>
-<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/collect.js" type="text/javascript" charset="utf-8"></script>
+<script src="/yougou/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/yougou/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+<script src="/yougou/js/base.js" type="text/javascript" charset="utf-8"></script>
+<script src="/yougou/js/backorder.js" type="text/javascript" charset="utf-8"></script>

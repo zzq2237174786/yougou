@@ -41,6 +41,7 @@
 			<result name="unordernum" path="/power_html/collect_order.jsp"></result>
 			<result name="dordernum" path="/power_html/collect_deliveredGoods.jsp"></result>
 			<result name="cordernum" path="/power_html/collect_singGoods.jsp"></result>
+			<result name="dsorder" path="/power_html/backorder.do?method=getUnOrderNum"></result>
 	</action>
 	
 	<!-- 购物车 -->
