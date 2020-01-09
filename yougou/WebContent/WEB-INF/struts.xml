@@ -32,6 +32,11 @@
 			<result name="index" path="/backstage/backstage_goods.jsp"></result>
 	</action>
 	
+	<!-- 后台商品数据 -->
+	<action path="backusers" class="com.yougou.web.servlet.zz.action.BackUsersAction"  form="com.yougou.web.servlet.zz.form.BackUsersForm">
+			<result name="users" path="/backstage/baskstage_manage.jsp"></result>
+	</action>
+	
 	<!-- 后台订单 -->
 	<action path="backorder" class="com.yougou.web.servlet.zz.action.OrderAction"  form="com.yougou.web.servlet.zz.form.OrderForm">
 			<result name="unorder" path="/backstage/backstage_order.jsp"></result>
