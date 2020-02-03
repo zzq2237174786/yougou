@@ -34,7 +34,7 @@ public class CartAction extends DispatcherAction {
 		cart.setGoodsId(goodsId);
 		//拿到数据
 		String data = lx.getStockInfo(cart);
-		System.out.println(data);
+//		System.out.println(data);
 		//成功..
 		ActionForward fa=new ActionForward();
 		data=JsonSuccess.success(data);;
@@ -48,7 +48,7 @@ public class CartAction extends DispatcherAction {
 		GoodsCart cart=new GoodsCart();
 		CartForm cf=(CartForm)form;
 		String stockId=cf.getStockId();
-		System.out.println("商品的"+stockId);
+//		System.out.println("商品的"+stockId);
 		cart.setStockId(stockId);
 		
 //		int page = Integer.parseInt(cf.getPage());
@@ -78,7 +78,7 @@ public class CartAction extends DispatcherAction {
 		
 		//拿到数据
 		String data = lx.getDetailInfo(cart);
-		System.out.println(data);
+//		System.out.println(data);
 		//成功..
 		ActionForward fa=new ActionForward();
 		data=JsonSuccess.success(data);;
@@ -92,13 +92,13 @@ public class CartAction extends DispatcherAction {
 		CartForm cf=(CartForm)form;
 		String usersNum=cf.getUsersNum();
 		//String stockId=cf.getStockId();
-		System.out.println("用户"+usersNum);
+//		System.out.println("用户"+usersNum);
 		UsersInfo userInfo=(UsersInfo)request.getSession().getAttribute("usersInfo");
 		cart.setUsersNum(userInfo.getUsersNum());
 		//cart.setStockId(stockId);
 		//拿到数据
 		String data = lx.getUserStock(cart);
-		System.out.println("stock_id 和 cart_id"+data);
+//		System.out.println("stock_id 和 cart_id"+data);
 		//成功..
 		ActionForward fa=new ActionForward();
 		data=JsonSuccess.success(data);;
@@ -111,11 +111,11 @@ public class CartAction extends DispatcherAction {
 		GoodsCart cart=new GoodsCart();
 		CartForm cf=(CartForm)form;
 		String stockId=cf.getStockId();
-		System.out.println("商品的"+stockId);
+//		System.out.println("商品的"+stockId);
 		cart.setStockId(stockId);
 		//拿到数据
 		String data = lx.getGoodsId(cart);
-		System.out.println(data);
+//		System.out.println(data);
 		//成功..
 		ActionForward fa=new ActionForward();
 		data=JsonSuccess.success(data);;
@@ -131,7 +131,7 @@ public class CartAction extends DispatcherAction {
 		
 		//拿到数据
 		String data = lx.deleteGoods(cart);
-		System.out.println("删除数据"+data);
+//		System.out.println("删除数据"+data);
 		//成功..
 		ActionForward fa=new ActionForward();
 		data=JsonSuccess.success(data);;

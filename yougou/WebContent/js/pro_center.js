@@ -6,7 +6,7 @@ $(function(){
 		'goodsId':goodsId
 	},function(re){
 		var obj=JSON.parse(re);
-		console.log(obj);
+//		console.log(obj);
 		if(obj.code!=0){
 			console.log(obj.message);
 			return;
@@ -547,7 +547,7 @@ $(function(){
 				'usersNum':usersNum
 			},function(re){
 				var obj=JSON.parse(re);
-				console.log(obj);
+//				console.log(obj);
 				var goodsArr=obj.data;
 				if(obj.code!=0){
 					console.log(obj.message);
@@ -561,8 +561,7 @@ $(function(){
     	/*********/
     		//$('.tc').fadeOut();
     	}else{
-    		window.location.href="login.jsp?goodsId="+goodsId;
-    		
+    		window.location.href="login.jsp?goodsId="+goodsId;    		
     	}
     
     	});
@@ -571,10 +570,15 @@ $(function(){
     //点击立即购买
     $('#come').click(function(){
     	if(usersNum) {
-    	window.location.href="/yougou/power_html/order_submit.jsp?stockId="+id;
+    		if($('#scolor2').length>0){  
+    			var stockId = $('#scolor2').siblings('#xx1').attr('class')
+    			var orderNum = $('.cart-num').text();
+    			//登录 立即购买 跳orderSubmit.do
+    			window.location.href="/yougou/orderSubmit.do?method=nowBuy&orderNum="+orderNum+"&stockId="+stockId;
+    		}
     	}else{
-    		window.location.href="/yougou/base_html/login.jsp";
-    	}
+    		window.location.href="/yougou/base_html/login.jsp?goodsId="+goodsId;
+		}
     })
     
 

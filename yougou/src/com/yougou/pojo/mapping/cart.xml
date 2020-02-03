@@ -10,13 +10,14 @@
 		<property name="goodsSize" column="goods_size"/>
 		<property name="stockNum" column="stock_num"/>
 		<property name="goodsImg" column="goods_img"/>
+		<property name="goodsTImg" column="goods_timg"/>
 		<property name="goodsName" column="goods_name"/>
 		<property name="goodsColor" column="goods_color"/>
 		<property name="goodsNewPrice" column="goods_newprice"/>
 
 		<!-- 根据stock_id查询商品信息，商品尺寸goods_size，商品尺寸所对应的商品库存数量stock_num -->
 		<select sqlId="selectOne" parameterType="com.yougou.dto.lx.GoodsCart" resultType="com.yougou.dto.lx.GoodsCart">
-			select goods_name , goods_img , goods_color , goods_newprice , s.goods_size , stock_num from stock as s INNER JOIN goods as g ON s.goods_id=g.goods_id where stock_id = #{stockId}  
+			select goods_name , goods_img ,goods_timg, goods_color , goods_newprice , s.goods_size , stock_num from stock as s INNER JOIN goods as g ON s.goods_id=g.goods_id where stock_id = #{stockId}  
 		</select >
 		
 		<!-- 根据goods_id获取到存货的stock_id -->
@@ -37,6 +38,11 @@
 		<!-- 根据购物车表中的stock_id去查库存表中的goodsId -->
 		<select sqlId="selectFour" parameterType="com.yougou.dto.lx.GoodsCart" resultType="com.yougou.dto.lx.GoodsCart">
 			select goods_id from stock where stock_id=#{stockId}
+		</select>
+		
+		<!-- 查取购物车单信息 -->
+		<select sqlId="selectFive" parameterType="com.yougou.dto.lx.GoodsCart" resultType="com.yougou.dto.lx.GoodsCart">
+			select stock_id , cart_num , users_num  from cart where cart_id=#{cartId}
 		</select>
 		
 		<!-- 根据购物车表中的cart_id去删除订单信息 -->

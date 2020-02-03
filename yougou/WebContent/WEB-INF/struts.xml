@@ -11,7 +11,7 @@
 	</action>
 	
 	<!-- 基础分类 -->
-	<action path="base" class="com.yougou.web.servlet.zzq.action.BaseAction" >
+	<action path="base" class="com.yougou.web.servlet.zzq.action.BaseAction" form="com.yougou.web.servlet.zzq.form.BaseForm">
 		<result name="show" path="main.jsp"></result>
 	</action>
 	
@@ -51,5 +51,11 @@
 	
 	<!-- 购物车 -->
 	<action path="cart" class="com.yougou.web.servlet.lx.action.CartAction"  form="com.yougou.web.servlet.lx.form.CartForm">
+	</action>
+	
+	<!-- 订单详情 -->
+	<action path="orderSubmit" class="com.yougou.web.servlet.zz.action.OrderSubmitAction" form="com.yougou.web.servlet.zz.form.OrderSubmitForm">
+		<result name="orderSubmit" path="/power_html/order_submit.jsp"></result>
+		<result name="orderPay" path="/power_html/order_pay.jsp"></result>
 	</action>
 </actions>

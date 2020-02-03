@@ -113,7 +113,7 @@ public class LXServiceImpl implements LXService {
 		try {
 			List<GoodsCart> allCarts = (List<GoodsCart>)dao.selectMethod(cartInfo, conn, "selectOne");
 //			System.out.println(allCarts);
-			System.out.println("存货的长度"+allCarts.size());
+//			System.out.println("存货的长度"+allCarts.size());
 			carts = allCarts.get(0);
 			change.setGoodsImg(Resolver.resolverImg(carts.getGoodsImg()));
 			change.setGoodsName(carts.getGoodsName());
@@ -131,6 +131,9 @@ public class LXServiceImpl implements LXService {
 		JSONObject jsonData = JSONObject.fromObject(change);
 		return jsonData.toString();
 	}
+	
+	
+	
 	//根据cart_id向购物车表中插入订单信息
 	@Override
 	public String getDetailInfo(GoodsCart carts) {
@@ -211,7 +214,7 @@ public class LXServiceImpl implements LXService {
 		boolean deleteInfo=false;
 		try {
 			deleteInfo=dao.deleteMethod(cart, conn, "deleteOne");
-			System.out.println("删除"+deleteInfo);
+//			System.out.println("删除"+deleteInfo);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -221,6 +224,44 @@ public class LXServiceImpl implements LXService {
 		JSONObject jsonData = JSONObject.fromObject(cart);
 		return jsonData.toString();
 	}
+	
+	
+	//根据stockId获取商品详情
+	//根据存货表中的cart_id获得商品信息，商品尺寸goods_size，商品尺寸所对应的商品库存数量stock_num
+	@Override
+	public GoodsCart getgoodsInfo(GoodsCart cartInfo) {
+		Connection conn=DBHelper.getConnection();
+		BaseDao dao=new BaseDaoImpl();
+		GoodsCart carts=null;
+		try {
+			List<GoodsCart> allCarts = (List<GoodsCart>)dao.selectMethod(cartInfo, conn, "selectOne");
+			carts = allCarts.get(0);
+			return carts;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			DBHelper.closeConnection();
+		}
+		return null;
+	}
+
+	//查取订单信息
+	public GoodsCart getCartInfoByCartId(GoodsCart cartInfo) {
+		try {
+			BaseDao dao=new BaseDaoImpl();
+			Connection conn = DBHelper.getConnection();
+			String sqlId = "selectFive";
+			List<GoodsCart> list= (List<GoodsCart>)dao.selectMethod(cartInfo, conn, sqlId);
+			if(list.size()!=0) {
+				return list.get(0);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+
 	
 	
 }

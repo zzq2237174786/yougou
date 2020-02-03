@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<class name="com.yougou.pojo.Address" table="brand">
+		<property id="addressId" column="address_id"/>
+		<property name="usersNum" column="users_num"/>
+		<property name="usersName" column="users_name"/>
+		<property name="usersRegion" column="users_region"/>
+		<property name="usersAddress" column="users_address"/>
+		<property name="usersPhone" column="users_phone"/>
+		<property name="usersPitch" column="users_pitch"/>
+
+		<!-- 查询有没有 -->
+		<insert sqlId="insertOne" parameterType="com.yougou.pojo.Address" resultType="com.yougou.pojo.Address">
+			insert into address(address_id, users_num, users_name , users_region, users_address, users_phone, users_pitch)
+			 values(#{addressId},#{usersNum},#{usersName},#{usersRegion},#{usersAddress},#{usersPhone},#{usersPitch})
+		</insert >
+	</class>

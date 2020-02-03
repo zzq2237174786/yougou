@@ -17,7 +17,7 @@
   				},
   			function(re){
   				var obj=JSON.parse(re);
-  				console.log(obj);
+//  				console.log(obj);
   				//验证
   				if(obj.code!=0){
   					console.log(obj.message);
@@ -28,7 +28,7 @@
   				var allCartId=listArr.cartId;
   				var filedAll = allStock.split(",");
   				var cartAll=allCartId.split(",");
-  				console.log(filedAll);
+//  				console.log(filedAll);
   				//console.log(cartAll);
   				//遍历数组数据拿到每一个stockId
   				
@@ -132,7 +132,7 @@
 	  		  				},
 	  		  			function(re){
 	  		  				var obj=JSON.parse(re);
-	  		  				console.log("删除"+obj);
+//	  		  				console.log("删除"+obj);
 	  		  				//验证
 	  		  				if(obj.code!=0){
 	  		  					console.log(obj.message);
@@ -168,7 +168,7 @@
 	  		  				},
 	  		  			function(re){
 	  		  				var obj=JSON.parse(re);
-	  		  				console.log("删除"+obj);
+//	  		  				console.log("删除"+obj);
 	  		  				//验证
 	  		  				if(obj.code!=0){
 	  		  					console.log(obj.message);
@@ -523,10 +523,22 @@ $(function(){
 		//累减
 		n--;
 		$('.full').animate({'left':-n*ulWidth},1000);
-	});
-      	
-      	
-      	
+	});	
 		}
 	})
 })
+
+
+$(function() {
+	$('#orderSubmit').click(function() {
+		var cartId = $("[data-check='active']").attr('id');
+		if(!cartId){
+			alert('请选择一件商品');
+			return;
+		}else{
+			//跳转到获取商品信息页面
+			window.location.href="/yougou/orderSubmit.do?method=getCartInfo&cartId="+cartId;
+		}	
+	});
+});
+

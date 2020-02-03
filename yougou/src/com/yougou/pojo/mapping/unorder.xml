@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<class name="com.yougou.pojo.UnOrder" table="unorder">
+		<property id="orderId" column="order_id"/>
+		<property name="stockId" column="stock_id"/>
+		<property name="orderNum" column="order_num"/>
+		<property name="addressId" column="address_id"/>
+		<property name="orderDate" column="order_date"/>
+		<property name="orderMSum" column="order_msum"/>
+		<property name="usersNum" column="users_num"/>
+
+		<!-- 查询有没有 -->
+		<insert sqlId="insertOne" parameterType="com.yougou.pojo.UnOrder" resultType="com.yougou.pojo.UnOrder">
+		insert into unorder(order_id, stock_id, order_num , address_id, order_date, order_msum, users_num)
+		 values(#{orderId},#{stockId},#{orderNum},#{addressId},#{orderDate},#{orderMSum},#{usersNum})
+		</insert >
+	</class>
